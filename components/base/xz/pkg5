@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "shell/ksh93",
+        "system/library",
+        "system/xopen/xcu4"
+    ],
+    "fmris": [
+        "compress/xz"
+    ],
+    "name": "xz"
+}

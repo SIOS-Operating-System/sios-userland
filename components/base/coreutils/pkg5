@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/gmp",
+        "system/library"
+    ],
+    "fmris": [
+        "file/gnu-coreutils"
+    ],
+    "name": "coreutils"
+}

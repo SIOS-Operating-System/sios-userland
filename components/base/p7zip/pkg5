@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "shell/ksh93",
+        "system/library",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "compress/p7zip"
+    ],
+    "name": "p7zip"
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/ncurses",
+        "system/library"
+    ],
+    "fmris": [
+        "text/text-utilities"
+    ],
+    "name": "text-utilities"
+}

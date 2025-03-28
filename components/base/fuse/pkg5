@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "driver/fuse"
+    ],
+    "name": "illumos-fusefs"
+}

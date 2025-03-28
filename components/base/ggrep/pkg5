@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/pcre2",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "text/gnu-grep"
+    ],
+    "name": "grep"
+}

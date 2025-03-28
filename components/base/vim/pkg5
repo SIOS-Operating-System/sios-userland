@@ -1,0 +1,26 @@
+{
+    "dependencies": [
+        "library/desktop/cairo",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk3",
+        "library/desktop/pango",
+        "library/desktop/xdg/libcanberra",
+        "library/glib2",
+        "library/ncurses",
+        "library/security/libsodium",
+        "runtime/python-39",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math",
+        "x11/library/libice",
+        "x11/library/libsm",
+        "x11/library/libx11",
+        "x11/library/toolkit/libxt"
+    ],
+    "fmris": [
+        "editor/gvim",
+        "editor/vim",
+        "editor/vim/vim-core"
+    ],
+    "name": "vim"
+}

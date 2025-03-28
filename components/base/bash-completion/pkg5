@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "shell/bash",
+        "text/gnu-grep",
+        "text/gnu-sed"
+    ],
+    "fmris": [
+        "utility/bash-completion"
+    ],
+    "name": "bash-completion"
+}
