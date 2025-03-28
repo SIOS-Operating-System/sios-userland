@@ -1,9 +1,0 @@
-{
-  global:
-	inb;
-	inw;
-	inl;
-	outb;
-	outw;
-	outl;
-};

@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "runtime/java/openjdk17"
-    ],
-    "fmris": [
-        "developer/jenkins-core-lts"
-    ],
-    "name": "jenkins"
-}

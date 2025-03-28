@@ -1,2 +1,0 @@
-Network Management:solaris:cmd:RO::/usr/sbin/dumpcap:privs=net_rawaccess
-Network Observability:solaris:cmd:RO::/usr/sbin/dumpcap:privs=net_rawaccess

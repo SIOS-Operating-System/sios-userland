@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "text/itstool"
-    ],
-    "fmris": [
-        "library/gnome/yelp-xsl"
-    ],
-    "name": "yelp-xsl"
-}

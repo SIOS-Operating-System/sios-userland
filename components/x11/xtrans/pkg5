@@ -1,7 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "x11/library/xtrans"
-    ],
-    "name": "xtrans"
-}

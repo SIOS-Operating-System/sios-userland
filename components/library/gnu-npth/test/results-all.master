@@ -1,4 +1,0 @@
-PASS: t-mutex
-PASS: t-thread
-PASS: t-cond
-PASS: t-fork

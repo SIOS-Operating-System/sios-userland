@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "shell/ksh93"
-    ],
-    "fmris": [
-        "data/docbook/sgml-common"
-    ],
-    "name": "sgml-common"
-}

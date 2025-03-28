@@ -1,2 +1,0 @@
-solaris.smf.value.sysstatd:::Change sysstatd value properties::
-solaris.smf.manage.sysstatd:::Manage sysstatd service states::

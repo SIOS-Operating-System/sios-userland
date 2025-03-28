@@ -1,8 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "release/name",
-        "release/notices"
-    ],
-    "name": "release"
-}

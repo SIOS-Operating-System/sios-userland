@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "runtime/perl"
-    ],
-    "fmris": [
-        "text/xmltoman"
-    ],
-    "name": "xmltoman"
-}

@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "system/library"
-    ],
-    "fmris": [
-        "library/libsigsegv"
-    ],
-    "name": "libsigsegv"
-}

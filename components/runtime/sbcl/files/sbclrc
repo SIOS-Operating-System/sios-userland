@@ -1,4 +1,0 @@
-;;; Setup ASDF
-(in-package #:cl-user)
-(require :asdf)
-(push #p"/usr/share/common-lisp/systems/" asdf:*central-registry*)

@@ -1,6 +1,0 @@
-t/crash.t ....... ok
-t/extras.t ...... ok
-t/strictures.t .. ok
-All tests successful.
-Files=3, Tests=42
-Result: PASS

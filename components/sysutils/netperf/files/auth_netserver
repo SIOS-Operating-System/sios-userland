@@ -1,2 +1,0 @@
-solaris.smf.value.netserver:::Change netperf netserver value properties::
-solaris.smf.manage.netserver:::Manage netperf netserver service states::

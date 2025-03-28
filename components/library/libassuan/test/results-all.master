@@ -1,4 +1,0 @@
-PASS: version
-PASS: pipeconnect
-PASS: fdpassing
-PASS: fdpassing-socket.sh

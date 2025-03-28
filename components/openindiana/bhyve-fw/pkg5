@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "developer/acpi"
-    ],
-    "fmris": [
-        "system/bhyve/firmware"
-    ],
-    "name": "uefi-edk2"
-}

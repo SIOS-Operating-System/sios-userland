@@ -1,7 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "x11/documentation/xorg-sgml-doctools"
-    ],
-    "name": "xorg-sgml-doctools"
-}

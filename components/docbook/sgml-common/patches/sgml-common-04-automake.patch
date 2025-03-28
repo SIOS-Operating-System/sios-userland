@@ -1,6 +1,0 @@
---- sgml-common-0.6.3/doc/man/Makefile.am.orig
-+++ sgml-common-0.6.3/doc/man/Makefile.am
-@@ -1,2 +1,2 @@
- man8dir	  = $(mandir)/man8
--man8_DATA = *.8
-+man8_MANS = install-catalog.8

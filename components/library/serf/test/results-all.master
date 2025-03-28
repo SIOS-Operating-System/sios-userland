@@ -1,7 +1,0 @@
-OK (70 tests)
-== Testing test/testcases/chunked-empty.response ==
-== Testing test/testcases/chunked-trailers.response ==
-== Testing test/testcases/chunked.response ==
-== Testing test/testcases/deflate.response ==
-== Testing test/testcases/simple.response ==
-== Running the unit tests ==

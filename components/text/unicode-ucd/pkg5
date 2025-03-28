@@ -1,7 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "data/unicode-ucd"
-    ],
-    "name": "unicode-ucd"
-}

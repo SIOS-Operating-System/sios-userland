@@ -1,7 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "x11/server/xorg/driver/xorg-video"
-    ],
-    "name": "xorg-video"
-}

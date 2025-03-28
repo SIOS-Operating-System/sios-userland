@@ -1,5 +1,0 @@
-Test project $(@D)
-Test xmltest ..........................   Passed
-
-100% tests passed, 0 tests failed out of 1
-

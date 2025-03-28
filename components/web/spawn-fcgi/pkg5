@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "system/library"
-    ],
-    "fmris": [
-        "web/fastcgi/spawn-fcgi"
-    ],
-    "name": "spawn-fcgi"
-}

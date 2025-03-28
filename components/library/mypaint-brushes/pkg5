@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "SUNWcs"
-    ],
-    "fmris": [
-        "library/mypaint-brushes"
-    ],
-    "name": "mypaint-brushes"
-}

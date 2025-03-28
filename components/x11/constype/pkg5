@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "system/library"
-    ],
-    "fmris": [
-        "diagnostic/constype"
-    ],
-    "name": "constype"
-}

@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "runtime/ruby-32"
-    ],
-    "fmris": [
-        "system/management/facter"
-    ],
-    "name": "facter"
-}

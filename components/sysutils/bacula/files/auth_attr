@@ -1,2 +1,0 @@
-solaris.smf.manage.bacula:RO::Manage Bacula services states::
-solaris.smf.value.bacula:RO::Change Bacula value properties::

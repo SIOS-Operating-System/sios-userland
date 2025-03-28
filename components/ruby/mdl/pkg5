@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "runtime/ruby-32"
-    ],
-    "fmris": [
-        "developer/documentation-tool/mdl"
-    ],
-    "name": "mdl"
-}

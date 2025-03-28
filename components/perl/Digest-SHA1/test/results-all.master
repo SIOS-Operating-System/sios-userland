@@ -1,6 +1,0 @@
-t/badfile.t .. ok
-t/bits.t ..... ok
-t/sha1.t ..... ok
-All tests successful.
-Files=3, Tests=17
-Result: PASS

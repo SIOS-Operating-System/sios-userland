@@ -1,3 +1,0 @@
-SKIP: regression
-SKIP: compile
-PASS: globals

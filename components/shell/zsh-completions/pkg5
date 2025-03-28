@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "shell/zsh"
-    ],
-    "fmris": [
-        "utility/zsh-completions"
-    ],
-    "name": "zsh-completions"
-}

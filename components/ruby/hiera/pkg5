@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "runtime/ruby-32"
-    ],
-    "fmris": [
-        "library/ruby/hiera"
-    ],
-    "name": "hiera"
-}

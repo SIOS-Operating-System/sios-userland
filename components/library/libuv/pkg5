@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "system/library"
-    ],
-    "fmris": [
-        "library/libuv"
-    ],
-    "name": "libuv"
-}

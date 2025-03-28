@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "system/library"
-    ],
-    "fmris": [
-        "media/mtx"
-    ],
-    "name": "mtx"
-}

@@ -1,5 +1,0 @@
-t/00_diag.t ....... ok
-t/file_listing.t .. ok
-All tests successful.
-Files=2, Tests=6
-Result: PASS

@@ -1,7 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "library/c++/mdds"
-    ],
-    "name": "mdds"
-}

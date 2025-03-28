@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "system/library"
-    ],
-    "fmris": [
-        "system/library/libupnp"
-    ],
-    "name": "libupnp"
-}
