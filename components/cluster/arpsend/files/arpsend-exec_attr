@@ -1,1 +1,0 @@
-Network Management:solaris:cmd:::/usr/bin/arpsend: privs=net_rawaccess

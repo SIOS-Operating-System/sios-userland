@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "runtime/perl"
-    ],
-    "fmris": [
-        "data/docbook/dsssl"
-    ],
-    "name": "docbook-dsssl"
-}

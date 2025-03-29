@@ -1,7 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "library/common-lisp/cl-json"
-    ],
-    "name": "cl-json"
-}

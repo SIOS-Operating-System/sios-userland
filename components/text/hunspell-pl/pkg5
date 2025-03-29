@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "text/aspell"
-    ],
-    "fmris": [
-        "library/myspell/dictionary/pl"
-    ],
-    "name": "hunspell-pl"
-}

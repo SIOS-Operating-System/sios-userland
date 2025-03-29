@@ -1,3 +1,0 @@
-solaris.mail.:RO::Mail::
-solaris.mail.mailq:RO::Mail Queue::
-solaris.smf.manage.sendmail:RO::Manage Sendmail Service States::

@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "shell/ksh93"
-    ],
-    "fmris": [
-        "gnome/gnome-common"
-    ],
-    "name": "gnome-common"
-}

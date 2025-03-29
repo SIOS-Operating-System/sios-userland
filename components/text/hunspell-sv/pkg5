@@ -1,7 +1,0 @@
-{
-    "dependencies": [],
-    "fmris": [
-        "library/myspell/dictionary/sv"
-    ],
-    "name": "hunspell-sv"
-}

@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "runtime/python-39"
-    ],
-    "fmris": [
-        "data/iso-codes"
-    ],
-    "name": "iso-codes"
-}
