@@ -1,0 +1,26 @@
+https://www.illumos.org/issues/5346
+
+--- OpenColorIO-2.4.0/src/utils/NumberUtils.h.orig
++++ OpenColorIO-2.4.0/src/utils/NumberUtils.h
+@@ -18,6 +18,21 @@
+ #endif
+ #include <system_error>
+ 
++inline double strtod_l(const char *__nptr, char **__endptr,
++    locale_t __loc) {
++  return strtod(__nptr, __endptr);
++}
++
++inline float strtof_l(const char *__nptr, char **__endptr,
++    locale_t __loc) {
++  return strtof(__nptr, __endptr);
++}
++
++inline long strtol_l(const char *__nptr, char **__endptr,
++    int __base, locale_t __loc) {
++  return strtol(__nptr, __endptr, __base);
++}
++
+ namespace OCIO_NAMESPACE
+ {
+ namespace NumberUtils

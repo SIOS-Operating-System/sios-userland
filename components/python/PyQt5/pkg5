@@ -1,0 +1,17 @@
+{
+    "dependencies": [
+        "library/python/pyqt-builder-39",
+        "library/python/pyqt5-sip-39",
+        "library/python/sip-39",
+        "library/qt5",
+        "runtime/python-39",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/libdbus"
+    ],
+    "fmris": [
+        "library/python/pyqt5",
+        "library/python/pyqt5-39"
+    ],
+    "name": "PyQt5"
+}

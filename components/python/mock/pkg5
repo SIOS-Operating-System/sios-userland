@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/mock",
+        "library/python/mock-39"
+    ],
+    "name": "mock"
+}

@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/audio/openal",
+        "library/audio/pulseaudio",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/audio/libmikmod"
+    ],
+    "name": "libmikmod"
+}

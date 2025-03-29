@@ -1,0 +1,15 @@
+--- libidn-1.35/doc/Makefile.in	2018-05-11 14:39:28.000000000 +0000
++++ libidn-1.35/doc/Makefile.in.new	2019-03-11 08:29:04.940110779 +0000
+@@ -1657,10 +1657,8 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefi
+ 	        && { if test -f $@; then exit 0; else break; fi; }; \
+ 	      exit 1;; \
+ 	  esac; \
+-	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/Makefile'; \
+-	$(am__cd) $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu doc/Makefile
++	done;
++
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+ 	@case '$?' in \
+ 	  *config.status*) \

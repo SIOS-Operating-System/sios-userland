@@ -1,0 +1,51 @@
+Test project $(@D)
+Test testgroup ........................   Passed
+Test testkdbx2 ........................   Passed
+Test testkdbx3 ........................   Passed
+Test testkdbx4 ........................   Passed
+Test testkeys .........................   Passed
+Test testgroupmodel ...................   Passed
+Test testentrymodel ...................   Passed
+Test testcryptohash ...................   Passed
+Test testsymmetriccipher ..............   Passed
+Test testhashedblockstream ............   Passed
+Test testkeepass2randomstream .........   Passed
+Test testmodified .....................   Passed
+Test testdeletedobjects ...............   Passed
+Test testkeepass1reader ...............   Passed
+Test testimports ......................   Passed
+Test testupdatecheck ..................   Passed
+Test testicondownloader ...............   Passed
+Test testautotype .....................***Failed
+Test testopensshkey ...................   Passed
+Test testsshagent .....................   Passed
+Test testentry ........................   Passed
+Test testmerge ........................   Passed
+Test testpasswordgenerator ............   Passed
+Test testpasswordhealth ...............   Passed
+Test testpassphrasegenerator ..........   Passed
+Test testhibp .........................   Passed
+Test testtotp .........................   Passed
+Test testbase32 .......................   Passed
+Test testcsvparser ....................   Passed
+Test testrandomgenerator ..............   Passed
+Test testentrysearcher ................   Passed
+Test testcsvexporter ..................   Passed
+Test testdatabase .....................   Passed
+Test testtools ........................   Passed
+Test testconfig .......................   Passed
+Test testfdosecrets ...................   Passed
+Test testbrowser ......................   Passed
+Test testpasskeys .....................   Passed
+Test testurltools .....................   Passed
+Test testcli ..........................Subprocess aborted***Exception:
+
+95% tests passed, 2 tests failed out of 40
+
+
+The following tests FAILED:
+	 18 - testautotype (Failed)
+	 40 - testcli (Subprocess aborted)
+Errors while running CTest
+Output from these tests are in: $(@D)/Testing/Temporary/LastTest.log
+Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.

@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/xdg/libxdg-basedir"
+    ],
+    "name": "libxdg-basedir"
+}

@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/ncurses",
+        "library/readline-8",
+        "system/library",
+        "text/asciidoc"
+    ],
+    "fmris": [
+        "developer/versioning/tig"
+    ],
+    "name": "tig"
+}

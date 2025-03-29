@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "diagnostic/fping"
+    ],
+    "name": "fping"
+}

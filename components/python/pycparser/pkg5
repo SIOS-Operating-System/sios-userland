@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/pycparser",
+        "library/python/pycparser-39"
+    ],
+    "name": "pycparser"
+}

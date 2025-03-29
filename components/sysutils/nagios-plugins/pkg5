@@ -1,0 +1,18 @@
+{
+    "dependencies": [
+        "database/mariadb-106/client",
+        "database/mariadb-106/library",
+        "database/postgres-16/developer",
+        "database/postgres-16/library",
+        "diagnostic/fping",
+        "library/security/openssl-31",
+        "runtime/perl",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "system/management/nagios/plugins"
+    ],
+    "name": "nagios-plugins"
+}

@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/python/setuptools-39",
+        "library/python/setuptools-scm-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/jaraco-env",
+        "library/python/jaraco-env-39"
+    ],
+    "name": "jaraco.env"
+}

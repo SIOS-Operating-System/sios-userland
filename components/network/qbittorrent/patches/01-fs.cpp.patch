@@ -1,0 +1,24 @@
+diff -Nru qbittorrent-4.5.0.orig/src/base/utils/fs.cpp qbittorrent-4.5.0/src/base/utils/fs.cpp
+--- qbittorrent-4.5.0.orig/src/base/utils/fs.cpp	2022-11-26 22:16:23.000000000 +0000
++++ qbittorrent-4.5.0/src/base/utils/fs.cpp	2023-01-13 17:43:51.175007800 +0000
+@@ -239,14 +239,18 @@
+     return (::GetDriveTypeW(volumePath.get()) == DRIVE_REMOTE);
+ #else
+     const QString file = (path.toString() + u"/.");
+-    struct statfs buf {};
+-    if (statfs(file.toLocal8Bit().constData(), &buf) != 0)
++    struct statvfs buf {};
++    if (statvfs(file.toLocal8Bit().constData(), &buf) != 0)
+         return false;
+ 
+ #if defined(Q_OS_OPENBSD)
+     return ((strncmp(buf.f_fstypename, "cifs", sizeof(buf.f_fstypename)) == 0)
+         || (strncmp(buf.f_fstypename, "nfs", sizeof(buf.f_fstypename)) == 0)
+         || (strncmp(buf.f_fstypename, "smbfs", sizeof(buf.f_fstypename)) == 0));
++#elif defined(Q_OS_SOLARIS)
++    return ((strncmp(buf.f_basetype, "cifs", sizeof(buf.f_basetype)) == 0)
++        || (strncmp(buf.f_basetype, "nfs", sizeof(buf.f_basetype)) == 0)
++        || (strncmp(buf.f_basetype, "smbfs", sizeof(buf.f_basetype)) == 0));
+ #else
+     // Magic number reference:
+     // https://github.com/coreutils/coreutils/blob/master/src/stat.c

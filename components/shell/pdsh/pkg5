@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/readline",
+        "runtime/perl",
+        "system/library"
+    ],
+    "fmris": [
+        "shell/pdsh"
+    ],
+    "name": "pdsh"
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "developer/macro/gnu-m4",
+        "runtime/perl-538"
+    ],
+    "fmris": [
+        "developer/build/autoconf"
+    ],
+    "name": "autoconf"
+}

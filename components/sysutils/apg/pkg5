@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/security/cracklib",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "security/apg"
+    ],
+    "name": "apg"
+}

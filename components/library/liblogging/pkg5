@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/python/docutils-39",
+        "system/library"
+    ],
+    "fmris": [
+        "library/liblogging"
+    ],
+    "name": "liblogging"
+}

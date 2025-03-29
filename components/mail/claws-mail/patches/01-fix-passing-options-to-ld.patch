@@ -1,0 +1,13 @@
+--- claws-mail-4.3.1/configure.ac.orig
++++ claws-mail-4.3.1/configure.ac
+@@ -135,6 +135,10 @@
+     platform_win32=yes
+     LDFLAGS="$LDFLAGS -mwindows -Wl,--export-all-symbols"
+     ;;
++  *solaris*)
++	platform_osx=no
++	platform_win32=no
++    ;;
+ 	*-apple-*)
+ 		platform_osx=yes
+ 		LDFLAGS="$LDFLAGS -Wl,-export_dynamic"

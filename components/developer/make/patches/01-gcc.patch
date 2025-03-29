@@ -1,0 +1,18 @@
+The native compiler on OpenIndiana is gcc. Modify GNU make to suit.
+We don't define GCC_IS_NATIVE since this also modifies the native
+lex and yacc defitions and makes the POSIX tests fail.
+
+This patch is taken from OmniOS on May 9th, 2021
+--- make-4.4.1/src/default.c.orig
++++ make-4.4.1/src/default.c
+@@ -529,8 +529,8 @@
+     "CC", "gcc",
+     "OBJC", "gcc",
+ #else
+-    "CC", "cc",
+-    "OBJC", "cc",
++    "CC", "gcc",
++    "OBJC", "gcc",
+ #endif
+ #ifdef MAKE_CXX
+     "CXX", MAKE_CXX,

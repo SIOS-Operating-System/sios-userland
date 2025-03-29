@@ -1,0 +1,6 @@
+t/Inheritable.t ... ok
+t/pod-coverage.t .. ok
+t/pod.t ........... ok
+All tests successful.
+Files=3, Tests=17
+Result: PASS

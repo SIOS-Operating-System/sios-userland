@@ -1,0 +1,17 @@
+g++: error: -pie is not supported in this configuration
+make[4]: *** [/ws/grzemba/oi-userland/components/web/firefox/firefox-68.12.0/config/rules.mk:540: ../../../dist/bin/js] Error 1
+make[4]: Leaving directory '/ws/grzemba/oi-userland/components/web/firefox/build/amd64/js/src/shell'
+--- gecko-dev-16a5f0e868a01d3f3a4a7364206bef2a64e80735/build/moz.configure/flags.configure.old	2024-06-30 12:42:44.175625854 -0400
++++ gecko-dev-16a5f0e868a01d3f3a4a7364206bef2a64e80735/build/moz.configure/flags.configure	2024-06-30 12:43:46.927628117 -0400
+@@ -509,9 +509,10 @@
+ 
+ # MOZ_PROGRAM_LDFLAGS
+ # ---------------------------------
++# On Illumos, there was an error using -pie with g++ for Firefox 68
+ @depends(building_with_gnu_compatible_cc, target)
+ def moz_program_ldflags(building_with_gnu_compatible_cc, target):
+-    if building_with_gnu_compatible_cc and target.kernel not in ("Darwin", "WASI"):
++    if building_with_gnu_compatible_cc and target.kernel not in ("Darwin", "WASI", "SunOS"):
+         return ["-pie"]
+ 
+ 

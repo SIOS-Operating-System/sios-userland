@@ -1,0 +1,13 @@
+--- c_icap_modules-0.5.7/services/url_check/Makefile.in.orig	2024-01-12 11:04:22.000000000 +0100
++++ c_icap_modules-0.5.7/services/url_check/Makefile.in	2024-02-09 22:56:29.767435947 +0100
+@@ -875,8 +875,8 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(CONFIGDIR)
+-	$(INSTALL) $(srcdir)/srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf.default
+-	if test ! -f $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf; then $(INSTALL) srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf; fi
++	$(INSTALL) -D $(srcdir)/srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf.default
++	if test ! -f $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf; then $(INSTALL) $(srcdir)/srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf; fi
+ 	$(mkinstalldirs) $(DESTDIR)$(cicapdatadir)/templates/srv_url_check/en
+ 	for f in $(TMPLS); do  $(INSTALL) $(srcdir)/$$f $(DESTDIR)$(cicapdatadir)/templates/srv_url_check/en/; done
+ 

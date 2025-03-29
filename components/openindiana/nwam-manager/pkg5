@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "gnome/config/gconf",
+        "library/desktop/atk",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk2",
+        "library/glib2",
+        "library/libnotify",
+        "library/perl-5/xml-parser",
+        "shell/ksh93",
+        "system/library",
+        "text/rarian"
+    ],
+    "fmris": [
+        "desktop/administration/nwam-manager"
+    ],
+    "name": "nwam-manager"
+}

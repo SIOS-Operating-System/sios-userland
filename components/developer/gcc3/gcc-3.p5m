@@ -1,0 +1,473 @@
+#
+# CDDL HEADER START
+#
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License (the "License").
+# You may not use this file except in compliance with the License.
+#
+# You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+# or http://www.opensolaris.org/os/licensing.
+# See the License for the specific language governing permissions
+# and limitations under the License.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+# If applicable, add the following below this CDDL HEADER, with the
+# fields enclosed by brackets "[]" replaced with your own identifying
+# information: Portions Copyright [yyyy] [name of copyright owner]
+#
+# CDDL HEADER END
+#
+# Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
+#
+
+<transform file path=usr/.*/man/.* -> default mangler.man.stability volatile >
+# they are installed in share/locale, but that is accessed through a link
+<transform file path=usr/gcc/3.4/lib/locale(.*)$ -> set action.hash /usr/gcc/3.4/share/locale/%<\1> >
+
+# All files and hardlinks installed under /usr/gcc/3.4/bin should have 
+# equivalent links under /usr/sfw/bin for backward compatibility.
+<transform file hardlink path=usr/gcc/3.4/bin/(.*) -> \
+    emit link path=usr/sfw/bin/%<1> target=../../gcc/3.4/bin/%<1>>
+
+# All files directly installed under /usr/gcc/3.4/lib should have 
+# equivalent links under /usr/sfw/lib for backward compatibility.
+<transform file link path=usr/gcc/3.4/lib/([^/]*.so.[0-9]*)$ -> \
+    emit link path=usr/sfw/lib/%<1> target=../../gcc/3.4/lib/%<1>>
+# Include /usr/sfw/lib links for 64 bit library support
+<transform file link path=usr/gcc/3.4/lib/$(MACH64)/([^/]*.so.[0-9]*)$ -> \
+    emit link path=usr/sfw/lib/$(MACH64)/%<1> \
+    target=../../../gcc/3.4/lib/$(MACH64)/%<1>>
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=pkg.description value="GNU C - The GNU C compiler 3.4.3"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/gcc/3.4/bin/$(GNU_TRIPLET)-g++
+file path=usr/gcc/3.4/bin/$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION)
+file path=usr/gcc/3.4/bin/cpp
+file path=usr/gcc/3.4/bin/g77
+file path=usr/gcc/3.4/bin/gccbug
+file path=usr/gcc/3.4/bin/gcov
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/atomic_word.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/basic_file.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/c++allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/c++config.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/c++io.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/c++locale.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/codecvt_specializations.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/ctype_base.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/ctype_inline.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/ctype_noninline.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/gthr-default.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/gthr-posix.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/gthr-single.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/gthr.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/messages_members.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/os_defines.h
+#file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/stdc++.h.gch/O0g
+#file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/stdc++.h.gch/O2g
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/$(GNU_TRIPLET)/bits/time_members.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/algorithm
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/algo.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/algobase.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/alloc.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/backward_warning.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/bvector.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/complex.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/defalloc.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/deque.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/fstream.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/function.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/hash_map.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/hash_set.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/hashtable.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/heap.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/iomanip.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/iostream.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/istream.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/iterator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/list.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/map.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/multimap.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/multiset.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/new.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/ostream.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/pair.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/queue.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/rope.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/set.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/slist.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/stack.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/stream.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/streambuf.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/strstream
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/tempbuf.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/tree.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/backward/vector.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/atomicity.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/basic_ios.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/basic_ios.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/basic_string.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/basic_string.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/boost_concept_check.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/char_traits.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/cmath.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/codecvt.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/concept_check.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/concurrence.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/cpp_type_traits.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/deque.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/fstream.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/functexcept.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/gslice.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/gslice_array.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/indirect_array.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/ios_base.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/istream.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/list.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/locale_classes.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/locale_facets.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/locale_facets.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/localefwd.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/mask_array.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/ostream.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/postypes.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/slice_array.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/sstream.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_algo.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_algobase.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_bvector.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_construct.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_deque.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_function.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_heap.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_iterator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_iterator_base_funcs.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_iterator_base_types.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_list.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_map.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_multimap.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_multiset.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_numeric.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_pair.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_queue.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_raw_storage_iter.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_relops.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_set.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_stack.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_tempbuf.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_threads.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_tree.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_uninitialized.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stl_vector.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stream_iterator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/streambuf.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/streambuf_iterator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/stringfwd.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/type_traits.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/valarray_after.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/valarray_array.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/valarray_array.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/valarray_before.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bits/vector.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/bitset
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cassert
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cctype
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cerrno
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cfloat
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ciso646
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/climits
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/clocale
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cmath
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/complex
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/csetjmp
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/csignal
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cstdarg
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cstddef
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cstdio
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cstdlib
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cstring
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ctime
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cwchar
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cwctype
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/cxxabi.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/bitset
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/debug.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/deque
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/formatter.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/hash_map
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/hash_map.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/hash_multimap.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/hash_multiset.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/hash_set
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/hash_set.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/list
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/map
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/map.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/multimap.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/multiset.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/safe_base.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/safe_iterator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/safe_iterator.tcc
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/safe_sequence.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/set
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/set.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/string
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/debug/vector
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/deque
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/exception
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/exception_defines.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/algorithm
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/bitmap_allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/debug_allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/enc_filebuf.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/functional
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/hash_fun.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/hash_map
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/hash_set
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/hashtable.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/iterator
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/malloc_allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/memory
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/mt_allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/new_allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/numeric
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/pod_char_traits.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/pool_allocator.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/rb_tree
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/rope
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/ropeimpl.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/slist
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/stdio_filebuf.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ext/stdio_sync_filebuf.h
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/fstream
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/functional
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/iomanip
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ios
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/iosfwd
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/iostream
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/istream
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/iterator
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/limits
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/list
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/locale
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/map
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/memory
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/new
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/numeric
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/ostream
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/queue
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/set
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/sstream
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/stack
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/stdexcept
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/streambuf
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/string
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/typeinfo
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/utility
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/valarray
+file path=usr/gcc/3.4/include/c++/$(COMPONENT_VERSION)/vector
+file path=usr/gcc/3.4/lib/$(MACH64)/libfrtbegin.a
+file path=usr/gcc/3.4/lib/$(MACH64)/libg2c.a
+file path=usr/gcc/3.4/lib/$(MACH64)/libiberty.a
+file path=usr/gcc/3.4/lib/$(MACH64)/libobjc.a
+file path=usr/gcc/3.4/lib/$(MACH64)/libstdc++.a
+file path=usr/gcc/3.4/lib/$(MACH64)/libsupc++.a
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/crt1.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/crtbegin.o
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/crtend.o
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/crtfastmath.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/crti.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/crtn.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/gcrt1.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/gmon.o
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/libgcc.a
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/libgcc_eh.a
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/$(MACH64)/libgcov.a
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/crt1.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/crtbegin.o
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/crtend.o
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/crtfastmath.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/crti.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/crtn.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/gcrt1.o variant.arch=sparc
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/gmon.o
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/emmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/float.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/iso646.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/mmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/NXConstStr.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/Object.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/Protocol.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/encoding.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/hash.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/objc-api.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/objc-list.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/objc.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/sarray.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/thr.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/objc/typedstream.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/pmmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/stdarg.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/stdbool.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/unwind.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/include/xmmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/gsyslimits.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/README
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/emmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/float.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/iso646.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/limits.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/mmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/pmmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/stdarg.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/stdbool.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/stddef.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/unwind.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/varargs.h
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/include/xmmintrin.h variant.arch=i386
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/mkheaders.conf
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/libgcc.a
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/libgcc_eh.a
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/libgcov.a
+file path=usr/gcc/3.4/lib/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/specs
+file path=usr/gcc/3.4/lib/libfrtbegin.a
+file path=usr/gcc/3.4/lib/libg2c.a
+file path=usr/gcc/3.4/lib/libiberty.a
+file path=usr/gcc/3.4/lib/libobjc.a
+file path=usr/gcc/3.4/lib/libstdc++.a
+file path=usr/gcc/3.4/lib/libsupc++.a
+file path=usr/gcc/3.4/lib/locale/be/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/ca/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/da/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/de/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/el/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/es/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/fr/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/ja/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/nl/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/sv/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/lib/locale/tr/LC_MESSAGES/gcc.mo
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/cc1 mode=0555
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/cc1obj mode=0555
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/cc1plus mode=0555
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/collect2 mode=0555
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/f771 mode=0555
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/fixinc.sh mode=0555
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/fixincl mode=0555
+file path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/install-tools/mkheaders mode=0555
+file path=usr/gcc/3.4/share/info/cpp.info
+file path=usr/gcc/3.4/share/info/cppinternals.info
+file path=usr/gcc/3.4/share/info/g77.info
+file path=usr/gcc/3.4/share/info/gcc.info
+file path=usr/gcc/3.4/share/info/gccinstall.info
+file path=usr/gcc/3.4/share/info/gccint.info
+file cpp.1 path=usr/gcc/3.4/share/man/man1/cpp.1
+file g++.1 path=usr/gcc/3.4/share/man/man1/g++.1
+file g77.1 path=usr/gcc/3.4/share/man/man1/g77.1
+file gcc.1 path=usr/gcc/3.4/share/man/man1/gcc.1
+file gcov.1 path=usr/gcc/3.4/share/man/man1/gcov.1
+file fsf-funding.7 path=usr/gcc/3.4/share/man/man7/fsf-funding.7
+file gfdl.7 path=usr/gcc/3.4/share/man/man7/gfdl.7
+file gpl.7 path=usr/gcc/3.4/share/man/man7/gpl.7
+file usr/gcc/3.4/share/info/dir path=var/info/usr_gcc_3.4_share_info_dir mode=0644 preserve=true
+
+hardlink path=usr/gcc/3.4/bin/$(GNU_TRIPLET)-c++ target=$(GNU_TRIPLET)-g++
+hardlink path=usr/gcc/3.4/bin/$(GNU_TRIPLET)-gcc target=$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION)
+hardlink path=usr/gcc/3.4/bin/c++ target=../../../../usr/gcc/3.4/bin/$(GNU_TRIPLET)-g++
+hardlink path=usr/gcc/3.4/bin/g++ target=../../../../usr/gcc/3.4/bin/$(GNU_TRIPLET)-g++
+hardlink path=usr/gcc/3.4/bin/gcc \
+    target=../../../../usr/gcc/3.4/bin/$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION)
+hardlink path=usr/gcc/3.4/bin/gcc \
+    target=../../../../usr/gcc/3.4/bin/$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION)
+
+#link path=usr/bin/$(GNU_TRIPLET)-c++ target=../gcc/3.4/bin/$(GNU_TRIPLET)-c++
+#link path=usr/bin/$(GNU_TRIPLET)-g++ target=../gcc/3.4/bin/$(GNU_TRIPLET)-g++
+#link path=usr/bin/$(GNU_TRIPLET)-gcc target=../gcc/3.4/bin/$(GNU_TRIPLET)-gcc
+#link path=usr/bin/$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION) \
+#    target=../gcc/3.4/bin/$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION)
+#link path=usr/bin/$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION) \
+#    target=../gcc/3.4/bin/$(GNU_TRIPLET)-gcc-$(COMPONENT_VERSION)
+
+# Mediated links for gcc binaries in /usr/bin
+link path=usr/bin/c++ target=../gcc/3.4/bin/c++ \
+    mediator=gcc mediator-version=3.4
+link path=usr/bin/g++ target=../gcc/3.4/bin/g++ \
+    mediator=gcc mediator-version=3.4
+link path=usr/bin/g77 target=../gcc/3.4/bin/g77 \
+    mediator=gcc mediator-version=3.4
+link path=usr/bin/gcc target=../gcc/3.4/bin/gcc \
+    mediator=gcc mediator-version=3.4
+link path=usr/bin/gcov target=../gcc/3.4/bin/gcov \
+    mediator=gcc mediator-version=3.4
+link path=usr/bin/gcpp target=../gcc/3.4/bin/cpp \
+    mediator=gcc mediator-version=3.4
+
+link path=usr/gcc/3.4/libexec/gcc/$(GNU_TRIPLET)/$(COMPONENT_VERSION)/as \
+    target=../../../../../../gnu/$(GNU_TRIPLET)/bin/as pkg.linted.userland.action002.0=true
+
+# Mediated links for gcc man pages in /usr/share/man
+link path=usr/share/man/man1/c++.1 \
+    target=../../../gcc/3.4/share/man/man1/g++.1 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man1/g++.1 \
+    target=../../../gcc/3.4/share/man/man1/g++.1 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man1/g77.1 \
+    target=../../../gcc/3.4/share/man/man1/g77.1 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man1/gcc.1 \
+    target=../../../gcc/3.4/share/man/man1/gcc.1 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man1/gcov.1 \
+    target=../../../gcc/3.4/share/man/man1/gcov.1 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man1/gcpp.1 \
+    target=../../../gcc/3.4/share/man/man1/cpp.1 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man7/fsf-funding.7 \
+    target=../../../gcc/3.4/share/man/man7/fsf-funding.7 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man7/gfdl.7 \
+    target=../../../gcc/3.4/share/man/man7/gfdl.7 \
+    mediator=gcc mediator-version=3.4
+link path=usr/share/man/man7/gpl.7 \
+    target=../../../gcc/3.4/share/man/man7/gpl.7 \
+    mediator=gcc mediator-version=3.4
+
+link path=usr/gcc/3.4/share/info/dir target=../../../../../var/info/usr_gcc_3.4_share_info_dir
+
+# gcc 3.4.3 on x86 uses the CRT files in /usr/lib plus the GNU assembler,
+# and gcc 3.4.3 on SPARC does not.  Any upgrade to this package should
+# reverify this and adjust the following CRT related dependencies accordingly.
+depend fmri=__TBD pkg.debug.depend.file=usr/bin/ld type=require
+depend fmri=__TBD pkg.debug.depend.file=usr/gnu/bin/as type=require \
+    variant.arch=i386
+depend fmri=__TBD pkg.debug.depend.file=usr/bin/as type=require \
+    variant.arch=sparc
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/crt1.o type=require \
+    variant.arch=i386
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/crti.o type=require \
+    variant.arch=i386
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/crtn.o type=require \
+    variant.arch=i386
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/values-Xa.o type=require
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/values-Xc.o type=require
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/values-Xs.o type=require
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/values-Xt.o type=require
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/values-xpg4.o type=require
+depend fmri=__TBD pkg.debug.depend.file=usr/lib/values-xpg6.o type=require
+depend fmri=__TBD pkg.debug.depend.file=usr/gcc/3.4/lib/libstdc++.so type=require
+depend fmri=pkg:/system/header type=require
+
+legacy pkg=SUNWgcc \
+	name="gcc - The GNU C compiler" \
+	desc="GNU C - The GNU C compiler"

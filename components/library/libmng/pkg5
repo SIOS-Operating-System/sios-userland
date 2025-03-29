@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "image/library/libjpeg8-turbo",
+        "library/lcms2",
+        "library/zlib",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/graphics/libmng"
+    ],
+    "name": "libmng"
+}

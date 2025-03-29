@@ -1,0 +1,11 @@
+--- tomli-w-1.2.0/pyproject.toml.orig
++++ tomli-w-1.2.0/pyproject.toml
+@@ -59,7 +59,7 @@
+     "-r tests/requirements.txt",
+ ]
+ commands = [
+-    ["pytest", { replace = "posargs", extend = true }],
++    ["python", "-m", "pytest", { replace = "posargs", extend = true }],
+ ]
+ 
+ [tool.tox.env."pre-commit"]

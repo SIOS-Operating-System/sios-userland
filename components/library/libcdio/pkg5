@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/audio/libcddb",
+        "library/ncurses",
+        "service/hal",
+        "shell/ksh93",
+        "system/library",
+        "system/library/libdbus"
+    ],
+    "fmris": [
+        "library/audio/libcdio"
+    ],
+    "name": "libcdio"
+}

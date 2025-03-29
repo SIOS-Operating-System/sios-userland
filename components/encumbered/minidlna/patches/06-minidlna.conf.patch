@@ -1,0 +1,11 @@
+--- minidlna-1.3.3/minidlna.conf.orig
++++ minidlna-1.3.3/minidlna.conf
+@@ -28,7 +28,7 @@
+ #db_dir=/var/cache/minidlna
+ 
+ # set this if you would like to specify the directory where you want MiniDLNA to store its log file
+-#log_dir=/var/log
++#log_dir=/var/log/minidlna
+ 
+ # set this to change the verbosity of the information that is logged
+ # each section can use a different level: off, fatal, error, warn, info, or debug

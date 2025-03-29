@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk2",
+        "library/desktop/pango",
+        "library/desktop/xdg/libcanberra",
+        "library/glib2",
+        "library/security/openssl-3",
+        "runtime/perl-540",
+        "runtime/python-39",
+        "system/library",
+        "system/library/libdbus-glib",
+        "x11/library/libx11"
+    ],
+    "fmris": [
+        "desktop/irc/hexchat"
+    ],
+    "name": "hexchat"
+}

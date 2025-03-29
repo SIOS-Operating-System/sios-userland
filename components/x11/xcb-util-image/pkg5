@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "shell/ksh93",
+        "system/library",
+        "x11/header/x11-protocols",
+        "x11/library/libxcb",
+        "x11/library/xcb-util"
+    ],
+    "fmris": [
+        "x11/library/xcb-util-image"
+    ],
+    "name": "xcb-util-image"
+}

@@ -1,0 +1,17 @@
+{
+    "dependencies": [
+        "compress/bzip2",
+        "compress/xz",
+        "compress/zstd",
+        "library/brotli",
+        "library/libevent",
+        "library/lzlib",
+        "library/security/openssl-3",
+        "library/zlib",
+        "system/library"
+    ],
+    "fmris": [
+        "web/browser/links"
+    ],
+    "name": "links"
+}

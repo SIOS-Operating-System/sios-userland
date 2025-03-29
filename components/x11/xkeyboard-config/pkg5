@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "text/intltool",
+        "x11/keyboard/xkbcomp"
+    ],
+    "fmris": [
+        "x11/keyboard/data-xkb"
+    ],
+    "name": "xkeyboard-config"
+}

@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/libmilter",
+        "library/libspf2",
+        "system/library"
+    ],
+    "fmris": [
+        "mail/spfmilter"
+    ],
+    "name": "spfmilter"
+}

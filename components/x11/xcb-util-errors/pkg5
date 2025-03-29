@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "shell/ksh93",
+        "system/library",
+        "x11/library/libxcb"
+    ],
+    "fmris": [
+        "x11/library/xcb-util-errors"
+    ],
+    "name": "xcb-util-errors"
+}

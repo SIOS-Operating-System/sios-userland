@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/zlib",
+        "system/library"
+    ],
+    "fmris": [
+        "x11/library/libfontenc"
+    ],
+    "name": "libfontenc"
+}

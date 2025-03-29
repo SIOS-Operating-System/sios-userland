@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "developer/documentation-tool/openjade",
+        "runtime/ocaml",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/ocaml/ocaml-findlib"
+    ],
+    "name": "ocaml-findlib"
+}

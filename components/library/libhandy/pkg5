@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        "developer/ui-designer/glade",
+        "developer/vala",
+        "gnome/accessibility/at-spi2-core",
+        "library/desktop/cairo",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk3",
+        "library/desktop/pango",
+        "library/fribidi",
+        "library/glib2",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/libhandy"
+    ],
+    "name": "libhandy"
+}

@@ -1,0 +1,23 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "database/lmdb",
+        "library/json-c",
+        "library/libidn2",
+        "library/libuv",
+        "library/libxml2",
+        "library/nghttp2",
+        "library/readline-8",
+        "library/security/openssl-3",
+        "library/zlib",
+        "service/security/kerberos-5",
+        "shell/ksh93",
+        "system/library",
+        "system/library/security/gss"
+    ],
+    "fmris": [
+        "network/dns/bind",
+        "service/network/dns/bind"
+    ],
+    "name": "bind"
+}

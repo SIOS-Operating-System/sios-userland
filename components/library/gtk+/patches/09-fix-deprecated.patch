@@ -1,0 +1,13 @@
+--- gtk+-2.24.33/gtk/gtkscalebutton.c.orig
++++ gtk+-2.24.33/gtk/gtkscalebutton.c
+@@ -425,6 +425,10 @@
+   return object;
+ }
+ 
++void
++gtk_scale_button_set_orientation (GtkScaleButton *button,
++                                  GtkOrientation  orientation);
++
+ static void
+ gtk_scale_button_set_property (GObject       *object,
+ 			       guint          prop_id,

@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "shell/ksh93",
+        "system/library",
+        "x11/bdftopcf"
+    ],
+    "fmris": [
+        "system/font/terminus"
+    ],
+    "name": "terminus-font"
+}

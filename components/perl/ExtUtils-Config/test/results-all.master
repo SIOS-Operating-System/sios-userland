@@ -1,0 +1,5 @@
+t/00-compile.t .. ok
+t/basics.t ...... ok
+All tests successful.
+Files=2, Tests=16
+Result: PASS

@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/guile",
+        "system/library"
+    ],
+    "fmris": [
+        "developer/build/gnu-make"
+    ],
+    "name": "make"
+}

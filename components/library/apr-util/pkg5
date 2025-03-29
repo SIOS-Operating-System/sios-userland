@@ -1,0 +1,25 @@
+{
+    "dependencies": [
+        "database/mariadb-106/client",
+        "database/mariadb-106/library",
+        "database/postgres-16/developer",
+        "database/postgres-16/library",
+        "database/sqlite-3",
+        "developer/documentation-tool/doxygen",
+        "library/apr",
+        "library/expat",
+        "library/openldap",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/apr-util",
+        "library/apr-util-13",
+        "library/apr-util/apr-ldap",
+        "library/apr-util/dbd-mysql",
+        "library/apr-util/dbd-pgsql",
+        "library/apr-util/dbd-sqlite",
+        "library/apr-util/documentation"
+    ],
+    "name": "apr-util"
+}

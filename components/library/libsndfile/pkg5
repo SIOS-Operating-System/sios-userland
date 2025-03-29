@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "audio/lame",
+        "audio/mpg123",
+        "codec/flac",
+        "library/libogg",
+        "library/libvorbis",
+        "library/opus",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/libsndfile"
+    ],
+    "name": "libsndfile"
+}

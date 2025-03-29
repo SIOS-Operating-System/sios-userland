@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "editor/vim",
+        "library/readline-8",
+        "service/network/smtp/sendmail",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "sysutils/fcron"
+    ],
+    "name": "fcron"
+}

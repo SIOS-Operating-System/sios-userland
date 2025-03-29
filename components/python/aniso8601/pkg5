@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/aniso8601",
+        "library/python/aniso8601-39"
+    ],
+    "name": "aniso8601"
+}

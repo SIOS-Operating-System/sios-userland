@@ -1,0 +1,42 @@
+--- net-snmp-5.9.4/snmplib/scapi.c.orig
++++ net-snmp-5.9.4/snmplib/scapi.c
+@@ -208,8 +208,8 @@
+ #ifdef NETSNMP_USE_OPENSSL
+ static
+ void EVP_hmac(const EVP_MD *evp_md, const void *key,
+-              const unsigned char *msg, unsigned char *md,
+-              size_t *md_len);
++              const unsigned char *msg, u_int msglen, 
++              unsigned char *md, size_t *md_len);
+ static
+ int EVP_decrypt(const EVP_CIPHER *type, u_char * key,
+                 u_int keylen, u_char * iv, u_char * ciphertext,
+@@ -797,7 +797,7 @@
+     }
+ #ifndef NETSNMP_DISABLE_MD5
+     if (auth_type == NETSNMP_USMAUTH_HMACMD5)
+-        EVP_hmac(hashfn, key, message, buf, &buf_len);
++        EVP_hmac(hashfn, key, message, msglen, buf, &buf_len);
+     else
+ #endif
+         HMAC(hashfn, key, keylen, message, msglen, buf, &buf_len);
+@@ -1837,8 +1837,8 @@
+ #ifdef NETSNMP_USE_OPENSSL
+ static
+ void EVP_hmac(const EVP_MD *evp_md, const void *key,
+-              const unsigned char *msg, unsigned char *md,
+-              size_t *md_len)
++              const unsigned char *msg, u_int msglen, 
++              unsigned char *md, size_t *md_len)
+ {
+         EVP_MD_CTX* mdctx = NULL;
+         EVP_PKEY *pkey = NULL;
+@@ -1862,7 +1862,7 @@
+             EVP_PKEY_free(pkey);
+             return;
+         }
+-        if(EVP_DigestSignUpdate(mdctx, msg, strlen(msg)) != 1) {
++        if(EVP_DigestSignUpdate(mdctx, msg, msglen) != 1) {
+             snmp_log(LOG_ERR, "EVP_DigestSignUpdate failure.\n");
+             EVP_MD_CTX_destroy(mdctx);
+             EVP_PKEY_free(pkey);

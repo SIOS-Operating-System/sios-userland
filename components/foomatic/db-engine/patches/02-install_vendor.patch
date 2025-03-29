@@ -1,0 +1,11 @@
+--- foomatic-db-engine-4.0.13/Makefile.in.orig
++++ foomatic-db-engine-4.0.13/Makefile.in
+@@ -189,7 +189,7 @@
+ #	$(DESTDIR) properly
+ 	( cd lib && \
+ 	  $(MAKE) PREFIX=$(PERLPREFIX) && \
+-	  $(MAKE) PREFIX=$(PERLPREFIX) DESTDIR=$(DESTDIR) pure_install \
++	  $(MAKE) PREFIX=$(PERLPREFIX) DESTDIR=$(DESTDIR) install_vendor \
+ 	)
+ 	${SRC}/mkinstalldirs $(DESTDIR)$(BINDIR)
+ 	${SRC}/mkinstalldirs $(DESTDIR)$(SBINDIR)

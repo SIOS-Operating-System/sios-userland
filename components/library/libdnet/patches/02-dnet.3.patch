@@ -1,0 +1,308 @@
+--- libdnet-libdnet-1.14/man/dnet.3.orig	2020-07-17 18:56:28.000000000 +0000
++++ libdnet-libdnet-1.14/man/dnet.3	2021-09-12 15:14:12.657877359 +0000
+@@ -181,26 +181,295 @@
+ .Pp
+ .Sh DESCRIPTION
+ .Nm
++
++.TH "DNET" "3" "August 21, 2001" "SunOS 5.11" "Library Functions Manual"
++.SH "NAME"
++\fBdnet\fP
++\- dumb networking library
++.SH "SYNOPSIS"
++#include <dnet.h>
++.SS "Network addressing"
++.LP
++.nf
++int
++addr_cmp(const struct addr *a, const struct addr *b);
++
++int
++addr_bcast(const struct addr *a, struct addr *b);
++
++int
++addr_net(const struct addr *a, struct addr *b);
++
++char *
++addr_ntop(const struct addr *src, char *dst size_t size);
++
++int
++addr_pton(const char *src, struct addr *dst);
++
++char *
++addr_ntoa(const struct addr *a);
++
++int
++addr_aton(const char *src, struct addr *dst);
++
++int
++addr_ntos(const struct addr *a, struct sockaddr *sa);
++
++int
++addr_ston(const struct sockaddr *sa, struct addr *a);
++
++int
++addr_btos(uint16_t bits, struct sockaddr *sa);
++
++int
++addr_stob(const struct sockaddr *sa, uint16_t *bits);
++
++int
++addr_btom(uint16_t bits, void *mask, size_t size);
++
++int
++addr_mtob(const void *mask, size_t size, uint16_t *bits);
++.fi
++.SS "Address Resolution Protocol"
++.LP
++.nf
++typedef int (*arp_handler)(const struct arp_entry *entry, void *arg);
++
++arp_t *
++arp_open(void);
++
++int
++arp_add(arp_t *a, const struct arp_entry *entry);
++
++int
++arp_delete(arp_t *a, const struct arp_entry *entry);
++
++int
++arp_get(arp_t *a, struct arp_entry *entry);
++
++int
++arp_loop(arp_t *a, arp_handler callback, void *arg);
++
++arp_t *
++arp_close(arp_t *a);
++.fi
++.SS "Binary buffers"
++.LP
++.nf
++blob_t *
++blob_new(void);
++
++int
++blob_read(blob_t *b, void *buf, int len);
++
++int
++blob_write(blob_t *b, const void *buf, int len);
++
++int
++blob_seek(blob_t *b, int off, int whence);
++
++int
++blob_index(blob_t *b, const void *buf, int len);
++
++int
++blob_rindex(blob_t *b, const void *buf, int len);
++
++int
++blob_pack(blob_t *b, const void *fmt, ...);
++
++int
++blob_unpack(blob_t *b, const void *fmt, ...);
++
++int
++blob_print(blob_t *b, char *style, int len);
++
++blob_t *
++blob_free(blob_t *b);
++.fi
++.SS "Ethernet"
++.LP
++.nf
++eth_t *
++eth_open(const char *device);
++
++int
++eth_get(eth_t *e, eth_addr_t *ea);
++
++int
++eth_set(eth_t *e, const eth_addr_t *ea);
++
++ssize_t
++eth_send(eth_t *e, const void *buf, size_t len);
++
++eth_t *
++eth_close(eth_t *e);
++.fi
++.SS "Firewalling"
++.LP
++.nf
++typedef int (*fw_handler)(const struct fw_rule *rule, void *arg);
++
++fw_t *
++fw_open void
++
++int
++fw_add(fw_t *f, const struct fw_rule *rule);
++
++int
++fw_delete(fw_t *f, const struct fw_rule *rule);
++
++int
++fw_loop(fw_t *f, fw_handler callback, void *arg);
++
++fw_t *
++fw_close(fw_t *f);
++.fi
++.SS "Network interfaces"
++.LP
++.nf
++typedef int (*intf_handler)(const struct intf_entry *entry void *arg);
++
++intf_t *
++intf_open(void);
++
++int
++intf_get(intf_t *i, struct intf_entry *entry);
++
++int
++intf_get_src(intf_t *i, struct intf_entry *entry, struct addr *src);
++
++int
++intf_get_dst(intf_t *i, struct intf_entry *entry, struct addr *dst);
++
++int
++intf_set(intf_t *i, const struct intf_entry *entry);
++
++int
++intf_loop(intf_t *i, intf_handler callback, void *arg);
++
++intf_t *
++intf_close(intf_t *i);
++.fi
++.SS "Internet Protocol"
++.LP
++.nf
++ip_t *
++ip_open(void);
++
++ssize_t
++ip_add_option(void *buf, size_t len, int proto, const void *optbuf, size_t optlen);
++
++void
++ip_checksum(void *buf, size_t len);
++
++ssize_t
++ip_send(ip_t *i, const void *buf, size_t len);
++
++ip_t *
++ip_close(ip_t *i);
++.fi
++.SS "Internet Protocol Version 6"
++.LP
++.nf
++void
++ip6_checksum(void *buf, size_t len);
++.fi
++.SS "Random number generation"
++.LP
++.nf
++rand_t *
++rand_open(void);
++
++int
++rand_get(rand_t *r, void *buf, size_t len);
++
++int
++rand_set(rand_t *r, const void *seed, size_t len);
++
++int
++rand_add(rand_t *r, const void *buf, size_t len);
++
++uint8_t
++rand_uint8(rand_t *r);
++
++uint16_t
++rand_uint16(rand_t *r);
++
++uint32_t
++rand_uint32(rand_t *r);
++
++int
++rand_shuffle(rand_t *r, void *base, size_t nmemb, size_t size);
++
++rand_t *
++rand_close(rand_t *r);
++.fi
++.SS "Routing"
++.LP
++.nf
++typedef int (*route_handler)(const struct route_entry *entry void *arg);
++
++route_t *
++route_open(void);
++
++int
++route_add(route_t *r, const struct route_entry *entry);
++
++int
++route_delete(route_t *r, const struct route_entry *entry);
++
++int
++route_get(route_t *r, struct route_entry *entry);
++
++int
++route_loop(route_t *r, route_handler callback, void *arg);
++
++route_t *
++route_close(route_t *r);
++.fi
++.SS "Tunnel interface"
++.LP
++.nf
++tun_t *
++tun_open(struct addr *src, struct addr *dst, int mtu);
++
++int
++tun_fileno(tun_t *t);
++
++const char *
++tun_name(tun_t *t);
++
++ssize_t
++tun_send(tun_t *t, const void *buf, size_t size);
++
++ssize_t
++tun_recv(tun_t *t, void *buf, size_t size);
++
++tun_t *
++tun_close(tun_t *t);
++.fi
++.SH "DESCRIPTION"
++\fBdnet\fP
+ provides a simplified, portable interface to several low-level
+ networking routines, including network address manipulation, kernel
+-.Xr arp 4
+-cache and 
+-.Xr route 4
++arp(4)
++cache and
++route(4)
+ table lookup and manipulation, network firewalling, network interface
+ lookup and manipulation, and raw IP packet and Ethernet frame
+ transmission. It is intended to complement the functionality provided
+ by
+-.Xr pcap 3 .
+-.Pp
+-In addition, 
+-.Nm
++pcap(3).
++.PP
++In addition,
++\fBdnet\fP
+ also provides platform-independent definitions of various network
+ protocol formats and values for portable low-level network
+ programming, as well as a simple binary buffer handling API.
+-.Pp
+-.Ss Network addressing
++.PP
++.SS "Network addressing"
+ Network addresses are described by the following structure:
+-.Bd -literal
++.nf
+ struct addr {
+ 	uint16_t		addr_type;
+ 	uint16_t		addr_bits;

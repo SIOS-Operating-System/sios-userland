@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        "library/desktop/p11-kit",
+        "library/gmp",
+        "library/libidn2",
+        "library/libtasn1",
+        "library/libunistring",
+        "library/nettle",
+        "service/network/unbound",
+        "system/library",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/gnutls-3"
+    ],
+    "name": "gnutls"
+}

@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "shell/bash"
+    ],
+    "fmris": [
+        "desktop/xdg/xdg-utils"
+    ],
+    "name": "xdg-utils"
+}

@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "developer/documentation-tool/gtk-doc",
+        "library/glib2",
+        "library/glib2/32",
+        "library/libidl",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/orbit2"
+    ],
+    "name": "ORBit2"
+}

@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "shell/ksh93",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime",
+        "web/curl"
+    ],
+    "fmris": [
+        "library/xmlrpc-c"
+    ],
+    "name": "xmlrpc-c"
+}

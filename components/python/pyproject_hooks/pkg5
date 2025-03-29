@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/flit-core-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/pyproject-hooks",
+        "library/python/pyproject-hooks-39"
+    ],
+    "name": "pyproject-hooks"
+}

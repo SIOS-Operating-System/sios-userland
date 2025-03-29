@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/print/cups-libs",
+        "runtime/python-39",
+        "system/library"
+    ],
+    "fmris": [
+        "library/python/pycups",
+        "library/python/pycups-39"
+    ],
+    "name": "pycups"
+}

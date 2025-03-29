@@ -1,0 +1,11 @@
+--- trousers-0.3.11.2/src/tspi/tspi_context.c.orig
++++ trousers-0.3.11.2/src/tspi/tspi_context.c
+@@ -57,6 +57,8 @@
+ 
+ 	Tspi_Context_FreeMemory(tspContext, NULL);
+ 
++	__tspi_freeTable(tspContext);
++
+ 	/* close the ps file */
+ 	PS_close();
+ 

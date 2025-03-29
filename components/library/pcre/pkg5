@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "compress/bzip2",
+        "library/zlib",
+        "shell/ksh93",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime"
+    ],
+    "fmris": [
+        "library/pcre"
+    ],
+    "name": "pcre"
+}

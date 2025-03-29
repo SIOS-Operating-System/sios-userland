@@ -1,0 +1,13 @@
+This is a workaround for bug #121920 (see https://rt.cpan.org/Public/Bug/Display.html?id=121920)
+and effectively reverts changes made in HTML-TableExtract-2.14.
+
+--- HTML-TableExtract-2.15/lib/HTML/TableExtract.pm.orig
++++ HTML-TableExtract-2.15/lib/HTML/TableExtract.pm
+@@ -438,7 +438,6 @@
+   $self->{_counts}        = [];
+   $self->{_in_a_table}    = 0;
+   $self->{_parsing}       = 0;
+-  $self->tree->delete_content() if TREE();
+ }
+ 
+ sub _emsg {

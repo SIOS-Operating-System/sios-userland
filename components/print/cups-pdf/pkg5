@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/print/cups-libs",
+        "system/library"
+    ],
+    "fmris": [
+        "print/cups-pdf"
+    ],
+    "name": "cups-pdf"
+}

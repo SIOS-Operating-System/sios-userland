@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "developer/illumos-closed"
+    ],
+    "name": "illumos-closed"
+}

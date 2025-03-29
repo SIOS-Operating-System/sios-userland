@@ -1,0 +1,17 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/gmp",
+        "library/libffi",
+        "library/libyaml",
+        "library/readline-8",
+        "library/security/openssl-3",
+        "library/zlib",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "runtime/ruby-32"
+    ],
+    "name": "ruby"
+}

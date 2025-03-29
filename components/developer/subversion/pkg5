@@ -1,0 +1,25 @@
+{
+    "dependencies": [
+        "database/sqlite-3",
+        "library/apr",
+        "library/apr-util",
+        "library/expat",
+        "library/libserf",
+        "library/lz4",
+        "library/magic",
+        "library/python/py3c-39",
+        "library/zlib",
+        "runtime/perl-538",
+        "runtime/python-39",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime"
+    ],
+    "fmris": [
+        "library/java/subversion",
+        "library/perl-5/subversion",
+        "library/python/subversion",
+        "developer/versioning/subversion"
+    ],
+    "name": "subversion"
+}

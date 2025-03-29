@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "developer/build/maven",
+        "runtime/java/openjdk21"
+    ],
+    "fmris": [
+        "database/postgres/connector/jdbc"
+    ],
+    "name": "postgresql-jdbc"
+}

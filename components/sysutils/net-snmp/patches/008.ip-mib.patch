@@ -1,0 +1,13 @@
+--- net-snmp-5.9.4/agent/mibgroup/mibII.h.orig
++++ net-snmp-5.9.4/agent/mibgroup/mibII.h
+@@ -56,3 +56,10 @@
+  * ip-mib/ipv6ScopeZoneIndexTable
+  */
+ #endif
++
++/*
++ * For Solaris, enable additional tables.
++ */
++#if defined( solaris2 )
++config_require(ip-mib/ipSystemStatsTable ip-mib/ipAddressTable)
++#endif

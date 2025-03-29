@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "developer/vala",
+        "image/library/librsvg",
+        "library/desktop/gobject/gobject-introspection",
+        "library/lcms2",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "image/library/babl"
+    ],
+    "name": "babl"
+}

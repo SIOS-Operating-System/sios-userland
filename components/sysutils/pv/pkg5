@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "shell/pipe-viewer"
+    ],
+    "name": "pv"
+}

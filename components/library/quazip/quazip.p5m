@@ -1,0 +1,52 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2023 Andreas Wacknitz
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/JlCompress.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/ioapi.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/minizip_crypt.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quaadler32.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quachecksum32.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quacrc32.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quagzipfile.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quaziodevice.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quazip.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quazip_global.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quazip_qt_compat.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quazipdir.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quazipfile.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quazipfileinfo.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/quazipnewinfo.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/unzip.h
+file path=usr/include/QuaZip-Qt5-$(HUMAN_VERSION)/quazip/zip.h
+file path=usr/lib/$(MACH64)/cmake/QuaZip-Qt5-$(HUMAN_VERSION)/QuaZip-Qt5Config.cmake
+file path=usr/lib/$(MACH64)/cmake/QuaZip-Qt5-$(HUMAN_VERSION)/QuaZip-Qt5ConfigVersion.cmake
+file path=usr/lib/$(MACH64)/cmake/QuaZip-Qt5-$(HUMAN_VERSION)/QuaZip-Qt5_SharedTargets-release.cmake
+file path=usr/lib/$(MACH64)/cmake/QuaZip-Qt5-$(HUMAN_VERSION)/QuaZip-Qt5_SharedTargets.cmake
+link path=usr/lib/$(MACH64)/libquazip1-qt5.so \
+    target=libquazip1-qt5.so.$(HUMAN_VERSION).0
+file path=usr/lib/$(MACH64)/libquazip1-qt5.so.$(HUMAN_VERSION)
+link path=usr/lib/$(MACH64)/libquazip1-qt5.so.$(HUMAN_VERSION).0 \
+    target=libquazip1-qt5.so.$(HUMAN_VERSION)
+file path=usr/lib/$(MACH64)/pkgconfig/quazip1-qt5.pc

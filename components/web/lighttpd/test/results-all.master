@@ -1,0 +1,6 @@
+PASS: t/test_common
+PASS: t/test_configfile
+PASS: t/test_mod
+preparing infrastructure                PASS: prepare.sh
+PASS: run-tests.pl
+cleaning up                             PASS: cleanup.sh

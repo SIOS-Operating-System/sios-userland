@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/pycryptodome-test-vectors",
+        "library/python/pycryptodome-test-vectors-39"
+    ],
+    "name": "pycryptodome_test_vectors"
+}

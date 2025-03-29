@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/popt",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/librsync"
+    ],
+    "name": "librsync"
+}

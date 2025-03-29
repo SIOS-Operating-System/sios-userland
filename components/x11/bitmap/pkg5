@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "system/library",
+        "system/library/math",
+        "x11/data/xbitmaps",
+        "x11/library/libx11",
+        "x11/library/libxmu",
+        "x11/library/toolkit/libxaw7",
+        "x11/library/toolkit/libxt"
+    ],
+    "fmris": [
+        "image/editor/bitmap"
+    ],
+    "name": "bitmap"
+}

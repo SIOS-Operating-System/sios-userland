@@ -1,0 +1,11 @@
+--- totem-pl-parser-3.26.6/plparse/xmlparser.c.orig
++++ totem-pl-parser-3.26.6/plparse/xmlparser.c
+@@ -62,7 +62,7 @@
+ #include "xmlparser.h"
+ 
+ 
+-#define TOKEN_SIZE  64 * 1024
++#define TOKEN_SIZE  32 * 1024
+ #define DATA_SIZE   64 * 1024
+ #define MAX_RECURSION 26
+ 

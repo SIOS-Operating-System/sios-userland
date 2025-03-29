@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "database/postgres-15/developer",
+        "developer/documentation-tool/doxygen",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime"
+    ],
+    "fmris": [
+        "database/postgres/library/c++/libpqxx"
+    ],
+    "name": "libpqxx"
+}

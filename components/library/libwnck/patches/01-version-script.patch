@@ -1,0 +1,12 @@
+illumos ld doesn't support --version-script.
+
+--- libwnck-43.2/libwnck/meson.build.orig
++++ libwnck-43.2/libwnck/meson.build
+@@ -107,7 +107,6 @@
+ 
+ mapfile = MODULE_NAME + '.map'
+ libwnck_ldflags = [
+-  '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile),
+ ]
+ 
+ if get_option('deprecation_flags')

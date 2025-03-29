@@ -1,0 +1,26 @@
+--- nspr-4.35/nspr/configure.orig
++++ nspr-4.35/nspr/configure
+@@ -7288,8 +7288,8 @@
+             CXX="$CXX -m64"
+         else
+             if test "$OS_TEST" = "i86pc"; then
+-                CC="$CC -xarch=amd64"
+-                CXX="$CXX -xarch=amd64"
++                CC="$CC -m64"
++                CXX="$CXX -m64"
+             else
+                 CC="$CC -xarch=v9"
+                 CXX="$CXX -xarch=v9"
+--- nspr-4.35/nspr/configure.in.orig
++++ nspr-4.35/nspr/configure.in
+@@ -2110,8 +2110,8 @@
+             CXX="$CXX -m64"
+         else
+             if test "$OS_TEST" = "i86pc"; then
+-                CC="$CC -xarch=amd64"
+-                CXX="$CXX -xarch=amd64"
++                CC="$CC -m64"
++                CXX="$CXX -m64"
+             else
+                 CC="$CC -xarch=v9"
+                 CXX="$CXX -xarch=v9"

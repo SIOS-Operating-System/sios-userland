@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "runtime/perl",
+        "shell/bash",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "text/patchutils"
+    ],
+    "name": "patchutils"
+}

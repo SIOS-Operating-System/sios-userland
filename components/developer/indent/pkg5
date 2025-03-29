@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "developer/gnu-indent"
+    ],
+    "name": "indent"
+}

@@ -1,0 +1,11 @@
+--- gtk+-2.24.33/modules/other/gail/gailwindow.c.orig
++++ gtk+-2.24.33/modules/other/gail/gailwindow.c
+@@ -289,6 +289,8 @@
+           GtkWindow *window = GTK_WINDOW (widget);
+  
+           name = gtk_window_get_title (window);
++	  if (name == NULL)
++	    name = g_get_application_name();
+           if (name == NULL &&
+               accessible->role == ATK_ROLE_TOOL_TIP)
+             {

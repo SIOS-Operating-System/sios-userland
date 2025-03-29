@@ -1,0 +1,23 @@
+SUNWexternal_1.0 {
+    global:
+	XResQueryClients;
+	XResQueryClientResources;
+	XResQueryExtension;
+	XResQueryClientPixmapBytes;
+	XResQueryVersion;
+    local:
+	*;
+};
+
+SUNWexternal_1.2 {
+    global:
+	XResQueryClientIds;
+	XResQueryResourceBytes;
+} SUNWexternal_1.0;
+	
+OIexternal_1.3 {
+    global:
+    XResGetClientPid;
+    XResClientIdsDestroy;
+} SUNWexternal_1.2;
+	

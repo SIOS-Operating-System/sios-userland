@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "runtime/tcl-8",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "shell/expect"
+    ],
+    "name": "expect"
+}

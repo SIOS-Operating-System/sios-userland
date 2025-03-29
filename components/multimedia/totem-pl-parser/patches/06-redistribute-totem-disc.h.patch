@@ -1,0 +1,10 @@
+--- totem-pl-parser-3.26.6/plparse/meson.build.orig
++++ totem-pl-parser-3.26.6/plparse/meson.build
+@@ -3,6 +3,7 @@
+ includedir = join_paths(get_option('includedir'), 'totem-pl-parser/1/plparser')
+ 
+ plparser_public_headers = [
++  'totem-disc.h',
+   'totem-pl-parser.h',
+   'totem-pl-playlist.h',
+   'totem-pl-parser-mini.h',

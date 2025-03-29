@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "library/libpoppler",
+        "library/print/cups-libs",
+        "print/filter/ghostscript",
+        "print/libcupsfilters",
+        "print/libppd",
+        "print/psutils",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "print/cups-filters"
+    ],
+    "name": "cups-filters"
+}

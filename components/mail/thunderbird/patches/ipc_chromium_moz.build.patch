@@ -1,0 +1,16 @@
+add flags for find libevent header files not in standard include path
+
+diff --git a/ipc/chromium/moz.build b/ipc/chromium/moz.build
+index d29817b..70252e6 100644
+--- a/ipc/chromium/moz.build
++++ b/ipc/chromium/moz.build
+@@ -118,6 +118,9 @@ if os_solaris:
+ 
+ CXXFLAGS += CONFIG['TK_CFLAGS']
+ 
++if CONFIG['MOZ_SYSTEM_LIBEVENT']:
++    CXXFLAGS += CONFIG['MOZ_LIBEVENT_CFLAGS']
++
+ TEST_DIRS += [
+     "gtest",
+ ]

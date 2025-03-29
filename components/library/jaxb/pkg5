@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "developer/build/maven",
+        "developer/java/openjdk8",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/java/jaxb"
+    ],
+    "name": "jaxb-ri"
+}

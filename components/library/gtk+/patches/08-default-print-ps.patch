@@ -1,0 +1,29 @@
+--- gtk+-2.24.33/gtk/gtkprintoperation-unix.c.orig
++++ gtk+-2.24.33/gtk/gtkprintoperation-unix.c
+@@ -808,7 +808,7 @@
+   cairo_surface_t *surface;
+   static cairo_user_data_key_t key;
+   
+-  filename = g_build_filename (g_get_tmp_dir (), "previewXXXXXX.pdf", NULL);
++  filename = g_build_filename (g_get_tmp_dir (), "previewXXXXXX.ps", NULL);
+   fd = g_mkstemp (filename);
+ 
+   if (fd < 0)
+@@ -824,7 +824,7 @@
+   h = gtk_paper_size_get_height (paper_size, GTK_UNIT_POINTS);
+     
+   *dpi_x = *dpi_y = 72;
+-  surface = cairo_pdf_surface_create_for_stream (write_preview, GINT_TO_POINTER (fd), w, h);
++  surface = cairo_ps_surface_create_for_stream (write_preview, GINT_TO_POINTER (fd), w, h);
+  
+   cairo_surface_set_user_data (surface, &key, GINT_TO_POINTER (fd), close_preview);
+ 
+@@ -857,7 +857,7 @@
+   paper_size = gtk_page_setup_get_paper_size (page_setup);
+   w = gtk_paper_size_get_width (paper_size, GTK_UNIT_POINTS);
+   h = gtk_paper_size_get_height (paper_size, GTK_UNIT_POINTS);
+-  cairo_pdf_surface_set_size (surface, w, h);
++  cairo_ps_surface_set_size (surface, w, h);
+ }
+ 
+ 

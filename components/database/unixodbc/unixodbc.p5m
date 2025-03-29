@@ -1,0 +1,103 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2023 Andreas Wacknitz
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+dir path=etc/odbc/ODBCDataSources
+
+file path=etc/odbc/odbc.ini preserve=yes
+file path=etc/odbc/odbcinst.ini preserve=yes
+file path=usr/bin/$(MACH32)/dltest
+file path=usr/bin/$(MACH32)/isql
+file path=usr/bin/$(MACH32)/iusql
+file path=usr/bin/$(MACH32)/odbc_config
+file path=usr/bin/$(MACH32)/odbcinst
+file path=usr/bin/$(MACH32)/slencheck
+file path=usr/bin/dltest
+file path=usr/bin/isql
+file path=usr/bin/iusql
+file path=usr/bin/odbc_config
+file path=usr/bin/odbcinst
+file path=usr/bin/slencheck
+file path=usr/include/odbc/autotest.h
+file path=usr/include/odbc/odbcinst.h
+file path=usr/include/odbc/odbcinstext.h
+file path=usr/include/odbc/sql.h
+file path=usr/include/odbc/sqlext.h
+file path=usr/include/odbc/sqlspi.h
+file path=usr/include/odbc/sqltypes.h
+file path=usr/include/odbc/sqlucode.h
+file path=usr/include/odbc/unixODBC/unixodbc_conf.h
+file path=usr/include/odbc/unixodbc.h
+file path=usr/include/odbc/uodbc_extras.h
+file path=usr/include/odbc/uodbc_stats.h
+link path=usr/lib/$(MACH64)/libnn.so target=libnn.so.1.0.0
+link path=usr/lib/$(MACH64)/libnn.so.1 target=libnn.so.1.0.0
+file path=usr/lib/$(MACH64)/libnn.so.1.0.0
+link path=usr/lib/$(MACH64)/libodbc.so target=libodbc.so.2.0.0
+link path=usr/lib/$(MACH64)/libodbc.so.2 target=libodbc.so.2.0.0
+file path=usr/lib/$(MACH64)/libodbc.so.2.0.0
+link path=usr/lib/$(MACH64)/libodbccr.so target=libodbccr.so.2.0.0
+link path=usr/lib/$(MACH64)/libodbccr.so.2 target=libodbccr.so.2.0.0
+file path=usr/lib/$(MACH64)/libodbccr.so.2.0.0
+link path=usr/lib/$(MACH64)/libodbcinst.so target=libodbcinst.so.2.0.0
+link path=usr/lib/$(MACH64)/libodbcinst.so.2 target=libodbcinst.so.2.0.0
+file path=usr/lib/$(MACH64)/libodbcinst.so.2.0.0
+link path=usr/lib/$(MACH64)/libodbcpsql.so target=libodbcpsql.so.2.0.0
+link path=usr/lib/$(MACH64)/libodbcpsql.so.2 target=libodbcpsql.so.2.0.0
+file path=usr/lib/$(MACH64)/libodbcpsql.so.2.0.0
+link path=usr/lib/$(MACH64)/libtemplate.so target=libtemplate.so.1.0.0
+link path=usr/lib/$(MACH64)/libtemplate.so.1 target=libtemplate.so.1.0.0
+file path=usr/lib/$(MACH64)/libtemplate.so.1.0.0
+file path=usr/lib/$(MACH64)/pkgconfig/odbc.pc
+file path=usr/lib/$(MACH64)/pkgconfig/odbccr.pc
+file path=usr/lib/$(MACH64)/pkgconfig/odbcinst.pc
+link path=usr/lib/libnn.so target=libnn.so.1.0.0
+link path=usr/lib/libnn.so.1 target=libnn.so.1.0.0
+file path=usr/lib/libnn.so.1.0.0
+link path=usr/lib/libodbc.so target=libodbc.so.2.0.0
+link path=usr/lib/libodbc.so.2 target=libodbc.so.2.0.0
+file path=usr/lib/libodbc.so.2.0.0
+link path=usr/lib/libodbccr.so target=libodbccr.so.2.0.0
+link path=usr/lib/libodbccr.so.2 target=libodbccr.so.2.0.0
+file path=usr/lib/libodbccr.so.2.0.0
+link path=usr/lib/libodbcinst.so target=libodbcinst.so.2.0.0
+link path=usr/lib/libodbcinst.so.2 target=libodbcinst.so.2.0.0
+file path=usr/lib/libodbcinst.so.2.0.0
+link path=usr/lib/libodbcpsql.so target=libodbcpsql.so.2.0.0
+link path=usr/lib/libodbcpsql.so.2 target=libodbcpsql.so.2.0.0
+file path=usr/lib/libodbcpsql.so.2.0.0
+link path=usr/lib/libtemplate.so target=libtemplate.so.1.0.0
+link path=usr/lib/libtemplate.so.1 target=libtemplate.so.1.0.0
+file path=usr/lib/libtemplate.so.1.0.0
+file path=usr/lib/pkgconfig/odbc.pc
+file path=usr/lib/pkgconfig/odbccr.pc
+file path=usr/lib/pkgconfig/odbcinst.pc
+file path=usr/share/man/man1/dltest.1
+file path=usr/share/man/man1/isql.1
+file path=usr/share/man/man1/iusql.1
+file path=usr/share/man/man1/odbc_config.1
+file path=usr/share/man/man1/odbcinst.1
+file path=usr/share/man/man5/odbc.ini.5
+file path=usr/share/man/man5/odbcinst.ini.5
+file path=usr/share/man/man7/unixODBC.7

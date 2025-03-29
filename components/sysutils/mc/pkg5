@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "library/glib2",
+        "library/slang",
+        "runtime/perl",
+        "runtime/python-39",
+        "shell/ksh93",
+        "system/library",
+        "sysutils/e2fsprogs"
+    ],
+    "fmris": [
+        "file/mc"
+    ],
+    "name": "mc"
+}

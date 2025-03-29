@@ -1,0 +1,12 @@
+t/as_int64.t ............ ok
+t/die_on_overflow.t ..... ok
+t/Math-Int64-Native.t ... ok
+t/Math-Int64.t .......... ok
+t/Math-UInt64-Native.t .. ok
+t/Math-UInt64.t ......... ok
+t/MSC.t ................. ok
+t/pow.t ................. ok
+t/storable.t ............ ok
+All tests successful.
+Files=9, Tests=2523
+Result: PASS

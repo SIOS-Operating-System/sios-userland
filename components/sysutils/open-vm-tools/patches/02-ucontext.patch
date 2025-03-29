@@ -1,0 +1,11 @@
+--- open-vm-tools-stable-10.2.5/lib/include/sigPosixRegs.h.orig	2018-04-30 12:19:21.563492316 +0000
++++ open-vm-tools-stable-10.2.5/lib/include/sigPosixRegs.h	2018-04-30 12:19:34.829574329 +0000
+@@ -72,7 +72,7 @@
+ #endif
+ 
+ #include <signal.h>
+-#include <sys/ucontext.h>
++#include <ucontext.h>
+ 
+ #if __linux__ && !defined __ANDROID__
+ #  if defined(__x86_64__)

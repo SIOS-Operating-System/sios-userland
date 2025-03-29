@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "runtime/perl-538"
+    ],
+    "fmris": [
+        "developer/pkgtree"
+    ],
+    "name": "pkgtree"
+}

@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/glib2",
+        "library/gnutls-3",
+        "library/libproxy",
+        "system/library"
+    ],
+    "fmris": [
+        "library/glib-networking"
+    ],
+    "name": "glib-networking"
+}

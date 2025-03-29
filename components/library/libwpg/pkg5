@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "library/c++/librevenge",
+        "library/c++/libwpd",
+        "runtime/perl",
+        "system/library",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/c++/libwpg"
+    ],
+    "name": "libwpg"
+}

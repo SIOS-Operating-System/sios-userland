@@ -1,0 +1,32 @@
+FAIL: modify1
+FAIL: modify2
+FAIL: modify3
+FAIL: modify4
+FAIL: modify5
+FAIL: tune1
+FAIL: tune2
+PASS: graph1
+PASS: graph2
+PASS: rpn1
+PASS: rpn2
+PASS: rrdcreate
+PASS: compat-cloexec
+FAIL: dump-restore
+FAIL: create-with-source-1
+PASS: create-with-source-2
+FAIL: create-with-source-3
+PASS: create-with-source-4
+PASS: create-with-source-and-mapping-1
+FAIL: create-from-template-1
+PASS: dcounter1
+PASS: vformatter1
+PASS: xport1
+PASS: list1
+PASS: pdp-calc1
+# TOTAL: 25
+# PASS:  14
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  11
+# XPASS: 0
+# ERROR: 0

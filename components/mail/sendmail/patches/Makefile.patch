@@ -1,0 +1,28 @@
+--- sendmail-8.17.1/Makefile	2021-06-22 10:24:42.000000000 +0000
++++ sendmail-8.17.1/Makefile.new	2022-01-31 20:53:02.878126128 +0000
+@@ -1,9 +1,9 @@
+ #       $Id: Makefile.dist,v 8.15 2001-08-23 20:44:39 ca Exp $
+ 
+ SHELL= /bin/sh
+-SUBDIRS= libsm libsmutil libsmdb sendmail editmap mail.local \
++SUBDIRS= libsm libsmutil libsmdb libmilter sendmail editmap mail.local \
+ 	 mailstats makemap praliases rmail smrsh vacation
+-# libmilter: requires pthread
++CHECKSUBDIRS= libsm libmilter sendmail test
+ BUILD=   ./Build
+ OPTIONS= $(CONFIG) $(FLAGS)
+ 
+@@ -42,6 +42,13 @@
+ 		$(SHELL) $(BUILD) $(OPTIONS) -c) || exit; \
+ 	done
+ 
++check: FRC
++	@for x in $(CHECKSUBDIRS); \
++	do \
++		(cd $$x; echo Making $@ in:; pwd; \
++		$(SHELL) $(BUILD) $(OPTIONS) $@); \
++	done
++
+ $(SUBDIRS): FRC
+ 	@cd $@; pwd; \
+ 	$(SHELL) $(BUILD) $(OPTIONS)

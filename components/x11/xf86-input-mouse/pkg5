@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "system/library",
+        "x11/header/x11-protocols"
+    ],
+    "fmris": [
+        "x11/server/xorg/driver/xorg-input-mouse"
+    ],
+    "name": "xf86-input-mouse"
+}

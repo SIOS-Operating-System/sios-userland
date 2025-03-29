@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "compress/bzip2",
+        "image/library/libpng16",
+        "library/brotli",
+        "library/c++/harfbuzz",
+        "library/zlib",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "system/library/freetype-2",
+        "system/library/freetype-2/32"
+    ],
+    "name": "freetype"
+}

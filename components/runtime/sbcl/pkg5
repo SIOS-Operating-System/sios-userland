@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "compress/zstd",
+        "runtime/sbcl",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "runtime/sbcl"
+    ],
+    "name": "sbcl"
+}

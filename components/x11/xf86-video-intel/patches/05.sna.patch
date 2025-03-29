@@ -1,0 +1,15 @@
+--- xf86-video-intel-e6a4c4740c15ace9dd79dc7c18955f2eb413a6a5/src/sna/kgem.c.orig
++++ xf86-video-intel-e6a4c4740c15ace9dd79dc7c18955f2eb413a6a5/src/sna/kgem.c
+@@ -963,11 +963,7 @@
+ constant inline static unsigned long __fls(unsigned long word)
+ {
+ #if defined(__GNUC__) && (defined(__i386__) || defined(__x86__) || defined(__x86_64__))
+-	asm("bsr %1,%0"
+-	    : "=r" (word)
+-	    : "rm" (word));
+-	return word;
+-#else
++	
+ 	unsigned int v = 0;
+ 
+ 	while (word >>= 1)

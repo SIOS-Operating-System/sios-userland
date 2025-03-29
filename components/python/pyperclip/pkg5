@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/pyperclip",
+        "library/python/pyperclip-39"
+    ],
+    "name": "pyperclip"
+}

@@ -1,0 +1,7 @@
+t/base.t .... ok
+t/more.t .... ok
+t/pod.t ..... ok
+t/podcov.t .. ok
+All tests successful.
+Files=4, Tests=46
+Result: PASS

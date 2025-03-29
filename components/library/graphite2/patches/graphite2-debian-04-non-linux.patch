@@ -1,0 +1,33 @@
+--- src/CMakeLists.txt.orig	2018-05-19 16:44:36.921088002 +0000
++++ src/CMakeLists.txt	2018-05-19 16:45:54.194593270 +0000
+@@ -110,7 +110,7 @@
+                                             LT_VERSION_REVISION ${GRAPHITE_API_REVISION}
+                                             LT_VERSION_AGE ${GRAPHITE_API_AGE})
+ 
+-if  (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
++if  (${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "k.*BSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "GNU" OR ${CMAKE_SYSTEM_NAME} STREQUAL "SunOS")
+     set_target_properties(graphite2 PROPERTIES
+         COMPILE_FLAGS   "-Wall -Wextra -Wno-unknown-pragmas -Wendif-labels -Wshadow -Wctor-dtor-privacy -Wnon-virtual-dtor -fno-rtti -fno-exceptions -fvisibility=hidden -fvisibility-inlines-hidden"
+         LINK_FLAGS      "-nodefaultlibs ${GRAPHITE_LINK_FLAGS}"
+--- tests/examples/CMakeLists.txt	2018-12-20 07:28:50.000000000 +0000
++++ tests/examples/CMakeLists.txt.new	2019-03-10 09:54:56.769138941 +0000
+@@ -23,7 +23,7 @@ macro(test_example TESTNAME SRCFILE)
+     set_tests_properties(${TESTNAME} PROPERTIES TIMEOUT 3)
+ endmacro()
+ 
+-if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
++if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "k.*BSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "GNU" OR ${CMAKE_SYSTEM_NAME} STREQUAL "SunOS")
+     find_package(Freetype)
+     if (${FREETYPE_FOUND})
+         include_directories(${FREETYPE_INCLUDE_DIRS})
+--- tests/vm/CMakeLists.txt	2018-12-20 07:28:50.000000000 +0000
++++ tests/vm/CMakeLists.txt.new	2019-03-10 09:53:08.842323164 +0000
+@@ -29,7 +29,7 @@ if  (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_C
+ 	target_link_libraries(vm-test-direct vm-test-common)
+ endif()
+ 
+-if  (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
++if  (${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "k.*BSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "GNU" OR ${CMAKE_SYSTEM_NAME} STREQUAL "SunOS")
+ 	add_definitions(-fno-rtti -fno-exceptions)
+ 	if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+ 		add_definitions(-DNDEBUG -fomit-frame-pointer)

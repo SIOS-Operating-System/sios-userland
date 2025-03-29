@@ -1,0 +1,12 @@
+diff -Nru OpenBLAS-0.3.21.orig/c_check OpenBLAS-0.3.21/c_check
+--- OpenBLAS-0.3.21.orig/c_check	2022-08-07 22:36:26.000000000 +0000
++++ OpenBLAS-0.3.21/c_check	2022-10-02 10:15:33.310281620 +0000
+@@ -327,7 +327,7 @@
+     esac
+ 
+     case "$flag" in -Y*)
+-        linker_L="$linker_L -Wl,$flag" ;;
++        #linker_L="$linker_L -Wl,$flag" ;;
+     esac
+ 
+     case "$flag" in --exclude-libs*)

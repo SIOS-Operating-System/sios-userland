@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/mpich/gcc",
+        "library/openmpi/gcc",
+        "runtime/python-39",
+        "shell/bash",
+        "shell/ksh93"
+    ],
+    "fmris": [
+        "library/math/petsc",
+        "library/math/petsc/mpich/gcc",
+        "library/math/petsc/openmpi/gcc"
+    ],
+    "name": "petsc"
+}

@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/pygobject-39",
+        "library/python/python-compizconfig-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "desktop/compiz/ccsm"
+    ],
+    "name": "ccsm"
+}

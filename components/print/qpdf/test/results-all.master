@@ -1,0 +1,11 @@
+Test project $(@D)
+Test check-assert .....................   Passed
+Test compare-for-test .................   Passed
+Test qpdf .............................   Passed
+Test libtests .........................   Passed
+Test examples .........................   Passed
+Test zlib-flate .......................   Passed
+Test fuzz .............................   Passed
+
+100% tests passed, 0 tests failed out of 7
+

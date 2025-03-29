@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/libsigsegv",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "developer/macro/gnu-m4"
+    ],
+    "name": "m4"
+}

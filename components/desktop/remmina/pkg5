@@ -1,0 +1,25 @@
+{
+    "dependencies": [
+        "desktop/library/libayatana-appindicator",
+        "desktop/remote-desktop/freerdp",
+        "library/desktop/cairo",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk3",
+        "library/desktop/json-glib",
+        "library/desktop/webkitgtk2",
+        "library/glib2",
+        "library/libsecret",
+        "library/libvncserver",
+        "library/print/cups-libs",
+        "library/security/libsodium",
+        "library/security/openssl-3",
+        "shell/ksh93",
+        "system/library",
+        "system/library/security/libgcrypt",
+        "web/curl"
+    ],
+    "fmris": [
+        "desktop/remote-desktop/remmina"
+    ],
+    "name": "Remmina"
+}

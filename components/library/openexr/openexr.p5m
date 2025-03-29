@@ -1,0 +1,232 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2023 Andreas Wacknitz
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/bin/$(MACH64)/exr2aces
+file path=usr/bin/$(MACH64)/exrenvmap
+file path=usr/bin/$(MACH64)/exrheader
+file path=usr/bin/$(MACH64)/exrinfo
+file path=usr/bin/$(MACH64)/exrmakepreview
+file path=usr/bin/$(MACH64)/exrmaketiled
+file path=usr/bin/$(MACH64)/exrmanifest
+file path=usr/bin/$(MACH64)/exrmultipart
+file path=usr/bin/$(MACH64)/exrmultiview
+file path=usr/bin/$(MACH64)/exrstdattr
+file path=usr/include/OpenEXR/Iex.h
+file path=usr/include/OpenEXR/IexBaseExc.h
+file path=usr/include/OpenEXR/IexConfig.h
+file path=usr/include/OpenEXR/IexErrnoExc.h
+file path=usr/include/OpenEXR/IexExport.h
+file path=usr/include/OpenEXR/IexForward.h
+file path=usr/include/OpenEXR/IexMacros.h
+file path=usr/include/OpenEXR/IexMathExc.h
+file path=usr/include/OpenEXR/IexMathFloatExc.h
+file path=usr/include/OpenEXR/IexMathIeeeExc.h
+file path=usr/include/OpenEXR/IexNamespace.h
+file path=usr/include/OpenEXR/IexThrowErrnoExc.h
+file path=usr/include/OpenEXR/IlmThread.h
+file path=usr/include/OpenEXR/IlmThreadConfig.h
+file path=usr/include/OpenEXR/IlmThreadExport.h
+file path=usr/include/OpenEXR/IlmThreadForward.h
+file path=usr/include/OpenEXR/IlmThreadMutex.h
+file path=usr/include/OpenEXR/IlmThreadNamespace.h
+file path=usr/include/OpenEXR/IlmThreadPool.h
+file path=usr/include/OpenEXR/IlmThreadSemaphore.h
+file path=usr/include/OpenEXR/ImfAcesFile.h
+file path=usr/include/OpenEXR/ImfArray.h
+file path=usr/include/OpenEXR/ImfAttribute.h
+file path=usr/include/OpenEXR/ImfBoxAttribute.h
+file path=usr/include/OpenEXR/ImfCRgbaFile.h
+file path=usr/include/OpenEXR/ImfChannelList.h
+file path=usr/include/OpenEXR/ImfChannelListAttribute.h
+file path=usr/include/OpenEXR/ImfCheckFile.h
+file path=usr/include/OpenEXR/ImfChromaticities.h
+file path=usr/include/OpenEXR/ImfChromaticitiesAttribute.h
+file path=usr/include/OpenEXR/ImfCompositeDeepScanLine.h
+file path=usr/include/OpenEXR/ImfCompression.h
+file path=usr/include/OpenEXR/ImfCompressionAttribute.h
+file path=usr/include/OpenEXR/ImfCompressor.h
+file path=usr/include/OpenEXR/ImfConvert.h
+file path=usr/include/OpenEXR/ImfDeepCompositing.h
+file path=usr/include/OpenEXR/ImfDeepFrameBuffer.h
+file path=usr/include/OpenEXR/ImfDeepImage.h
+file path=usr/include/OpenEXR/ImfDeepImageChannel.h
+file path=usr/include/OpenEXR/ImfDeepImageIO.h
+file path=usr/include/OpenEXR/ImfDeepImageLevel.h
+file path=usr/include/OpenEXR/ImfDeepImageState.h
+file path=usr/include/OpenEXR/ImfDeepImageStateAttribute.h
+file path=usr/include/OpenEXR/ImfDeepScanLineInputFile.h
+file path=usr/include/OpenEXR/ImfDeepScanLineInputPart.h
+file path=usr/include/OpenEXR/ImfDeepScanLineOutputFile.h
+file path=usr/include/OpenEXR/ImfDeepScanLineOutputPart.h
+file path=usr/include/OpenEXR/ImfDeepTiledInputFile.h
+file path=usr/include/OpenEXR/ImfDeepTiledInputPart.h
+file path=usr/include/OpenEXR/ImfDeepTiledOutputFile.h
+file path=usr/include/OpenEXR/ImfDeepTiledOutputPart.h
+file path=usr/include/OpenEXR/ImfDoubleAttribute.h
+file path=usr/include/OpenEXR/ImfEnvmap.h
+file path=usr/include/OpenEXR/ImfEnvmapAttribute.h
+file path=usr/include/OpenEXR/ImfExport.h
+file path=usr/include/OpenEXR/ImfFlatImage.h
+file path=usr/include/OpenEXR/ImfFlatImageChannel.h
+file path=usr/include/OpenEXR/ImfFlatImageIO.h
+file path=usr/include/OpenEXR/ImfFlatImageLevel.h
+file path=usr/include/OpenEXR/ImfFloatAttribute.h
+file path=usr/include/OpenEXR/ImfFloatVectorAttribute.h
+file path=usr/include/OpenEXR/ImfForward.h
+file path=usr/include/OpenEXR/ImfFrameBuffer.h
+file path=usr/include/OpenEXR/ImfFramesPerSecond.h
+file path=usr/include/OpenEXR/ImfGenericInputFile.h
+file path=usr/include/OpenEXR/ImfGenericOutputFile.h
+file path=usr/include/OpenEXR/ImfHeader.h
+file path=usr/include/OpenEXR/ImfHuf.h
+file path=usr/include/OpenEXR/ImfIDManifest.h
+file path=usr/include/OpenEXR/ImfIDManifestAttribute.h
+file path=usr/include/OpenEXR/ImfIO.h
+file path=usr/include/OpenEXR/ImfImage.h
+file path=usr/include/OpenEXR/ImfImageChannel.h
+file path=usr/include/OpenEXR/ImfImageChannelRenaming.h
+file path=usr/include/OpenEXR/ImfImageDataWindow.h
+file path=usr/include/OpenEXR/ImfImageIO.h
+file path=usr/include/OpenEXR/ImfImageLevel.h
+file path=usr/include/OpenEXR/ImfInputFile.h
+file path=usr/include/OpenEXR/ImfInputPart.h
+file path=usr/include/OpenEXR/ImfInt64.h
+file path=usr/include/OpenEXR/ImfIntAttribute.h
+file path=usr/include/OpenEXR/ImfKeyCode.h
+file path=usr/include/OpenEXR/ImfKeyCodeAttribute.h
+file path=usr/include/OpenEXR/ImfLineOrder.h
+file path=usr/include/OpenEXR/ImfLineOrderAttribute.h
+file path=usr/include/OpenEXR/ImfLut.h
+file path=usr/include/OpenEXR/ImfMatrixAttribute.h
+file path=usr/include/OpenEXR/ImfMisc.h
+file path=usr/include/OpenEXR/ImfMultiPartInputFile.h
+file path=usr/include/OpenEXR/ImfMultiPartOutputFile.h
+file path=usr/include/OpenEXR/ImfMultiView.h
+file path=usr/include/OpenEXR/ImfName.h
+file path=usr/include/OpenEXR/ImfNamespace.h
+file path=usr/include/OpenEXR/ImfOpaqueAttribute.h
+file path=usr/include/OpenEXR/ImfOutputFile.h
+file path=usr/include/OpenEXR/ImfOutputPart.h
+file path=usr/include/OpenEXR/ImfPartHelper.h
+file path=usr/include/OpenEXR/ImfPartType.h
+file path=usr/include/OpenEXR/ImfPixelType.h
+file path=usr/include/OpenEXR/ImfPreviewImage.h
+file path=usr/include/OpenEXR/ImfPreviewImageAttribute.h
+file path=usr/include/OpenEXR/ImfRational.h
+file path=usr/include/OpenEXR/ImfRationalAttribute.h
+file path=usr/include/OpenEXR/ImfRgba.h
+file path=usr/include/OpenEXR/ImfRgbaFile.h
+file path=usr/include/OpenEXR/ImfRgbaYca.h
+file path=usr/include/OpenEXR/ImfSampleCountChannel.h
+file path=usr/include/OpenEXR/ImfStandardAttributes.h
+file path=usr/include/OpenEXR/ImfStdIO.h
+file path=usr/include/OpenEXR/ImfStringAttribute.h
+file path=usr/include/OpenEXR/ImfStringVectorAttribute.h
+file path=usr/include/OpenEXR/ImfTestFile.h
+file path=usr/include/OpenEXR/ImfThreading.h
+file path=usr/include/OpenEXR/ImfTileDescription.h
+file path=usr/include/OpenEXR/ImfTileDescriptionAttribute.h
+file path=usr/include/OpenEXR/ImfTiledInputFile.h
+file path=usr/include/OpenEXR/ImfTiledInputPart.h
+file path=usr/include/OpenEXR/ImfTiledOutputFile.h
+file path=usr/include/OpenEXR/ImfTiledOutputPart.h
+file path=usr/include/OpenEXR/ImfTiledRgbaFile.h
+file path=usr/include/OpenEXR/ImfTimeCode.h
+file path=usr/include/OpenEXR/ImfTimeCodeAttribute.h
+file path=usr/include/OpenEXR/ImfUtilExport.h
+file path=usr/include/OpenEXR/ImfVecAttribute.h
+file path=usr/include/OpenEXR/ImfVersion.h
+file path=usr/include/OpenEXR/ImfWav.h
+file path=usr/include/OpenEXR/ImfXdr.h
+file path=usr/include/OpenEXR/OpenEXRConfig.h
+file path=usr/include/OpenEXR/openexr.h
+file path=usr/include/OpenEXR/openexr_attr.h
+file path=usr/include/OpenEXR/openexr_base.h
+file path=usr/include/OpenEXR/openexr_chunkio.h
+file path=usr/include/OpenEXR/openexr_coding.h
+file path=usr/include/OpenEXR/openexr_compression.h
+file path=usr/include/OpenEXR/openexr_config.h
+file path=usr/include/OpenEXR/openexr_context.h
+file path=usr/include/OpenEXR/openexr_debug.h
+file path=usr/include/OpenEXR/openexr_decode.h
+file path=usr/include/OpenEXR/openexr_encode.h
+file path=usr/include/OpenEXR/openexr_errors.h
+file path=usr/include/OpenEXR/openexr_part.h
+file path=usr/include/OpenEXR/openexr_std_attr.h
+file path=usr/include/OpenEXR/openexr_version.h
+file path=usr/lib/$(MACH64)/cmake/OpenEXR/OpenEXRConfig.cmake
+file path=usr/lib/$(MACH64)/cmake/OpenEXR/OpenEXRConfigVersion.cmake
+file path=usr/lib/$(MACH64)/cmake/OpenEXR/OpenEXRTargets-none.cmake
+file path=usr/lib/$(MACH64)/cmake/OpenEXR/OpenEXRTargets.cmake
+link path=usr/lib/$(MACH64)/libIex-3_2.so target=libIex-3_2.so.31
+link path=usr/lib/$(MACH64)/libIex-3_2.so.31 \
+    target=libIex-3_2.so.31.$(HUMAN_VERSION)
+file path=usr/lib/$(MACH64)/libIex-3_2.so.31.$(HUMAN_VERSION)
+link path=usr/lib/$(MACH64)/libIex.so target=libIex-3_2.so
+link path=usr/lib/$(MACH64)/libIlmThread-3_2.so target=libIlmThread-3_2.so.31
+link path=usr/lib/$(MACH64)/libIlmThread-3_2.so.31 \
+    target=libIlmThread-3_2.so.31.$(HUMAN_VERSION)
+file path=usr/lib/$(MACH64)/libIlmThread-3_2.so.31.$(HUMAN_VERSION)
+link path=usr/lib/$(MACH64)/libIlmThread.so target=libIlmThread-3_2.so
+link path=usr/lib/$(MACH64)/libOpenEXR-3_2.so target=libOpenEXR-3_2.so.31
+link path=usr/lib/$(MACH64)/libOpenEXR-3_2.so.31 \
+    target=libOpenEXR-3_2.so.31.$(HUMAN_VERSION)
+file path=usr/lib/$(MACH64)/libOpenEXR-3_2.so.31.$(HUMAN_VERSION)
+link path=usr/lib/$(MACH64)/libOpenEXR.so target=libOpenEXR-3_2.so
+link path=usr/lib/$(MACH64)/libOpenEXRCore-3_2.so \
+    target=libOpenEXRCore-3_2.so.31
+link path=usr/lib/$(MACH64)/libOpenEXRCore-3_2.so.31 \
+    target=libOpenEXRCore-3_2.so.31.$(HUMAN_VERSION)
+file path=usr/lib/$(MACH64)/libOpenEXRCore-3_2.so.31.$(HUMAN_VERSION)
+link path=usr/lib/$(MACH64)/libOpenEXRCore.so target=libOpenEXRCore-3_2.so
+link path=usr/lib/$(MACH64)/libOpenEXRUtil-3_2.so \
+    target=libOpenEXRUtil-3_2.so.31
+link path=usr/lib/$(MACH64)/libOpenEXRUtil-3_2.so.31 \
+    target=libOpenEXRUtil-3_2.so.31.$(HUMAN_VERSION)
+file path=usr/lib/$(MACH64)/libOpenEXRUtil-3_2.so.31.$(HUMAN_VERSION)
+link path=usr/lib/$(MACH64)/libOpenEXRUtil.so target=libOpenEXRUtil-3_2.so
+file path=usr/lib/$(MACH64)/pkgconfig/OpenEXR.pc
+file path=usr/share/doc/OpenEXR/examples/deepExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/deepExamples.h
+file path=usr/share/doc/OpenEXR/examples/deepTiledExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/deepTiledExamples.h
+file path=usr/share/doc/OpenEXR/examples/drawImage.cpp
+file path=usr/share/doc/OpenEXR/examples/drawImage.h
+file path=usr/share/doc/OpenEXR/examples/generalInterfaceExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/generalInterfaceExamples.h
+file path=usr/share/doc/OpenEXR/examples/generalInterfaceTiledExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/generalInterfaceTiledExamples.h
+file path=usr/share/doc/OpenEXR/examples/lowLevelIoExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/lowLevelIoExamples.h
+file path=usr/share/doc/OpenEXR/examples/main.cpp
+file path=usr/share/doc/OpenEXR/examples/multipartExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/multipartExamples.h
+file path=usr/share/doc/OpenEXR/examples/namespaceAlias.h
+file path=usr/share/doc/OpenEXR/examples/previewImageExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/previewImageExamples.h
+file path=usr/share/doc/OpenEXR/examples/rgbaInterfaceExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/rgbaInterfaceExamples.h
+file path=usr/share/doc/OpenEXR/examples/rgbaInterfaceTiledExamples.cpp
+file path=usr/share/doc/OpenEXR/examples/rgbaInterfaceTiledExamples.h

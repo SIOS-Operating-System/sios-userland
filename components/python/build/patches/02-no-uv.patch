@@ -1,0 +1,13 @@
+We do not have uv packaged yet.
+
+--- build-1.2.2.post1/pyproject.toml.orig
++++ build-1.2.2.post1/pyproject.toml
+@@ -51,7 +51,7 @@
+   "sphinx-issues >= 3.0.0",
+ ]
+ test = [
+-  "build[uv, virtualenv]",
++  "build[virtualenv]",
+   "filelock >= 3",
+   "pytest >= 6.2.4",
+   "pytest-cov >= 2.12",

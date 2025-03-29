@@ -1,0 +1,7 @@
+--- bottle-0.13.2/bottle.py.orig
++++ bottle-0.13.2/bottle.py
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+ """
+ Bottle is a fast and simple micro-framework for small web applications. It

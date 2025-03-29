@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/setuptools-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/zconfig",
+        "library/python/zconfig-39"
+    ],
+    "name": "zconfig"
+}

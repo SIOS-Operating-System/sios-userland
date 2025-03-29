@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/flit-core-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/tomli-w",
+        "library/python/tomli-w-39"
+    ],
+    "name": "tomli-w"
+}

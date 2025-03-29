@@ -1,0 +1,15 @@
+--- p11-kit-0.23.1/common/message.c.1	2016-11-09 11:18:36.130262007 +0300
++++ p11-kit-0.23.1/common/message.c	2016-11-09 11:18:47.618258145 +0300
+@@ -37,12 +37,6 @@
+ 
+ #include "config.h"
+ 
+-/*
+- * Oh god. glibc is nasty. Changes behavior and definitions of POSIX
+- * functions to completely different signatures depending on defines
+- */
+-#define _POSIX_C_SOURCE 200112L
+-
+ #include "compat.h"
+ #define P11_DEBUG_FLAG P11_DEBUG_LIB
+ #include "debug.h"

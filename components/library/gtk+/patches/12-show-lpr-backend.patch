@@ -1,0 +1,29 @@
+--- gtk+-2.24.33/gtk/Makefile.am.orig
++++ gtk+-2.24.33/gtk/Makefile.am
+@@ -20,13 +20,13 @@
+ DIST_SUBDIRS=theme-bits tests
+ 
+ if HAVE_PAPI_CUPS
+-GTK_PRINT_BACKENDS=file,papi,cups
++GTK_PRINT_BACKENDS=file,papi,cups,lpr
+ else
+ if HAVE_CUPS
+-GTK_PRINT_BACKENDS=file,cups
++GTK_PRINT_BACKENDS=file,cups,lpr
+ else
+ if HAVE_PAPI
+-GTK_PRINT_BACKENDS=file,papi
++GTK_PRINT_BACKENDS=file,papi,lpr
+ else
+ GTK_PRINT_BACKENDS=file,lpr
+ endif
+--- gtk+-2.24.33/modules/printbackends/lpr/gtkprintbackendlpr.c.orig
++++ gtk+-2.24.33/modules/printbackends/lpr/gtkprintbackendlpr.c
+@@ -398,7 +398,6 @@
+   gtk_printer_set_has_details (printer, TRUE);
+   gtk_printer_set_icon_name (printer, "gtk-print");
+   gtk_printer_set_is_active (printer, TRUE);
+-  gtk_printer_set_is_default (printer, TRUE);
+ 
+   gtk_print_backend_add_printer (GTK_PRINT_BACKEND (backend), printer);
+   g_object_unref (printer);

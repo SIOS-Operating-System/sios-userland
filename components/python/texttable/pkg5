@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/texttable-39",
+        "library/python/texttable"
+    ],
+    "name": "texttable"
+}

@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/hatchling-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/urllib3-39",
+        "library/python/urllib3"
+    ],
+    "name": "urllib3"
+}

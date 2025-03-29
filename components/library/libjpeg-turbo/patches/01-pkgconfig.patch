@@ -1,0 +1,20 @@
+Always link to the right JPEG implementation
+
+--- libjpeg-turbo-3.1.0/release/libjpeg.pc.in.orig
++++ libjpeg-turbo-3.1.0/release/libjpeg.pc.in
+@@ -6,5 +6,5 @@
+ Name: libjpeg
+ Description: A SIMD-accelerated JPEG codec that provides the libjpeg API
+ Version: @VERSION@
+-Libs: -L${libdir} -ljpeg
++Libs: -L${libdir} -R${libdir} -ljpeg
+ Cflags: -I${includedir}
+--- libjpeg-turbo-3.1.0/release/libturbojpeg.pc.in.orig
++++ libjpeg-turbo-3.1.0/release/libturbojpeg.pc.in
+@@ -6,5 +6,5 @@
+ Name: libturbojpeg
+ Description: A SIMD-accelerated JPEG codec that provides the TurboJPEG API
+ Version: @VERSION@
+-Libs: -L${libdir} -lturbojpeg
++Libs: -L${libdir} -R${libdir} -lturbojpeg
+ Cflags: -I${includedir}

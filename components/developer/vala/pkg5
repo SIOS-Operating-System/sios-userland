@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "image/graphviz",
+        "library/glib2",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "developer/vala"
+    ],
+    "name": "vala"
+}

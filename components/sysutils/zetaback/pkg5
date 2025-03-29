@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "runtime/perl"
+    ],
+    "fmris": [
+        "backup/zetaback"
+    ],
+    "name": "zetaback"
+}

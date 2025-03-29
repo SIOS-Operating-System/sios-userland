@@ -1,0 +1,10 @@
+--- vlc-3.0.20/configure.ac.orig
++++ vlc-3.0.20/configure.ac
+@@ -307,6 +307,7 @@
+     ;;
+   solaris*)
+     SYS=solaris
++    AC_DEFINE([_XOPEN_SOURCE], [600], [POSIX and XPG 6th edition])
+     ;;
+   hpux*)
+     SYS=hpux

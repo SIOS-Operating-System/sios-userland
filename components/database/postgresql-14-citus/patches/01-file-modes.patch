@@ -1,0 +1,10 @@
+--- citus-12.1.7/src/backend/distributed/commands/multi_copy.c.orig
++++ citus-12.1.7/src/backend/distributed/commands/multi_copy.c
+@@ -45,6 +45,7 @@
+ 
+ #include <arpa/inet.h> /* for htons */
+ #include <netinet/in.h> /* for htons */
++#include <sys/stat.h>
+ #include <string.h>
+ 
+ #include "postgres.h"

@@ -1,0 +1,10 @@
+--- stardict-3.0.7/dict/stardict-plugins/stardict-wordnet-plugin/scene.h.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-wordnet-plugin/scene.h
+@@ -27,6 +27,7 @@
+ 
+ #include <cstddef>
+ 
++#include <cstddef>
+ #include "partic.h"
+ #include "spring.h"
+ 

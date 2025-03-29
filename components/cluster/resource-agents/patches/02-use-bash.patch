@@ -1,0 +1,609 @@
+--- resource-agents-4.1.0/heartbeat/anything.orig
++++ resource-agents-4.1.0/heartbeat/anything
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #       OCF Resource Agent compliant resource script.
+ #
+--- resource-agents-4.1.0/heartbeat/apache.orig
++++ resource-agents-4.1.0/heartbeat/apache
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	High-Availability Apache/IBMhttp control script
+ # 
+--- resource-agents-4.1.0/heartbeat/asterisk.orig
++++ resource-agents-4.1.0/heartbeat/asterisk
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # Asterisk
+--- resource-agents-4.1.0/heartbeat/AudibleAlarm.orig
++++ resource-agents-4.1.0/heartbeat/AudibleAlarm
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Startup script for the Audible Alarm
+ #
+--- resource-agents-4.1.0/heartbeat/awseip.orig
++++ resource-agents-4.1.0/heartbeat/awseip
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #    Manage Elastic IP with Pacemaker
+--- resource-agents-4.1.0/heartbeat/awsvip.orig
++++ resource-agents-4.1.0/heartbeat/awsvip
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #    Manage Secondary Private IP with Pacemaker
+--- resource-agents-4.1.0/heartbeat/ClusterMon.orig
++++ resource-agents-4.1.0/heartbeat/ClusterMon
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #	ClusterMon OCF RA.
+--- resource-agents-4.1.0/heartbeat/CTDB.orig
++++ resource-agents-4.1.0/heartbeat/CTDB
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #             OCF Resource Agent for managing CTDB
+ #
+--- resource-agents-4.1.0/heartbeat/db2.orig
++++ resource-agents-4.1.0/heartbeat/db2
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # db2
+ #
+--- resource-agents-4.1.0/heartbeat/Delay.orig
++++ resource-agents-4.1.0/heartbeat/Delay
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # Support:      users@clusterlabs.org
+--- resource-agents-4.1.0/heartbeat/dhcpd.orig
++++ resource-agents-4.1.0/heartbeat/dhcpd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #   Resource Agent for managing dhcpd resources.
+ #
+--- resource-agents-4.1.0/heartbeat/docker.orig
++++ resource-agents-4.1.0/heartbeat/docker
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # The docker HA resource agent creates and launches a docker container
+ # based off a supplied docker image. Containers managed by this agent
+--- resource-agents-4.1.0/heartbeat/Dummy.orig
++++ resource-agents-4.1.0/heartbeat/Dummy
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #	Dummy OCF RA. Does nothing but wait a few seconds, can be
+--- resource-agents-4.1.0/heartbeat/ethmonitor.orig
++++ resource-agents-4.1.0/heartbeat/ethmonitor
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	   OCF Resource Agent compliant script.
+ #	   Monitor the vitality of a local network interface.
+--- resource-agents-4.1.0/heartbeat/Evmsd.orig
++++ resource-agents-4.1.0/heartbeat/Evmsd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	Evmsd OCF RA.
+ #
+--- resource-agents-4.1.0/heartbeat/EvmsSCC.orig
++++ resource-agents-4.1.0/heartbeat/EvmsSCC
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Support:      users@clusterlabs.org
+ # License:      GNU General Public License (GPL)
+--- resource-agents-4.1.0/heartbeat/exportfs.orig
++++ resource-agents-4.1.0/heartbeat/exportfs
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ # exportfs
+ #
+ # Description: Manages nfs exported file system.
+--- resource-agents-4.1.0/heartbeat/Filesystem.orig
++++ resource-agents-4.1.0/heartbeat/Filesystem
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Support:      users@clusterlabs.org
+ # License:      GNU General Public License (GPL)
+--- resource-agents-4.1.0/heartbeat/findif.sh.orig
++++ resource-agents-4.1.0/heartbeat/findif.sh
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ ipcheck_ipv4() {
+   local r1_to_255="([1-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-5])"
+   local r0_to_255="([0-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-5])"
+--- resource-agents-4.1.0/heartbeat/galera.orig
++++ resource-agents-4.1.0/heartbeat/galera
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Copyright (c) 2014 David Vossel <davidvossel@gmail.com>
+ #                    All Rights Reserved.
+--- resource-agents-4.1.0/heartbeat/garbd.orig
++++ resource-agents-4.1.0/heartbeat/garbd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Copyright (c) 2015 Damien Ciabrini <dciabrin@redhat.com>
+ #                    All Rights Reserved.
+--- resource-agents-4.1.0/heartbeat/ICP.orig
++++ resource-agents-4.1.0/heartbeat/ICP
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # 
+ # ICP
+--- resource-agents-4.1.0/heartbeat/ids.orig
++++ resource-agents-4.1.0/heartbeat/ids
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # ids
+--- resource-agents-4.1.0/heartbeat/iface-bridge.orig
++++ resource-agents-4.1.0/heartbeat/iface-bridge
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #       OCF Resource Agent compliant iface-bridge script.
+ #
+--- resource-agents-4.1.0/heartbeat/iface-vlan.orig
++++ resource-agents-4.1.0/heartbeat/iface-vlan
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #       OCF Resource Agent compliant iface-vlan script.
+ #
+--- resource-agents-4.1.0/heartbeat/IPaddr.orig
++++ resource-agents-4.1.0/heartbeat/IPaddr
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # License:      GNU General Public License (GPL) 
+ # Support:      users@clusterlabs.org
+--- resource-agents-4.1.0/heartbeat/IPaddr2.orig
++++ resource-agents-4.1.0/heartbeat/IPaddr2
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	$Id: IPaddr2.in,v 1.24 2006/08/09 13:01:54 lars Exp $
+ #
+--- resource-agents-4.1.0/heartbeat/IPsrcaddr.orig
++++ resource-agents-4.1.0/heartbeat/IPsrcaddr
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	Description:	IPsrcaddr - Preferred source address modification
+ #
+--- resource-agents-4.1.0/heartbeat/iscsi.orig
++++ resource-agents-4.1.0/heartbeat/iscsi
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # iSCSI OCF resource agent
+ # Description: manage iSCSI disks (add/remove) using open-iscsi
+--- resource-agents-4.1.0/heartbeat/jboss.orig
++++ resource-agents-4.1.0/heartbeat/jboss
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Description:  Manages a Jboss Server as an OCF High-Availability
+ #               resource under Heartbeat/LinuxHA control
+--- resource-agents-4.1.0/heartbeat/LinuxSCSI.orig
++++ resource-agents-4.1.0/heartbeat/LinuxSCSI
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # LinuxSCSI
+--- resource-agents-4.1.0/heartbeat/LVM.orig
++++ resource-agents-4.1.0/heartbeat/LVM
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # 
+ # LVM
+--- resource-agents-4.1.0/heartbeat/MailTo.orig
++++ resource-agents-4.1.0/heartbeat/MailTo
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Resource script for MailTo
+ #
+--- resource-agents-4.1.0/heartbeat/mysql.orig
++++ resource-agents-4.1.0/heartbeat/mysql
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # MySQL
+--- resource-agents-4.1.0/heartbeat/mysql-common.sh.orig
++++ resource-agents-4.1.0/heartbeat/mysql-common.sh
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ 
+ #######################################################################
+ 
+--- resource-agents-4.1.0/heartbeat/mysql-proxy.orig
++++ resource-agents-4.1.0/heartbeat/mysql-proxy
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Resource script for MySQL Proxy
+ #
+--- resource-agents-4.1.0/heartbeat/nagios.orig
++++ resource-agents-4.1.0/heartbeat/nagios
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #  License:      GNU General Public License (GPL)
+ #  (c) 2015 T.J. Yang, O. Albrigtsen
+--- resource-agents-4.1.0/heartbeat/named.orig
++++ resource-agents-4.1.0/heartbeat/named
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Description:  Manages a named (Bind) server as an OCF High-Availability
+ #               resource
+--- resource-agents-4.1.0/heartbeat/nfsserver.orig
++++ resource-agents-4.1.0/heartbeat/nfsserver
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ # nfsserver
+ #
+ # Description: Manages nfs server as OCF resource
+--- resource-agents-4.1.0/heartbeat/nginx.orig
++++ resource-agents-4.1.0/heartbeat/nginx
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	High-Availability nginx OCF resource agent
+ # 
+--- resource-agents-4.1.0/heartbeat/oracle.orig
++++ resource-agents-4.1.0/heartbeat/oracle
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # 
+ # oracle
+--- resource-agents-4.1.0/heartbeat/oralsnr.orig
++++ resource-agents-4.1.0/heartbeat/oralsnr
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # 
+ # oralsnr
+--- resource-agents-4.1.0/heartbeat/pgagent.orig
++++ resource-agents-4.1.0/heartbeat/pgagent
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # High-Availability pgagent OCF resource agent
+ #
+--- resource-agents-4.1.0/heartbeat/pgsql.orig
++++ resource-agents-4.1.0/heartbeat/pgsql
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Description:  Manages a PostgreSQL Server as an OCF High-Availability
+ #               resource
+--- resource-agents-4.1.0/heartbeat/pingd.orig
++++ resource-agents-4.1.0/heartbeat/pingd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #	pingd OCF Resource Agent
+--- resource-agents-4.1.0/heartbeat/portblock.orig
++++ resource-agents-4.1.0/heartbeat/portblock
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # portblock: iptables temporary portblocking control 
+ #
+--- resource-agents-4.1.0/heartbeat/postfix.orig
++++ resource-agents-4.1.0/heartbeat/postfix
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Resource script for Postfix
+ #
+--- resource-agents-4.1.0/heartbeat/pound.orig
++++ resource-agents-4.1.0/heartbeat/pound
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # Pound
+--- resource-agents-4.1.0/heartbeat/proftpd.orig
++++ resource-agents-4.1.0/heartbeat/proftpd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Resource script for Proftpd
+ #
+--- resource-agents-4.1.0/heartbeat/Pure-FTPd.orig
++++ resource-agents-4.1.0/heartbeat/Pure-FTPd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Resource script for Pure-FTPd
+ #
+--- resource-agents-4.1.0/heartbeat/rabbitmq-cluster.orig
++++ resource-agents-4.1.0/heartbeat/rabbitmq-cluster
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Copyright (c) 2014 David Vossel <davidvossel@gmail.com>
+ #                    All Rights Reserved.
+--- resource-agents-4.1.0/heartbeat/Raid1.orig
++++ resource-agents-4.1.0/heartbeat/Raid1
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # License:      GNU General Public License (GPL)
+--- resource-agents-4.1.0/heartbeat/Route.orig
++++ resource-agents-4.1.0/heartbeat/Route
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	Route OCF RA. Enables and disables network routes.
+ #
+--- resource-agents-4.1.0/heartbeat/rsyncd.orig
++++ resource-agents-4.1.0/heartbeat/rsyncd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Resource script for rsync daemon
+ #
+--- resource-agents-4.1.0/heartbeat/SAPDatabase.orig
++++ resource-agents-4.1.0/heartbeat/SAPDatabase
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # SAPDatabase
+ #
+--- resource-agents-4.1.0/heartbeat/SAPInstance.orig
++++ resource-agents-4.1.0/heartbeat/SAPInstance
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # SAPInstance
+ #
+--- resource-agents-4.1.0/heartbeat/scsi2reservation.orig
++++ resource-agents-4.1.0/heartbeat/scsi2reservation
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ # by hxinwei@gmail.com
+ # License: GNU General Public License 2 (GPL2)
+ 
+--- resource-agents-4.1.0/heartbeat/SendArp.orig
++++ resource-agents-4.1.0/heartbeat/SendArp
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #	Copyright (c) 2006, Huang Zhen <zhen.huang@gmail.com>
+--- resource-agents-4.1.0/heartbeat/ServeRAID.orig
++++ resource-agents-4.1.0/heartbeat/ServeRAID
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # 
+ # ServeRAID
+--- resource-agents-4.1.0/heartbeat/sfex.orig
++++ resource-agents-4.1.0/heartbeat/sfex
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #       Shared Disk File EXclusiveness (SF-EX) OCF RA. 
+ #       prevent a destruction of data on shared disk file system 
+--- resource-agents-4.1.0/heartbeat/SphinxSearchDaemon.orig
++++ resource-agents-4.1.0/heartbeat/SphinxSearchDaemon
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #	Searchd OCF RA. 
+--- resource-agents-4.1.0/heartbeat/Stateful.orig
++++ resource-agents-4.1.0/heartbeat/Stateful
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #	Example of a stateful OCF Resource Agent.
+--- resource-agents-4.1.0/heartbeat/symlink.orig
++++ resource-agents-4.1.0/heartbeat/symlink
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #   An OCF RA that manages a symlink
+--- resource-agents-4.1.0/heartbeat/tomcat.orig
++++ resource-agents-4.1.0/heartbeat/tomcat
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Description:  Manages a Tomcat Server as an OCF High-Availability
+ #               resource under Heartbeat/LinuxHA control
+--- resource-agents-4.1.0/heartbeat/varnish.orig
++++ resource-agents-4.1.0/heartbeat/varnish
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # Varnish
+--- resource-agents-4.1.0/heartbeat/VIPArip.orig
++++ resource-agents-4.1.0/heartbeat/VIPArip
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # 	License:	GNU General Public License (GPL) 
+ # 	Support:	users@clusterlabs.org
+--- resource-agents-4.1.0/heartbeat/VirtualDomain.orig
++++ resource-agents-4.1.0/heartbeat/VirtualDomain
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Support:	  users@clusterlabs.org
+ # License:	  GNU General Public License (GPL)
+--- resource-agents-4.1.0/heartbeat/vmware.orig
++++ resource-agents-4.1.0/heartbeat/vmware
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # VMware OCF resource agent
+ #
+--- resource-agents-4.1.0/heartbeat/WAS.orig
++++ resource-agents-4.1.0/heartbeat/WAS
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # 
+ # WAS
+--- resource-agents-4.1.0/heartbeat/WAS6.orig
++++ resource-agents-4.1.0/heartbeat/WAS6
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ # WAS6 
+ #
+ # Description:  Manages a Websphere Application Server as an HA resource
+--- resource-agents-4.1.0/heartbeat/WinPopup.orig
++++ resource-agents-4.1.0/heartbeat/WinPopup
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Resource script for sending WinPopups using smbclient
+ # derived from Alan Robertson's MailTo script
+--- resource-agents-4.1.0/heartbeat/Xen.orig
++++ resource-agents-4.1.0/heartbeat/Xen
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ # Support:      users@clusterlabs.org
+--- resource-agents-4.1.0/heartbeat/Xinetd.orig
++++ resource-agents-4.1.0/heartbeat/Xinetd
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ # Startup/shutdown script for services managed by xinetd.
+ #
+--- resource-agents-4.1.0/heartbeat/zabbixserver.orig
++++ resource-agents-4.1.0/heartbeat/zabbixserver
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #
+ #   zabbixserver OCF RA for zabbix_server daemon
+--- resource-agents-4.1.0/tools/ocf-tester.in.orig
++++ resource-agents-4.1.0/tools/ocf-tester.in
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/bash
+ #
+ #	$Id: ocf-tester,v 1.2 2006/08/14 09:38:20 andrew Exp $
+ #
+@@ -216,7 +216,7 @@
+ test_permissions() {
+     action=meta-data
+     debug ${1:-"Testing permissions with uid nobody"}
+-    su nobody -s /bin/sh -c "$agent $action" > /dev/null
++    su nobody -s /usr/bin/bash -c "$agent $action" > /dev/null
+ }
+ 
+ test_metadata() {

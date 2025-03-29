@@ -1,0 +1,11 @@
+--- schroedinger-1.0.11/Makefile.in.orig
++++ schroedinger-1.0.11/Makefile.in
+@@ -291,7 +291,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+-SUBDIRS = schroedinger doc tools testsuite
++SUBDIRS = schroedinger doc tools
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+ DIST_SUBDIRS = schroedinger doc tools testsuite
+ EXTRA_DIST = COPYING COPYING.GPL COPYING.LGPL COPYING.MIT COPYING.MPL \

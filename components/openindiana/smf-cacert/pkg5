@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "shell/ksh93"
+    ],
+    "fmris": [
+        "system/ca-certificates"
+    ],
+    "name": "smf-cacert"
+}

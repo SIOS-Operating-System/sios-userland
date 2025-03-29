@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/sdl"
+    ],
+    "name": "SDL"
+}

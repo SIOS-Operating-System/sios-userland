@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "system/library",
+        "x11/library/libx11"
+    ],
+    "fmris": [
+        "x11/library/libxfixes"
+    ],
+    "name": "libXfixes"
+}

@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/hatchling-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/jsonrpclib-pelix",
+        "library/python/jsonrpclib-pelix-39"
+    ],
+    "name": "jsonrpclib_pelix"
+}

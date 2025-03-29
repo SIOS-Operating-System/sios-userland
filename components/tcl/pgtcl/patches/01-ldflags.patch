@@ -1,0 +1,13 @@
+--- Pgtcl-2.6.3/configure.in.1	2019-11-22 12:51:03.519783323 +0000
++++ Pgtcl-2.6.3/configure.in	2019-11-22 12:54:16.937889276 +0000
+@@ -108,8 +108,8 @@
+ LIBPG=""
+ PG_INCLUDES="-I$PG_INC_DIR"
+ PKG_INCLUDES="-I$PG_INC_DIR"
+-PG_LIBS="-L$PG_LIB_DIR -lpq"
+-PKG_LIBS="-L$PG_LIB_DIR -lpq"
++PG_LIBS="-L$PG_LIB_DIR -R$PG_LIB_DIR -lpq"
++PKG_LIBS="-L$PG_LIB_DIR -R$PG_LIB_DIR -lpq"
+ if test ! "$PG_LIB_DIR" = ""; then
+     LIBPG="libpq${SHLIB_SUFFIX}"
+ fi

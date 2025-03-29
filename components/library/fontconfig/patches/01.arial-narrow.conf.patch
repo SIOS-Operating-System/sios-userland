@@ -1,0 +1,27 @@
+--- fontconfig-2.16.0/conf.d/30-metric-aliases.conf.orig
++++ fontconfig-2.16.0/conf.d/30-metric-aliases.conf
+@@ -646,13 +646,22 @@
+ 	  <accept>
+ 	    <family>Carlito</family>
+ 	  </accept>
+-  </alias>
++  	</alias>
+ 
+ 	<alias binding="same">
+ 	  <family>Symbol</family>
+ 	  <accept>
+ 	    <family>SymbolNeu</family>
+ 	  </accept>
+-  </alias>
++  	</alias>
++
++        <!-- StarOffice formerly included Arial Narrow - Solaris includes Arial Narrow MT instead. -->
++        <alias>
++          <family>Arial Narrow</family>
++            <accept>
++              <family>Arial Narrow MT</family>
++              <family>Nimbus Sans L Condensed</family>
++            </accept>
++        </alias>
+ 
+ </fontconfig>

@@ -1,0 +1,260 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Reworked from initial solaris-userland manifest
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+<transform link mediator=openssl -> default mediator-priority vendor>
+<transform link mediator=openssl -> default mediator-implementation openssl>
+<transform link mediator=openssl -> default mediator-version 1.0>
+
+### Basic directories, links, and a configuration file.
+dir  path=etc/openssl/certs group=sys
+file path=etc/openssl/openssl.cnf group=sys mode=0644 preserve=true
+dir  path=etc/openssl/private group=sys mode=0700
+# Default configuration
+file etc/openssl/openssl.cnf path=etc/openssl/1.0/openssl.cnf group=sys mode=0644 preserve=true
+# Mediated link
+link path=etc/openssl/default target=1.0 mediator=openssl
+# Compatibility links
+link path=etc/sfw/openssl target=../openssl
+
+### Libraries
+<transform file path=lib/.*\.so.* -> default mode 0555>
+<transform file path=lib/.*\.so.* -> default group bin>
+<transform file path=lib/.*\.so.* -> default owner root>
+# OpenSSL 0.9.8 libraries
+file path=lib/$(MACH64)/libcrypto.so.0.9.8
+file path=lib/$(MACH64)/libssl.so.0.9.8
+file path=lib/libcrypto.so.0.9.8
+file path=lib/libssl.so.0.9.8
+link path=usr/lib/$(MACH64)/libcrypto.so.0.9.8 target=../../../lib/$(MACH64)/libcrypto.so.0.9.8
+link path=usr/lib/$(MACH64)/libssl.so.0.9.8 target=../../../lib/$(MACH64)/libssl.so.0.9.8
+link path=usr/lib/libcrypto.so.0.9.8 target=../../lib/libcrypto.so.0.9.8
+link path=usr/lib/libssl.so.0.9.8 target=../../lib/libssl.so.0.9.8
+# OpenSSL 1.0.2 libraries
+link path=lib/$(MACH64)/libcrypto.so.1.0.0 target=../../usr/openssl/1.0/lib/$(MACH64)/libcrypto.so.1.0.0
+link path=lib/$(MACH64)/libssl.so.1.0.0 target=../../usr/openssl/1.0/lib/$(MACH64)/libssl.so.1.0.0
+link path=lib/libcrypto.so.1.0.0 target=../usr/openssl/1.0/lib/libcrypto.so.1.0.0
+link path=lib/libssl.so.1.0.0 target=../usr/openssl/1.0/lib/libssl.so.1.0.0
+link path=usr/lib/$(MACH64)/libcrypto.so.1.0.0 target=../../openssl/1.0/lib/$(MACH64)/libcrypto.so.1.0.0
+link path=usr/lib/$(MACH64)/libssl.so.1.0.0 target=../../openssl/1.0/lib/$(MACH64)/libssl.so.1.0.0
+link path=usr/lib/libcrypto.so.1.0.0 target=../openssl/1.0/lib/libcrypto.so.1.0.0
+link path=usr/lib/libssl.so.1.0.0 target=../openssl/1.0/lib/libssl.so.1.0.0
+# Mediated links in /lib
+link path=lib/$(MACH64)/libcrypto.so target=libcrypto.so.1.0.0 mediator=openssl
+link path=lib/$(MACH64)/libssl.so target=libssl.so.1.0.0 mediator=openssl
+link path=lib/libcrypto.so target=libcrypto.so.1.0.0 mediator=openssl
+link path=lib/libssl.so target=libssl.so.1.0.0 mediator=openssl
+# Mediated links in /usr/lib
+link path=usr/lib/$(MACH64)/libcrypto.so target=libcrypto.so.1.0.0 mediator=openssl
+link path=usr/lib/$(MACH64)/libssl.so target=libssl.so.1.0.0 mediator=openssl
+link path=usr/lib/libcrypto.so target=libcrypto.so.1.0.0 mediator=openssl
+link path=usr/lib/libssl.so target=libssl.so.1.0.0 mediator=openssl
+
+# Default directory (compatibility)
+link path=lib/openssl/default target=../../usr/openssl/1.0/lib
+
+# Engines directory (compatibility)
+link path=lib/openssl/engines target=../../usr/openssl/1.0/lib/engines
+
+# OpenSSL binaries
+<transform file path=usr/openssl/1.0/bin/.* -> default mode 0555>
+<transform file path=usr/openssl/1.0/bin/.* -> default group bin>
+<transform file path=usr/openssl/1.0/bin/.* -> default owner root>
+file path=usr/openssl/1.0/bin/openssl
+file $(MACH32)/apps/openssl path=usr/openssl/1.0/bin/$(MACH32)/openssl
+file path=usr/openssl/1.0/bin/c_rehash
+file etc/openssl/misc/CA.pl path=usr/openssl/1.0/bin/CA.pl
+# Compatibility link
+link path=usr/openssl/1.0/lib/CA.pl target=../bin/CA.pl
+
+# Mediator links for the tools 
+link path=usr/bin/$(MACH32)/openssl \
+    target=../../openssl/1.0/bin/$(MACH32)/openssl mediator=openssl
+link path=usr/bin/openssl target=../openssl/1.0/bin/openssl \
+    mediator=openssl
+link path=usr/bin/c_rehash target=../openssl/1.0/bin/c_rehash \
+    mediator=openssl
+link path=usr/bin/CA.pl target=../openssl/1.0/bin/CA.pl \
+    mediator=openssl
+
+# Compatibility links
+link path=usr/sfw/bin/$(MACH64)/openssl target=../../../bin/openssl
+link path=usr/sfw/bin/openssl target=../../bin/openssl
+
+# Mediator link to header files
+link path=usr/include/openssl target=../openssl/1.0/include/openssl mediator=openssl
+
+# Header files.
+file path=usr/openssl/1.0/include/openssl/aes.h
+file path=usr/openssl/1.0/include/openssl/asn1.h
+file path=usr/openssl/1.0/include/openssl/asn1_mac.h
+file path=usr/openssl/1.0/include/openssl/asn1t.h
+file path=usr/openssl/1.0/include/openssl/bio.h
+file path=usr/openssl/1.0/include/openssl/blowfish.h
+file path=usr/openssl/1.0/include/openssl/bn.h
+file path=usr/openssl/1.0/include/openssl/buffer.h
+file path=usr/openssl/1.0/include/openssl/camellia.h
+file path=usr/openssl/1.0/include/openssl/cast.h
+file path=usr/openssl/1.0/include/openssl/cmac.h
+file path=usr/openssl/1.0/include/openssl/cms.h
+file path=usr/openssl/1.0/include/openssl/comp.h
+file path=usr/openssl/1.0/include/openssl/conf.h
+file path=usr/openssl/1.0/include/openssl/conf_api.h
+file path=usr/openssl/1.0/include/openssl/crypto.h
+file path=usr/openssl/1.0/include/openssl/des.h
+file path=usr/openssl/1.0/include/openssl/des_old.h
+file path=usr/openssl/1.0/include/openssl/dh.h
+file path=usr/openssl/1.0/include/openssl/dsa.h
+file path=usr/openssl/1.0/include/openssl/dso.h
+file path=usr/openssl/1.0/include/openssl/dtls1.h
+file path=usr/openssl/1.0/include/openssl/e_os2.h
+file path=usr/openssl/1.0/include/openssl/ebcdic.h
+file path=usr/openssl/1.0/include/openssl/ec.h
+file path=usr/openssl/1.0/include/openssl/ecdh.h
+file path=usr/openssl/1.0/include/openssl/ecdsa.h
+file path=usr/openssl/1.0/include/openssl/engine.h
+file path=usr/openssl/1.0/include/openssl/err.h
+file path=usr/openssl/1.0/include/openssl/evp.h
+file path=usr/openssl/1.0/include/openssl/hmac.h
+file path=usr/openssl/1.0/include/openssl/krb5_asn.h
+file path=usr/openssl/1.0/include/openssl/kssl.h
+file path=usr/openssl/1.0/include/openssl/lhash.h
+file path=usr/openssl/1.0/include/openssl/md2.h
+file path=usr/openssl/1.0/include/openssl/md4.h
+file path=usr/openssl/1.0/include/openssl/md5.h
+file path=usr/openssl/1.0/include/openssl/modes.h
+file path=usr/openssl/1.0/include/openssl/obj_mac.h
+file path=usr/openssl/1.0/include/openssl/objects.h
+file path=usr/openssl/1.0/include/openssl/ocsp.h
+# Only the 32-bit header file is patched for multilib
+file $(MACH32)/include/openssl/opensslconf.h path=usr/openssl/1.0/include/openssl/opensslconf.h
+file path=usr/openssl/1.0/include/openssl/opensslv.h
+file path=usr/openssl/1.0/include/openssl/ossl_typ.h
+file path=usr/openssl/1.0/include/openssl/pem.h
+file path=usr/openssl/1.0/include/openssl/pem2.h
+file path=usr/openssl/1.0/include/openssl/pkcs12.h
+file path=usr/openssl/1.0/include/openssl/pkcs7.h
+file path=usr/openssl/1.0/include/openssl/pqueue.h
+file path=usr/openssl/1.0/include/openssl/rand.h
+file path=usr/openssl/1.0/include/openssl/rc2.h
+file path=usr/openssl/1.0/include/openssl/rc4.h
+file path=usr/openssl/1.0/include/openssl/ripemd.h
+file path=usr/openssl/1.0/include/openssl/rsa.h
+file path=usr/openssl/1.0/include/openssl/safestack.h
+file path=usr/openssl/1.0/include/openssl/sha.h
+file path=usr/openssl/1.0/include/openssl/srp.h
+file path=usr/openssl/1.0/include/openssl/srtp.h
+file path=usr/openssl/1.0/include/openssl/ssl.h
+file path=usr/openssl/1.0/include/openssl/ssl2.h
+file path=usr/openssl/1.0/include/openssl/ssl23.h
+file path=usr/openssl/1.0/include/openssl/ssl3.h
+file path=usr/openssl/1.0/include/openssl/stack.h
+file path=usr/openssl/1.0/include/openssl/symhacks.h
+file path=usr/openssl/1.0/include/openssl/tls1.h
+file path=usr/openssl/1.0/include/openssl/ts.h
+file path=usr/openssl/1.0/include/openssl/txt_db.h
+file path=usr/openssl/1.0/include/openssl/ui.h
+file path=usr/openssl/1.0/include/openssl/ui_compat.h
+file path=usr/openssl/1.0/include/openssl/x509.h
+file path=usr/openssl/1.0/include/openssl/x509_vfy.h
+file path=usr/openssl/1.0/include/openssl/x509v3.h
+
+# Libraries
+<transform file path=usr/openssl/1.0/.*/engines/.*\.so -> default mode 0555>
+<transform file path=usr/openssl/1.0/.*/engines/.*\.so -> default group bin>
+<transform file path=usr/openssl/1.0/.*/engines/.*\.so -> default owner root>
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/lib4758cca.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libaep.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libatalla.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libcapi.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libchil.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libcswift.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libgmp.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libgost.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libnuron.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libpadlock.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libpk11.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libsureware.so
+file path=usr/openssl/1.0/lib/$(MACH64)/engines/libubsec.so
+#file path=usr/openssl/1.0/lib/$(MACH64)/libcrypto.a
+link path=usr/openssl/1.0/lib/$(MACH64)/libcrypto.so target=libcrypto.so.1.0.0
+file path=usr/openssl/1.0/lib/$(MACH64)/libcrypto.so.1.0.0
+#file path=usr/openssl/1.0/lib/$(MACH64)/libssl.a
+link path=usr/openssl/1.0/lib/$(MACH64)/libssl.so target=libssl.so.1.0.0
+file path=usr/openssl/1.0/lib/$(MACH64)/libssl.so.1.0.0
+file path=usr/openssl/1.0/lib/$(MACH64)/pkgconfig/libcrypto.pc
+file path=usr/openssl/1.0/lib/$(MACH64)/pkgconfig/libssl.pc
+file path=usr/openssl/1.0/lib/$(MACH64)/pkgconfig/openssl.pc
+file path=usr/openssl/1.0/lib/engines/lib4758cca.so
+file path=usr/openssl/1.0/lib/engines/libaep.so
+file path=usr/openssl/1.0/lib/engines/libatalla.so
+file path=usr/openssl/1.0/lib/engines/libcapi.so
+file path=usr/openssl/1.0/lib/engines/libchil.so
+file path=usr/openssl/1.0/lib/engines/libcswift.so
+file path=usr/openssl/1.0/lib/engines/libgmp.so
+file path=usr/openssl/1.0/lib/engines/libgost.so
+file path=usr/openssl/1.0/lib/engines/libnuron.so
+file path=usr/openssl/1.0/lib/engines/libpadlock.so
+file path=usr/openssl/1.0/lib/engines/libpk11.so
+file path=usr/openssl/1.0/lib/engines/libsureware.so
+file path=usr/openssl/1.0/lib/engines/libubsec.so
+#file path=usr/openssl/1.0/lib/libcrypto.a
+link path=usr/openssl/1.0/lib/libcrypto.so target=libcrypto.so.1.0.0
+file path=usr/openssl/1.0/lib/libcrypto.so.1.0.0
+#file path=usr/openssl/1.0/lib/libssl.a
+link path=usr/openssl/1.0/lib/libssl.so target=libssl.so.1.0.0
+file path=usr/openssl/1.0/lib/libssl.so.1.0.0
+file path=usr/openssl/1.0/lib/pkgconfig/libcrypto.pc
+file path=usr/openssl/1.0/lib/pkgconfig/libssl.pc
+file path=usr/openssl/1.0/lib/pkgconfig/openssl.pc
+
+# Add symlink to subdirectories for compatibilty
+link path=usr/openssl/1.0/lib/32 target=.
+link path=usr/openssl/1.0/lib/64 target=$(MACH64)
+link path=usr/openssl/1.0/lib/engines/$(MACH64) target=../$(MACH64)/engines
+link path=usr/openssl/1.0/lib/engines/64 target=../$(MACH64)/engines
+
+# Add compatibility symlinks
+link path=usr/openssl/1.0/lib/openssl target=../bin/openssl
+link path=usr/openssl/1.0/lib/$(MACH32)/openssl target=../../bin/$(MACH32)/openssl
+
+# Mediated pkg-config files links
+link path=usr/lib/$(MACH64)/pkgconfig/libcrypto.pc \
+	target=../../../openssl/1.0/lib/$(MACH64)/pkgconfig/libcrypto.pc mediator=openssl
+link path=usr/lib/$(MACH64)/pkgconfig/libssl.pc \
+	target=../../../openssl/1.0/lib/$(MACH64)/pkgconfig/libssl.pc mediator=openssl
+link path=usr/lib/$(MACH64)/pkgconfig/openssl.pc \
+	target=../../../openssl/1.0/lib/$(MACH64)/pkgconfig/openssl.pc mediator=openssl
+link path=usr/lib/pkgconfig/libcrypto.pc \
+	target=../../openssl/1.0/lib/pkgconfig/libcrypto.pc mediator=openssl
+link path=usr/lib/pkgconfig/libssl.pc \
+	target=../../openssl/1.0/lib/pkgconfig/libssl.pc mediator=openssl
+link path=usr/lib/pkgconfig/openssl.pc \
+	target=../../openssl/1.0/lib/pkgconfig/openssl.pc mediator=openssl
+
+<include openssl-1.0.2.manpages> 
+
+# force a dependency on the Perl runtime
+depend type=require fmri=__TBD pkg.debug.depend.file=perl \
+    pkg.debug.depend.path=usr/bin

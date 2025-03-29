@@ -1,0 +1,11 @@
+--- vlc-3.0.20/modules/services_discovery/mtp.c.orig
++++ vlc-3.0.20/modules/services_discovery/mtp.c
+@@ -31,6 +31,8 @@
+ 
+ #include <libmtp.h>
+ 
++#include <strings.h>
++
+ /*****************************************************************************
+  * Module descriptor
+  *****************************************************************************/

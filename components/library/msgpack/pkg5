@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "library/msgpack"
+    ],
+    "name": "msgpack"
+}

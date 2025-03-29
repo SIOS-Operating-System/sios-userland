@@ -1,0 +1,10 @@
+--- sloccount-2.26/makefile.orig
++++ sloccount-2.26/makefile
+@@ -242,6 +242,6 @@
+ 	echo "Use rpm -e $(NAME) to remove the package"
+ 
+ test: all
+-	PATH=.:${PATH}; sloccount testcode
++	@PATH=$(shell pwd):${PATH} ./sloccount testcode
+ 
+ 

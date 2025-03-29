@@ -1,0 +1,18 @@
+{
+    "dependencies": [
+        "database/mariadb-106/library",
+        "database/postgres-15/developer",
+        "database/postgres-15/library",
+        "library/glib2",
+        "library/libusb-1",
+        "shell/bash",
+        "system/library",
+        "system/library/math",
+        "utility/bash-completion",
+        "web/curl"
+    ],
+    "fmris": [
+        "utility/gammu"
+    ],
+    "name": "gammu"
+}

@@ -1,0 +1,218 @@
+--- stardict-3.0.7/dict/stardict-plugins/stardict-dictdotcn-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-dictdotcn-plugin/Makefile.am
+@@ -3,7 +3,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_dictdotcn.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_dictdotcn.v"
+ endif
+ 
+ noinst_HEADERS = stardict_dictdotcn.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-espeak-tts-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-espeak-tts-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_espeak.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_espeak.v"
+ endif
+ 
+ noinst_HEADERS = stardict_espeak.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-festival-tts-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-festival-tts-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_festival.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_festival.v"
+ endif
+ 
+ noinst_HEADERS = stardict_festival.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-gucharmap-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-gucharmap-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_gucharmap.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_gucharmap.v"
+ endif
+ 
+ noinst_HEADERS = stardict_gucharmap.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-html-parsedata-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-html-parsedata-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_html_parsedata.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_html_parsedata.v"
+ endif
+ 
+ noinst_HEADERS = stardict_html_parsedata.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-man-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-man-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_man.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_man.v"
+ endif
+ 
+ noinst_HEADERS = stardict_man.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-powerword-parsedata-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-powerword-parsedata-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_powerword_parsedata.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_powerword_parsedata.v"
+ endif
+ 
+ noinst_HEADERS = stardict_powerword_parsedata.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-qqwry-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-qqwry-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_qqwry.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_qqwry.v"
+ endif
+ 
+ noinst_HEADERS = stardict_qqwry.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-spell-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-spell-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_spell.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_spell.v"
+ endif
+ 
+ noinst_HEADERS = stardict_spell.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-update-info-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-update-info-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_update_info.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_update_info.v"
+ endif
+ 
+ noinst_HEADERS = stardict_update_info.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-wiki-parsedata-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-wiki-parsedata-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_wiki_parsedata.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_wiki_parsedata.v"
+ endif
+ 
+ noinst_HEADERS = stardict_wiki_parsedata.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-wordnet-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-wordnet-plugin/Makefile.am
+@@ -5,7 +5,7 @@
+ if DARWIN_SUPPORT
+ WORDNET_LD_VERSION_SCRIPT_OPTION=
+ else
+-WORDNET_LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_wordnet.v"
++WORDNET_LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_wordnet.v"
+ endif
+ 
+ stardict_wordnet_LTLIBRARIES = stardict_wordnet.la
+@@ -25,7 +25,7 @@
+ if DARWIN_SUPPORT
+ WORDNET_PARSEDATA_LD_VERSION_SCRIPT_OPTION=
+ else
+-WORDNET_PARSEDATA_LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_wordnet_parsedata.v"
++WORDNET_PARSEDATA_LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_wordnet_parsedata.v"
+ endif
+ 
+ stardict_wordnet_parsedata_LTLIBRARIES = stardict_wordnet_parsedata.la
+--- stardict-3.0.7/dict/stardict-plugins/stardict-xdxf-parsedata-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-xdxf-parsedata-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_xdxf_parsedata.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_xdxf_parsedata.v"
+ endif
+ 
+ noinst_HEADERS = stardict_xdxf_parsedata.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-youdaodict-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-youdaodict-plugin/Makefile.am
+@@ -3,7 +3,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_youdaodict.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_youdaodict.v"
+ endif
+ 
+ noinst_HEADERS = stardict_youdaodict.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-customdict-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-customdict-plugin/Makefile.am
+@@ -5,7 +5,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/customdict.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/customdict.v"
+ endif
+ 
+ noinst_HEADERS = customdict.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-info-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-info-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_info.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_info.v"
+ endif
+ 
+ noinst_HEADERS = stardict_info.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-fortune-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-fortune-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_fortune.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_fortune.v"
+ endif
+ 
+ noinst_HEADERS = stardict_fortune.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-cal-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-cal-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_cal.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_cal.v"
+ endif
+ 
+ noinst_HEADERS = stardict_cal.h
+--- stardict-3.0.7/dict/stardict-plugins/stardict-multi-cmd-plugin/Makefile.am.orig
++++ stardict-3.0.7/dict/stardict-plugins/stardict-multi-cmd-plugin/Makefile.am
+@@ -4,7 +4,7 @@
+ if DARWIN_SUPPORT
+ LD_VERSION_SCRIPT_OPTION=
+ else
+-LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/stardict_multi_cmd.v"
++LD_VERSION_SCRIPT_OPTION="-export-symbols $(srcdir)/stardict_multi_cmd.v"
+ endif
+ 
+ noinst_HEADERS = stardict_multi_cmd.h

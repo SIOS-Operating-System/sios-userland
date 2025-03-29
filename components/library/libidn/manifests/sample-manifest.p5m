@@ -1,0 +1,215 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2023 <contributor>
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/bin/idn
+file path=usr/include/idn/idn-free.h
+file path=usr/include/idn/idn-int.h
+file path=usr/include/idn/idna.h
+file path=usr/include/idn/pr29.h
+file path=usr/include/idn/punycode.h
+file path=usr/include/idn/stringprep.h
+file path=usr/include/idn/tld.h
+link path=usr/lib/$(MACH64)/libidn.so target=libidn.so.12.6.1
+link path=usr/lib/$(MACH64)/libidn.so.12 target=libidn.so.12.6.1
+file path=usr/lib/$(MACH64)/libidn.so.12.6.1
+file path=usr/lib/$(MACH64)/pkgconfig/libidn.pc
+file path=usr/share/doc/idn/html/libidn-components.png
+file path=usr/share/doc/idn/html/libidn.html
+file path=usr/share/doc/idn/java/Makefile.am
+file path=usr/share/doc/idn/java/Makefile.in
+file path=usr/share/doc/idn/java/html/allclasses-frame.html
+file path=usr/share/doc/idn/java/html/allclasses-index.html
+file path=usr/share/doc/idn/java/html/allclasses-noframe.html
+file path=usr/share/doc/idn/java/html/allclasses.html
+file path=usr/share/doc/idn/java/html/allpackages-index.html
+file path=usr/share/doc/idn/java/html/constant-values.html
+file path=usr/share/doc/idn/java/html/deprecated-list.html
+file path=usr/share/doc/idn/java/html/element-list
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/CombiningClass.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/Composition.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/DecompositionKeys.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/DecompositionMappings.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/IDNA.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/IDNAException.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/NFKC.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/Punycode.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/PunycodeException.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/RFC3454.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/RangeSet.Builder.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/RangeSet.Range.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/RangeSet.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/Stringprep.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/StringprepException.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/package-frame.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/package-summary.html
+file path=usr/share/doc/idn/java/html/gnu/inet/encoding/package-tree.html
+file path=usr/share/doc/idn/java/html/help-doc.html
+file path=usr/share/doc/idn/java/html/index-all.html
+file path=usr/share/doc/idn/java/html/index.html
+file path=usr/share/doc/idn/java/html/jquery/external/jquery/jquery.js
+file path=usr/share/doc/idn/java/html/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-bg_glass_65_dadada_1x400.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-bg_glass_75_dadada_1x400.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-bg_glass_95_fef1ec_1x400.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-icons_222222_256x240.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-icons_2e83ff_256x240.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-icons_454545_256x240.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-icons_888888_256x240.png
+file path=usr/share/doc/idn/java/html/jquery/images/ui-icons_cd0a0a_256x240.png
+file path=usr/share/doc/idn/java/html/jquery/jquery-3.3.1.js
+file path=usr/share/doc/idn/java/html/jquery/jquery-migrate-3.0.1.js
+file path=usr/share/doc/idn/java/html/jquery/jquery-ui.css
+file path=usr/share/doc/idn/java/html/jquery/jquery-ui.js
+file path=usr/share/doc/idn/java/html/jquery/jquery-ui.min.css
+file path=usr/share/doc/idn/java/html/jquery/jquery-ui.min.js
+file path=usr/share/doc/idn/java/html/jquery/jquery-ui.structure.css
+file path=usr/share/doc/idn/java/html/jquery/jquery-ui.structure.min.css
+file path=usr/share/doc/idn/java/html/jquery/jszip-utils/dist/jszip-utils-ie.js
+file path=usr/share/doc/idn/java/html/jquery/jszip-utils/dist/jszip-utils-ie.min.js
+file path=usr/share/doc/idn/java/html/jquery/jszip-utils/dist/jszip-utils.js
+file path=usr/share/doc/idn/java/html/jquery/jszip-utils/dist/jszip-utils.min.js
+file path=usr/share/doc/idn/java/html/jquery/jszip/dist/jszip.js
+file path=usr/share/doc/idn/java/html/jquery/jszip/dist/jszip.min.js
+file path=usr/share/doc/idn/java/html/member-search-index.js
+file path=usr/share/doc/idn/java/html/member-search-index.zip
+file path=usr/share/doc/idn/java/html/overview-tree.html
+file path=usr/share/doc/idn/java/html/package-list
+file path=usr/share/doc/idn/java/html/package-search-index.js
+file path=usr/share/doc/idn/java/html/package-search-index.zip
+file path=usr/share/doc/idn/java/html/resources/glass.png
+file path=usr/share/doc/idn/java/html/resources/x.png
+file path=usr/share/doc/idn/java/html/script.js
+file path=usr/share/doc/idn/java/html/search.js
+file path=usr/share/doc/idn/java/html/serialized-form.html
+file path=usr/share/doc/idn/java/html/stylesheet.css
+file path=usr/share/doc/idn/java/html/type-search-index.js
+file path=usr/share/doc/idn/java/html/type-search-index.zip
+file path=usr/share/doc/idn/libidn-components.pdf
+file path=usr/share/doc/idn/libidn.pdf
+file path=usr/share/doc/idn/tld/ac.tld
+file path=usr/share/doc/idn/tld/at.tld
+file path=usr/share/doc/idn/tld/biz.tld
+file path=usr/share/doc/idn/tld/br.tld
+file path=usr/share/doc/idn/tld/ch.tld
+file path=usr/share/doc/idn/tld/de.tld
+file path=usr/share/doc/idn/tld/dk.tld
+file path=usr/share/doc/idn/tld/fr.tld
+file path=usr/share/doc/idn/tld/hu.tld
+file path=usr/share/doc/idn/tld/info.tld
+file path=usr/share/doc/idn/tld/io.tld
+file path=usr/share/doc/idn/tld/li.tld
+file path=usr/share/doc/idn/tld/no.tld
+file path=usr/share/doc/idn/tld/org.tld
+file path=usr/share/doc/idn/tld/pl.tld
+file path=usr/share/doc/idn/tld/se.tld
+file path=usr/share/doc/idn/tld/sh.tld
+file path=usr/share/doc/idn/tld/templates/arabic_digits
+file path=usr/share/doc/idn/tld/templates/arabic_letters
+file path=usr/share/doc/idn/tld/templates/greek_standard
+file path=usr/share/doc/idn/tld/templates/hebrew_letters
+file path=usr/share/doc/idn/tld/templates/latin_1_supplement_letters
+file path=usr/share/doc/idn/tld/templates/latin_extended_a_letters
+file path=usr/share/doc/idn/tld/templates/latin_extended_a_letters_icb
+file path=usr/share/doc/idn/tld/tm.tld
+file path=usr/share/emacs/site-lisp/idna.el
+file path=usr/share/emacs/site-lisp/punycode.el
+file path=usr/share/info/libidn-components.png
+file path=usr/share/info/libidn.info
+file path=usr/share/java/libidn-$(HUMAN_VERSION).jar
+link path=usr/share/java/libidn.jar target=libidn-$(HUMAN_VERSION).jar
+file path=usr/share/locale/cs/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/da/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/de/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/en/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/en@boldquot/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/en@quot/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/eo/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/es/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/fi/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/fr/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/hr/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/hu/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/id/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/it/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/ja/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/nl/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/pl/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/pt_BR/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/ro/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/sr/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/sv/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/uk/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/vi/LC_MESSAGES/libidn.mo
+file path=usr/share/locale/zh_CN/LC_MESSAGES/libidn.mo
+file path=usr/share/man/man1/idn.1
+file path=usr/share/man/man3/idn_free.3
+file path=usr/share/man/man3/idna_strerror.3
+file path=usr/share/man/man3/idna_to_ascii_4i.3
+file path=usr/share/man/man3/idna_to_ascii_4z.3
+file path=usr/share/man/man3/idna_to_ascii_8z.3
+file path=usr/share/man/man3/idna_to_ascii_lz.3
+file path=usr/share/man/man3/idna_to_unicode_44i.3
+file path=usr/share/man/man3/idna_to_unicode_4z4z.3
+file path=usr/share/man/man3/idna_to_unicode_8z4z.3
+file path=usr/share/man/man3/idna_to_unicode_8z8z.3
+file path=usr/share/man/man3/idna_to_unicode_8zlz.3
+file path=usr/share/man/man3/idna_to_unicode_lzlz.3
+file path=usr/share/man/man3/pr29_4.3
+file path=usr/share/man/man3/pr29_4z.3
+file path=usr/share/man/man3/pr29_8z.3
+file path=usr/share/man/man3/pr29_strerror.3
+file path=usr/share/man/man3/punycode_decode.3
+file path=usr/share/man/man3/punycode_encode.3
+file path=usr/share/man/man3/punycode_strerror.3
+file path=usr/share/man/man3/stringprep.3
+file path=usr/share/man/man3/stringprep_4i.3
+file path=usr/share/man/man3/stringprep_4zi.3
+file path=usr/share/man/man3/stringprep_check_version.3
+file path=usr/share/man/man3/stringprep_convert.3
+file path=usr/share/man/man3/stringprep_locale_charset.3
+file path=usr/share/man/man3/stringprep_locale_to_utf8.3
+file path=usr/share/man/man3/stringprep_profile.3
+file path=usr/share/man/man3/stringprep_strerror.3
+file path=usr/share/man/man3/stringprep_ucs4_nfkc_normalize.3
+file path=usr/share/man/man3/stringprep_ucs4_to_utf8.3
+file path=usr/share/man/man3/stringprep_unichar_to_utf8.3
+file path=usr/share/man/man3/stringprep_utf8_nfkc_normalize.3
+file path=usr/share/man/man3/stringprep_utf8_to_locale.3
+file path=usr/share/man/man3/stringprep_utf8_to_ucs4.3
+file path=usr/share/man/man3/stringprep_utf8_to_unichar.3
+file path=usr/share/man/man3/tld_check_4.3
+file path=usr/share/man/man3/tld_check_4t.3
+file path=usr/share/man/man3/tld_check_4tz.3
+file path=usr/share/man/man3/tld_check_4z.3
+file path=usr/share/man/man3/tld_check_8z.3
+file path=usr/share/man/man3/tld_check_lz.3
+file path=usr/share/man/man3/tld_default_table.3
+file path=usr/share/man/man3/tld_get_4.3
+file path=usr/share/man/man3/tld_get_4z.3
+file path=usr/share/man/man3/tld_get_table.3
+file path=usr/share/man/man3/tld_get_z.3
+file path=usr/share/man/man3/tld_strerror.3

@@ -1,0 +1,35 @@
+diff -Nuraw stunnel-5.74_O/src/options.c stunnel-5.74/src/options.c
+--- stunnel-5.74_O/src/options.c	2024-09-05 19:42:50.000000000 +0200
++++ stunnel-5.74/src/options.c	2025-01-01 15:32:04.000000000 +0100
+@@ -1987,7 +1987,9 @@
+     switch(cmd) {
+     case CMD_SET_DEFAULTS:
+         section->log_level=LOG_NOTICE;
+-#if !defined (USE_WIN32) && !defined (__vms)
++#if defined(__sun) && defined(__SVR4) && defined(LOG_AUTHPRIV)
++        new_global_options.log_facility=LOG_AUTHPRIV;
++#elif !defined (USE_WIN32) && !defined (__vms)
+         new_global_options.log_facility=LOG_DAEMON;
+ #endif
+         break;
+@@ -2003,14 +2005,18 @@
+     case CMD_INITIALIZE:
+         break;
+     case CMD_PRINT_DEFAULTS:
+-#if !defined (USE_WIN32) && !defined (__vms)
++#if defined(__sun) && defined(__SVR4) && defined(LOG_AUTHPRIV)
++        s_log(LOG_NOTICE, "%-22s = %s", "debug", "authpriv.notice");
++#elif !defined (USE_WIN32) && !defined (__vms)
+         s_log(LOG_NOTICE, "%-22s = %s", "debug", "daemon.notice");
+ #else
+         s_log(LOG_NOTICE, "%-22s = %s", "debug", "notice");
+ #endif
+         break;
+     case CMD_PRINT_HELP:
+-#if !defined (USE_WIN32) && !defined (__vms)
++#if defined(__sun) && defined(__SVR4) && defined(LOG_AUTHPRIV)
++        s_log(LOG_NOTICE, "%-22s = [facility].level (e.g. authpriv.info)", "debug");
++#elif !defined (USE_WIN32) && !defined (__vms)
+         s_log(LOG_NOTICE, "%-22s = [facility].level (e.g. daemon.info)", "debug");
+ #else
+         s_log(LOG_NOTICE, "%-22s = level (e.g. info)", "debug");

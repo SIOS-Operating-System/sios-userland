@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/gmp",
+        "system/library"
+    ],
+    "fmris": [
+        "library/nettle"
+    ],
+    "name": "nettle"
+}

@@ -1,0 +1,49 @@
+
+Modified this patch to
+- add the /src/ directory into the path, for the source reorganization
+  at 1.25.x
+- move the netlist.flags = 1; chunk to
+  02-make-multiload-network-available-part2.patch because of changes to
+  that section of the file.
+
+--- mate-applets-1.26.1/multiload/src/linux-proc.c.orig
++++ mate-applets-1.26.1/multiload/src/linux-proc.c
+@@ -153,6 +153,13 @@
+     }
+     else
+     {
++
++        /*
++          At the moment, Solaris can't get the read/write information for filesystem
++          so we would like to use disk to get them, later when some unstable interfaces
++          become stable or public, will use them
++        */
++        /*
+         glibtop_mountlist mountlist;
+         glibtop_mountentry *mountentries;
+ 
+@@ -182,6 +189,10 @@
+         }
+ 
+         g_free(mountentries);
++        */
++        glibtop_fsusage fsusage;
++        glibtop_get_fsusage(&fsusage,"/"); /* "/" will not use, just as a input */
++        read = fsusage.read; write = fsusage.write;
+     }
+ 
+     readdiff  = read - lastread;
+@@ -381,7 +392,12 @@
+ 
+         glibtop_get_netload(&netload, devices[i]);
+ 
+-        g_return_if_fail((netload.flags & needed_netload_flags) == needed_netload_flags);
++        /* this is not correct, because after run get netlist, there are lots of net devices,
++           not all of them meet the requirement of needed_netload_flags, but we don't need to
++           exit, we can just ignore them, and try to continue with the next one */
++        if ((netload.flags & needed_netload_flags) != needed_netload_flags)
++            continue;
++
+ 
+         if (!(netload.if_flags & (1L << GLIBTOP_IF_FLAGS_UP)))
+             continue;

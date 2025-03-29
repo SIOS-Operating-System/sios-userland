@@ -1,0 +1,83 @@
+--- fontconfig-2.16.0/src/fcmatch.c.orig
++++ fontconfig-2.16.0/src/fcmatch.c
+@@ -50,6 +50,15 @@
+ 	return -1.0;
+     }
+     v = v2 - v1;
++
++    /*
++     * Hack to allow bitmap fonts to equal requested font if it is close
++     */
++    if ( v > -.5 && v <= .5 )
++    {
++        v = 0;
++    }
++
+     if (v < 0)
+ 	v = -v;
+     *bestValue = FcValueCanonicalize (value2);
+@@ -857,6 +866,46 @@
+     return new;
+ }
+ 
++static void
++FcChangeFormat ( FcPattern *p )
++{
++    int i;
++    FcPatternElt    *pe = FcPatternElts(p);
++
++    /*
++     * Hack. If user want monochrome mode, then try to pick bitmaps over
++     * outlines.
++     */
++    for ( i = 0; i < p->num; i++ )
++    {
++        if ( !strcmp(&pe[i].object, "antialias" ))
++        {
++            int aa = (int) &pe[i].values->value.u.b;
++            int j;
++            int done = 0;
++            FcValue v;
++
++            v.type = FcTypeBool;
++            v.u.b  = aa;
++
++            for ( j = 0; j < p->num; j++ )
++            {
++                if ( !strcmp(&pe[j].object, "outline" ))
++                {
++                    done = 1;
++                    break;
++                }
++            }
++            if ( !done )
++            {
++                FcPatternObjectAddWithBinding (p, "outline", v,
++                        FcValueBindingStrong, 1);
++            }
++            break;
++        }
++    }
++}
++
+ static FcPattern *
+ FcFontSetMatchInternal (FcFontSet   **sets,
+ 			int	    nsets,
+@@ -872,6 +921,8 @@
+     FcCompareData   data;
+     const FcPatternElt *elt;
+ 
++    FcChangeFormat ( p );
++
+     for (i = 0; i < PRI_END; i++)
+ 	bestscore[i] = 0;
+     best = 0;
+@@ -1212,6 +1263,8 @@
+     FcValue	    patternLang;
+     FcCompareData   data;
+ 
++    FcChangeFormat ( p );
++
+     assert (sets != NULL);
+     assert (p != NULL);
+     assert (result != NULL);

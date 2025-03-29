@@ -1,0 +1,20 @@
+{
+    "dependencies": [
+        "library/python/aiohappyeyeballs-39",
+        "library/python/aiosignal-39",
+        "library/python/async-timeout-39",
+        "library/python/attrs-39",
+        "library/python/frozenlist-39",
+        "library/python/multidict-39",
+        "library/python/propcache-39",
+        "library/python/setuptools-39",
+        "library/python/yarl-39",
+        "runtime/python-39",
+        "system/library"
+    ],
+    "fmris": [
+        "library/python/aiohttp",
+        "library/python/aiohttp-39"
+    ],
+    "name": "aiohttp"
+}

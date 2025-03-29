@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "developer/documentation-tool/doxygen",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libqb"
+    ],
+    "name": "libqb"
+}

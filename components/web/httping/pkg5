@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "library/fftw-3",
+        "library/ncurses",
+        "library/security/openssl-3",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "diagnostic/httping"
+    ],
+    "name": "httping"
+}

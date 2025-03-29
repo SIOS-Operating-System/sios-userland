@@ -1,0 +1,9 @@
+--- mariadb-10.6.16/support-files/rpm/my.cnf.orig
++++ mariadb-10.6.16/support-files/rpm/my.cnf
+@@ -7,5 +7,4 @@
+ #
+ # include *.cnf from the config directory
+ #
+-!includedir /etc/my.cnf.d
+-
++!includedir /etc/mariadb/10.6/my.cnf.d

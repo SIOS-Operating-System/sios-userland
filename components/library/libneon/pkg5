@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "library/expat",
+        "library/libproxy",
+        "library/security/openssl-31",
+        "library/zlib",
+        "shell/ksh93",
+        "system/library",
+        "system/library/security/gss"
+    ],
+    "fmris": [
+        "library/neon"
+    ],
+    "name": "neon"
+}

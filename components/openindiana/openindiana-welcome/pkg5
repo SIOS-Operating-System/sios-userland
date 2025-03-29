@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/python/pygobject-3-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "release/os-welcome"
+    ],
+    "name": "openindiana-welcome"
+}

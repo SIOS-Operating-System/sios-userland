@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/security/openssl-3",
+        "library/security/openssl-3/32",
+        "runtime/python-39",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libevent2"
+    ],
+    "name": "libevent2"
+}

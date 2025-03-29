@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/parso",
+        "library/python/parso-39"
+    ],
+    "name": "parso"
+}

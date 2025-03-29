@@ -1,0 +1,17 @@
+{
+    "dependencies": [
+        "library/python/six-39",
+        "library/security/openssl-3",
+        "library/zlib",
+        "runtime/python-39",
+        "shell/bash",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math",
+        "web/curl"
+    ],
+    "fmris": [
+        "system/test/fio"
+    ],
+    "name": "fio"
+}

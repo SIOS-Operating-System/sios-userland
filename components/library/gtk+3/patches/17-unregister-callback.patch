@@ -1,0 +1,38 @@
+--- gtk-3.24.48/modules/input/gtkimcontextxim.c.orig
++++ gtk-3.24.48/modules/input/gtkimcontextxim.c
+@@ -143,6 +143,8 @@
+ static void           xim_info_display_closed (GdkDisplay *display,
+ 			                       gboolean    is_error,
+ 			                       GtkXIMInfo *info);
++static void           xim_instantiate_callback (Display *display, XPointer client_data,
++			                        XPointer call_data);
+ 
+ static GObjectClass *parent_class;
+ 
+@@ -338,6 +340,26 @@
+   if (info->display_closed_cb)
+     g_signal_handler_disconnect (display, info->display_closed_cb);
+ 
++  if (info->reconnecting)
++    {
++      GdkDisplay *display;
++
++      display = gdk_screen_get_display (info->screen);
++      XUnregisterIMInstantiateCallback (GDK_DISPLAY_XDISPLAY (display),
++					NULL, NULL, NULL,
++					xim_instantiate_callback,
++					(XPointer)info);
++    }
++  else if (info->im)
++    {
++      XIMCallback im_destroy_callback;
++
++      im_destroy_callback.client_data = NULL;
++      im_destroy_callback.callback = NULL;
++      XSetIMValues (info->im,
++		    XNDestroyCallback, &im_destroy_callback,
++		    NULL);
++    }
+   if (info->xim_styles)
+     XFree (info->xim_styles);
+   g_free (info->locale);

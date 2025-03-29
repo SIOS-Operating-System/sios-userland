@@ -1,0 +1,133 @@
+PASS: library_independ
+PASS: mc_build_filename
+PASS: name_quote
+PASS: serialize
+PASS: utilunix__mc_pstream_get_string
+PASS: utilunix__my_system_fork_fail
+PASS: utilunix__my_system_fork_child_shell
+PASS: utilunix__my_system_fork_child
+PASS: x_basename
+PASS: mc_realpath
+# TOTAL: 10
+# PASS:  10
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: config_string
+PASS: user_configs_path
+# TOTAL: 2
+# PASS:  2
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: glob_prepare_replace_str
+PASS: glob_translate_to_regex
+PASS: hex_translate_to_regex
+PASS: regex_replace_esc_seq
+PASS: regex_process_escape_sequence
+PASS: translate_replace_glob_to_regex
+# TOTAL: 6
+# PASS:  6
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: parse_integer
+PASS: str_replace_all
+PASS: str_verscmp
+PASS: filevercmp
+# TOTAL: 4
+# PASS:  4
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: canonicalize_pathname
+PASS: current_dir
+PASS: path_cmp
+PASS: path_len
+PASS: path_manipulations
+PASS: path_serialize
+PASS: relative_cd
+PASS: tempdir
+PASS: vfs_adjust_stat
+PASS: vfs_parse_ls_lga
+PASS: vfs_path_from_str_flags
+PASS: vfs_path_string_convert
+PASS: vfs_prefix_to_class
+PASS: vfs_setup_cwd
+PASS: vfs_split
+PASS: vfs_s_get_path
+PASS: path_recode
+PASS: vfs_get_encoding
+# TOTAL: 18
+# PASS:  18
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: complete_engine
+PASS: hotkey_equal
+PASS: group_init_destroy
+PASS: widget_find_by_id
+PASS: widget_make_global_local
+# TOTAL: 5
+# PASS:  5
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: execute__execute_with_vfs_arg
+PASS: execute__execute_external_editor_or_viewer
+PASS: execute__execute_get_external_cmd_opts_from_config
+# TOTAL: 3
+# PASS:  3
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: cd_to
+PASS: examine_cd
+PASS: exec_get_export_variables_ext
+PASS: filegui_is_wildcarded
+PASS: get_random_hint
+# TOTAL: 5
+# PASS:  5
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: run
+# TOTAL: 1
+# PASS:  1
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: ftpfs_parse_long_list
+# TOTAL: 1
+# PASS:  1
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+PASS: edit_complete_word_cmd
+# TOTAL: 1
+# PASS:  1
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0

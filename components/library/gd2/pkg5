@@ -1,0 +1,23 @@
+{
+    "dependencies": [
+        "image/library/libjpeg8-turbo",
+        "image/library/libjpeg8-turbo/32",
+        "image/library/libpng16",
+        "image/library/libtiff",
+        "library/libwebp",
+        "library/zlib",
+        "runtime/perl",
+        "system/library",
+        "system/library/fontconfig",
+        "system/library/fontconfig/32",
+        "system/library/freetype-2",
+        "system/library/freetype-2/32",
+        "system/library/g++-14-runtime",
+        "system/library/math",
+        "x11/library/libxpm"
+    ],
+    "fmris": [
+        "library/gd"
+    ],
+    "name": "gd2"
+}

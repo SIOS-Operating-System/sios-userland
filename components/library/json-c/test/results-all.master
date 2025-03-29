@@ -1,0 +1,29 @@
+Test project $(@D)
+Test test1 ............................   Passed
+Test test2 ............................   Passed
+Test test4 ............................   Passed
+Test testReplaceExisting ..............   Passed
+Test test_cast ........................   Passed
+Test test_charcase ....................   Passed
+Test test_compare .....................   Passed
+Test test_deep_copy ...................   Passed
+Test test_double_serializer ...........   Passed
+Test test_float .......................   Passed
+Test test_int_add .....................   Passed
+Test test_int_get .....................   Passed
+Test test_locale ......................   Passed
+Test test_null ........................   Passed
+Test test_parse .......................   Passed
+Test test_parse_int64 .................   Passed
+Test test_printbuf ....................   Passed
+Test test_set_serializer ..............   Passed
+Test test_set_value ...................   Passed
+Test test_strerror ....................   Passed
+Test test_util_file ...................   Passed
+Test test_visit .......................   Passed
+Test test_object_iterator .............   Passed
+Test test_json_pointer ................   Passed
+Test test_json_patch ..................   Passed
+
+100% tests passed, 0 tests failed out of 25
+

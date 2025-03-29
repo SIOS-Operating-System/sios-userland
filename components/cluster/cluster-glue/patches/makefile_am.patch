@@ -1,0 +1,29 @@
+--- cluster-glue-bdd95fd0f89f31b19fa46ffa0ea3f5022ebcd858/Makefile.am.orig
++++ cluster-glue-bdd95fd0f89f31b19fa46ffa0ea3f5022ebcd858/Makefile.am
+@@ -27,11 +27,11 @@
+ 			  hb_report doc config
+ 
+ install-exec-local:
+-	$(INSTALL) -d $(DESTDIR)/$(HA_COREDIR)
+-	-$(INSTALL) -d -m 700 -o root $(DESTDIR)/$(HA_COREDIR)/root
+-	-$(INSTALL) -d -m 700 -o nobody $(DESTDIR)/$(HA_COREDIR)/nobody
+-	$(INSTALL) -d -m 700 $(DESTDIR)/$(HA_COREDIR)/$(GLUE_DAEMON_USER)
+-	-chown $(GLUE_DAEMON_USER) $(DESTDIR)/$(HA_COREDIR)/$(GLUE_DAEMON_USER)
++	$(INSTALL) -d $(DESTDIR)$(HA_COREDIR)
++	-$(INSTALL) -d -m 700 -o root $(DESTDIR)$(HA_COREDIR)/root
++	-$(INSTALL) -d -m 700 -o nobody $(DESTDIR)$(HA_COREDIR)/nobody
++#	$(INSTALL) -d -m 700 $(DESTDIR)$(HA_COREDIR)/$(GLUE_DAEMON_USER)
++#	-chown $(GLUE_DAEMON_USER) $(DESTDIR)$(HA_COREDIR)/$(GLUE_DAEMON_USER)
+ # Use chown because $(GLUE_DAEMON_USER) may not exist yet
+ 
+ dist-clean-local:
+--- cluster-glue-bdd95fd0f89f31b19fa46ffa0ea3f5022ebcd858/lib/lrm/Makefile.am.orig
++++ cluster-glue-bdd95fd0f89f31b19fa46ffa0ea3f5022ebcd858/lib/lrm/Makefile.am
+@@ -31,5 +31,5 @@
+ 
+ install-exec-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(lrmdir)
+-	-chgrp $(GLUE_DAEMON_GROUP) $(DESTDIR)/$(lrmdir)
+-	chmod 770 $(DESTDIR)/$(lrmdir)
++#	-chgrp $(GLUE_DAEMON_GROUP) $(DESTDIR)/$(lrmdir)
++#	chmod 770 $(DESTDIR)/$(lrmdir)

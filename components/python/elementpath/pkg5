@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/elementpath",
+        "library/python/elementpath-39"
+    ],
+    "name": "elementpath"
+}

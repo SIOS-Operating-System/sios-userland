@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/flit-core",
+        "library/python/flit-core-39"
+    ],
+    "name": "flit_core"
+}

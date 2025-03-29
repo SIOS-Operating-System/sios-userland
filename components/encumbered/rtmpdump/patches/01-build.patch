@@ -1,0 +1,78 @@
+--- rtmpdump-2.6/Makefile.orig
++++ rtmpdump-2.6/Makefile
+@@ -1,9 +1,9 @@
+ VERSION=v2.4
+ 
+-prefix=/usr/local
++prefix=/usr
+ 
+-CC=$(CROSS_COMPILE)gcc
+-LD=$(CROSS_COMPILE)ld
++#CC=$(CROSS_COMPILE)gcc
++#LD=$(CROSS_COMPILE)ld
+ 
+ SYS=posix
+ #SYS=mingw
+@@ -20,13 +20,13 @@
+ CRYPTO_DEF=$(DEF_$(CRYPTO))
+ 
+ DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
+-OPT=-O2
++#OPT=-O2
+ CFLAGS=-Wall $(XCFLAGS) $(INC) $(DEF) $(OPT)
+ LDFLAGS=-Wall $(XLDFLAGS)
+ 
+ bindir=$(prefix)/bin
+ sbindir=$(prefix)/sbin
+-mandir=$(prefix)/man
++mandir=$(prefix)/share/man
+ 
+ BINDIR=$(DESTDIR)$(bindir)
+ SBINDIR=$(DESTDIR)$(sbindir)
+@@ -59,9 +59,9 @@
+ $(PROGS): $(LIBRTMP)
+ 
+ install:	$(PROGS)
+-	-mkdir -p $(BINDIR) $(SBINDIR) $(MANDIR)/man1 $(MANDIR)/man8
++	-mkdir -p $(BINDIR) $(MANDIR)/man1 $(MANDIR)/man8
+ 	cp rtmpdump$(EXT) $(BINDIR)
+-	cp rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(SBINDIR)
++	cp rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(BINDIR)
+ 	cp rtmpdump.1 $(MANDIR)/man1
+ 	cp rtmpgw.8 $(MANDIR)/man8
+ 	@cd librtmp; $(MAKE) install
+--- rtmpdump-2.6/librtmp/Makefile.orig
++++ rtmpdump-2.6/librtmp/Makefile
+@@ -1,18 +1,18 @@
+ VERSION=v2.4
+ 
+-prefix=/usr/local
++prefix=/usr
+ 
+ incdir=$(prefix)/include/librtmp
+ bindir=$(prefix)/bin
+-libdir=$(prefix)/lib
+-mandir=$(prefix)/man
++libdir=$(prefix)/lib$(ARCH)
++mandir=$(prefix)/share/man
+ BINDIR=$(DESTDIR)$(bindir)
+ INCDIR=$(DESTDIR)$(incdir)
+ LIBDIR=$(DESTDIR)$(libdir)
+ MANDIR=$(DESTDIR)$(mandir)
+ 
+-CC=$(CROSS_COMPILE)gcc
+-LD=$(CROSS_COMPILE)ld
++#CC=$(CROSS_COMPILE)gcc
++#LD=$(CROSS_COMPILE)ld
+ AR=$(CROSS_COMPILE)ar
+ 
+ SYS=posix
+@@ -23,7 +23,7 @@
+ DEF_GNUTLS=-DUSE_GNUTLS
+ DEF_=-DNO_CRYPTO
+ REQ_GNUTLS=gnutls,hogweed,nettle
+-REQ_OPENSSL=libssl,libcrypto
++REQ_OPENSSL=openssl
+ PUB_GNUTLS=-lgmp
+ LIBZ=-lz
+ LIBS_posix=

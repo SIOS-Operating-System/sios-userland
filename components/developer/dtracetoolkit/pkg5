@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "developer/dtrace",
+        "runtime/perl",
+        "runtime/python-39",
+        "runtime/ruby",
+        "shell/ksh93"
+    ],
+    "fmris": [
+        "developer/dtrace/toolkit"
+    ],
+    "name": "DTraceToolkit"
+}

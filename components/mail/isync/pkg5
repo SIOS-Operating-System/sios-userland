@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "database/berkeleydb-5",
+        "library/security/openssl-3",
+        "library/zlib",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "mail/isync"
+    ],
+    "name": "isync"
+}

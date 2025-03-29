@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "text/tidy"
+    ],
+    "name": "tidy"
+}

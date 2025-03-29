@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "web/gwsocket"
+    ],
+    "name": "gwsocket"
+}

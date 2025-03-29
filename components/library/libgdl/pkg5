@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "library/desktop/cairo",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk3",
+        "library/glib2",
+        "library/libxml2",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libgdl"
+    ],
+    "name": "gdl"
+}

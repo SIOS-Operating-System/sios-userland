@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "library/libpoppler-data"
+    ],
+    "name": "poppler-data"
+}

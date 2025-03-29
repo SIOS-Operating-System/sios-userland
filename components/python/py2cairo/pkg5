@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/desktop/cairo",
+        "system/library"
+    ],
+    "fmris": [
+        "library/python/pycairo-27"
+    ],
+    "name": "py2cairo"
+}

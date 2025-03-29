@@ -1,0 +1,22 @@
+PASS: ibus-bus
+PASS: ibus-config
+PASS: ibus-configservice
+PASS: ibus-factory
+PASS: ibus-inputcontext
+PASS: ibus-inputcontext-create
+PASS: ibus-keynames
+PASS: ibus-registry
+PASS: ibus-serializable
+PASS: ibus-share
+PASS: ibus-util
+PASS: ibus-engine-switch
+FAIL: ibus-compose
+FAIL: ibus-keypress
+FAIL: xkb-latin-layouts
+# TOTAL: 15
+# PASS:  12
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  3
+# XPASS: 0
+# ERROR: 0

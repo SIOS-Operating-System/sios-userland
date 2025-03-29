@@ -1,0 +1,88 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2024 <contributor>
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)-$(PLV)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Failure.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Failure::Multi.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Failure::Permanent.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Failure::Temporary.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Manual.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Manual::QuickStart.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Role::CommonSending.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Role::HasMessage.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Simple.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Success.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Success::Partial.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::DevNull.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::Failable.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::Maildir.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::Mbox.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::Print.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::SMTP.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::SMTP::Persistent.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::Sendmail.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::Test.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Transport::Wrapper.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Email::Sender::Util.3perl
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Failure.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Failure/Multi.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Failure/Permanent.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Failure/Temporary.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Manual.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Manual/QuickStart.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Role/CommonSending.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Role/HasMessage.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Simple.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Success.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Success/Partial.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/DevNull.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/Failable.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/Maildir.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/Mbox.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/Print.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/SMTP.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/SMTP/Persistent.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/Sendmail.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/Test.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Transport/Wrapper.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Email/Sender/Util.pm
+
+# perl modules are unusable without perl runtime binary
+depend type=require fmri=__TBD pkg.debug.depend.file=perl \
+    pkg.debug.depend.path=usr/perl5/$(PERLVER)/bin
+
+# Automatically generated dependencies based on distribution metadata
+depend type=require fmri=pkg:/library/perl-5/email-abstract-$(PLV)@3.6
+depend type=require fmri=pkg:/library/perl-5/email-address-xs-$(PLV)
+depend type=require fmri=pkg:/library/perl-5/email-simple-$(PLV)@1.998
+depend type=require fmri=pkg:/library/perl-5/module-runtime-$(PLV)
+depend type=require fmri=pkg:/library/perl-5/moo-$(PLV)@2.0.0
+depend type=require fmri=pkg:/library/perl-5/moox-types-mooselike-$(PLV)@0.15
+depend type=require fmri=pkg:/library/perl-5/sub-exporter-$(PLV)
+depend type=require fmri=pkg:/library/perl-5/throwable-$(PLV)@0.200.3
+depend type=require fmri=pkg:/library/perl-5/try-tiny-$(PLV)

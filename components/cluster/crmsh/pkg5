@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/python/lxml-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "application/cluster/crmsh"
+    ],
+    "name": "crmsh"
+}

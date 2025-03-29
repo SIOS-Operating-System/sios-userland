@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "runtime/perl"
+    ],
+    "fmris": [
+        "developer/build/help2man"
+    ],
+    "name": "help2man"
+}

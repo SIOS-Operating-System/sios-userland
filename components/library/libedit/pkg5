@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/ncurses",
+        "system/library",
+        "text/gawk"
+    ],
+    "fmris": [
+        "library/libedit"
+    ],
+    "name": "libedit"
+}

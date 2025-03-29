@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "compress/bzip2",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime"
+    ],
+    "fmris": [
+        "compress/pbzip2"
+    ],
+    "name": "pbzip2"
+}

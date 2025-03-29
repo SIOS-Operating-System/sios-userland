@@ -1,0 +1,123 @@
+--- gsm-1.0-pl22/Makefile.orig	2022-08-04 20:46:46.107815841 +0000
++++ gsm-1.0-pl22/Makefile	2022-10-31 09:39:21.985606716 +0000
+@@ -30,6 +30,9 @@
+ ######### define this, and read about the GSM_OPT_WAV49 option in the
+ ######### manual page on gsm_option(3).
+ 
++######### Define MAJOR so number.
++MAJOR=1
++
+ # Choose a compiler.  The code works both with ANSI and K&R-C.
+ # Use -DNeedFunctionPrototypes to compile with, -UNeedFunctionPrototypes to
+ # compile without, function prototypes in the header files.
+@@ -43,8 +46,8 @@
+ # CC		= /usr/lang/acc
+ # CCFLAGS 	= -c -O
+ 
+-CC		= gcc -ansi -pedantic
+-CCFLAGS 	= -c -O2 -DNeedFunctionPrototypes=1 -Wall -Wno-comment
++#CC		= gcc -ansi -pedantic
++#CCFLAGS 	= -c -O2 -DNeedFunctionPrototypes=1 -Wall -Wno-comment
+ 
+ LD 		= $(CC)
+ 
+@@ -71,17 +74,17 @@
+ # Leave INSTALL_ROOT empty (or just don't execute "make install") to
+ # not install gsm and toast outside of this directory.
+ 
+-INSTALL_ROOT	=
++#INSTALL_ROOT	=
+ 
+ # Where do you want to install the gsm library, header file, and manpages?
+ #
+ # Leave GSM_INSTALL_ROOT empty to not install the GSM library outside of
+ # this directory.
+ 
+-GSM_INSTALL_ROOT = $(INSTALL_ROOT)
+-GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
+-GSM_INSTALL_INC = $(GSM_INSTALL_ROOT)/inc
+-GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
++GSM_INSTALL_ROOT = $(DESTDIR)$(INSTALL_ROOT)
++GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib$(ARCH)
++GSM_INSTALL_INC = $(GSM_INSTALL_ROOT)/include
++GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/share/man/man3
+ 
+ 
+ # Where do you want to install the toast binaries and their manpage?
+@@ -89,13 +92,13 @@
+ # Leave TOAST_INSTALL_ROOT empty to not install the toast binaries outside
+ # of this directory.
+ 
+-TOAST_INSTALL_ROOT	  = $(INSTALL_ROOT)
++TOAST_INSTALL_ROOT= $(DESTDIR)$(INSTALL_ROOT)
+ TOAST_INSTALL_BIN = $(TOAST_INSTALL_ROOT)/bin
+-TOAST_INSTALL_MAN = $(TOAST_INSTALL_ROOT)/man/man1
++TOAST_INSTALL_MAN = $(TOAST_INSTALL_ROOT)/share/man/man1
+ 
+ #  Other tools
+ 
+-SHELL		= /bin/sh
++SHELL		= /bin/bash
+ LN		= ln
+ BASENAME 	= basename
+ AR		= ar
+@@ -129,8 +132,9 @@
+ # DEBUG	= -DNDEBUG
+ ######### Remove -DNDEBUG to enable assertions.
+ 
+-CFLAGS	= $(CCFLAGS) $(SASR) $(DEBUG) $(MULHACK) $(FAST) $(LTP_CUT) \
+-	$(WAV49) $(CCINC) -I$(INC)
++CFLAGS  = -c $(MYCFLAGS) $(PICFLAG) $(OPTFLAGS) $(SASR) $(DEBUG) $(MULHACK) $(FAST) $(LTP_CUT) \
++    $(WAV49) $(CCINC) -I$(INC)
++
+ ######### It's $(CC) $(CFLAGS)
+ 
+ LFLAGS	= $(LDFLAGS) $(LDINC)
+@@ -139,7 +143,7 @@
+ 
+ # Targets
+ 
+-LIBGSM	= $(LIB)/libgsm.a
++LIBGSM	= $(LIB)/libgsm.so.$(MAJOR)
+ 
+ TOAST	= $(BIN)/toast
+ UNTOAST	= $(BIN)/untoast
+@@ -257,7 +261,7 @@
+ # Install targets
+ 
+ GSM_INSTALL_TARGETS =	\
+-		$(GSM_INSTALL_LIB)/libgsm.a		\
++		$(GSM_INSTALL_LIB)/libgsm.so.$(MAJOR)   \
+ 		$(GSM_INSTALL_INC)/gsm.h		\
+ 		$(GSM_INSTALL_MAN)/gsm.3		\
+ 		$(GSM_INSTALL_MAN)/gsm_explode.3	\
+@@ -301,14 +305,13 @@
+ 
+ $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
+ 		-rm $(RMFLAGS) $(LIBGSM)
+-		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
+-		$(RANLIB) $(LIBGSM)
+-
++		$(LD) -shared $(GSM_OBJECTS) -o $(LIBGSM) $(LDFLAGS)
++		ln -sf libgsm.so.$(MAJOR) $(LIB)/libgsm.so
+ 
+ # Toast, Untoast and Tcat -- the compress-like frontends to gsm.
+ 
+ $(TOAST):	$(BIN) $(TOAST_OBJECTS) $(LIBGSM)
+-		$(LD) $(LFLAGS) -o $(TOAST) $(TOAST_OBJECTS) $(LIBGSM) $(LDLIB)
++		$(LD) $(LFLAGS) -o $(TOAST) $(TOAST_OBJECTS) -L./lib -lgsm $(LDLIB)
+ 
+ $(UNTOAST):	$(BIN) $(TOAST)
+ 		-rm $(RMFLAGS) $(UNTOAST)
+@@ -393,9 +396,10 @@
+ 		cp $? $@
+ 		chmod 444 $@
+ 
+-$(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
++$(GSM_INSTALL_LIB)/libgsm.so.$(MAJOR):	$(LIBGSM)
+ 		-rm $(RMFLAGS) $@
+ 		cp $? $@
++		( cd $(GSM_INSTALL_LIB) ; ln -sf libgsm.so.$(MAJOR) libgsm.so )
+ 		chmod 444 $@
+ 
+ 

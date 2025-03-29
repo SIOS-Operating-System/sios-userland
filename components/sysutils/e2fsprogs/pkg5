@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "sysutils/e2fsprogs"
+    ],
+    "name": "e2fsprogs"
+}

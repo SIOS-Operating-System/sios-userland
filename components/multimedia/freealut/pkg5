@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/audio/openal",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/audio/freealut"
+    ],
+    "name": "freealut"
+}

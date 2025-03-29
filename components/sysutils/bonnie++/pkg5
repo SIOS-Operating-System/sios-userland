@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "runtime/perl",
+        "system/library",
+        "system/library/g++-10-runtime",
+        "system/library/gcc-10-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "benchmark/bonnieplus"
+    ],
+    "name": "bonnie++"
+}

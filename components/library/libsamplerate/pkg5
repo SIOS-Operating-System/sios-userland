@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/libsndfile",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/libsamplerate"
+    ],
+    "name": "libsamplerate"
+}

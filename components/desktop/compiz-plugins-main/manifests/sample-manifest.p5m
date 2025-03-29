@@ -1,0 +1,155 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2024 <contributor>
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/include/compiz/compiz-animation.h
+file path=usr/include/compiz/compiz-focuspoll.h
+file path=usr/include/compiz/compiz-mousepoll.h
+file path=usr/include/compiz/compiz-text.h
+file path=usr/lib/$(MACH64)/compiz/libanimation.so
+file path=usr/lib/$(MACH64)/compiz/libcolorfilter.so
+file path=usr/lib/$(MACH64)/compiz/libexpo.so
+file path=usr/lib/$(MACH64)/compiz/libezoom.so
+file path=usr/lib/$(MACH64)/compiz/libfocuspoll.so
+file path=usr/lib/$(MACH64)/compiz/libimgjpeg.so
+file path=usr/lib/$(MACH64)/compiz/libmag.so
+file path=usr/lib/$(MACH64)/compiz/libmousepoll.so
+file path=usr/lib/$(MACH64)/compiz/libneg.so
+file path=usr/lib/$(MACH64)/compiz/libopacify.so
+file path=usr/lib/$(MACH64)/compiz/libput.so
+file path=usr/lib/$(MACH64)/compiz/libresizeinfo.so
+file path=usr/lib/$(MACH64)/compiz/libring.so
+file path=usr/lib/$(MACH64)/compiz/libscaleaddon.so
+file path=usr/lib/$(MACH64)/compiz/libsession.so
+file path=usr/lib/$(MACH64)/compiz/libshift.so
+file path=usr/lib/$(MACH64)/compiz/libsnap.so
+file path=usr/lib/$(MACH64)/compiz/libstaticswitcher.so
+file path=usr/lib/$(MACH64)/compiz/libtext.so
+file path=usr/lib/$(MACH64)/compiz/libthumbnail.so
+file path=usr/lib/$(MACH64)/compiz/libtitleinfo.so
+file path=usr/lib/$(MACH64)/compiz/libvpswitch.so
+file path=usr/lib/$(MACH64)/compiz/libwinrules.so
+file path=usr/lib/$(MACH64)/compiz/libworkarounds.so
+file path=usr/lib/$(MACH64)/pkgconfig/compiz-animation.pc
+file path=usr/lib/$(MACH64)/pkgconfig/compiz-focuspoll.pc
+file path=usr/lib/$(MACH64)/pkgconfig/compiz-mousepoll.pc
+file path=usr/lib/$(MACH64)/pkgconfig/compiz-text.pc
+file path=usr/share/compiz/Default/mask.png
+file path=usr/share/compiz/Default/overlay.png
+file path=usr/share/compiz/animation.xml
+file path=usr/share/compiz/colorfilter.xml
+file path=usr/share/compiz/expo.xml
+file path=usr/share/compiz/ezoom.xml
+file path=usr/share/compiz/filters/blackandwhite
+file path=usr/share/compiz/filters/blueish-filter
+file path=usr/share/compiz/filters/colornegative
+file path=usr/share/compiz/filters/contrast
+file path=usr/share/compiz/filters/deuteranopia
+file path=usr/share/compiz/filters/grayscale
+file path=usr/share/compiz/filters/negative
+file path=usr/share/compiz/filters/negative-green
+file path=usr/share/compiz/filters/negative-lightness
+file path=usr/share/compiz/filters/nightmode
+file path=usr/share/compiz/filters/nightmodeb
+file path=usr/share/compiz/filters/nightmodec
+file path=usr/share/compiz/filters/nightmoded
+file path=usr/share/compiz/filters/protanopia
+file path=usr/share/compiz/filters/sepia
+file path=usr/share/compiz/filters/swap-green-blue
+file path=usr/share/compiz/filters/swap-hue
+file path=usr/share/compiz/filters/swap-red-blue
+file path=usr/share/compiz/filters/swap-red-green
+file path=usr/share/compiz/focuspoll.xml
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-animation.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-colorfilter.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-expo.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-ezoom.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-focuspoll.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-imgjpeg.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-mag.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-mousepoll.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-neg.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-opacify.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-put.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-resizeinfo.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-ring.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-scaleaddon.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-session.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-shift.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-snap.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-staticswitcher.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-text.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-thumbnail.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-titleinfo.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-vpswitch.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-winrules.svg
+file path=usr/share/compiz/icons/hicolor/scalable/apps/plugin-workarounds.svg
+file path=usr/share/compiz/imgjpeg.xml
+file path=usr/share/compiz/mag.xml
+file path=usr/share/compiz/mousepoll.xml
+file path=usr/share/compiz/neg.xml
+file path=usr/share/compiz/opacify.xml
+file path=usr/share/compiz/put.xml
+file path=usr/share/compiz/resizeinfo.xml
+file path=usr/share/compiz/ring.xml
+file path=usr/share/compiz/scaleaddon.xml
+file path=usr/share/compiz/session.xml
+file path=usr/share/compiz/shift.xml
+file path=usr/share/compiz/snap.xml
+file path=usr/share/compiz/staticswitcher.xml
+file path=usr/share/compiz/text.xml
+file path=usr/share/compiz/thumbnail.xml
+file path=usr/share/compiz/titleinfo.xml
+file path=usr/share/compiz/vpswitch.xml
+file path=usr/share/compiz/winrules.xml
+file path=usr/share/compiz/workarounds.xml
+file path=usr/share/locale/ar/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/bn/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/ca/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/cs/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/de/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/el/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/en_GB/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/es/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/eu/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/fa/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/fi/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/fr/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/gl/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/gu/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/he/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/hi/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/hu/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/it/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/ja/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/ko/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/nb/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/nl/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/pl/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/pt/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/pt_BR/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/ru/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/sv/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/tr/LC_MESSAGES/compiz-plugins-main.mo
+file path=usr/share/locale/zh_CN/LC_MESSAGES/compiz-plugins-main.mo

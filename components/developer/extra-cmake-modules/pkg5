@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/python/sphinx-39",
+        "library/qt5"
+    ],
+    "fmris": [
+        "developer/kde/extra-cmake-modules"
+    ],
+    "name": "extra-cmake-modules"
+}

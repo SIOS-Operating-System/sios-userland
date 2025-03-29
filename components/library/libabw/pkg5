@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "library/c++/librevenge",
+        "library/libxml2",
+        "library/zlib",
+        "system/library",
+        "system/library/boost",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime"
+    ],
+    "fmris": [
+        "library/c++/libabw"
+    ],
+    "name": "libabw"
+}

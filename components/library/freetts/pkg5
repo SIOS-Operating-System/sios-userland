@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "developer/build/ant",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/java/freetts"
+    ],
+    "name": "freetts"
+}

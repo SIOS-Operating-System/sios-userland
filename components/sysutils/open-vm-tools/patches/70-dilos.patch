@@ -1,0 +1,73 @@
+Index: open-vm-tools-2013.04.16-1098359/open-vm-tools/lib/misc/timeutil.c
+===================================================================
+--- open-vm-tools-2013.04.16-1098359/lib/misc/timeutil.c.orig
++++ open-vm-tools-2013.04.16-1098359/lib/misc/timeutil.c
+@@ -855,7 +855,7 @@ TimeUtil_GetTimeFormat(int64 utcTime,  /
+    const time_t t = (time_t) utcTime;  // Implicit narrowing on 32-bit
+
+ #if defined sun
+-   str = Util_SafeStrdup(ctime_r(&t, buf, sizeof buf));
++   str = Util_SafeStrdup(ctime_r(&t, buf));
+ #else
+    str = Util_SafeStrdup(ctime_r(&t, buf));
+ #endif
+Index: open-vm-tools-2013.04.16-1098359/open-vm-tools/lib/procMgr/procMgrSolaris.c
+===================================================================
+--- open-vm-tools-2013.04.16-1098359/lib/procMgr/procMgrSolaris.c.orig
++++ open-vm-tools-2013.04.16-1098359/lib/procMgr/procMgrSolaris.c
+@@ -647,7 +647,7 @@ ProcMgr_ImpersonateUserStart(const char
+    char *userLocal;
+
+    ppw = &pw;
+-   if ((ppw = getpwuid_r(0, &pw, buffer, sizeof buffer)) == NULL) {
++   if (!getpwuid_r(0, &pw, buffer, sizeof buffer, &ppw)) {
+       return FALSE;
+    }
+
+@@ -660,7 +660,7 @@ ProcMgr_ImpersonateUserStart(const char
+        return FALSE;
+    }
+
+-   ppw = getpwnam_r(userLocal, &pw, buffer, sizeof buffer);
++   getpwnam_r(userLocal, &pw, buffer, sizeof buffer, &ppw);
+
+    free(userLocal);
+
+@@ -759,7 +759,7 @@ ProcMgr_ImpersonateUserStop(void)
+    int ret;
+
+    ppw = &pw;
+-   if ((ppw = getpwuid_r(0, &pw, buffer, sizeof buffer)) == NULL) {
++   if (!getpwuid_r(0, &pw, buffer, sizeof buffer, &ppw)) {
+       return FALSE;
+    }
+
+@@ -823,7 +823,7 @@ ProcMgr_GetImpersonatedUserInfo(char **u
+    *homeDir = NULL;
+
+    ppw = &pw;
+-   if ((ppw = getpwuid_r(Id_GetEUid(), &pw, buffer, sizeof buffer)) == NULL) {
++   if (!getpwuid_r(Id_GetEUid(), &pw, buffer, sizeof buffer, &ppw)) {
+       return FALSE;
+    }
+
+--- open-vm-tools-stable-10.2.5/lib/include/vmci_sockets.h.orig	2018-04-30 12:10:50.994448776 +0000
++++ open-vm-tools-stable-10.2.5/lib/include/vmci_sockets.h	2018-04-30 12:12:27.824324960 +0000
+@@ -524,7 +524,7 @@
+       }
+ #  endif // !NT_INCLUDED
+ #else // _WIN32
+-#if (defined(__linux__) && !defined(VMKERNEL)) || (defined(__APPLE__))
++#if (defined(__linux__) && !defined(VMKERNEL)) || (defined(__APPLE__)) || (defined(__sun))
+ #  if defined(__linux__) && defined(__KERNEL__)
+    void VMCISock_KernelRegister(void);
+    void VMCISock_KernelDeregister(void);
+@@ -544,7 +544,7 @@
+ /** \cond PRIVATE */
+ #  define VMCI_SOCKETS_DEFAULT_DEVICE      "/dev/vsock"
+ #  define VMCI_SOCKETS_CLASSIC_ESX_DEVICE  "/vmfs/devices/char/vsock/vsock"
+-#  if defined(__linux__)
++#  if defined(__linux__) || (defined(__sun))
+ #     define VMCI_SOCKETS_VERSION       1972
+ #     define VMCI_SOCKETS_GET_AF_VALUE  1976
+ #     define VMCI_SOCKETS_GET_LOCAL_CID 1977

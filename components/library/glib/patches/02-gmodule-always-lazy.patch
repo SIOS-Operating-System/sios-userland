@@ -1,0 +1,29 @@
+Patch migrated from Desktop, where it was listed as:
+# owner:laca type:bug date:2005-10-13
+
+After talking with Rod, it seems like this should apply to all platforms;
+not just Solaris, otherwise there could be a significant performance
+penalty at startup.  Need to file upstream bug for that.
+
+--- glib-2.82.0/gmodule/gmodule-dl.c.orig
++++ glib-2.82.0/gmodule/gmodule-dl.c
+@@ -133,10 +133,18 @@
+                 GError     **error)
+ {
+   gpointer handle;
++
++#if defined(__sun) && defined(__SVR4)
++  /* 
++   * Always use RTLD_LAZY on Solaris; otherwise all relocations are performed
++   * immediately in all dynamic dependencies.
++   */
++  bind_lazy = 1;
++#endif
+   
+   lock_dlerror ();
+   handle = dlopen (file_name,
+-                   (bind_local ? RTLD_LOCAL : RTLD_GLOBAL) | (bind_lazy ? RTLD_LAZY : RTLD_NOW));
++                   (bind_local ? RTLD_LOCAL : RTLD_GLOBAL) | (bind_lazy ? RTLD_LAZY | RTLD_FIRST : RTLD_NOW));
+   if (!handle)
+     {
+       const gchar *message = fetch_dlerror (TRUE);

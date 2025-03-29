@@ -1,0 +1,21 @@
+{
+    "dependencies": [
+        "image/library/libjpeg8-turbo",
+        "image/library/libpng16",
+        "image/library/libraw",
+        "image/library/libtiff",
+        "image/library/openjpeg",
+        "library/imath",
+        "library/jxrlib",
+        "library/libwebp",
+        "library/openexr",
+        "library/zlib",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime"
+    ],
+    "fmris": [
+        "library/libfreeimage"
+    ],
+    "name": "FreeImage"
+}

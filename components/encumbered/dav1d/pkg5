@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "developer/assembler/nasm",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "codec/dav1d"
+    ],
+    "name": "dav1d"
+}

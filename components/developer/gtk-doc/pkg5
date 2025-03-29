@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/python/pygments-39",
+        "runtime/python-39",
+        "shell/ksh93",
+        "text/itstool"
+    ],
+    "fmris": [
+        "developer/documentation-tool/gtk-doc"
+    ],
+    "name": "gtk-doc"
+}

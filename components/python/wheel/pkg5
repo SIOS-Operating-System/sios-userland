@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/flit-core-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/wheel",
+        "library/python/wheel-39"
+    ],
+    "name": "wheel"
+}

@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        "image/library/libjpeg8-turbo",
+        "library/ncurses",
+        "library/qt5",
+        "library/zlib",
+        "system/file-system/ntfsprogs",
+        "system/library",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime",
+        "sysutils/e2fsprogs"
+    ],
+    "fmris": [
+        "system/storage/photorec",
+        "system/storage/qphotorec",
+        "system/storage/testdisk"
+    ],
+    "name": "testdisk"
+}

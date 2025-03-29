@@ -1,0 +1,49 @@
+py$(PYV): remove tox env folder $(@D)/.tox/py$(PYV)
+py$(PYV): commands[0]> python -m unittest -v
+testArgToStringFunction (tests.test_icecream.TestIceCream) ... ok
+testAsArgument (tests.test_icecream.TestIceCream) ... ok
+testCallSurroundedByExpressions (tests.test_icecream.TestIceCream) ... ok
+testColoring (tests.test_icecream.TestIceCream) ... ok
+testComments (tests.test_icecream.TestIceCream) ... ok
+testComplicated (tests.test_icecream.TestIceCream) ... ok
+testConfigureOutputWithNoParameters (tests.test_icecream.TestIceCream) ... ok
+testContextAbsPathMultiLine (tests.test_icecream.TestIceCream) ... ok
+testContextAbsPathSingleLine (tests.test_icecream.TestIceCream) ... ok
+testDifferentName (tests.test_icecream.TestIceCream) ... ok
+testEnableDisable (tests.test_icecream.TestIceCream) ... ok
+testExpressionArguments (tests.test_icecream.TestIceCream) ... ok
+testFormat (tests.test_icecream.TestIceCream) ... ok
+testIncludeContextMultiLine (tests.test_icecream.TestIceCream) ... ok
+testIncludeContextSingleLine (tests.test_icecream.TestIceCream) ... ok
+testMetadata (tests.test_icecream.TestIceCream) ... ok
+testMethodArguments (tests.test_icecream.TestIceCream) ... ok
+testMultilineContainerArgs (tests.test_icecream.TestIceCream) ... ok
+testMultilineInvocationWithComments (tests.test_icecream.TestIceCream) ... ok
+testMultilineValueWrapped (tests.test_icecream.TestIceCream) ... ok
+testMultipleArguments (tests.test_icecream.TestIceCream) ... ok
+testMultipleArgumentsLongLineWrapped (tests.test_icecream.TestIceCream) ... ok
+testMultipleCallsOnSameLine (tests.test_icecream.TestIceCream) ... ok
+testMultipleTupleArguments (tests.test_icecream.TestIceCream) ... ok
+testNestedMultiline (tests.test_icecream.TestIceCream) ... ok
+testNoSourceAvailableIssuesExactlyOneWarning (tests.test_icecream.TestIceCream) ... ok
+testNoSourceAvailablePrintsMultiline (tests.test_icecream.TestIceCream)
+This tests for a bug which caused only multiline prints to fail. ... ok
+testNoSourceAvailablePrintsValues (tests.test_icecream.TestIceCream) ... ok
+testOutputFunction (tests.test_icecream.TestIceCream) ... ok
+testPrefixConfiguration (tests.test_icecream.TestIceCream) ... ok
+testReturnValue (tests.test_icecream.TestIceCream) ... ok
+testSingleArgument (tests.test_icecream.TestIceCream) ... ok
+testSingleArgumentLongLineNotWrapped (tests.test_icecream.TestIceCream) ... ok
+testSingleTupleArgument (tests.test_icecream.TestIceCream) ... ok
+testSingledispatchArgumentToString (tests.test_icecream.TestIceCream) ... ok
+testValues (tests.test_icecream.TestIceCream) ... ok
+testWithoutArgs (tests.test_icecream.TestIceCream) ... ok
+testInstall (tests.test_install.TestIceCreamInstall) ... ok
+testUninstall (tests.test_install.TestIceCreamInstall) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests
+
+OK
+  py$(PYV): OK
+  congratulations :)

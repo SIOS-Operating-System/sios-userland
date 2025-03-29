@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "system/library",
+        "system/library/g++-13-runtime"
+    ],
+    "fmris": [
+        "library/olm"
+    ],
+    "name": "olm"
+}

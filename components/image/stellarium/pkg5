@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "image/calcmysky",
+        "image/library/exiv2",
+        "library/qt5",
+        "library/zlib",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "image/stellarium"
+    ],
+    "name": "stellarium"
+}

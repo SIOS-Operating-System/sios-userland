@@ -1,0 +1,13 @@
+--- libvpx-1.14.0/build/make/Makefile.orig	2024-01-09 22:12:22.000000000 +0100
++++ libvpx-1.14.0/build/make/Makefile	2024-01-26 17:29:07.656303062 +0100
+@@ -336,8 +336,8 @@
+ 	$(qexec)$$(LD) -shared $$(LDFLAGS) \
+             $(NO_UNDEFINED) \
+             -Wl,-soname,$$(SONAME) \
+-            -Wl,--version-script,$$(EXPORTS_FILE) -o $$@ \
+-            $$(filter %.o,$$^) $$(extralibs)
++            -Wl,-M$$(EXPORTS_FILE) -o $$@ \
++            $$(filter %.o,$$^) -lc $$(extralibs)
+ endef
+ 
+ define dl_template

@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "library/expat",
+        "library/security/openssl-3",
+        "library/tre",
+        "library/zlib",
+        "system/library",
+        "web/curl"
+    ],
+    "fmris": [
+        "web/browser/elinks"
+    ],
+    "name": "elinks"
+}

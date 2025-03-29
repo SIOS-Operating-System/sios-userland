@@ -1,0 +1,26 @@
+{
+    "dependencies": [
+        "image/library/libjpeg8-turbo",
+        "image/library/libpng16",
+        "image/library/libtiff",
+        "image/library/openjpeg",
+        "library/desktop/cairo",
+        "library/glib2",
+        "library/lcms2",
+        "library/libpoppler-data",
+        "library/nspr",
+        "library/qt5",
+        "library/zlib",
+        "system/library",
+        "system/library/fontconfig",
+        "system/library/freetype-2",
+        "system/library/g++-14-runtime",
+        "system/library/math",
+        "system/library/mozilla-nss",
+        "web/curl"
+    ],
+    "fmris": [
+        "library/libpoppler"
+    ],
+    "name": "poppler"
+}

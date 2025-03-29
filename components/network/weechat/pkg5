@@ -1,0 +1,23 @@
+{
+    "dependencies": [
+        "compress/zstd",
+        "library/gnutls-3",
+        "library/guile",
+        "library/ncurses",
+        "library/zlib",
+        "runtime/lua",
+        "runtime/perl-540",
+        "runtime/python-39",
+        "runtime/ruby-32",
+        "runtime/tcl-8",
+        "system/library",
+        "system/library/math",
+        "system/library/security/libgcrypt",
+        "text/aspell",
+        "web/curl"
+    ],
+    "fmris": [
+        "network/chat/weechat"
+    ],
+    "name": "weechat"
+}

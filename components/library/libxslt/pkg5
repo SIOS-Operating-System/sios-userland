@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "library/libxml2",
+        "library/security/libgpg-error",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math",
+        "system/library/security/libgcrypt"
+    ],
+    "fmris": [
+        "library/libxslt",
+        "library/python/libxslt-39"
+    ],
+    "name": "libxslt"
+}

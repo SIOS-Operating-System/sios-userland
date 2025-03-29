@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/libsndfile",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "audio/twolame"
+    ],
+    "name": "twolame"
+}

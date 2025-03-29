@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "library/python/jaraco-functools-39",
+        "library/python/python-dateutil-39",
+        "library/python/setuptools-39",
+        "library/python/setuptools-scm-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/tempora",
+        "library/python/tempora-39"
+    ],
+    "name": "tempora"
+}

@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/ncurses",
+        "library/pcre",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "shell/zsh"
+    ],
+    "name": "zsh"
+}

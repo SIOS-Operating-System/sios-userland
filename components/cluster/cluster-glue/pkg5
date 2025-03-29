@@ -1,0 +1,23 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "compress/bzip2",
+        "library/glib2",
+        "library/libtool/libltdl",
+        "library/libxml2",
+        "library/zlib",
+        "runtime/perl",
+        "runtime/python-39",
+        "shell/bash",
+        "shell/ksh93",
+        "system/library",
+        "system/library/libnet",
+        "system/management/snmp/net-snmp",
+        "text/asciidoc",
+        "web/curl"
+    ],
+    "fmris": [
+        "application/cluster/cluster-glue"
+    ],
+    "name": "cluster-glue"
+}

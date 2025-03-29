@@ -1,0 +1,13 @@
+https://bugs.ntp.org/show_bug.cgi?id=2367
+
+--- ntpd/ntp_proto.c.orig
++++ ntpd/ntp_proto.c
+@@ -718,7 +718,7 @@
+ 		process_control(rbufp, restrict_mask);
+ 		return;
+ 	}
+-	if (restrict_mask & RES_DONTSERVE) {
++	if (hismode == MODE_CLIENT && (restrict_mask & RES_DONTSERVE)) {
+ 		DPRINTF(2, ("receive: drop: RES_DONTSERVE\n"));
+ 		sys_restricted++;
+ 		return;				/* no time serve */

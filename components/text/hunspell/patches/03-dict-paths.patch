@@ -1,0 +1,14 @@
+--- hunspell-1.7.2/src/tools/hunspell.cxx.orig
++++ hunspell-1.7.2/src/tools/hunspell.cxx
+@@ -116,9 +116,8 @@
+ #include "../parsers/odfparser.hxx"
+ 
+ #define LIBDIR                \
+-  "/usr/share/hunspell:"      \
+-  "/usr/share/myspell:"       \
+-  "/usr/share/myspell/dicts:" \
++  "/usr/share/spell/hunspell:"      \
++  "/usr/share/spell/myspell:"       \
+   "/Library/Spelling"
+ #define USEROOODIR {                  \
+   ".openoffice.org/3/user/wordbook", \

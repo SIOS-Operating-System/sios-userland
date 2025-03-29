@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "system/library",
+        "system/library/math",
+        "text/oniguruma"
+    ],
+    "fmris": [
+        "text/jq"
+    ],
+    "name": "jq"
+}

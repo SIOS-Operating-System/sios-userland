@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "developer/build/makedepend"
+    ],
+    "name": "makedepend"
+}

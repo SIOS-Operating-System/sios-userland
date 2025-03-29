@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "developer/documentation-tool/gtk-doc",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libidn"
+    ],
+    "name": "libidn"
+}

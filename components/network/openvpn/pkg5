@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "driver/network/header-tun",
+        "library/lz4",
+        "library/lzo",
+        "library/python/docutils-39",
+        "library/security/openssl-3",
+        "system/library"
+    ],
+    "fmris": [
+        "network/openvpn"
+    ],
+    "name": "openvpn"
+}

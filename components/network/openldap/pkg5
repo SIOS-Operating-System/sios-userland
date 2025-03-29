@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/gmp",
+        "library/libtool/libltdl",
+        "library/security/openssl-3",
+        "library/security/openssl-3/32",
+        "library/unixodbc",
+        "runtime/perl-540",
+        "security/argon2",
+        "shell/ksh93",
+        "system/library",
+        "system/library/security/libsasl"
+    ],
+    "fmris": [
+        "library/openldap"
+    ],
+    "name": "openldap"
+}

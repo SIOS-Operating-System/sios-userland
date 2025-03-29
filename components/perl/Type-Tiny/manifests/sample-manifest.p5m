@@ -1,0 +1,155 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2024 <contributor>
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)-$(PLV)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/perl5/$(PERLVER)/man/man3perl/Error::TypeTiny.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Error::TypeTiny::Assertion.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Error::TypeTiny::Compilation.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Error::TypeTiny::WrongNumberOfParameters.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Eval::TypeTiny.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Eval::TypeTiny::CodeAccumulator.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Reply::Plugin::TypeTiny.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Test::TypeTiny.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Coercion.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Coercion::FromMoose.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Coercion::Union.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Library.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Params.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Parser.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Registry.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tie.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Bitfield.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Class.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::ConstrainedObject.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Duck.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Enum.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Intersection.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::AllTypes.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::Coercions.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::Contributing.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::Installation.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::Libraries.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::NonOO.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::Optimization.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::Params.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::Policies.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithClassTiny.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithMite.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithMoo.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithMoo2.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithMoo3.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithMoose.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithMouse.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithOther.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Manual::UsingWithTestMore.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Role.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::Union.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::_DeclaredType.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Tiny::_HalfOp.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Type::Utils.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Types::Common.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Types::Common::Numeric.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Types::Common::String.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Types::Standard.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/Types::TypeTiny.3perl
+file path=usr/perl5/vendor_perl/$(PERLVER)/Devel/TypeTiny/Perl58Compat.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Error/TypeTiny.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Error/TypeTiny/Assertion.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Error/TypeTiny/Compilation.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Error/TypeTiny/WrongNumberOfParameters.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Eval/TypeTiny.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Eval/TypeTiny/CodeAccumulator.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Reply/Plugin/TypeTiny.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Test/TypeTiny.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Coercion.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Coercion/FromMoose.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Coercion/Union.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Library.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Params.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Params/Alternatives.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Params/Parameter.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Params/Signature.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Parser.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Registry.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tie.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Bitfield.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Class.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/ConstrainedObject.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Duck.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Enum.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Intersection.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/AllTypes.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/Coercions.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/Contributing.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/Installation.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/Libraries.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/NonOO.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/Optimization.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/Params.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/Policies.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithClassTiny.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithMite.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithMoo.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithMoo2.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithMoo3.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithMoose.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithMouse.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithOther.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Manual/UsingWithTestMore.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Role.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/Union.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/_DeclaredType.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Tiny/_HalfOp.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Type/Utils.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Common.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Common/Numeric.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Common/String.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/ArrayRef.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/CycleTuple.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/Dict.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/HashRef.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/Map.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/ScalarRef.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/StrMatch.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/Tied.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/Standard/Tuple.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/Types/TypeTiny.pm
+
+# perl modules are unusable without perl runtime binary
+depend type=require fmri=__TBD pkg.debug.depend.file=perl \
+    pkg.debug.depend.path=usr/perl5/$(PERLVER)/bin
+
+# Automatically generated dependencies based on distribution metadata
+depend type=require fmri=pkg:/library/perl-5/class-xsaccessor-$(PLV)@1.17
+depend type=require fmri=pkg:/library/perl-5/devel-lexalias-$(PLV)@0.5
+depend type=require fmri=pkg:/library/perl-5/devel-stacktrace-$(PLV)
+depend type=require fmri=pkg:/library/perl-5/exporter-tiny-$(PLV)@1.6.0
+depend type=require fmri=pkg:/library/perl-5/ref-util-xs-$(PLV)@0.100
+depend type=require fmri=pkg:/library/perl-5/regexp-util-$(PLV)@0.3
+depend type=require fmri=pkg:/library/perl-5/type-tiny-xs-$(PLV)@0.25

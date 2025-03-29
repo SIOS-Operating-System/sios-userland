@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "developer/assembler/yasm",
+        "developer/documentation-tool/doxygen",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/video/libvpx"
+    ],
+    "name": "libvpx"
+}

@@ -1,0 +1,22 @@
+--- docs/doxygen.conf.orig	2008-05-30 16:29:57.000000000 +0000
++++ docs/doxygen.conf	2020-12-12 14:26:59.359295174 +0000
+@@ -24,9 +24,18 @@
+ 
+ OPTIMIZE_OUTPUT_FOR_C=YES
+ 
++# If the HTML_TIMESTAMP tag is set to YES then the footer of
++# each generated HTML page will contain the date and time when the page
++# was generated. Setting this to NO can help when comparing the output of
++# multiple runs.
++HTML_TIMESTAMP=NO
++
+ FULL_PATH_NAMES=YES
+ CASE_SENSE_NAMES=NO
+ # some autoconf guru needs to make configure set this correctly...
+ #STRIP_FROM_PATH=/root/apache/httpd-2.0-8/srclib/apr-util
+ 
+-GENERATE_TAGFILE=docs/dox/apu.tag
++#GENERATE_TAGFILE=docs/dox/apu.tag
++GENERATE_LATEX=NO
++HTML_OUTPUT=manual
++SEARCHENGINE=NO

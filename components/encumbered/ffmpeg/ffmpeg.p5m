@@ -1,0 +1,94 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2015 Alexander Pyhalov
+# Copyright (c) 2021 Tim Mooney.  All rights reserved.
+# Copyright 2023 Niklas Poslovski
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+# The ffmpeg-6 runtime libraries used to be in this package.  Since
+# network/megasync still depends on video/ffmpeg we need to add the explicit
+# dependency on library/ffmpeg-6 here.
+#
+# We need to rebuild network/megasync to update its runtime dependency.  Once
+# that's done and there is no other package that depends on video/ffmpeg we
+# should remove the following line.
+depend type=require fmri=library/ffmpeg-6
+
+file path=usr/bin/ffmpeg
+file path=usr/bin/ffplay
+file path=usr/bin/ffprobe
+file path=usr/share/doc/ffmpeg/bootstrap.min.css
+file path=usr/share/doc/ffmpeg/community.html
+file path=usr/share/doc/ffmpeg/default.css
+file path=usr/share/doc/ffmpeg/developer.html
+file path=usr/share/doc/ffmpeg/faq.html
+file path=usr/share/doc/ffmpeg/fate.html
+file path=usr/share/doc/ffmpeg/ffmpeg-all.html
+file path=usr/share/doc/ffmpeg/ffmpeg-bitstream-filters.html
+file path=usr/share/doc/ffmpeg/ffmpeg-codecs.html
+file path=usr/share/doc/ffmpeg/ffmpeg-devices.html
+file path=usr/share/doc/ffmpeg/ffmpeg-filters.html
+file path=usr/share/doc/ffmpeg/ffmpeg-formats.html
+file path=usr/share/doc/ffmpeg/ffmpeg-protocols.html
+file path=usr/share/doc/ffmpeg/ffmpeg-resampler.html
+file path=usr/share/doc/ffmpeg/ffmpeg-scaler.html
+file path=usr/share/doc/ffmpeg/ffmpeg-utils.html
+file path=usr/share/doc/ffmpeg/ffmpeg.html
+file path=usr/share/doc/ffmpeg/ffplay-all.html
+file path=usr/share/doc/ffmpeg/ffplay.html
+file path=usr/share/doc/ffmpeg/ffprobe-all.html
+file path=usr/share/doc/ffmpeg/ffprobe.html
+file path=usr/share/doc/ffmpeg/general.html
+file path=usr/share/doc/ffmpeg/git-howto.html
+file path=usr/share/doc/ffmpeg/libavcodec.html
+file path=usr/share/doc/ffmpeg/libavdevice.html
+file path=usr/share/doc/ffmpeg/libavfilter.html
+file path=usr/share/doc/ffmpeg/libavformat.html
+file path=usr/share/doc/ffmpeg/libavutil.html
+file path=usr/share/doc/ffmpeg/libswresample.html
+file path=usr/share/doc/ffmpeg/libswscale.html
+file path=usr/share/doc/ffmpeg/mailing-list-faq.html
+file path=usr/share/doc/ffmpeg/nut.html
+file path=usr/share/doc/ffmpeg/platform.html
+file path=usr/share/doc/ffmpeg/style.min.css
+file path=usr/share/ffmpeg/ffprobe.xsd
+file path=usr/share/ffmpeg/libvpx-1080p.ffpreset
+file path=usr/share/ffmpeg/libvpx-1080p50_60.ffpreset
+file path=usr/share/ffmpeg/libvpx-360p.ffpreset
+file path=usr/share/ffmpeg/libvpx-720p.ffpreset
+file path=usr/share/ffmpeg/libvpx-720p50_60.ffpreset
+file path=usr/share/man/man1/ffmpeg-all.1
+file path=usr/share/man/man1/ffmpeg-bitstream-filters.1
+file path=usr/share/man/man1/ffmpeg-codecs.1
+file path=usr/share/man/man1/ffmpeg-devices.1
+file path=usr/share/man/man1/ffmpeg-filters.1
+file path=usr/share/man/man1/ffmpeg-formats.1
+file path=usr/share/man/man1/ffmpeg-protocols.1
+file path=usr/share/man/man1/ffmpeg-resampler.1
+file path=usr/share/man/man1/ffmpeg-scaler.1
+file path=usr/share/man/man1/ffmpeg-utils.1
+file path=usr/share/man/man1/ffmpeg.1
+file path=usr/share/man/man1/ffplay-all.1
+file path=usr/share/man/man1/ffplay.1
+file path=usr/share/man/man1/ffprobe-all.1
+file path=usr/share/man/man1/ffprobe.1

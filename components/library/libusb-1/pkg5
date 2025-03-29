@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "system/header/header-ugen",
+        "system/header/header-usb",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libusb-1"
+    ],
+    "name": "libusb"
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/pynutclient",
+        "library/python/pynutclient-39"
+    ],
+    "name": "PyNUTClient"
+}

@@ -1,0 +1,8 @@
+t/00-report-prereqs.t .... ok
+t/basic.t ................ ok
+t/compile.t .............. ok
+t/tap-bug-in-test2.t ..... ok
+t/warnings-after-done.t .. ok
+All tests successful.
+Files=5, Tests=8
+Result: PASS

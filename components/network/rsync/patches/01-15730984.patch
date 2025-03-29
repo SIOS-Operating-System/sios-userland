@@ -1,0 +1,44 @@
+Reduce references to source pathnames down to the respective basenames so
+that builds are reproducible between workspaces.
+The patch is needed to avoid embedding path information from the build area
+in the compiled binares (in particular in error messages).
+
+--- rsync-3.2.7/t_stub.c.orig
++++ rsync-3.2.7/t_stub.c
+@@ -20,6 +20,7 @@
+  */
+ 
+ #include "rsync.h"
++#include <libgen.h>
+ 
+ int do_fsync = 0;
+ int inplace = 0;
+@@ -60,7 +61,7 @@
+  void _exit_cleanup(int code, const char *file, int line)
+ {
+ 	fprintf(stderr, "exit(%d): %s(%d)\n",
+-		code, file, line);
++		code, basename((char *)file), line);
+ 	exit(code);
+ }
+ 
+--- rsync-3.2.7/log.c.orig
++++ rsync-3.2.7/log.c
+@@ -22,6 +22,7 @@
+ #include "rsync.h"
+ #include "itypes.h"
+ #include "inums.h"
++#include <libgen.h>
+ 
+ extern int dry_run;
+ extern int am_daemon;
+--- rsync-3.2.7/cleanup.c.orig
++++ rsync-3.2.7/cleanup.c
+@@ -21,6 +21,7 @@
+  */
+ 
+ #include "rsync.h"
++#include <libgen.h>
+ 
+ extern int dry_run;
+ extern int am_server;

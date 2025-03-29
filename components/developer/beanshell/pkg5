@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/java/openjdk8",
+        "shell/ksh93"
+    ],
+    "fmris": [
+        "runtime/java/beanshell"
+    ],
+    "name": "beanshell"
+}

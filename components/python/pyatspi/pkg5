@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/pyatspi2",
+        "library/python/pyatspi2-39"
+    ],
+    "name": "pyatspi"
+}

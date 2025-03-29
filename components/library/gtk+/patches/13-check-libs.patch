@@ -1,0 +1,26 @@
+--- gtk+-2.24.33/modules/printbackends/cups/gtkprintbackendcups.c.orig
++++ gtk+-2.24.33/modules/printbackends/cups/gtkprintbackendcups.c
+@@ -263,6 +263,23 @@
+ G_MODULE_EXPORT GtkPrintBackend * 
+ pb_module_create (void)
+ {
++  static gboolean loaded = FALSE;
++
++  if (!loaded)
++  {
++    GModule *cups;
++    GModuleFlags flags;
++
++    flags = G_MODULE_BIND_LAZY | G_MODULE_BIND_LOCAL;
++
++    cups = g_module_open ("libcups.so", flags);
++    loaded = TRUE;
++    if (!cups)
++      return NULL;
++    else
++      g_module_close (cups);
++  }
++
+   return gtk_print_backend_cups_new ();
+ }
+ /* CUPS 1.6 Getter/Setter Functions CUPS 1.6 makes private most of the

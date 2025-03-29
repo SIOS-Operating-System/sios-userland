@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "SUNWcs"
+    ],
+    "fmris": [
+        "database/opensearch"
+    ],
+    "name": "opensearch"
+}

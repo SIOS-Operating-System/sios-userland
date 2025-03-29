@@ -1,0 +1,13 @@
+PASS: pcre_jit_test
+PASS: pcrecpp_unittest
+PASS: pcre_scanner_unittest
+PASS: pcre_stringpiece_unittest
+PASS: RunTest
+PASS: RunGrepTest
+# TOTAL: 6
+# PASS:  6
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0

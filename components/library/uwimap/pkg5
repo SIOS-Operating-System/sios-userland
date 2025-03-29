@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/security/openssl-3",
+        "system/library"
+    ],
+    "fmris": [
+        "library/uw-imap"
+    ],
+    "name": "imap"
+}

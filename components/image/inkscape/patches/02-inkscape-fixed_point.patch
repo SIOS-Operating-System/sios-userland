@@ -1,0 +1,13 @@
+--- inkscape-1.4_2024-10-09_e7c3feb100/src/util/fixed_point.h.orig
++++ inkscape-1.4_2024-10-09_e7c3feb100/src/util/fixed_point.h
+@@ -78,8 +78,8 @@
+     operator int() const { return v>>precision; }
+     operator unsigned int() const { return v>>precision; }
+ 
+-    operator float() const { return ldexpf(v,-precision); }
+-    operator double() const { return ldexp(v,-precision); }
++    operator float() const { return ldexpf((float)v,-precision); }
++    operator double() const { return ldexp((double) v,-precision); }
+ private:
+     T v;
+ };

@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "library/python/jaraco-text-39",
+        "library/python/setuptools-39",
+        "library/python/setuptools-scm-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/jaraco-collections",
+        "library/python/jaraco-collections-39"
+    ],
+    "name": "jaraco.collections"
+}

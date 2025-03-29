@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/zlib",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "runtime/tcl-8"
+    ],
+    "name": "tcl"
+}

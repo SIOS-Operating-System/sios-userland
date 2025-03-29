@@ -1,0 +1,39 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+# Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.description value="The Info-Zip (unzip) decompression utility"
+set name=pkg.summary value="Info-Zip (unzip)"
+set name=com.oracle.info.description value="the unzip decompression utility"
+set name=com.oracle.info.tpno value=9100
+set name=info.classification \
+    value="org.opensolaris.category.2008:Applications/System Utilities "
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=org.opensolaris.arc-caseid \
+    value=PSARC/1999/555
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license info-zip.license license="Info-ZIP"
+
+file path=usr/bin/funzip
+file path=usr/bin/unzip
+file path=usr/bin/unzipsfx
+file path=usr/bin/zipgrep
+link path=usr/bin/zipinfo target=unzip
+file path=usr/share/man/man1/funzip.1
+file path=usr/share/man/man1/unzip.1
+file path=usr/share/man/man1/unzipsfx.1
+file path=usr/share/man/man1/zipgrep.1
+file path=usr/share/man/man1/zipinfo.1

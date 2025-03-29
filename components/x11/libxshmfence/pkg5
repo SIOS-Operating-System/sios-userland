@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "system/library"
+    ],
+    "fmris": [
+        "x11/library/libxshmfence"
+    ],
+    "name": "libxshmfence"
+}

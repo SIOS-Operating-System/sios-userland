@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "shell/expect",
+        "shell/ksh93"
+    ],
+    "fmris": [
+        "developer/test/dejagnu"
+    ],
+    "name": "dejagnu"
+}

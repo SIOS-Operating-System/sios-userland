@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "library/libxml2",
+        "library/readline-8",
+        "system/library",
+        "system/library/gcc-13-runtime"
+    ],
+    "fmris": [
+        "library/augeas",
+        "library/augeas-lenses",
+        "library/augeas-libs",
+        "library/augeas-tools",
+        "library/augeas-vim"
+    ],
+    "name": "augeas"
+}

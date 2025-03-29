@@ -1,0 +1,5279 @@
+We change (8) to (1m), [8] to [1m] in docs/man/*.txt and
+8 to 1m in docs/man/Makefile.am and configure.ac self-test.
+Makefile variable 'man1m_MANS' should be changed to 'man_MANS'
+or 'man1_MANS'. In any case I couldn't make automake install
+manpages in man1m directory - this is addressed by moving
+in the packaging Makefile.
+
+Manual review of this patch for upgrades to new NUT versions
+is necessary.
+
+diff -Naur nut-2.8.1-orig/docs/man/adelsystem_cbi.txt nut-2.8.1/docs/man/adelsystem_cbi.txt
+--- nut-2.8.1-orig/docs/man/adelsystem_cbi.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/adelsystem_cbi.txt	2023-11-01 03:45:39.979590993 +0100
+@@ -1,5 +1,5 @@
+-ADELSYSTEM_CBI(8)
+-=================
++ADELSYSTEM_CBI(1m)
++==================
+ 
+ NAME
+ ----
+@@ -14,7 +14,7 @@
+ *adelsystem_cbi* -a 'DEVICE_NAME' ['OPTIONS']
+ 
+ NOTE: This man page only documents the specific features of the *adelsystem_cbi*
+-driver. For information about the core driver, see linkman:nutupsdrv[8].
++driver. For information about the core driver, see linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -102,7 +102,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8], linkman:ups.conf[5]
++linkman:nutupsdrv[1m], linkman:ups.conf[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/al175.txt nut-2.8.1/docs/man/al175.txt
+--- nut-2.8.1-orig/docs/man/al175.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/al175.txt	2023-11-01 03:45:44.506981936 +0100
+@@ -1,5 +1,5 @@
+-AL175(8)
+-========
++AL175(1m)
++=========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ *al175* driver. For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -36,7 +36,7 @@
+ INSTANT COMMANDS
+ ----------------
+ 
+-This driver supports some extra commands (see linkman:upscmd[8]):
++This driver supports some extra commands (see linkman:upscmd[1m]):
+ 
+ *test.battery.start*::
+ Start a battery test.
+@@ -75,7 +75,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/apc_modbus.txt nut-2.8.1/docs/man/apc_modbus.txt
+--- nut-2.8.1-orig/docs/man/apc_modbus.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/apc_modbus.txt	2023-11-01 03:45:52.847474988 +0100
+@@ -1,5 +1,5 @@
+-APC_MODBUS(8)
+-=============
++APC_MODBUS(1m)
++==============
+ 
+ NAME
+ ----
+@@ -87,7 +87,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8], linkman:ups.conf[5]
++linkman:nutupsdrv[1m], linkman:ups.conf[5]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/apcsmart-old.txt nut-2.8.1/docs/man/apcsmart-old.txt
+--- nut-2.8.1-orig/docs/man/apcsmart-old.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/apcsmart-old.txt	2023-11-01 03:45:57.753094376 +0100
+@@ -1,5 +1,5 @@
+-APCSMART-OLD(8)
+-===============
++APCSMART-OLD(1m)
++================
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ apcsmart-old driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -101,7 +101,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/apcsmart.txt nut-2.8.1/docs/man/apcsmart.txt
+--- nut-2.8.1-orig/docs/man/apcsmart.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/apcsmart.txt	2023-11-01 03:46:01.287326276 +0100
+@@ -1,5 +1,5 @@
+-APCSMART(8)
+-===========
++APCSMART(1m)
++============
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ apcsmart driver. For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ 
+ SUPPORTED HARDWARE
+@@ -72,7 +72,7 @@
+     Several Microsol serial models sold in Brazil have been rebranded
+ 	as APC Back-UPS, and the model numbers tend to start with "BZ".
+ 	If you have one of these "Nobreaks", they will not work with the
+-	*apcsmart* driver -- please see the linkman:solis[8] driver instead.
++	*apcsmart* driver -- please see the linkman:solis[1m] driver instead.
+ +
+ --
+ .Example models:
+@@ -403,8 +403,8 @@
+ SEE ALSO
+ --------
+ 
+-linkman:nutupsdrv[8], linkman:ups.conf[5], linkman:usbhid-ups[8],
+-linkman:solis[8]
++linkman:nutupsdrv[1m], linkman:ups.conf[5], linkman:usbhid-ups[1m],
++linkman:solis[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/apcupsd-ups.txt nut-2.8.1/docs/man/apcupsd-ups.txt
+--- nut-2.8.1-orig/docs/man/apcupsd-ups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/apcupsd-ups.txt	2023-11-01 03:46:04.406055412 +0100
+@@ -1,5 +1,5 @@
+-APCUPSD-UPS(8)
+-==============
++APCUPSD-UPS(1m)
++===============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the specific features of the
+ *apcupsd-ups* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ DESCRIPTION
+ -----------
+@@ -106,7 +106,7 @@
+ --------
+ 
+ linkman:ups.conf[5],
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet Resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/asem.txt nut-2.8.1/docs/man/asem.txt
+--- nut-2.8.1-orig/docs/man/asem.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/asem.txt	2023-11-01 03:46:08.774173932 +0100
+@@ -1,5 +1,5 @@
+-ASEM(8)
+-=======
++ASEM(1m)
++========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ *asem* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -79,7 +79,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/bcmxcp_usb.txt nut-2.8.1/docs/man/bcmxcp_usb.txt
+--- nut-2.8.1-orig/docs/man/bcmxcp_usb.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/bcmxcp_usb.txt	2023-11-01 03:46:16.831697323 +0100
+@@ -1,5 +1,5 @@
+-BCMXCP_USB(8)
+-=============
++BCMXCP_USB(1m)
++==============
+ 
+ NAME
+ ----
+@@ -12,7 +12,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ bcmxcp_usb driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ This driver is a variant of the serial driver bcmxcp and uses the same
+ core code.
+ 
+@@ -128,7 +128,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/bcmxcp.txt nut-2.8.1/docs/man/bcmxcp.txt
+--- nut-2.8.1-orig/docs/man/bcmxcp.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/bcmxcp.txt	2023-11-01 03:46:13.395432614 +0100
+@@ -1,5 +1,5 @@
+-BCMXCP(8)
+-=========
++BCMXCP(1m)
++==========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ bcmxcp driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -19,7 +19,7 @@
+ This driver should recognize all serial BCM/XCP-compatible UPSes.
+ It has been developed and tested on Powerware PW5115 and PW9120 hardware.
+ If your UPS has a USB connection, you may also consult the
+-linkman:bcmxcp_usb[8] driver documentation.
++linkman:bcmxcp_usb[1m] driver documentation.
+ 
+ EXTRA ARGUMENTS
+ ---------------
+@@ -87,12 +87,12 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ The USB BCM/XCP driver:
+ ~~~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:bcmxcp_usb[8]
++linkman:bcmxcp_usb[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/belkin.txt nut-2.8.1/docs/man/belkin.txt
+--- nut-2.8.1-orig/docs/man/belkin.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/belkin.txt	2023-11-01 03:46:20.071770927 +0100
+@@ -1,5 +1,5 @@
+-BELKIN(8)
+-=========
++BELKIN(1m)
++==========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ belkin driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -48,15 +48,15 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Other Belkin drivers:
+ ~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:belkinunv[8],
+-linkman:blazer_ser[8],
+-linkman:blazer_usb[8],
+-linkman:usbhid-ups[8]
++linkman:belkinunv[1m],
++linkman:blazer_ser[1m],
++linkman:blazer_usb[1m],
++linkman:usbhid-ups[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/belkinunv.txt nut-2.8.1/docs/man/belkinunv.txt
+--- nut-2.8.1-orig/docs/man/belkinunv.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/belkinunv.txt	2023-11-01 03:46:23.098486028 +0100
+@@ -1,5 +1,5 @@
+-BELKINUNV(8)
+-============
++BELKINUNV(1m)
++=============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ belkin driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ This driver only supports serial connections. If your UPS has a USB port,
+ please consult the Hardware Compatibility List (HCL) to see which of
+@@ -28,8 +28,8 @@
+ The Trust UPS and older Belkin units are not supported by this driver,
+ and neither are the Belkin Home Office models (F6H500-SER and so
+ forth). However, some Belkin models, such as the Regulator Pro, are
+-supported by the linkman:belkin[8] driver, and the Home Office models
+-are supported using the linkman:genericups[8] driver with
++supported by the linkman:belkin[1m] driver, and the Home Office models
++are supported using the linkman:genericups[1m] driver with
+ `upstype=7`.
+ 
+ SOFT SHUTDOWN WORKAROUND
+@@ -51,7 +51,7 @@
+ This is meant to be used in a shutdown script as follows: during a
+ shutdown, after all filesystems have been remounted read-only, and
+ just before the system would normally be halted: check /etc/killpower
+-(or similar) to see if this shutdown was caused by linkman:upsmon[8],
++(or similar) to see if this shutdown was caused by linkman:upsmon[1m],
+ and if yes, call *belkinunv -x wait*. If AC power comes back on,
+ *belkinunv* exits, and things should be arranged so that the
+ system reboots in this case. If AC power does not come back on, the
+@@ -77,7 +77,7 @@
+ OPTIONS
+ -------
+ 
+-See also linkman:nutupsdrv[8] for generic options. Never use the
++See also linkman:nutupsdrv[1m] for generic options. Never use the
+ *-k* option with this driver; it does not work properly.
+ 
+ *-x wait*[='level']::
+@@ -319,7 +319,7 @@
+ 
+ When used normally, *belkinunv* forks into the background and its
+ diagnostics are the same as for all NUT drivers, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ When used with the *-x wait* option, the exit status is normally
+ *0*. If the *-x nohang* option has also been specified, an exit
+@@ -343,15 +343,15 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Other Belkin drivers:
+ ~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:belkinunv[8],
+-linkman:blazer_ser[8],
+-linkman:blazer_usb[8],
+-linkman:usbhid-ups[8]
++linkman:belkinunv[1m],
++linkman:blazer_ser[1m],
++linkman:blazer_usb[1m],
++linkman:usbhid-ups[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/bestfcom.txt nut-2.8.1/docs/man/bestfcom.txt
+--- nut-2.8.1-orig/docs/man/bestfcom.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/bestfcom.txt	2023-11-01 03:46:26.720929901 +0100
+@@ -1,5 +1,5 @@
+-BESTFCOM(8)
+-===========
++BESTFCOM(1m)
++============
+ 
+ NAME
+ ----
+@@ -11,14 +11,14 @@
+ 
+ This man page only documents the hardware-specific features of the
+ bestfcom driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+ 
+ Best Power Fortress/Ferrups implementing the Fortress UPS Protocol
+ (f-command set).  (For older Fortress units, see
+-linkman:bestfortress[8].)
++linkman:bestfortress[1m].)
+ 
+ EXTRA ARGUMENTS
+ ---------------
+@@ -40,7 +40,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/bestfortress.txt nut-2.8.1/docs/man/bestfortress.txt
+--- nut-2.8.1-orig/docs/man/bestfortress.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/bestfortress.txt	2023-11-01 03:46:30.226678512 +0100
+@@ -1,5 +1,5 @@
+-BESTFORTRESS(8)
+-===============
++BESTFORTRESS(1m)
++================
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ bestfortress driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -45,12 +45,12 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ The newer Best Power drivers:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:bestups[8], linkman:bestuferrups[8], linkman:bestfcom[8]
++linkman:bestups[1m], linkman:bestuferrups[1m], linkman:bestfcom[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/bestuferrups.txt nut-2.8.1/docs/man/bestuferrups.txt
+--- nut-2.8.1-orig/docs/man/bestuferrups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/bestuferrups.txt	2023-11-01 03:46:35.664091460 +0100
+@@ -1,5 +1,5 @@
+-BESTUFERRUPS(8)
+-===============
++BESTUFERRUPS(1m)
++================
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ bestuferrups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -37,7 +37,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/bestups.txt nut-2.8.1/docs/man/bestups.txt
+--- nut-2.8.1-orig/docs/man/bestups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/bestups.txt	2023-11-01 03:46:38.330653596 +0100
+@@ -1,5 +1,5 @@
+-BESTUPS(8)
+-==========
++BESTUPS(1m)
++===========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ bestups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ NOTE
+ ----
+@@ -19,11 +19,11 @@
+ Please note that this driver is deprecated and will not receive
+ new development. If it works for managing your devices -- fine,
+ but if you are running it to try setting up a new device, please
+-consider the newer linkman:nutdrv_qx[8] instead, which should
++consider the newer linkman:nutdrv_qx[1m] instead, which should
+ handle all 'Q*' protocol variants for NUT.
+ 
+ If your device works with this driver, but does not work with
+-linkman:nutdrv_qx[8], please report this via the mailing list or issue
++linkman:nutdrv_qx[1m], please report this via the mailing list or issue
+ tracker.
+ 
+ SUPPORTED HARDWARE
+@@ -38,7 +38,7 @@
+ they will generate a warning since their battery information is not known.
+ 
+ This driver does not support some older Best/SOLA units.  (For older
+-Fortress units, see linkman:bestfortress[8].)
++Fortress units, see linkman:bestfortress[1m].)
+ 
+ EXTRA ARGUMENTS
+ ---------------
+@@ -64,7 +64,7 @@
+ +
+ For example, the SOLA 610 700VA UPS (with a 24V battery) reports the
+ single cell voltage (about 2.27V when fully charged). In this particular
+-case you can set `battvoltmult = 12` in linkman:ups.conf[8] to fix this.
++case you can set `battvoltmult = 12` in linkman:ups.conf[1m] to fix this.
+ 
+ *ID=*'string'::
+ 
+@@ -114,7 +114,7 @@
+ yet actually have a nominal voltage slightly below that.  This leads to
+ things such as the perpetual 98.7% charge on the author's Fortress 750,
+ even when it's been charging for weeks.  You can use `nombattvolt=` in
+-linkman:ups.conf[8] to fix this.
++linkman:ups.conf[1m] to fix this.
+ 
+ AUTHORS
+ -------
+@@ -128,7 +128,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/blazer_ser.txt nut-2.8.1/docs/man/blazer_ser.txt
+--- nut-2.8.1-orig/docs/man/blazer_ser.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/blazer_ser.txt	2023-11-01 03:46:41.622764336 +0100
+@@ -1,5 +1,5 @@
+-BLAZER_SER(8)
+-=============
++BLAZER_SER(1m)
++==============
+ :blazer_usb!:
+ 
+ NAME
+diff -Naur nut-2.8.1-orig/docs/man/blazer_usb.txt nut-2.8.1/docs/man/blazer_usb.txt
+--- nut-2.8.1-orig/docs/man/blazer_usb.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/blazer_usb.txt	2023-11-01 03:46:44.638791414 +0100
+@@ -1,5 +1,5 @@
+-BLAZER_USB(8)
+-=============
++BLAZER_USB(1m)
++==============
+ :blazer_usb:
+ 
+ NAME
+diff -Naur nut-2.8.1-orig/docs/man/blazer-common.txt nut-2.8.1/docs/man/blazer-common.txt
+--- nut-2.8.1-orig/docs/man/blazer-common.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/blazer-common.txt	2023-11-01 03:43:21.838975323 +0100
+@@ -3,7 +3,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ blazer driver. For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ NOTE
+ ----
+@@ -11,11 +11,11 @@
+ Please note that this driver is deprecated and will not receive
+ new development. If it works for managing your devices -- fine,
+ but if you are running it to try setting up a new device, please
+-consider the newer linkman:nutdrv_qx[8] instead, which should
++consider the newer linkman:nutdrv_qx[1m] instead, which should
+ handle all 'Q*' protocol variants for NUT.
+ 
+ Please do also report if your device works with this driver,
+-but linkman:nutdrv_qx[8] would not actually support it with any
++but linkman:nutdrv_qx[1m] would not actually support it with any
+ subdriver!
+ 
+ SUPPORTED HARDWARE
+@@ -156,7 +156,7 @@
+ UPS COMMANDS
+ ------------
+ 
+-This driver supports some instant commands (see linkman:upscmd[8]):
++This driver supports some instant commands (see linkman:upscmd[1m]):
+ 
+ *beeper.toggle*::
+ 
+@@ -300,12 +300,12 @@
+ --------
+ 
+ ifdef::blazer_usb[]
+-linkman:blazer_ser[8],
++linkman:blazer_ser[1m],
+ endif::blazer_usb[]
+ ifndef::blazer_usb[]
+-linkman:blazer_usb[8],
++linkman:blazer_usb[1m],
+ endif::blazer_usb[]
+-linkman:nutupsdrv[8], linkman:upsc[8], linkman:upscmd[8], linkman:upsrw[8]
++linkman:nutupsdrv[1m], linkman:upsc[1m], linkman:upscmd[1m], linkman:upsrw[1m]
+ 
+ 
+ Internet Resources:
+diff -Naur nut-2.8.1-orig/docs/man/clone.txt nut-2.8.1/docs/man/clone.txt
+--- nut-2.8.1-orig/docs/man/clone.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/clone.txt	2023-11-01 03:46:47.571327276 +0100
+@@ -1,5 +1,5 @@
+-CLONE(8)
+-========
++CLONE(1m)
++=========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the specific features of the
+ clone driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ DESCRIPTION
+ -----------
+@@ -128,7 +128,7 @@
+ linkman:upscmd[1],
+ linkman:upsrw[1],
+ linkman:ups.conf[5],
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Dummy driver:
+ ~~~~~~~~~~~~~
+@@ -137,7 +137,7 @@
+ 'clone' driver, by relaying information from a locally or remotely running
+ "real" device driver (and NUT data server).
+ 
+-linkman:dummy-ups[8]
++linkman:dummy-ups[1m]
+ 
+ Internet Resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/dummy-ups.txt nut-2.8.1/docs/man/dummy-ups.txt
+--- nut-2.8.1-orig/docs/man/dummy-ups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/dummy-ups.txt	2023-11-01 03:46:54.338913469 +0100
+@@ -1,5 +1,5 @@
+-DUMMY-UPS(8)
+-============
++DUMMY-UPS(1m)
++=============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the specific features of the
+ *dummy-ups* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ DESCRIPTION
+ -----------
+@@ -27,7 +27,7 @@
+ ~~~~~~~~~~
+ 
+ In this mode, *dummy-ups* looks like a standard NUT device driver to
+-linkman:upsd[8] and allows one to change any value for testing purposes.
++linkman:upsd[1m] and allows one to change any value for testing purposes.
+ It is both interactive, controllable through the linkman:upsrw[1] and
+ linkman:upscmd[1] commands (or equivalent graphical tool), and batchable
+ through script files. It can be configured, launched and used as any other
+@@ -124,7 +124,7 @@
+ This file is generally named `something.dev` or `something.seq`. It contains
+ a list of all valid variables and associated values (you can later use `upsrw`
+ only to modify values of these variables), and has the same format as an
+-linkman:upsc[8] dump (`<varname>: <value>`). So you can easily create
++linkman:upsc[1m] dump (`<varname>: <value>`). So you can easily create
+ definition files from an existing UPS using `upsc > file.dev`.
+ 
+ Note that the Network UPS project provides an extensive
+@@ -272,7 +272,7 @@
+ linkman:upscmd[1],
+ linkman:upsrw[1],
+ linkman:ups.conf[5],
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Clone driver:
+ ~~~~~~~~~~~~~
+@@ -282,7 +282,7 @@
+ users to group clients to a particular outlet of a device and deal with
+ this output as if it were a normal UPS.
+ 
+-linkman:clone[8]
++linkman:clone[1m]
+ 
+ Internet Resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/etapro.txt nut-2.8.1/docs/man/etapro.txt
+--- nut-2.8.1-orig/docs/man/etapro.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/etapro.txt	2023-11-01 03:46:57.395906287 +0100
+@@ -1,5 +1,5 @@
+-ETAPRO(8)
+-=========
++ETAPRO(1m)
++==========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ etapro driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -35,7 +35,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/everups.txt nut-2.8.1/docs/man/everups.txt
+--- nut-2.8.1-orig/docs/man/everups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/everups.txt	2023-11-01 03:47:00.490682292 +0100
+@@ -1,5 +1,5 @@
+-EVERUPS(8)
+-==========
++EVERUPS(1m)
++===========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ everups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -42,7 +42,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/gamatronic.txt nut-2.8.1/docs/man/gamatronic.txt
+--- nut-2.8.1-orig/docs/man/gamatronic.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/gamatronic.txt	2023-11-01 03:47:03.012287890 +0100
+@@ -1,5 +1,5 @@
+-GAMATRONIC(8)
+-=============
++GAMATRONIC(1m)
++==============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ gamatronic driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -36,7 +36,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/generic_gpio.txt nut-2.8.1/docs/man/generic_gpio.txt
+--- nut-2.8.1-orig/docs/man/generic_gpio.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/generic_gpio.txt	2023-11-01 03:47:06.499076902 +0100
+@@ -1,5 +1,5 @@
+-GENERIC GPIO(8)
+-===============
++GENERIC GPIO(1m)
++================
+ 
+ NAME
+ ----
+@@ -14,7 +14,7 @@
+ *generic_gpio* -a 'gpiochip0' ['OPTIONS']
+ 
+ NOTE: This man page only documents the specific features of the *generic_gpio*
+-driver. For information about the core driver, see linkman:nutupsdrv[8].
++driver. For information about the core driver, see linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -118,7 +118,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8], linkman:ups.conf[5]
++linkman:nutupsdrv[1m], linkman:ups.conf[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/generic_modbus.txt nut-2.8.1/docs/man/generic_modbus.txt
+--- nut-2.8.1-orig/docs/man/generic_modbus.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/generic_modbus.txt	2023-11-01 03:47:09.335479636 +0100
+@@ -1,5 +1,5 @@
+-GENERIC_MODBUS(8)
+-=================
++GENERIC_MODBUS(1m)
++==================
+ 
+ NAME
+ ----
+@@ -16,7 +16,7 @@
+ 
+ NOTE: This man page only documents the specific features of the
+ *generic_modbus* driver. For information about the core driver,
+-see linkman:nutupsdrv[8].
++see linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -240,7 +240,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8], linkman:ups.conf[5]
++linkman:nutupsdrv[1m], linkman:ups.conf[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/genericups.txt nut-2.8.1/docs/man/genericups.txt
+--- nut-2.8.1-orig/docs/man/genericups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/genericups.txt	2023-11-01 03:47:12.052522745 +0100
+@@ -1,5 +1,5 @@
+-GENERICUPS(8)
+-=============
++GENERICUPS(1m)
++==============
+ 
+ NAME
+ ----
+@@ -10,7 +10,7 @@
+ ----
+ 
+ This man page only documents the specific features of the genericups
+-driver.  For information about the core driver, see linkman:nutupsdrv[8].
++driver.  For information about the core driver, see linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -387,8 +387,8 @@
+ may not be able to sense this in software.
+ 
+ Most contact-closure UPSes will not power down the load if the line power
+-is present.  This can create a race when using secondary linkman:upsmon[8]
+-systems.  See the linkman:upsmon[8] man page for more information.
++is present.  This can create a race when using secondary linkman:upsmon[1m]
++systems.  See the linkman:upsmon[1m] man page for more information.
+ 
+ The solution to both of these problems is to upgrade to a smart protocol
+ UPS of some kind that allows detection and proper load cycling on command.
+@@ -399,7 +399,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/hosts.conf.txt nut-2.8.1/docs/man/hosts.conf.txt
+--- nut-2.8.1-orig/docs/man/hosts.conf.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/hosts.conf.txt	2023-11-01 03:43:21.860546249 +0100
+@@ -9,8 +9,8 @@
+ DESCRIPTION
+ -----------
+ 
+-The CGI programs (linkman:upsset.cgi[8], linkman:upsstats.cgi[8],
+-linkman:upsimage.cgi[8]) use this file to determine if they are allowed to
++The CGI programs (linkman:upsset.cgi[1m], linkman:upsstats.cgi[1m],
++linkman:upsimage.cgi[1m]) use this file to determine if they are allowed to
+ talk to a host.  This keeps random visitors from using your web server
+ to annoy others by creating outgoing connections.
+ 
+@@ -32,7 +32,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsset.cgi[8], linkman:upsstats.cgi[8], linkman:upsimage.cgi[8]
++linkman:upsset.cgi[1m], linkman:upsstats.cgi[1m], linkman:upsimage.cgi[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/huawei-ups2000.txt nut-2.8.1/docs/man/huawei-ups2000.txt
+--- nut-2.8.1-orig/docs/man/huawei-ups2000.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/huawei-ups2000.txt	2023-11-01 03:47:18.145976119 +0100
+@@ -1,4 +1,4 @@
+-HUAWEI_UPS2000(8)
++HUAWEI_UPS2000(1m)
+ ==================
+ 
+ NAME
+@@ -16,7 +16,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ huawei-ups2000 driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -192,7 +192,7 @@
+ INSTANT COMMANDS
+ ----------------
+ 
+-This driver supports some instant commands (see linkman:upscmd[8]):
++This driver supports some instant commands (see linkman:upscmd[1m]):
+ 
+ *shutdown.stayoff*::
+ After an *offdelay*, turn off the load. When line power is back,
+@@ -272,7 +272,7 @@
+ VARIABLES
+ ---------
+ 
+-This driver supports some writable runtime variables (see linkman:upsrw[8]):
++This driver supports some writable runtime variables (see linkman:upsrw[1m]):
+ 
+ **ups.beeper.status**::
+ Enable or disable the UPS beeper, *disabled* or *enabled*.
+@@ -390,7 +390,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/isbmex.txt nut-2.8.1/docs/man/isbmex.txt
+--- nut-2.8.1-orig/docs/man/isbmex.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/isbmex.txt	2023-11-01 03:47:21.181739051 +0100
+@@ -1,5 +1,5 @@
+-ISBMEX(8)
+-=========
++ISBMEX(1m)
++==========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ isbmex driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -35,7 +35,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/ivtscd.txt nut-2.8.1/docs/man/ivtscd.txt
+--- nut-2.8.1-orig/docs/man/ivtscd.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/ivtscd.txt	2023-11-01 03:47:27.379219695 +0100
+@@ -1,5 +1,5 @@
+-IVTSCD(8)
+-=========
++IVTSCD(1m)
++==========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ *ivtscd* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ DESCRIPTION
+ -----------
+@@ -34,7 +34,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/libnutclient_tcp.txt nut-2.8.1/docs/man/libnutclient_tcp.txt
+--- nut-2.8.1-orig/docs/man/libnutclient_tcp.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/libnutclient_tcp.txt	2023-11-01 03:43:21.875500562 +0100
+@@ -35,7 +35,7 @@
+ DESCRIPTION
+ -----------
+ 
+-These functions allow to manage connections to linkman:upsd[8]
++These functions allow to manage connections to linkman:upsd[1m]
+ using NUT TCP protocol.
+ 
+ The *nutclient_tcp_create_client()* function create the 'NUTCLIENT_TCP_t'
+diff -Naur nut-2.8.1-orig/docs/man/libnutclient.txt nut-2.8.1/docs/man/libnutclient.txt
+--- nut-2.8.1-orig/docs/man/libnutclient.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/libnutclient.txt	2023-11-01 03:43:21.879645245 +0100
+@@ -19,7 +19,7 @@
+ 
+ The Network UPS Tools (NUT) *nutclient* library provides a number of
+ useful functions for programs to use when communicating with
+-linkman:upsd[8]. It provides high-level representation of NUT data
++linkman:upsd[1m]. It provides high-level representation of NUT data
+ through client connection, devices, variables and commands.
+ Unlike linkman:upsclient[3], all low-level protocol details are
+ hidden.
+diff -Naur nut-2.8.1-orig/docs/man/liebert-esp2.txt nut-2.8.1/docs/man/liebert-esp2.txt
+--- nut-2.8.1-orig/docs/man/liebert-esp2.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/liebert-esp2.txt	2023-11-01 03:47:33.920694165 +0100
+@@ -1,5 +1,5 @@
+-LIEBERT-ESP2(8)
+-==============
++LIEBERT-ESP2(1m)
++================
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ liebert-esp2 driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SPECIAL CABLING NOTE
+ --------------------
+@@ -61,7 +61,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/liebert.txt nut-2.8.1/docs/man/liebert.txt
+--- nut-2.8.1-orig/docs/man/liebert.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/liebert.txt	2023-11-01 03:48:12.243023618 +0100
+@@ -1,5 +1,5 @@
+-LIEBERT(8)
+-==========
++LIEBERT(1m)
++===========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ liebert driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -45,7 +45,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/macosx-ups.txt nut-2.8.1/docs/man/macosx-ups.txt
+--- nut-2.8.1-orig/docs/man/macosx-ups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/macosx-ups.txt	2023-11-01 03:48:15.912801461 +0100
+@@ -1,5 +1,5 @@
+-MACOSX-UPS(8)
+-=============
++MACOSX-UPS(1m)
++==============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ *macosx-ups* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -50,7 +50,7 @@
+ This driver is a monitoring-only driver, and cannot shut down an UPS on its
+ own. However, this should not be a problem in practice: it is monitoring the
+ built-in Mac OS X UPS driver, which has configuration options for several
+-shutdown scenarios. Consult the Energy Saver control panel or *pmset*(8) for
++shutdown scenarios. Consult the Energy Saver control panel or *pmset*(1m) for
+ more information.
+ 
+ The default distribution of *apcupsd* installs a kernel extension which
+@@ -62,7 +62,7 @@
+ provided by the built-in Mac OS X driver. In particular, voltages other than
+ the battery voltage, as well as current and frequency, are typically not
+ shown. It may be possible to monitor these values with *apcupsd* (for APC
+-hardware only) or linkman:usbhid-ups[8].
++hardware only) or linkman:usbhid-ups[1m].
+ 
+ AUTHOR
+ ------
+@@ -72,12 +72,12 @@
+ SEE ALSO
+ --------
+ 
+-linkman:usbhid-ups[8], *pmset*(8), *regex*(3)
++linkman:usbhid-ups[1m], *pmset*(1m), *regex*(3)
+ 
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/Makefile.am nut-2.8.1/docs/man/Makefile.am
+--- nut-2.8.1-orig/docs/man/Makefile.am	2023-10-24 10:45:21.000000000 +0200
++++ nut-2.8.1/docs/man/Makefile.am	2023-11-01 03:45:05.723861115 +0100
+@@ -70,20 +70,20 @@
+ 
+ if WITH_MANS
+ MAN_CLIENT_PAGES = \
+-	nutupsdrv.8 \
+-	nut-driver-enumerator.8 \
+-	upsc.8 \
+-	upscmd.8 \
+-	upsd.8 \
+-	upsdrvctl.8 \
+-	upsdrvsvcctl.8 \
+-	upslog.8 \
+-	upsmon.8 \
+-	upsrw.8 \
+-	upssched.8
++	nutupsdrv.1m \
++	nut-driver-enumerator.1m \
++	upsc.1m \
++	upscmd.1m \
++	upsd.1m \
++	upsdrvctl.1m \
++	upsdrvsvcctl.1m \
++	upslog.1m \
++	upsmon.1m \
++	upsrw.1m \
++	upssched.1m
+ endif WITH_MANS
+ 
+-man8_MANS = $(MAN_CLIENT_PAGES)
++man1m_MANS = $(MAN_CLIENT_PAGES)
+ 
+ HTML_CLIENT_MANS = \
+ 	nutupsdrv.html \
+@@ -101,10 +101,10 @@
+ SRC_TOOL_PAGES = nut-scanner.txt nut-recorder.txt
+ 
+ if WITH_MANS
+-MAN_TOOL_PAGES = nut-scanner.8 nut-recorder.8
++MAN_TOOL_PAGES = nut-scanner.1m nut-recorder.1m
+ endif WITH_MANS
+ 
+-man8_MANS += $(MAN_TOOL_PAGES)
++man1m_MANS += $(MAN_TOOL_PAGES)
+ 
+ HTML_TOOL_MANS = nut-scanner.html nut-recorder.html
+ 
+@@ -123,15 +123,15 @@
+ 	upsset.conf.5 \
+ 	upsstats.html.5
+ 
+-MAN8_CGI_PAGES = \
+-	upsset.cgi.8 \
+-	upsstats.cgi.8 \
+-	upsimage.cgi.8
++MAN1M_CGI_PAGES = \
++	upsset.cgi.1m \
++	upsstats.cgi.1m \
++	upsimage.cgi.1m
+ endif WITH_MANS
+ 
+ if WITH_CGI
+ man5_MANS += $(MAN5_CGI_PAGES)
+-man8_MANS += $(MAN8_CGI_PAGES)
++man1m_MANS += $(MAN1M_CGI_PAGES)
+ endif WITH_CGI
+ 
+ HTML_CGI_MANS = \
+@@ -316,13 +316,13 @@
+ MAN1_DEV_PAGES = \
+ 	libupsclient-config.1
+ 
+-MAN8_DEV_PAGES = \
+-	sockdebug.8
++MAN1M_DEV_PAGES = \
++	sockdebug.1m
+ endif WITH_MANS
+ 
+ if WITH_DEV
+ man3_MANS = $(MAN3_DEV_PAGES)
+-man8_MANS += $(MAN8_DEV_PAGES)
++man1m_MANS += $(MAN1M_DEV_PAGES)
+ 
+ if !WITH_PKG_CONFIG
+ man1_MANS = $(MAN1_DEV_PAGES)
+@@ -385,7 +385,7 @@
+ # If (--with-drivers=...) then we only build specific documents, however
+ # still do track (and EXTRA_DIST, and spellcheck) all available sources.
+ if SOME_DRIVERS
+-man8_MANS += $(DRIVER_MAN_LIST)
++man1m_MANS += $(DRIVER_MAN_LIST)
+ endif
+ 
+ # (--with-serial)
+@@ -437,52 +437,52 @@
+ if ! SOME_DRIVERS
+ if WITH_MANS
+ MAN_SERIAL_PAGES = \
+-	al175.8	\
+-	apcsmart.8	\
+-	apcsmart-old.8	\
+-	bcmxcp.8 	\
+-	belkin.8 	\
+-	belkinunv.8	\
+-	bestfortress.8	\
+-	bestuferrups.8	\
+-	bestups.8 	\
+-	bestfcom.8	\
+-	blazer_ser.8	\
+-	clone.8 \
+-	dummy-ups.8	\
+-	etapro.8	\
+-	everups.8	\
+-	gamatronic.8	\
+-	genericups.8	\
+-	isbmex.8	\
+-	ivtscd.8	\
+-	liebert.8	\
+-	liebert-esp2.8	\
+-	masterguard.8	\
+-	metasys.8	\
+-	mge-shut.8	\
+-	mge-utalk.8	\
+-	oneac.8		\
+-	microdowell.8	\
+-	microsol-apc.8	\
+-	nutdrv_siemens_sitop.8	\
+-	optiups.8	\
+-	powercom.8 	\
+-	powerpanel.8	\
+-	rhino.8		\
+-	riello_ser.8	\
+-	sms_ser.8 \
+-	safenet.8	\
+-	solis.8		\
+-	tripplite.8	\
+-	tripplitesu.8	\
+-	upscode2.8	\
+-	victronups.8	\
+-	apcupsd-ups.8
++	al175.1m	\
++	apcsmart.1m	\
++	apcsmart-old.1m	\
++	bcmxcp.1m 	\
++	belkin.1m 	\
++	belkinunv.1m	\
++	bestfortress.1m	\
++	bestuferrups.1m	\
++	bestups.1m 	\
++	bestfcom.1m	\
++	blazer_ser.1m	\
++	clone.1m \
++	dummy-ups.1m	\
++	etapro.1m	\
++	everups.1m	\
++	gamatronic.1m	\
++	genericups.1m	\
++	isbmex.1m	\
++	ivtscd.1m	\
++	liebert.1m	\
++	liebert-esp2.1m	\
++	masterguard.1m	\
++	metasys.1m	\
++	mge-shut.1m	\
++	mge-utalk.1m	\
++	oneac.1m		\
++	microdowell.1m	\
++	microsol-apc.1m	\
++	nutdrv_siemens_sitop.1m	\
++	optiups.1m	\
++	powercom.1m 	\
++	powerpanel.1m	\
++	rhino.1m		\
++	riello_ser.1m	\
++	sms_ser.1m \
++	safenet.1m	\
++	solis.1m		\
++	tripplite.1m	\
++	tripplitesu.1m	\
++	upscode2.1m	\
++	victronups.1m	\
++	apcupsd-ups.1m
+ endif WITH_MANS
+ 
+ if WITH_SERIAL
+-man8_MANS +=  $(MAN_SERIAL_PAGES)
++man1m_MANS +=  $(MAN_SERIAL_PAGES)
+ endif WITH_SERIAL
+ 
+ HTML_SERIAL_MANS = \
+@@ -534,11 +534,11 @@
+ SRC_SNMP_PAGES = snmp-ups.txt
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_SNMP_PAGES = snmp-ups.8
++MAN_SNMP_PAGES = snmp-ups.1m
+ endif WITH_MANS
+ 
+ if WITH_SNMP
+-man8_MANS += $(MAN_SNMP_PAGES)
++man1m_MANS += $(MAN_SNMP_PAGES)
+ endif WITH_SNMP
+ 
+ HTML_SNMP_MANS = snmp-ups.html
+@@ -560,17 +560,17 @@
+ # NOTE: nut_usb_addvars and blazer-common are not standalone man pages
+ if WITH_MANS
+ MAN_USB_LIBUSB_PAGES = \
+-	bcmxcp_usb.8 \
+-	blazer_usb.8 \
+-	nutdrv_atcl_usb.8 \
+-	richcomm_usb.8 \
+-	riello_usb.8	\
+-	tripplite_usb.8 \
+-	usbhid-ups.8
++	bcmxcp_usb.1m \
++	blazer_usb.1m \
++	nutdrv_atcl_usb.1m \
++	richcomm_usb.1m \
++	riello_usb.1m	\
++	tripplite_usb.1m \
++	usbhid-ups.1m
+ endif WITH_MANS
+ 
+ if WITH_USB
+-man8_MANS += $(MAN_USB_LIBUSB_PAGES)
++man1m_MANS += $(MAN_USB_LIBUSB_PAGES)
+ endif WITH_USB
+ 
+ HTML_USB_LIBUSB_MANS = \
+@@ -590,14 +590,14 @@
+ if ! SOME_DRIVERS
+ if WITH_MANS
+ MAN_SERIAL_USB_PAGES = \
+-	nutdrv_qx.8
++	nutdrv_qx.1m
+ endif WITH_MANS
+ 
+ if WITH_SERIAL
+-man8_MANS += $(MAN_SERIAL_USB_PAGES)
++man1m_MANS += $(MAN_SERIAL_USB_PAGES)
+ else !WITH_SERIAL
+ if WITH_USB
+-man8_MANS += $(MAN_SERIAL_USB_PAGES)
++man1m_MANS += $(MAN_SERIAL_USB_PAGES)
+ endif WITH_USB
+ endif !WITH_SERIAL
+ 
+@@ -609,11 +609,11 @@
+ SRC_NETXML_PAGES = netxml-ups.txt
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_NETXML_PAGES = netxml-ups.8
++MAN_NETXML_PAGES = netxml-ups.1m
+ endif WITH_MANS
+ 
+ if WITH_NEON
+-man8_MANS += $(MAN_NETXML_PAGES)
++man1m_MANS += $(MAN_NETXML_PAGES)
+ endif WITH_NEON
+ 
+ HTML_NETXML_MANS = netxml-ups.html
+@@ -623,11 +623,11 @@
+ SRC_POWERMAN_PAGES = powerman-pdu.txt
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_POWERMAN_PAGES = powerman-pdu.8
++MAN_POWERMAN_PAGES = powerman-pdu.1m
+ endif WITH_MANS
+ 
+ if WITH_LIBPOWERMAN
+-man8_MANS += $(MAN_POWERMAN_PAGES)
++man1m_MANS += $(MAN_POWERMAN_PAGES)
+ endif WITH_LIBPOWERMAN
+ 
+ HTML_POWERMAN_MANS = powerman-pdu.html
+@@ -637,11 +637,11 @@
+ SRC_IPMIPSU_PAGES = nut-ipmipsu.txt
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_IPMIPSU_PAGES = nut-ipmipsu.8
++MAN_IPMIPSU_PAGES = nut-ipmipsu.1m
+ endif WITH_MANS
+ 
+ if WITH_IPMI
+-man8_MANS += $(MAN_IPMIPSU_PAGES)
++man1m_MANS += $(MAN_IPMIPSU_PAGES)
+ endif WITH_IPMI
+ 
+ HTML_IPMIPSU_MANS = nut-ipmipsu.html
+@@ -651,11 +651,11 @@
+ SRC_MACOSX_PAGES = macosx-ups.txt
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_MACOSX_PAGES = macosx-ups.8
++MAN_MACOSX_PAGES = macosx-ups.1m
+ endif WITH_MANS
+ 
+ if WITH_MACOSX
+-man8_MANS += $(MAN_MACOSX_PAGES)
++man1m_MANS += $(MAN_MACOSX_PAGES)
+ endif WITH_MACOSX
+ 
+ HTML_MACOSX_MANS = macosx-ups.html
+@@ -671,16 +671,16 @@
+ 
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_MODBUS_PAGES = phoenixcontact_modbus.8 \
+-	generic_modbus.8 \
+-	huawei-ups2000.8 \
+-	socomec_jbus.8   \
+-	adelsystem_cbi.8 \
+-	apc_modbus.8
++MAN_MODBUS_PAGES = phoenixcontact_modbus.1m \
++	generic_modbus.1m \
++	huawei-ups2000.1m \
++	socomec_jbus.1m   \
++	adelsystem_cbi.1m \
++	apc_modbus.1m
+ endif WITH_MANS
+ 
+ if WITH_MODBUS
+-man8_MANS += $(MAN_MODBUS_PAGES)
++man1m_MANS += $(MAN_MODBUS_PAGES)
+ endif WITH_MODBUS
+ 
+ HTML_MODBUS_MANS = phoenixcontact_modbus.html \
+@@ -695,11 +695,11 @@
+ SRC_LINUX_I2C_PAGES = asem.txt pijuice.txt
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_LINUX_I2C_PAGES = asem.8 pijuice.8
++MAN_LINUX_I2C_PAGES = asem.1m pijuice.1m
+ endif WITH_MANS
+ 
+ if WITH_LINUX_I2C
+-man8_MANS += $(MAN_LINUX_I2C_PAGES)
++man1m_MANS += $(MAN_LINUX_I2C_PAGES)
+ endif WITH_LINUX_I2C
+ 
+ HTML_LINUX_I2C_MANS = asem.html pijuice.html
+@@ -709,11 +709,11 @@
+ SRC_GPIO_PAGES = generic_gpio.txt
+ if ! SOME_DRIVERS
+ if WITH_MANS
+-MAN_GPIO_PAGES = generic_gpio.8
++MAN_GPIO_PAGES = generic_gpio.1m
+ endif WITH_MANS
+ 
+ if WITH_GPIO
+-man8_MANS += $(MAN_GPIO_PAGES)
++man1m_MANS += $(MAN_GPIO_PAGES)
+ endif WITH_GPIO
+ 
+ HTML_GPIO_MANS = generic_gpio.html
+@@ -726,10 +726,10 @@
+ 	$(MAN_CLIENT_PAGES) \
+ 	$(MAN_TOOL_PAGES) \
+ 	$(MAN5_CGI_PAGES) \
+-	$(MAN8_CGI_PAGES) \
++	$(MAN1M_CGI_PAGES) \
+ 	$(MAN1_DEV_PAGES) \
+ 	$(MAN3_DEV_PAGES) \
+-	$(MAN8_DEV_PAGES) \
++	$(MAN1M_DEV_PAGES) \
+ 	$(MAN_SERIAL_PAGES) \
+ 	$(MAN_SNMP_PAGES) \
+ 	$(MAN_USB_LIBUSB_PAGES) \
+@@ -930,7 +930,8 @@
+ 
+ CLEANFILES = *-spellchecked
+ 
+-SUFFIXES = .txt .html .1 .3 .5 .8
++SUFFIXES = .txt .html .1 .3 .5 .1m
++man_MANS = $(man1m_MANS)
+ 
+ # For builds with allowed installation of prebuild man pages, check that
+ # they exist in sources (make would pull them automatically as a fallback
+@@ -944,7 +944,7 @@
+ 
+ if HAVE_ASCIIDOC
+ 
+-CLEANFILES += *.1 *.3 *.5 *.8 *.xml *.html *.pdf
++CLEANFILES += *.1 *.3 *.5 *.1m *.xml *.html *.pdf
+ 
+ # Working around a2x not friendly to parallelized runs.
+ # See more details in the main NUT docs/Makefile.am
+@@ -1009,7 +1009,7 @@
+ 		-o "$${A2X_OUTDIR}/$(@F)" $< || RES=$$? ; \
+ 	 $(DOCBUILD_END) ; exit $$RES
+ 
+-### Prior to Asciidoc ~8.6.8, the --destination-dir flag didn't seem to affect the location of the intermediate .xml file.
++### Prior to Asciidoc ~8.6.1m, the --destination-dir flag didn't seem to affect the location of the intermediate .xml file.
+ ### This parameter is currently required; see docs/Makefile.am for more detail.
+ A2X_MANPAGE_OPTS = --doctype manpage --format manpage $${A2X_VERBOSE} \
+ 	--xsltproc-opts="--nonet" \
+@@ -1043,8 +1043,8 @@
+ 	 $(A2X) $(A2X_MANPAGE_OPTS) $< || RES=$$? ; \
+ 	 $(DOCBUILD_END) ; exit $$RES
+ 
+-.txt.8:
+-	@A2X_OUTDIR="tmp/man8.$(@F).$$$$" ; \
++.txt.1m:
++	@A2X_OUTDIR="tmp/man1m.$(@F).$$$$" ; \
+ 	 echo "  DOC-MAN  Generating $@"; \
+ 	 $(DOCBUILD_BEGIN) ; RES=0; \
+ 	 $(A2X) $(A2X_MANPAGE_OPTS) $< || RES=$$? ; \
+@@ -1088,7 +1088,7 @@
+ 		exit 1; \
+ 	fi
+ 
+-.txt.8:
++.txt.1m:
+ 	@if [ -r "$@" ] $(SRC_PREBUILT_CLAUSE); then \
+ 		echo "Not (re)building $@ manual page, since 'asciidoc', 'xmllint' or 'xsltproc' were not found." ; \
+ 	else \
+diff -Naur nut-2.8.1-orig/docs/man/masterguard.txt nut-2.8.1/docs/man/masterguard.txt
+--- nut-2.8.1-orig/docs/man/masterguard.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/masterguard.txt	2023-11-01 03:48:18.462239059 +0100
+@@ -1,5 +1,5 @@
+-MASTERGUARD(8)
+-==============
++MASTERGUARD(1m)
++===============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ masterguard driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ NOTE
+ ----
+@@ -19,11 +19,11 @@
+ Please note that this driver is deprecated and will not receive
+ new development. If it works for managing your devices -- fine,
+ but if you are running it to try setting up a new device, please
+-consider the newer linkman:nutdrv_qx[8] instead, which should
++consider the newer linkman:nutdrv_qx[1m] instead, which should
+ handle all 'Q*' protocol variants for NUT.
+ 
+ Please do also report if your device works with this driver,
+-but linkman:nutdrv_qx[8] would not actually support it with any
++but linkman:nutdrv_qx[1m] would not actually support it with any
+ subdriver!
+ 
+ SUPPORTED HARDWARE
+@@ -48,12 +48,12 @@
+ Newer driver:
+ ~~~~~~~~~~~~~
+ 
+-linkman:nutdrv_qx[8]
++linkman:nutdrv_qx[1m]
+ 
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/metasys.txt nut-2.8.1/docs/man/metasys.txt
+--- nut-2.8.1-orig/docs/man/metasys.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/metasys.txt	2023-11-01 03:48:21.127765732 +0100
+@@ -1,5 +1,5 @@
+-METASYS(8)
+-==========
++METASYS(1m)
++===========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ metasys driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -61,7 +61,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/mge-shut.txt nut-2.8.1/docs/man/mge-shut.txt
+--- nut-2.8.1-orig/docs/man/mge-shut.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/mge-shut.txt	2023-11-01 03:48:28.468512641 +0100
+@@ -1,5 +1,5 @@
+-MGE-SHUT(8)
+-===========
++MGE-SHUT(1m)
++============
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ mge-shut driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -33,7 +33,7 @@
+ 
+ *lowbatt*='num'::
+ Set the low battery warning threshold at which shutdown is initiated by
+-linkman:upsmon[8].
++linkman:upsmon[1m].
+ +
+ The factory default value is 30 (in percent), and can be settable depending on
+ the exact model.
+@@ -91,7 +91,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/mge-utalk.txt nut-2.8.1/docs/man/mge-utalk.txt
+--- nut-2.8.1-orig/docs/man/mge-utalk.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/mge-utalk.txt	2023-11-01 03:48:35.948902673 +0100
+@@ -1,5 +1,5 @@
+-MGE-UTALK(8)
+-============
++MGE-UTALK(1m)
++=============
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ mge-utalk driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -43,7 +43,7 @@
+ 
+ *lowbatt*='num'::
+ Set the low battery warning threshold at which shutdown is initiated by
+-linkman:upsmon[8].
++linkman:upsmon[1m].
+ +
+ The factory default value is 30 (in percent), and can be settable depending on
+ the exact model.
+@@ -92,7 +92,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/microdowell.txt nut-2.8.1/docs/man/microdowell.txt
+--- nut-2.8.1-orig/docs/man/microdowell.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/microdowell.txt	2023-11-01 03:48:40.079228728 +0100
+@@ -1,5 +1,5 @@
+-MICRODOWELL(8)
+-==============
++MICRODOWELL(1m)
++===============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ Microdowell driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -36,7 +36,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/microsol-apc.txt nut-2.8.1/docs/man/microsol-apc.txt
+--- nut-2.8.1-orig/docs/man/microsol-apc.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/microsol-apc.txt	2023-11-01 03:48:45.002986044 +0100
+@@ -1,5 +1,5 @@
+-MICROSOL-APC(8)
+-===============
++MICROSOL-APC(1m)
++================
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ microsol-apc driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -24,7 +24,7 @@
+ 
+ In 2009, Schneider Electric acquired Microsol Technologies, and by 2012, the
+ entire Microsol line was being sold under the APC brand. This driver supports
+-these newer, APC-branded models. Older equipment should use linkman:solis[8].
++these newer, APC-branded models. Older equipment should use linkman:solis[1m].
+ 
+ EXTRA ARGUMENTS
+ ---------------
+@@ -65,7 +65,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/netxml-ups.txt nut-2.8.1/docs/man/netxml-ups.txt
+--- nut-2.8.1-orig/docs/man/netxml-ups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/netxml-ups.txt	2023-11-01 03:48:48.630031568 +0100
+@@ -1,5 +1,5 @@
+-netxml-ups(8)
+-=============
++netxml-ups(1m)
++==============
+ 
+ NAME
+ ----
+@@ -12,7 +12,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ netxml-ups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -30,7 +30,7 @@
+  * ePDU Monitored (newer version).
+ 
+ Older models, such as SNMP card (Ref 66062 and Ref 66045), use the SNMP
+-protocol and should use the linkman:snmp-ups[8] driver with the "mibs=mge"
++protocol and should use the linkman:snmp-ups[1m] driver with the "mibs=mge"
+ parameter.
+ 
+ EXTRA ARGUMENTS
+@@ -44,7 +44,7 @@
+ Don't change this value unless you know exactly what you're doing.
+ 
+ This value *must never* be higher than half the MAXAGE value specified in
+-linkman:upsd.conf[5], otherwise you run the risk that linkman:upsd[8] declares
++linkman:upsd.conf[5], otherwise you run the risk that linkman:upsd[1m] declares
+ the driver stale while it is waiting for a connection to timeout.
+ 
+ *subscribe*::
+@@ -94,7 +94,7 @@
+ 443 for https) it may be omitted.
+ 
+ In order not to overload older NMCs by polling them too frequently, it is
+-recommended to increase the "pollinterval" (see linkman:nutupsdrv[8]) and
++recommended to increase the "pollinterval" (see linkman:nutupsdrv[1m]) and
+ linkman:ups.conf[5]) to at least 5 seconds.
+ 
+ KNOWN ISSUES
+@@ -117,7 +117,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/nut_usb_addvars.txt nut-2.8.1/docs/man/nut_usb_addvars.txt
+--- nut-2.8.1-orig/docs/man/nut_usb_addvars.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nut_usb_addvars.txt	2023-11-01 03:43:21.901818089 +0100
+@@ -43,7 +43,7 @@
+ (minus any surrounding whitespace), or the whole 4-digit
+ hexadecimal code for `vendorid` and `productid`.
+ +
+-Try *lsusb(8)* or running this NUT driver with *-DD* command-line
++Try *lsusb(1m)* or running this NUT driver with *-DD* command-line
+ argument for finding out the strings to match.
+ +
+ Examples:
+@@ -57,14 +57,14 @@
+ Select a UPS on a specific USB bus or group of buses. The argument is
+ a regular expression that must match the bus name where the UPS is
+ connected (e.g. `bus="002"` or `bus="00[2-3]"`) as seen on Linux in
+-`/sys/bus/usb/devices` or *lsusb(8)*; including leading zeroes.
++`/sys/bus/usb/devices` or *lsusb(1m)*; including leading zeroes.
+ 
+ *device =* 'regex'::
+ 
+ Select a UPS on a specific USB device or group of devices. The argument is
+ a regular expression that must match the device name where the UPS is
+ connected (e.g. `device="001"` or `device="00[1-2]"`) as seen on Linux
+-in `/sys/bus/usb/devices` or *lsusb(8)*; including leading zeroes.
++in `/sys/bus/usb/devices` or *lsusb(1m)*; including leading zeroes.
+ +
+ NOTE: device numbers are not guaranteed by the OS to be stable across
+ re-boots or device re-plugging.
+diff -Naur nut-2.8.1-orig/docs/man/nut-driver-enumerator.txt nut-2.8.1/docs/man/nut-driver-enumerator.txt
+--- nut-2.8.1-orig/docs/man/nut-driver-enumerator.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nut-driver-enumerator.txt	2023-11-01 03:48:52.193447599 +0100
+@@ -1,5 +1,5 @@
+-NUT-DRIVER-ENUMERATOR(8)
+-========================
++NUT-DRIVER-ENUMERATOR(1m)
++=========================
+ 
+ NAME
+ ----
+@@ -31,7 +31,7 @@
+ other operating systems.
+ 
+ This script provides a uniform interface for further NUT tools
+-such as linkman:upsdrvsvcctl[8] to implement their logic as
++such as linkman:upsdrvsvcctl[1m] to implement their logic as
+ platform-independently as was possible and practical. It is not
+ currently intended for end-user consumption (and so is located in
+ the 'libexec' directory), with *upsdrvsvcctl* exposing the most
+@@ -142,7 +142,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsdrvsvcctl[8], linkman:ups.conf[5]
++linkman:upsdrvsvcctl[1m], linkman:ups.conf[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/nut-ipmipsu.txt nut-2.8.1/docs/man/nut-ipmipsu.txt
+--- nut-2.8.1-orig/docs/man/nut-ipmipsu.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nut-ipmipsu.txt	2023-11-01 03:48:55.313152656 +0100
+@@ -1,5 +1,5 @@
+-NUT-IPMIPSU(8)
+-==============
++NUT-IPMIPSU(1m)
++===============
+ 
+ NAME
+ ----
+@@ -18,7 +18,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ nut-ipmipsu driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -111,7 +111,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/nut-recorder.txt nut-2.8.1/docs/man/nut-recorder.txt
+--- nut-2.8.1-orig/docs/man/nut-recorder.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nut-recorder.txt	2023-11-01 03:48:59.309048286 +0100
+@@ -1,5 +1,5 @@
+-NUT-RECORDER(8)
+-===============
++NUT-RECORDER(1m)
++================
+ 
+ NAME
+ ----
+@@ -18,7 +18,7 @@
+ power failures, or any other value changes) from upsd, and dump it in a .seq
+ format.
+ 
+-The .seq file can then be used by the linkman:dummy-ups[8] driver
++The .seq file can then be used by the linkman:dummy-ups[1m] driver
+ to replay the sequence.
+ 
+ OPTIONS
+@@ -72,7 +72,7 @@
+ The dummy-ups driver:
+ ~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:dummy-ups[8]
++linkman:dummy-ups[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/nut-scanner.txt nut-2.8.1/docs/man/nut-scanner.txt
+--- nut-2.8.1-orig/docs/man/nut-scanner.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nut-scanner.txt	2023-11-01 03:49:02.340774673 +0100
+@@ -1,5 +1,5 @@
+-NUT-SCANNER(8)
+-==============
++NUT-SCANNER(1m)
++===============
+ 
+ NAME
+ ----
+diff -Naur nut-2.8.1-orig/docs/man/nut.conf.txt nut-2.8.1/docs/man/nut.conf.txt
+--- nut-2.8.1-orig/docs/man/nut.conf.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nut.conf.txt	2023-11-01 03:43:21.911278856 +0100
+@@ -66,12 +66,12 @@
+ become configured), this option is for you.
+ 
+ *UPSD_OPTIONS*::
+-Optional.  Set upsd specific options. See linkman:upsd[8] for more
++Optional.  Set upsd specific options. See linkman:upsd[1m] for more
+ details.  It is ignored when 'MODE' above indicates that no upsd
+ should be running.
+ 
+ *UPSMON_OPTIONS*::
+-Optional.  Set upsmon specific options. See linkman:upsmon[8] for
++Optional.  Set upsmon specific options. See linkman:upsmon[1m] for
+ more details.  It is ignored when 'MODE' above indicates that no
+ upsmon should be running.
+ 
+diff -Naur nut-2.8.1-orig/docs/man/nutdrv_atcl_usb.txt nut-2.8.1/docs/man/nutdrv_atcl_usb.txt
+--- nut-2.8.1-orig/docs/man/nutdrv_atcl_usb.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nutdrv_atcl_usb.txt	2023-11-01 03:49:21.004971513 +0100
+@@ -1,5 +1,5 @@
+-NUTDRV_ATCL_USB(8)
+-==================
++NUTDRV_ATCL_USB(1m)
++===================
+ 
+ NAME
+ ----
+@@ -10,7 +10,7 @@
+ ----
+ 
+ This man page only documents the specific features of the nutdrv_atcl_usb
+-driver.  For information about the core driver, see linkman:nutupsdrv[8].
++driver.  For information about the core driver, see linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -23,11 +23,11 @@
+ hardware manufactured by Kanji and Plexus, the microcontroller
+ appears to emulate a traditional contact-closure interface. This translates
+ into only three states in ups.status: *OL*, *OB* and *OB LB* (similar to
+-linkman:genericups[8]), with no other dynamic status values reported.
++linkman:genericups[1m]), with no other dynamic status values reported.
+ 
+ Note that these USB identifiers (including the iManufacturer string)
+ have also been seen on devices that are supported by the `fuji`
+-subdriver of linkman:nutdrv_qx[8].
++subdriver of linkman:nutdrv_qx[1m].
+ 
+ EXTRA ARGUMENTS
+ ---------------
+@@ -41,7 +41,7 @@
+ the device does not provide a vendor string but you want this driver to match).
+ +
+ Note that a more likely case for mismatch is that your device is handled by
+-another driver for +0001:0000+ devices, such as linkman:nutdrv_qx[8].
++another driver for +0001:0000+ devices, such as linkman:nutdrv_qx[1m].
+ +
+ NOTE: This driver does not intend to support USB-matching settings common to
+ other drivers, such as *vendorid*, *product*, *productid*, *serial*, *device*
+@@ -61,8 +61,8 @@
+ clean up).
+ 
+ Most contact-closure UPSes will not power down the load if the line power is
+-present. This can create a race when using secondary linkman:upsmon[8]
+-systems. See the linkman:upsmon[8] man page for more information.
++present. This can create a race when using secondary linkman:upsmon[1m]
++systems. See the linkman:upsmon[1m] man page for more information.
+ The solution to this problem is to upgrade to a smart protocol UPS of some
+ kind that allows detection and proper load cycling on command.
+ 
+@@ -77,17 +77,17 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ The generic serial driver:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:genericups[8]
++linkman:genericups[1m]
+ 
+ The Qx driver:
+ ~~~~~~~~~~~~~~
+ 
+-linkman:nutdrv_qx[8] (`fuji` subdriver)
++linkman:nutdrv_qx[1m] (`fuji` subdriver)
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/nutdrv_qx.txt nut-2.8.1/docs/man/nutdrv_qx.txt
+--- nut-2.8.1-orig/docs/man/nutdrv_qx.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nutdrv_qx.txt	2023-11-01 03:49:24.799065874 +0100
+@@ -1,5 +1,5 @@
+-NUTDRV_QX(8)
+-============
++NUTDRV_QX(1m)
++=============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ ----
+ 
+ This man page only documents the hardware-specific features of the *nutdrv_qx* driver.
+-For information about the core driver, see linkman:nutupsdrv[8].
++For information about the core driver, see linkman:nutupsdrv[1m].
+ 
+ 
+ SUPPORTED HARDWARE
+@@ -48,14 +48,14 @@
+ +
+ Note that a value below 3 minutes, may cause earlier firmware versions to not switch on automatically, so it defaults to 3 minutes (i.e. 180 seconds).
+ +
+-This option provides a default value for *ups.delay.start* that will then be used by the driver in the automatic shutdown sequence (i.e. calling the driver with the *-k* option, calling linkman:upsdrvctl[8] with the *shutdown* option or when the +FSD+ flag is set and linkman:upsmon[8] enters its shutdown sequence): however you can change this value `on the fly' for the actual session, only for the use with instant commands, setting *ups.delay.start* with linkman:upsrw[8].
++This option provides a default value for *ups.delay.start* that will then be used by the driver in the automatic shutdown sequence (i.e. calling the driver with the *-k* option, calling linkman:upsdrvctl[1m] with the *shutdown* option or when the +FSD+ flag is set and linkman:upsmon[1m] enters its shutdown sequence): however you can change this value `on the fly' for the actual session, only for the use with instant commands, setting *ups.delay.start* with linkman:upsrw[1m].
+ 
+ *offdelay =* 'value'::
+ Time to wait before shutting down the UPS (seconds).
+ This value is truncated to units of 6 seconds (less than 60 seconds) or 60 seconds (more than 60 seconds).
+ Defaults to 30 seconds.
+ +
+-This option provides a default value for *ups.delay.shutdown* that will then be used by the driver in the automatic shutdown sequence (i.e. calling the driver with the *-k* option, calling linkman:upsdrvctl[8] with the *shutdown* option or when the +FSD+ flag is set and linkman:upsmon[8] enters its shutdown sequence): however you can change this value `on the fly' for the actual session, only for the use with instant commands, setting *ups.delay.shutdown* with linkman:upsrw[8].
++This option provides a default value for *ups.delay.shutdown* that will then be used by the driver in the automatic shutdown sequence (i.e. calling the driver with the *-k* option, calling linkman:upsdrvctl[1m] with the *shutdown* option or when the +FSD+ flag is set and linkman:upsmon[1m] enters its shutdown sequence): however you can change this value `on the fly' for the actual session, only for the use with instant commands, setting *ups.delay.shutdown* with linkman:upsrw[1m].
+ 
+ *stayoff*::
+ If you set stayoff in linkman:ups.conf[5] when FSD arises the UPS will call a *shutdown.stayoff* shutting down after *ups.delay.shutdown* seconds and won't return (see <<_known_problems,KNOWN PROBLEMS>>), otherwise (standard behaviour) the UPS will call *shutdown.return* shutting down after *ups.delay.shutdown* seconds and then turn on after *ups.delay.start* seconds (if mains meanwhile returned).
+@@ -188,7 +188,7 @@
+ *slave_addr =* 'value'::
+ Make the claim function verify it's talking to the specified 'slave address' (*ups.id*).
+ Safeguard against talking to the wrong one of several identical UPSes on the same USB bus.
+-Note that when changing *ups.id* (through linkman:upsrw[8]) the driver will continue to talk to the UPS with the new 'slave address', but won't claim it again on restart until the *slave_addr* parameter is adjusted.
++Note that when changing *ups.id* (through linkman:upsrw[1m]) the driver will continue to talk to the UPS with the new 'slave address', but won't claim it again on restart until the *slave_addr* parameter is adjusted.
+ 
+ 
+ Q1 PROTOCOL
+@@ -398,7 +398,7 @@
+ UPS COMMANDS
+ ------------
+ 
+-This driver supports some instant commands (see linkman:upscmd[8]):
++This driver supports some instant commands (see linkman:upscmd[1m]):
+ 
+ *beeper.toggle*::
+ Toggle the UPS beeper.
+@@ -605,7 +605,7 @@
+ *battnumb*::
+ This option has been renamed to *battery_number*.
+ 
+-The following options are no longer supported by this driver, you can now change them more conveniently `on the fly' calling linkman:upsrw[8] with the appropriate NUT variable - provided that your UPS supports them.
++The following options are no longer supported by this driver, you can now change them more conveniently `on the fly' calling linkman:upsrw[1m] with the appropriate NUT variable - provided that your UPS supports them.
+ 
+ [horizontal]
+ *battpacks*:: -> *battery.packs*
+@@ -814,15 +814,15 @@
+ SEE ALSO
+ --------
+ 
+-linkman:blazer_ser[8],
+-linkman:blazer_usb[8],
+-linkman:nutupsdrv[8],
++linkman:blazer_ser[1m],
++linkman:blazer_usb[1m],
++linkman:nutupsdrv[1m],
+ linkman:ups.conf[5],
+-linkman:upsc[8],
+-linkman:upscmd[8],
+-linkman:upsdrvctl[8],
+-linkman:upsmon[8],
+-linkman:upsrw[8]
++linkman:upsc[1m],
++linkman:upscmd[1m],
++linkman:upsdrvctl[1m],
++linkman:upsmon[1m],
++linkman:upsrw[1m]
+ 
+ 
+ Internet Resources:
+diff -Naur nut-2.8.1-orig/docs/man/nutdrv_siemens_sitop.txt nut-2.8.1/docs/man/nutdrv_siemens_sitop.txt
+--- nut-2.8.1-orig/docs/man/nutdrv_siemens_sitop.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nutdrv_siemens_sitop.txt	2023-11-01 03:49:28.071723478 +0100
+@@ -1,5 +1,5 @@
+-NUTDRV_SIEMENS_SITOP(8)
+-=======================
++NUTDRV_SIEMENS_SITOP(1m)
++========================
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ *nutdrv_siemens_sitop* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -195,7 +195,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/nutscan.txt nut-2.8.1/docs/man/nutscan.txt
+--- nut-2.8.1-orig/docs/man/nutscan.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nutscan.txt	2023-11-01 03:43:21.954049017 +0100
+@@ -10,7 +10,7 @@
+ -----------
+ 
+ The Network UPS Tools (NUT) *nutscan* library provides the same discovery
+-related features that are also offered by linkman:nut-scanner[8].
++related features that are also offered by linkman:nut-scanner[1m].
+ 
+ It enables the discovery of supported NUT devices (USB, SNMP, Eaton XML/HTTP
+ and IPMI) and NUT servers (either using Avahi, or the classic connection
+@@ -57,7 +57,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:nut-scanner[8],
++linkman:nut-scanner[1m],
+ linkman:nutscan_scan_usb[3], linkman:nutscan_scan_snmp[3],
+ linkman:nutscan_scan_xml_http_range[3], linkman:nutscan_scan_nut[3],
+ linkman:nutscan_scan_avahi[3], linkman:nutscan_scan_ipmi[3],
+diff -Naur nut-2.8.1-orig/docs/man/nutupsdrv.txt nut-2.8.1/docs/man/nutupsdrv.txt
+--- nut-2.8.1-orig/docs/man/nutupsdrv.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/nutupsdrv.txt	2023-11-01 03:49:31.742515522 +0100
+@@ -1,5 +1,5 @@
+-NUTUPSDRV(8)
+-============
++NUTUPSDRV(1m)
++=============
+ 
+ NAME
+ ----
+@@ -23,7 +23,7 @@
+ For information on the specific drivers, see their individual man pages.
+ 
+ UPS drivers provide a communication channel between the physical UPS
+-hardware and the linkman:upsd[8] server.  The driver is responsible for
++hardware and the linkman:upsd[1m] server.  The driver is responsible for
+ translating the native protocol of the UPS to the common format used by
+ the rest of this package.
+ 
+@@ -44,7 +44,7 @@
+ complement the nut-scanner to discover devices, along with in-depth data.
+ 
+ NOTE: You probably don't want to use any of these options directly.  You
+-should use linkman:upsdrvctl[8] to control your drivers, and
++should use linkman:upsdrvctl[1m] to control your drivers, and
+ linkman:ups.conf[5] to configure them.  The rest of this manual describes
+ options and parameters that generally are not needed by normal users.
+ 
+@@ -65,7 +65,7 @@
+ linkman:ups.conf[5]. To be used instead of *-a* option when need to run
+ a driver not present in driver configuration file. Instead, driver
+ configuration have to be set with *-x* options directly in the command line.
+-As the driver instance cannot be controlled by linkman:upsdrvctl[8],
++As the driver instance cannot be controlled by linkman:upsdrvctl[1m],
+ this option should be used for specific needs only.
+ 
+ *-D*::
+@@ -170,7 +170,7 @@
+ you can set this option to `root` to bypass permission errors, especially with
+ USB-based drivers. However, you will want to remove this option later in order
+ to avoid permission conflicts between the driver and the unprivileged copy of
+-linkman:upsd[8].
++linkman:upsd[1m].
+ 
+ *-g* 'groupname'::
+ Override the unprivileged group name that the driver may use after startup
+@@ -189,14 +189,14 @@
+ -----------
+ 
+ Information about the startup process is printed to stdout.  Additional
+-messages after that point are available in the syslog.  After linkman:upsd[8]
+-starts, the UPS clients such as linkman:upsc[8] can be used to query the status
++messages after that point are available in the syslog.  After linkman:upsd[1m]
++starts, the UPS clients such as linkman:upsc[1m] can be used to query the status
+ of an UPS.
+ 
+ PROGRAM CONTROL
+ ---------------
+ 
+-You should always use linkman:upsdrvctl[8] to control the drivers.  While
++You should always use linkman:upsdrvctl[1m] to control the drivers.  While
+ drivers can be started by hand for testing purposes, it is not recommended for
+ production use.
+ 
+@@ -241,23 +241,23 @@
+ Server:
+ ~~~~~~~
+ 
+-- linkman:upsd[8]
++- linkman:upsd[1m]
+ 
+ Clients:
+ ~~~~~~~~
+ 
+-- linkman:upsc[8]
+-- linkman:upscmd[8]
+-- linkman:upsrw[8]
+-- linkman:upslog[8]
+-- linkman:upsmon[8]
++- linkman:upsc[1m]
++- linkman:upscmd[1m]
++- linkman:upsrw[1m]
++- linkman:upslog[1m]
++- linkman:upsmon[1m]
+ 
+ CGI programs:
+ ~~~~~~~~~~~~~
+ 
+-- linkman:upsset.cgi[8]
+-- linkman:upsstats.cgi[8]
+-- linkman:upsimage.cgi[8]
++- linkman:upsset.cgi[1m]
++- linkman:upsstats.cgi[1m]
++- linkman:upsimage.cgi[1m]
+ 
+ Driver control:
+ ~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/oneac.txt nut-2.8.1/docs/man/oneac.txt
+--- nut-2.8.1-orig/docs/man/oneac.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/oneac.txt	2023-11-01 03:49:34.513371405 +0100
+@@ -1,5 +1,5 @@
+-ONEAC(8)
+-========
++ONEAC(1m)
++=========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ oneac driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -24,7 +24,7 @@
+  - OB (early 2000's on, big cabinet, DB-25 std., interface slot)
+ 
+ If your UPS is equipped with the Basic Interface card, use the
+-linkman:genericups[8] driver.
++linkman:genericups[1m] driver.
+ 
+ EXTRA ARGUMENTS
+ ---------------
+@@ -42,7 +42,7 @@
+ ----------------
+ 
+ This driver supports the following Instant Commands.
+-(See linkman:upscmd[8])
++(See linkman:upscmd[1m])
+ 
+ All UPS units
+ ~~~~~~~~~~~~~
+@@ -100,7 +100,7 @@
+ Writable Variables
+ ------------------
+ 
+-See linkman:upsrw[8] to see what variables are writable for the UPS.
++See linkman:upsrw[1m] to see what variables are writable for the UPS.
+ 
+ NOTE: If your UPS supports writing battery.runtime.low, the new set value
+ is to be entered in minutes (up to 99) but the reported value is reported
+@@ -123,7 +123,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/optiups.txt nut-2.8.1/docs/man/optiups.txt
+--- nut-2.8.1-orig/docs/man/optiups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/optiups.txt	2023-11-01 03:49:38.882285563 +0100
+@@ -1,5 +1,5 @@
+-OPTIUPS(8)
+-==========
++OPTIUPS(1m)
++===========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ optiups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -91,7 +91,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/phoenixcontact_modbus.txt nut-2.8.1/docs/man/phoenixcontact_modbus.txt
+--- nut-2.8.1-orig/docs/man/phoenixcontact_modbus.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/phoenixcontact_modbus.txt	2023-11-01 03:49:43.273187364 +0100
+@@ -1,5 +1,5 @@
+-PHOENIXCONTACT_MODBUS(8)
+-========================
++PHOENIXCONTACT_MODBUS(1m)
++=========================
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ phoenixcontact_modbus driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -98,7 +98,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/pijuice.txt nut-2.8.1/docs/man/pijuice.txt
+--- nut-2.8.1-orig/docs/man/pijuice.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/pijuice.txt	2023-11-01 03:49:46.702036819 +0100
+@@ -1,5 +1,5 @@
+-PIJUICE(8)
+-==========
++PIJUICE(1m)
++===========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ *pijuice* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ NOTE: This manual page was hastily adapted from related `asem` driver
+ manpage based on information from the original pull request, and so
+@@ -74,7 +74,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/powercom.txt nut-2.8.1/docs/man/powercom.txt
+--- nut-2.8.1-orig/docs/man/powercom.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/powercom.txt	2023-11-01 03:49:50.781721492 +0100
+@@ -1,5 +1,5 @@
+-POWERCOM(8)
+-===========
++POWERCOM(1m)
++============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ powercom driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -19,7 +19,7 @@
+ This driver supports many similar kinds of serial UPS hardware (as well as a
+ few USB UPS models with USB-to-serial adapters).  The most common ones are the
+ Trust 425/625, Powercom, and Advice Partner/King PR750.  Others using the same
+-protocol may also work. For USB connections, you might need linkman:usbhid-ups[8].
++protocol may also work. For USB connections, you might need linkman:usbhid-ups[1m].
+ 
+ For more specific guidance on which driver is applicable for a USB connection,
+ see the NUT Hardware Compatibility List (HCL).
+@@ -224,7 +224,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/powerman-pdu.txt nut-2.8.1/docs/man/powerman-pdu.txt
+--- nut-2.8.1-orig/docs/man/powerman-pdu.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/powerman-pdu.txt	2023-11-01 03:49:53.615315754 +0100
+@@ -1,5 +1,5 @@
+-POWERMAN-PDU(8)
+-===============
++POWERMAN-PDU(1m)
++================
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ powerman-pdu driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -39,7 +39,7 @@
+ UPS COMMANDS
+ ------------
+ 
+-The following instant commands (see linkman:upscmd[8]) are available for each
++The following instant commands (see linkman:upscmd[1m]) are available for each
+ outlet of the PDU, with *X* standing for the outlet number:
+ 
+ *outlet.X.load.on*::
+@@ -84,7 +84,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/powerpanel.txt nut-2.8.1/docs/man/powerpanel.txt
+--- nut-2.8.1-orig/docs/man/powerpanel.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/powerpanel.txt	2023-11-01 03:49:57.520811376 +0100
+@@ -1,5 +1,5 @@
+-POWERPANEL(8)
+-=============
++POWERPANEL(1m)
++==============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ powerpanel driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -21,7 +21,7 @@
+ autodetect which protocol is used.
+ 
+ If your Cyber Power Systems UPS has a USB port, you may wish to use the
+-linkman:usbhid-ups[8] driver. The linkman:snmp-ups[8] driver supports several
++linkman:usbhid-ups[1m] driver. The linkman:snmp-ups[1m] driver supports several
+ network cards via SNMP.
+ 
+ EXTRA ARGUMENTS
+@@ -56,7 +56,7 @@
+ ---------
+ 
+ Depending on the type of your UPS unit, some of the following variables may
+-be changed with linkman:upsrw[8]. If the driver can't read a variable from the
++be changed with linkman:upsrw[1m]. If the driver can't read a variable from the
+ UPS, it will not be made available.
+ 
+ *input.transfer.high*::
+@@ -145,13 +145,13 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Other drivers:
+ ~~~~~~~~~~~~~~
+ 
+-linkman:usbhid-ups[8],
+-linkman:snmp-ups[8]
++linkman:usbhid-ups[1m],
++linkman:snmp-ups[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/rhino.txt nut-2.8.1/docs/man/rhino.txt
+--- nut-2.8.1-orig/docs/man/rhino.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/rhino.txt	2023-11-01 03:50:00.426539341 +0100
+@@ -1,5 +1,5 @@
+-RHINO(8)
+-========
++RHINO(1m)
++=========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ rhino driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -57,7 +57,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/richcomm_usb.txt nut-2.8.1/docs/man/richcomm_usb.txt
+--- nut-2.8.1-orig/docs/man/richcomm_usb.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/richcomm_usb.txt	2023-11-01 03:50:03.275738696 +0100
+@@ -1,5 +1,5 @@
+-RICHCOMM_USB(8)
+-===============
++RICHCOMM_USB(1m)
++================
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ ----
+ 
+ This man page only documents the specific features of the richcomm_usb
+-driver.  For information about the core driver, see linkman:nutupsdrv[8].
++driver.  For information about the core driver, see linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -20,7 +20,7 @@
+ used to upgrade an existing (RS-232) contact closure UPS interface to USB.
+ As such, all the limitations of the underlying contact closure interface
+ apply.  This means that you will only get the essentials in ups.status: OL,
+-OB, and LB.  See also linkman:genericups[8].
++OB, and LB.  See also linkman:genericups[1m].
+ 
+ ////////
+ TODO: Uncomment after solving https://github.com/networkupstools/nut/issues/1768
+@@ -35,8 +35,8 @@
+ ----
+ 
+ Most contact-closure UPSes will not power down the load if the line power
+-is present.  This can create a race when using secondary linkman:upsmon[8]
+-systems.  See the linkman:upsmon[8] man page for more information.
++is present.  This can create a race when using secondary linkman:upsmon[1m]
++systems.  See the linkman:upsmon[1m] man page for more information.
+ 
+ The solution to both of these problems is to upgrade to a smart protocol
+ UPS of some kind that allows detection and proper load cycling on command.
+@@ -53,12 +53,12 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ The generic serial driver:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:genericups[8]
++linkman:genericups[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/riello_ser.txt nut-2.8.1/docs/man/riello_ser.txt
+--- nut-2.8.1-orig/docs/man/riello_ser.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/riello_ser.txt	2023-11-01 03:50:07.024323869 +0100
+@@ -1,5 +1,5 @@
+-RIELLO_SER(8)
+-=============
++RIELLO_SER(1m)
++==============
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ riello_ser driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -37,7 +37,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/riello_usb.txt nut-2.8.1/docs/man/riello_usb.txt
+--- nut-2.8.1-orig/docs/man/riello_usb.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/riello_usb.txt	2023-11-01 03:50:09.984000498 +0100
+@@ -1,5 +1,5 @@
+-RIELLO_USB(8)
+-=============
++RIELLO_USB(1m)
++==============
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ riello_usb driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -40,7 +40,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/safenet.txt nut-2.8.1/docs/man/safenet.txt
+--- nut-2.8.1-orig/docs/man/safenet.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/safenet.txt	2023-11-01 03:50:13.634280881 +0100
+@@ -1,5 +1,5 @@
+-SAFENET(8)
+-==========
++SAFENET(1m)
++===========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ safenet driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -45,7 +45,7 @@
+ INSTANT COMMANDS
+ ----------------
+ 
+-This driver supports some instant commands (see linkman:upscmd[8]):
++This driver supports some instant commands (see linkman:upscmd[1m]):
+ 
+ *test.battery.start*::
+ Start UPS self test
+@@ -102,7 +102,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/skel.txt nut-2.8.1/docs/man/skel.txt
+--- nut-2.8.1-orig/docs/man/skel.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/skel.txt	2023-11-01 03:50:18.208875773 +0100
+@@ -1,5 +1,5 @@
+-SKEL(8)
+-=======
++SKEL(1m)
++========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ *skel* driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ //////////////////////////////////////////
+ The following lines are comments.
+@@ -28,7 +28,7 @@
+ 
+ In the "NAME" section, you must follow the format above, including separating
+ the driver name from its description by "-". This is to ensure that the
+-apropos(8) database is properly rebuilt.
++apropos(1m) database is properly rebuilt.
+ //////////////////////////////////////////
+ 
+ SUPPORTED HARDWARE
+@@ -121,7 +121,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/sms_ser.txt nut-2.8.1/docs/man/sms_ser.txt
+--- nut-2.8.1-orig/docs/man/sms_ser.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/sms_ser.txt	2023-11-01 03:50:20.916528088 +0100
+@@ -1,5 +1,5 @@
+-SMS_SER(8)
+-==========
++SMS_SER(1m)
++===========
+ 
+ NAME
+ ----
+@@ -15,7 +15,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features
+ of the sms_ser driver.  For information about the core driver, see
+-linkman:nutupsdrv[8], and for the technical background check in
++linkman:nutupsdrv[1m], and for the technical background check in
+ doc/sms-brazil-protocol.txt.
+ 
+ NOTE: Given the proximity of this protocol to Megatec Qx family,
+@@ -42,7 +42,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/snmp-ups.txt nut-2.8.1/docs/man/snmp-ups.txt
+--- nut-2.8.1-orig/docs/man/snmp-ups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/snmp-ups.txt	2023-11-01 03:50:23.464541489 +0100
+@@ -1,5 +1,5 @@
+-snmp-ups(8)
+-===========
++snmp-ups(1m)
++============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ snmp-ups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -227,7 +227,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ NUT SNMP Protocols Library
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/sockdebug.txt nut-2.8.1/docs/man/sockdebug.txt
+--- nut-2.8.1-orig/docs/man/sockdebug.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/sockdebug.txt	2023-11-01 03:50:26.077936470 +0100
+@@ -1,5 +1,5 @@
+-SOCKDEBUG(8)
+-============
++SOCKDEBUG(1m)
++=============
+ 
+ NAME
+ ----
+@@ -28,7 +28,7 @@
+ of the build workspace. Actual source files used depend on the platform.
+ 
+ It is used to connect to a NUT driver using the socket protocol on an
+-Unix socket or Windows pipe, similarly to how the linkman:upsd[8] data
++Unix socket or Windows pipe, similarly to how the linkman:upsd[1m] data
+ server talks to the locally running drivers in order to represent them
+ on the network further using the common NUT protocol of the Network UPS
+ Tools project, or how driver programs can communicate to their already
+@@ -75,7 +75,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8]
++linkman:upsd[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/socomec_jbus.txt nut-2.8.1/docs/man/socomec_jbus.txt
+--- nut-2.8.1-orig/docs/man/socomec_jbus.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/socomec_jbus.txt	2023-11-01 03:50:28.844316679 +0100
+@@ -1,5 +1,5 @@
+-SOCOMEC_JBUS(8)
+-===============
++SOCOMEC_JBUS(1m)
++================
+ 
+ NAME
+ ----
+@@ -16,7 +16,7 @@
+ 
+ NOTE: This man page only documents the hardware-specific features of the
+ socomec_jbus driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -29,7 +29,7 @@
+ 2. Connection: RS-232
+ 
+ These are typically provided with a Netvision WEB/SNMP management
+-card / external box that would be better served by the linkman:snmp-ups[8]
++card / external box that would be better served by the linkman:snmp-ups[1m]
+ driver. In case netvision isn't available, you can hook up the UPS directly
+ via the serial port and use this driver.
+ 
+@@ -92,7 +92,7 @@
+ VARIABLES
+ ---------
+ 
+-This driver does not support writable runtime variables (see linkman:upsrw[8]):
++This driver does not support writable runtime variables (see linkman:upsrw[1m]):
+ for the same reasons.
+ Both should be trivial to implement, but since I've already found one or two
+ inconsistencies in the documentation, I'm withholding from trying them.
+@@ -155,7 +155,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/solis.txt nut-2.8.1/docs/man/solis.txt
+--- nut-2.8.1-orig/docs/man/solis.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/solis.txt	2023-11-01 03:50:31.954172885 +0100
+@@ -1,5 +1,5 @@
+-SOLIS(8)
+-========
++SOLIS(1m)
++=========
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ solis driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -65,7 +65,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/tripplite_usb.txt nut-2.8.1/docs/man/tripplite_usb.txt
+--- nut-2.8.1-orig/docs/man/tripplite_usb.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/tripplite_usb.txt	2023-11-01 03:50:37.588001503 +0100
+@@ -1,5 +1,5 @@
+-TRIPPLITE_USB(8)
+-================
++TRIPPLITE_USB(1m)
++=================
+ 
+ NAME
+ ----
+@@ -20,7 +20,7 @@
+ as USB HID-class devices, but are not true HID Power-Device Class devices.
+ So far, the devices supported by `tripplite_usb` have product ID 0001,
+ and the newer units (such as those with "LCD" in the model name) with
+-product ID 2001 require the linkman:usbhid-ups[8] driver instead.
++product ID 2001 require the linkman:usbhid-ups[1m] driver instead.
+ 
+ Please report success or failure to the nut-upsuser mailing list.
+ A key piece of information is the protocol number, returned in
+@@ -28,7 +28,7 @@
+ for more informative log messages.
+ 
+ If your Tripp Lite UPS uses a serial port, you may wish to investigate
+-the linkman:tripplite[8] or linkman:tripplitesu[8] drivers.
++the linkman:tripplite[1m] or linkman:tripplitesu[1m] drivers.
+ 
+ This driver has been tested with the following models:
+ 
+@@ -53,7 +53,7 @@
+ On the other hand, if the web page for your UPS on the Tripp-Lite website
+ says "HID-compliant USB port also enables direct integration with built-in
+ power management and auto-shutdown features of Windows and MAC OS X", then
+-you should use the linkman:usbhid-ups[8] driver instead.
++you should use the linkman:usbhid-ups[1m] driver instead.
+ 
+ EXTRA ARGUMENTS
+ ---------------
+@@ -68,7 +68,7 @@
+ Select a specific UPS by its unique UPS ID. The argument is a regular expression 
+ that must match the UPS ID string. This allows for precise identification of UPS 
+ devices when multiple devices of the same make and model are connected.
+-See below regarding how to read and write the ups id (unit id) using linkman:upsrw[8].
++See below regarding how to read and write the ups id (unit id) using linkman:upsrw[1m].
+ 
+ 
+ [NOTE]
+@@ -80,7 +80,7 @@
+ in the correct order.
+ +
+ This regex is matched against the full USB product string as seen in
+-lsusb(8). The `ups.model` in the linkman:upsc[1] output only lists the name
++lsusb(1m). The `ups.model` in the linkman:upsc[1] output only lists the name
+ after `TRIPP LITE`, so to match a SMART2200RMXL2U, you could use the regex
+ `.*SMART2200.*`.
+ 
+@@ -114,19 +114,19 @@
+ *ups.delay.shutdown*::
+ 
+ This variable is the same as the 'offdelay' setting, but it can be
+-changed at runtime by linkman:upsrw[8].
++changed at runtime by linkman:upsrw[1m].
+ 
+ *ups.id*::
+ 
+ Some SMARTPRO models feature an Unit ID (ups.id) that can be set and retrieved.
+ If your UPS supports this feature, this variable will be listed in
+-the output of linkman:upsrw[8].
++the output of linkman:upsrw[1m].
+ 
+ *outlet.1.switch*::
+ 
+ Some Tripp Lite units have a switchable outlet (usually outlet #1)
+ which can be turned on and off by writing '1' or '0', respectively,
+-to `outlet.1.switch` with linkman:upsrw[8].
++to `outlet.1.switch` with linkman:upsrw[1m].
+ +
+ If your unit has multiple switchable outlets, substitute the outlet
+ number for '1' in the variable name. Be sure to test this first --
+@@ -149,17 +149,17 @@
+ For instance, you can easily monitor an OMNIVS1000 and a SMART1500RM2U at the
+ same time, since they have different USB Product ID strings. If you have two
+ SMART1500RM2U units, you would have to find which USB bus and device number
+-each unit is on (via lsusb(8)).
++each unit is on (via lsusb(1m)).
+ 
+ Some of the SMART*2U models have a configurable Unit ID number, and you can now use the `upsid` 
+ config argument to uniquely specify which UPS a given driver instance should control. 
+ This allows for precise identification of UPS devices when multiple devices are connected.
+-To retrieve or set the upsid use the linkman:upsrw[8] utility.
++To retrieve or set the upsid use the linkman:upsrw[1m] utility.
+ 
+ AUTHORS
+ -------
+ 
+-Written by Charles Lepple, based on the linkman:tripplite[8] driver
++Written by Charles Lepple, based on the linkman:tripplite[1m] driver
+ by Rickard E. (Rik) Faith and Nicholas Kain.
+ 
+ Please do not email the authors directly - use the nut-upsdev mailing list.
+@@ -173,17 +173,17 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Other drivers for Tripp-Lite hardware:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:tripplite[8], linkman:tripplitesu[8], linkman:usbhid-ups[8]
++linkman:tripplite[1m], linkman:tripplitesu[1m], linkman:usbhid-ups[1m]
+ 
+ Other tools:
+ ~~~~~~~~~~~~
+ 
+-regex(7), lsusb(8)
++regex(7), lsusb(1m)
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/tripplite.txt nut-2.8.1/docs/man/tripplite.txt
+--- nut-2.8.1-orig/docs/man/tripplite.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/tripplite.txt	2023-11-01 03:50:34.780254019 +0100
+@@ -1,5 +1,5 @@
+-TRIPPLITE(8)
+-============
++TRIPPLITE(1m)
++=============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ tripplite driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -57,12 +57,12 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Other drivers for Tripp-Lite hardware:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:tripplitesu[8], linkman:tripplite_usb[8], linkman:usbhid-ups[8]
++linkman:tripplitesu[1m], linkman:tripplite_usb[1m], linkman:usbhid-ups[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/tripplitesu.txt nut-2.8.1/docs/man/tripplitesu.txt
+--- nut-2.8.1-orig/docs/man/tripplitesu.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/tripplitesu.txt	2023-11-01 03:50:40.819397787 +0100
+@@ -1,5 +1,5 @@
+-TRIPPLITESU(8)
+-==============
++TRIPPLITESU(1m)
++===============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ tripplitesu driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -26,7 +26,7 @@
+ 
+ *lowbatt*='num'::
+ Set the low battery warning threshold in percent at which shutdown is
+-initiated by linkman:upsmon[8].  By default, the UPS may not report low battery
++initiated by linkman:upsmon[1m].  By default, the UPS may not report low battery
+ until there are only a few seconds left.  Common values are around 25--30.
+ 
+ AUTHOR
+@@ -40,12 +40,12 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Other drivers for Tripp-Lite hardware:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+-linkman:tripplite[8], linkman:tripplite_usb[8], linkman:usbhid-ups[8]
++linkman:tripplite[1m], linkman:tripplite_usb[1m], linkman:usbhid-ups[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/ups.conf.txt nut-2.8.1/docs/man/ups.conf.txt
+--- nut-2.8.1-orig/docs/man/ups.conf.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/ups.conf.txt	2023-11-01 03:43:22.004366308 +0100
+@@ -9,9 +9,9 @@
+ DESCRIPTION
+ -----------
+ 
+-This file is read by the driver controller linkman:upsdrvctl[8],
+-the UPS drivers which use the common core (see linkman:nutupsdrv[8]),
+-linkman:nut-driver-enumerator[8], and the NUT data server linkman:upsd[8].
++This file is read by the driver controller linkman:upsdrvctl[1m],
++the UPS drivers which use the common core (see linkman:nutupsdrv[1m]),
++linkman:nut-driver-enumerator[1m], and the NUT data server linkman:upsd[1m].
+ The file begins with global directives, and then each UPS has a section
+ which contains a number of directives that set parameters for that UPS.
+ 
+@@ -37,7 +37,7 @@
+ 		sdtype = 2
+ 		desc = "Database server UPS"
+ 
+-In this case, the linkman:apcsmart[8] driver will receive variables called
++In this case, the linkman:apcsmart[1m] driver will receive variables called
+ "cable" and "sdtype" which have special meanings.  See the man pages of
+ your driver(s) to learn which variables are supported and what they do.
+ 
+@@ -99,8 +99,8 @@
+ This setting may be useful if the driver is creating too much of a load
+ on your monitoring system or network.
+ +
+-Note that some drivers (such as linkman:usbhid-ups[8], linkman:snmp-ups[8]
+-and linkman:nutdrv_qx[8]) also have an option called *pollfreq* which
++Note that some drivers (such as linkman:usbhid-ups[1m], linkman:snmp-ups[1m]
++and linkman:nutdrv_qx[1m]) also have an option called *pollfreq* which
+ controls how frequently some of the less critical parameters are polled.
+ Details are provided in the respective driver man pages.
+ 
+@@ -132,14 +132,14 @@
+ 
+ Optional.  Overrides the compiled-in default unprivileged username for
+ all NUT device drivers. See the discussion of the `-u` option in
+-linkman:nutupsdrv[8] for details.
++linkman:nutupsdrv[1m] for details.
+ 
+ *group*::
+ 
+ Optional.  Overrides the compiled-in (and/or global-section) default
+ unprivileged group name for all NUT device drivers, used for the
+ socket file access. See the discussion of the `-g` option in
+-linkman:nutupsdrv[8] for details.
++linkman:nutupsdrv[1m] for details.
+ This may be specifically useful for ensuring access to dynamic device
+ filesystem nodes, such as USB (or serial-over-USB) hot-plug support,
+ or with device filesystems re-generated by an OS for every reboot.
+@@ -158,7 +158,7 @@
+ 
+ Required.  This specifies which program will be monitoring this UPS.
+ You need to specify the one that is compatible with your hardware.
+-See linkman:nutupsdrv[8] for more information on drivers in general
++See linkman:nutupsdrv[1m] for more information on drivers in general
+ and pointers to the man pages of specific drivers.
+ 
+ *port*::
+@@ -173,7 +173,7 @@
+ 
+ Optional.  Overrides the compiled-in (and/or global-section) default
+ unprivileged username for a particular NUT device driver. See the
+-discussion of the `-u` option in linkman:nutupsdrv[8] for details.
++discussion of the `-u` option in linkman:nutupsdrv[1m] for details.
+ This may be specifically useful for ensuring access to dynamic device
+ filesystem nodes, such as USB (or serial-over-USB) hot-plug support,
+ or with device filesystems re-generated by an OS for every reboot.
+@@ -183,7 +183,7 @@
+ Optional.  Overrides the compiled-in (and/or global-section) default
+ unprivileged group name for a particular NUT device driver, used for
+ the socket file access. See the discussion of the `-g` option in
+-linkman:nutupsdrv[8] for details.
++linkman:nutupsdrv[1m] for details.
+ This may be specifically useful for ensuring access to dynamic device
+ filesystem nodes, such as USB (or serial-over-USB) hot-plug support,
+ or with device filesystems re-generated by an OS for every reboot.
+@@ -202,7 +202,7 @@
+ to immediately call the driver-specific default implementation of
+ `upsdrv_shutdown()` method, for same effect as when a NUT driver is
+ started with `-k` command-line flag.  This option can be toggled with
+-linkman:upsrw[8] as `driver.flag.allow_killpower` during run-time.
++linkman:upsrw[1m] as `driver.flag.allow_killpower` during run-time.
+ 
+ *desc*::
+ 
+@@ -308,21 +308,21 @@
+ INTEGRATION
+ -----------
+ 
+-linkman:upsdrvctl[8] uses this file to start and stop the drivers.
++linkman:upsdrvctl[1m] uses this file to start and stop the drivers.
+ 
+ The drivers themselves also obtain configuration data from this file.
+ Each driver looks up its section and uses that to configure itself.
+ 
+-linkman:upsd[8] learns about which UPSes are installed on this system by
++linkman:upsd[1m] learns about which UPSes are installed on this system by
+ reading this file.  If this system is called "doghouse" and you have
+ defined a UPS in your *ups.conf* called "snoopy", then you can monitor it
+-from linkman:upsc[8] or similar as "snoopy@doghouse".
++from linkman:upsc[1m] or similar as "snoopy@doghouse".
+ 
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8], linkman:nutupsdrv[8], linkman:upsdrvctl[8],
+-linkman:upsdrvsvcctl[8]
++linkman:upsd[1m], linkman:nutupsdrv[1m], linkman:upsdrvctl[1m],
++linkman:upsdrvsvcctl[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsc.txt nut-2.8.1/docs/man/upsc.txt
+--- nut-2.8.1-orig/docs/man/upsc.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsc.txt	2023-11-01 03:50:43.272732969 +0100
+@@ -1,5 +1,5 @@
+-UPSC(8)
+-=======
++UPSC(1m)
++========
+ 
+ NAME
+ ----
+@@ -33,7 +33,7 @@
+ *-L* 'host'::
+ 
+   As above, list all UPS names configured at 'host', including their description
+-  provided by the remote upsd(8) from ups.conf(5). The hostname defaults to
++  provided by the remote upsd(1m) from ups.conf(5). The hostname defaults to
+   "localhost".  You may optionally add a colon and a port number to override the
+   default port.
+ 
+@@ -56,7 +56,7 @@
+ --------
+ 
+ To list all variables on an UPS named "myups" on a host
+-called "mybox", with upsd(8) running on port 1234:
++called "mybox", with upsd(1m) running on port 1234:
+ 
+     $ upsc myups@mybox:1234
+     battery.charge: 100.0
+@@ -100,7 +100,7 @@
+ upsc will either print a list of UPS names, a list of all supported variables
+ and their values on the UPS, or an error message.  If you receive an error,
+ make sure you have specified a valid UPS on the command line, that
+-linkman:upsd[8] is really running on the other host and that no firewalls are
++linkman:upsd[1m] is really running on the other host and that no firewalls are
+ blocking you.
+ 
+ HISTORY
+@@ -113,7 +113,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8]
++linkman:upsd[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upscli_fd.txt nut-2.8.1/docs/man/upscli_fd.txt
+--- nut-2.8.1-orig/docs/man/upscli_fd.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscli_fd.txt	2023-11-01 03:43:22.015389181 +0100
+@@ -20,7 +20,7 @@
+ state structure and returns the value of the file descriptor for
+ that connection, if any.
+ 
+-This may be useful for determining if the connection to linkman:upsd[8]
++This may be useful for determining if the connection to linkman:upsd[1m]
+ has been lost.
+ 
+ RETURN VALUE
+diff -Naur nut-2.8.1-orig/docs/man/upscli_get.txt nut-2.8.1/docs/man/upscli_get.txt
+--- nut-2.8.1-orig/docs/man/upscli_get.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscli_get.txt	2023-11-01 03:43:22.017135188 +0100
+@@ -20,7 +20,7 @@
+ The *upscli_get()* function takes the pointer 'ups' to a
+ `UPSCONN_t` state structure, and the pointer 'query' to an array of
+ 'numq' query elements.  It builds a properly-formatted request from
+-those elements and transmits it to linkman:upsd[8].
++those elements and transmits it to linkman:upsd[1m].
+ 
+ Upon success, the response will be split into separate components.
+ A pointer to those components will be returned in 'answer'.
+@@ -82,7 +82,7 @@
+ --------------
+ 
+ This function will check your query against the response from
+-linkman:upsd[8].  For example, if you send "VAR" "su700" "ups.status",
++linkman:upsd[1m].  For example, if you send "VAR" "su700" "ups.status",
+ it will expect to see those at the beginning of the response.
+ 
+ If the results from *upsd* do not pass this case-insensitive test
+diff -Naur nut-2.8.1-orig/docs/man/upscli_list_next.txt nut-2.8.1/docs/man/upscli_list_next.txt
+--- nut-2.8.1-orig/docs/man/upscli_list_next.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscli_list_next.txt	2023-11-01 03:43:22.020380436 +0100
+@@ -42,13 +42,13 @@
+ -----------------
+ 
+ The contents of 'numa' and 'answer' work just like a call to
+-linkman:upscli_get[3].  The values returned by linkman:upsd[8] are
++linkman:upscli_get[3].  The values returned by linkman:upsd[1m] are
+ identical to a single item request, so this is not surprising.
+ 
+ ERROR CHECKING
+ --------------
+ 
+-This function checks the response from linkman:upsd[8] against your query.
++This function checks the response from linkman:upsd[1m] against your query.
+ If the response is not part of the list you have requested, it will
+ return an error code.
+ 
+diff -Naur nut-2.8.1-orig/docs/man/upscli_list_start.txt nut-2.8.1/docs/man/upscli_list_start.txt
+--- nut-2.8.1-orig/docs/man/upscli_list_start.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscli_list_start.txt	2023-11-01 03:43:22.022615912 +0100
+@@ -19,7 +19,7 @@
+ The *upscli_list_start()* function takes the pointer 'ups' to a
+ `UPSCONN_t` state structure, and the pointer 'query' to an array of
+ 'numq' query elements.  It builds a properly-formatted request from
+-those elements and transmits it to linkman:upsd[8].
++those elements and transmits it to linkman:upsd[1m].
+ 
+ Upon success, the caller must call linkman:upscli_list_next[3] to retrieve
+ the elements of the list.  Failure to retrieve the list will most likely
+@@ -62,7 +62,7 @@
+ ERROR CHECKING
+ --------------
+ 
+-This function checks the response from linkman:upsd[8] against your query.
++This function checks the response from linkman:upsd[1m] against your query.
+ If it is not starting a list, or is starting the wrong type of list, it
+ will return an error code.
+ 
+diff -Naur nut-2.8.1-orig/docs/man/upscli_readline.txt nut-2.8.1/docs/man/upscli_readline.txt
+--- nut-2.8.1-orig/docs/man/upscli_readline.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscli_readline.txt	2023-11-01 03:43:22.024473885 +0100
+@@ -26,7 +26,7 @@
+ into the buffer 'buf'.
+ 
+ Some parsing of the string occurs during reception.  In particular,
+-ERR messages from linkman:upsd[8] are detected and will cause this
++ERR messages from linkman:upsd[1m] are detected and will cause this
+ function to return -1.
+ 
+ The difference between the two functions is that *upscli_readline_timeout()*
+diff -Naur nut-2.8.1-orig/docs/man/upscli_upserror.txt nut-2.8.1/docs/man/upscli_upserror.txt
+--- nut-2.8.1-orig/docs/man/upscli_upserror.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscli_upserror.txt	2023-11-01 03:43:22.033974265 +0100
+@@ -22,7 +22,7 @@
+ 
+ This is typically used to check for certain error values like
+ `UPSCLI_ERR_UNKCOMMAND`.  That specific error can be used for detecting
+-older versions of linkman:upsd[8] which might not support a given command.
++older versions of linkman:upsd[1m] which might not support a given command.
+ 
+ Some error messages have additional meanings, so you should use
+ linkman:upscli_strerror[3] to obtain readable error messages.
+diff -Naur nut-2.8.1-orig/docs/man/upsclient.txt nut-2.8.1/docs/man/upsclient.txt
+--- nut-2.8.1-orig/docs/man/upsclient.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsclient.txt	2023-11-01 03:43:22.035840329 +0100
+@@ -11,7 +11,7 @@
+ 
+ The Network UPS Tools (NUT) *upsclient* library provides a number of
+ useful functions for programs to use when communicating with
+-linkman:upsd[8].  Many of the low-level socket and protocol details are
++linkman:upsd[1m].  Many of the low-level socket and protocol details are
+ handled automatically when using this interface.
+ 
+ State is maintained across calls in an opaque structure called `UPSCONN_t`.
+@@ -47,7 +47,7 @@
+ linkman:upscli_list_start[3] to get it started, then call
+ linkman:upscli_list_next[3] for each element.
+ 
+-Raw lines of text may be sent to linkman:upsd[8] with
++Raw lines of text may be sent to linkman:upsd[1m] with
+ linkman:upscli_sendline[3].  Reading raw lines is possible with
+ linkman:upscli_readline[3].  Client programs are expected to format these
+ lines according to the protocol, as no checking will be performed before
+diff -Naur nut-2.8.1-orig/docs/man/upscmd.txt nut-2.8.1/docs/man/upscmd.txt
+--- nut-2.8.1-orig/docs/man/upscmd.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscmd.txt	2023-11-01 03:50:49.168354756 +0100
+@@ -1,5 +1,5 @@
+-UPSCMD(8)
+-=========
++UPSCMD(1m)
++==========
+ 
+ NAME
+ ----
+@@ -76,7 +76,7 @@
+ DANGEROUS COMMANDS
+ ------------------
+ 
+-Some drivers like linkman:apcsmart[8] have built-in paranoia for the
++Some drivers like linkman:apcsmart[1m] have built-in paranoia for the
+ dangerous commands like `load.off`.  To make them actually turn off the
+ load, you will have to send the command twice within a short window.
+ That is, you will have to send it once, then send it again after 3
+@@ -105,7 +105,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8], linkman:upsrw[8]
++linkman:upsd[1m], linkman:upsrw[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upscode2.txt nut-2.8.1/docs/man/upscode2.txt
+--- nut-2.8.1-orig/docs/man/upscode2.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upscode2.txt	2023-11-01 03:50:54.290537154 +0100
+@@ -1,5 +1,5 @@
+-UPSCODE2(8)
+-===========
++UPSCODE2(1m)
++============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ upscode2 driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -98,7 +98,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsd.conf.txt nut-2.8.1/docs/man/upsd.conf.txt
+--- nut-2.8.1-orig/docs/man/upsd.conf.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsd.conf.txt	2023-11-01 03:43:22.041506995 +0100
+@@ -162,7 +162,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8], linkman:nutupsdrv[8], linkman:upsd.users[5]
++linkman:upsd[1m], linkman:nutupsdrv[1m], linkman:upsd.users[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsd.txt nut-2.8.1/docs/man/upsd.txt
+--- nut-2.8.1-orig/docs/man/upsd.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsd.txt	2023-11-01 03:50:56.827111007 +0100
+@@ -1,5 +1,5 @@
+-UPSD(8)
+-=======
++UPSD(1m)
++========
+ 
+ NAME
+ ----
+@@ -24,14 +24,14 @@
+ such as starting tests, or setting values.
+ 
+ Communication between *upsd* and clients is handled on a TCP port.
+-Configuration details for this port are described in linkman:upsd.conf[8].
++Configuration details for this port are described in linkman:upsd.conf[1m].
+ 
+ This program is essential, and must be running at all times to actually
+ make any use out of the drivers and clients.
+ 
+ Controls in the configuration files allow you to limit access to the
+ server, but you should also use a firewall for extra protection.  Client
+-processes such as linkman:upsmon[8] trust *upsd* for status information about
++processes such as linkman:upsmon[1m] trust *upsd* for status information about
+ the UPS hardware, so keep it secure.
+ 
+ OPTIONS
+@@ -71,8 +71,8 @@
+ can use this to create a "jail" for greater security.
+ +
+ You must coordinate this with your drivers, as upsd must be able to find
+-the state path within 'directory'.  See linkman:upsdrvctl[8] and
+-linkman:nutupsdrv[8].
++the state path within 'directory'.  See linkman:upsdrvctl[1m] and
++linkman:nutupsdrv[1m].
+ 
+ *-u* 'user'::
+ Switch to user 'user' after startup if started as root.  This
+@@ -174,18 +174,18 @@
+ Clients:
+ ~~~~~~~~
+ 
+-- linkman:upsc[8]
+-- linkman:upscmd[8]
+-- linkman:upsrw[8]
+-- linkman:upslog[8]
+-- linkman:upsmon[8]
++- linkman:upsc[1m]
++- linkman:upscmd[1m]
++- linkman:upsrw[1m]
++- linkman:upslog[1m]
++- linkman:upsmon[1m]
+ 
+ CGI programs:
+ ~~~~~~~~~~~~~
+ 
+-- linkman:upsset.cgi[8]
+-- linkman:upsstats.cgi[8]
+-- linkman:upsimage.cgi[8]
++- linkman:upsset.cgi[1m]
++- linkman:upsstats.cgi[1m]
++- linkman:upsimage.cgi[1m]
+ 
+ Driver control:
+ ~~~~~~~~~~~~~~~
+@@ -195,7 +195,7 @@
+ Drivers:
+ ~~~~~~~~
+ 
+-- linkman:nutupsdrv[8]
++- linkman:nutupsdrv[1m]
+ include::{builddir}linkman-driver-names.txt[]
+ 
+ Internet resources:
+diff -Naur nut-2.8.1-orig/docs/man/upsd.users.txt nut-2.8.1/docs/man/upsd.users.txt
+--- nut-2.8.1-orig/docs/man/upsd.users.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsd.users.txt	2023-11-01 03:43:22.045373551 +0100
+@@ -83,7 +83,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8], linkman:upsd.conf[5]
++linkman:upsd[1m], linkman:upsd.conf[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsdrvctl.txt nut-2.8.1/docs/man/upsdrvctl.txt
+--- nut-2.8.1-orig/docs/man/upsdrvctl.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsdrvctl.txt	2023-11-01 03:50:59.518679271 +0100
+@@ -1,5 +1,5 @@
+-UPSDRVCTL(8)
+-============
++UPSDRVCTL(1m)
++=============
+ 
+ NAME
+ ----
+@@ -174,7 +174,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsdrvsvcctl[8], linkman:nutupsdrv[8], linkman:upsd[8], linkman:ups.conf[5]
++linkman:upsdrvsvcctl[1m], linkman:nutupsdrv[1m], linkman:upsd[1m], linkman:ups.conf[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsdrvsvcctl.txt nut-2.8.1/docs/man/upsdrvsvcctl.txt
+--- nut-2.8.1-orig/docs/man/upsdrvsvcctl.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsdrvsvcctl.txt	2023-11-01 03:51:02.072312734 +0100
+@@ -1,5 +1,5 @@
+-UPSDRVSVCCTL(8)
+-===============
++UPSDRVSVCCTL(1m)
++================
+ 
+ NAME
+ ----
+@@ -198,8 +198,8 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsdrvctl[8], linkman:nutupsdrv[8], linkman:upsd[8],
+-linkman:nut-driver-enumerator[8], linkman:ups.conf[5]
++linkman:upsdrvctl[1m], linkman:nutupsdrv[1m], linkman:upsd[1m],
++linkman:nut-driver-enumerator[1m], linkman:ups.conf[5]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsimage.cgi.txt nut-2.8.1/docs/man/upsimage.cgi.txt
+--- nut-2.8.1-orig/docs/man/upsimage.cgi.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsimage.cgi.txt	2023-11-01 03:51:05.715777100 +0100
+@@ -1,5 +1,5 @@
+-UPSIMAGE.CGI(8)
+-===============
++UPSIMAGE.CGI(1m)
++================
+ 
+ NAME
+ ----
+@@ -19,7 +19,7 @@
+ -----------
+ 
+ *upsimage.cgi* generates the graphical bars that make up the right side
+-of the page generated by linkman:upsstats.cgi[8].  These represent the
++of the page generated by linkman:upsstats.cgi[1m].  These represent the
+ current battery charge, utility voltage, and UPS load where available.
+ 
+ The images are in PNG format, and are created by linking to Boutell's
+@@ -28,7 +28,7 @@
+ ACCESS CONTROL
+ --------------
+ 
+-upsstats will only talk to linkman:upsd[8] servers that have been defined
++upsstats will only talk to linkman:upsd[1m] servers that have been defined
+ in your linkman:hosts.conf[5].  If it complains about "Access to that host
+ is not authorized", check that file first.
+ 
+@@ -40,7 +40,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8], linkman:upsstats.cgi[8]
++linkman:upsd[1m], linkman:upsstats.cgi[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upslog.txt nut-2.8.1/docs/man/upslog.txt
+--- nut-2.8.1-orig/docs/man/upslog.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upslog.txt	2023-11-01 03:51:08.956602830 +0100
+@@ -1,5 +1,5 @@
+-UPSLOG(8)
+-=========
++UPSLOG(1m)
++==========
+ 
+ NAME
+ ----
+@@ -124,13 +124,13 @@
+ Server:
+ ~~~~~~~
+ 
+-linkman:upsd[8]
++linkman:upsd[1m]
+ 
+ Clients:
+ ~~~~~~~~
+ 
+-linkman:upsc[8], linkman:upscmd[8],
+-linkman:upsrw[8], linkman:upsmon[8], linkman:upssched[8]
++linkman:upsc[1m], linkman:upscmd[1m],
++linkman:upsrw[1m], linkman:upsmon[1m], linkman:upssched[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsmon.conf.txt nut-2.8.1/docs/man/upsmon.conf.txt
+--- nut-2.8.1-orig/docs/man/upsmon.conf.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsmon.conf.txt	2023-11-01 03:43:22.054264364 +0100
+@@ -9,7 +9,7 @@
+ DESCRIPTION
+ -----------
+ 
+-This file's primary job is to define the systems that linkman:upsmon[8]
++This file's primary job is to define the systems that linkman:upsmon[1m]
+ will monitor and to tell it how to shut down the system when necessary.
+ It will contain passwords, so keep it secure.  Ideally, only the upsmon
+ process should be able to read it.
+@@ -95,7 +95,7 @@
+ subdirectory for more information and ideas on how to use this
+ feature.
+ +
+-Also see the section on "power values" in linkman:upsmon[8].
++Also see the section on "power values" in linkman:upsmon[1m].
+ 
+ *MONITOR* 'system' 'powervalue' 'username' 'password' 'type'::
+ 
+@@ -115,7 +115,7 @@
+  - "su700@mybox" means a UPS called "su700" on a system called "mybox".
+ This is the normal form.
+  - "fenton@bigbox:5678" is a UPS called "fenton" on a system called
+-"bigbox" which runs linkman:upsd[8] on port "5678".
++"bigbox" which runs linkman:upsd[1m] on port "5678".
+ 
+ 'powervalue' is an integer representing the number of power supplies
+ that the UPS feeds on this system.  Most normal computers have one power
+@@ -151,8 +151,8 @@
+ +MONITOR myups@bigserver 1 upswired blah primary+
+ 
+ 
+-The 'type' refers to the relationship with linkman:upsd[8].  It can
+-be either "primary" or "secondary".  See linkman:upsmon[8] for more
++The 'type' refers to the relationship with linkman:upsd[1m].  It can
++be either "primary" or "secondary".  See linkman:upsmon[1m] for more
+ information on the meaning of these modes.  The mode you pick here
+ also goes in the `upsd.users` file, as seen in the example above.
+ 
+@@ -183,7 +183,7 @@
+ argument.  The environment string NOTIFYTYPE will contain the type
+ string of whatever caused this event to happen.
+ +
+-If you need to use linkman:upssched[8], then you must make it your
++If you need to use linkman:upssched[1m], then you must make it your
+ NOTIFYCMD by listing it here.
+ +
+ Note that this is only called for NOTIFY events that have EXEC set with
+@@ -276,7 +276,7 @@
+ 
+ *POLLFREQ* 'seconds'::
+ 
+-Normally upsmon polls the linkman:upsd[8] server every 5 seconds.  If this
++Normally upsmon polls the linkman:upsd[1m] server every 5 seconds.  If this
+ is flooding your network with activity, you can make it higher.  You can
+ also make it lower to get faster updates in some cases.
+ +
+@@ -490,7 +490,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsmon[8], linkman:upsd[8], linkman:nutupsdrv[8].
++linkman:upsmon[1m], linkman:upsd[1m], linkman:nutupsdrv[1m].
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsmon.txt nut-2.8.1/docs/man/upsmon.txt
+--- nut-2.8.1-orig/docs/man/upsmon.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsmon.txt	2023-11-01 03:51:38.407636678 +0100
+@@ -1,541 +1,541 @@
+-UPSMON(8)
+-=========
+-
+-NAME
+-----
+-
+-upsmon - UPS monitor and shutdown controller
+-
+-SYNOPSIS
+---------
+-
+-*upsmon* -h
+-
+-*upsmon* -c 'command' [-P 'pid']
+-
+-*upsmon* [-D] [-F | -B] [-K] [-p] [-u 'user']
+-
+-DESCRIPTION
+------------
+-
+-*upsmon* is the client process that is responsible for the most important part
+-of UPS monitoring--shutting down the system when the power goes out.  It
+-can call out to other helper programs for notification purposes during
+-power events.
+-
+-upsmon can monitor multiple systems using a single process.  Every UPS
+-that is defined in the linkman:upsmon.conf[5] configuration file is assigned
+-a power value and a type (*primary* or *secondary*).
+-
+-OPTIONS
+--------
+-
+-*-h*::
+-Display the help message.
+-
+-*-c* 'command'::
+-Send the command 'command' to the existing upsmon process.  Valid
+-commands are:
+-
+-*fsd*;; shutdown all primary-mode UPSes (use with caution)
+-
+-*stop*;; stop monitoring and exit
+-
+-*reload*;; reread linkman:upsmon.conf[5] configuration file.  See
+-"reloading nuances" below if this doesn't work.
+-
+-*-P* 'pid'::
+-Send the command signal above using specified PID number, rather than
+-consulting the PID file.  This can help define service units which
+-start main `upsmon` as a foreground process so it does not have to
+-rely on a PID file.
+-
+-*-D*::
+-Raise the debugging level.  upsmon will run in the foreground by default,
+-and will print information on stdout about the monitoring process.
+-Use this option multiple times for more details.
+-
+-*-F*::
+-upsmon will run in the foreground, regardless of debugging settings.
+-
+-*-B*::
+-upsmon will run in the background, regardless of debugging settings.
+-
+-*-K*::
+-Test for the shutdown flag.  If it exists and contains the magic string
+-from upsmon, then upsmon will exit with `EXIT_SUCCESS`.  Any other condition
+-will make upsmon exit with `EXIT_FAILURE`.
+-+
+-You can test for a successful exit from `upsmon -K` in your shutdown
+-scripts to know when to call linkman:upsdrvctl[8] to shut down the UPS.
+-
+-*-p*::
+-Run privileged all the time.  Normally upsmon will split into two
+-processes.  The majority of the code runs as an unprivileged user, and
+-only a tiny stub runs as root.  This switch will disable that mode, and
+-run the old "all root all the time" system.
+-+
+-This is not the recommended mode, and you should not use this unless you
+-have a very good reason.
+-
+-*-u* 'user'::
+-Set the user for the unprivileged monitoring process.  This has no effect
+-when using -p.
+-+
+-The default user is set at configure time with 'configure
+---with-user=...'.  Typically this is 'nobody', but other distributions
+-will probably have a specific 'nut' user for this task.  If your
+-notification scripts need to run as a specific user, set it here.
+-+
+-You can also set this in the linkman:upsmon.conf[5] file with the
+-RUN_AS_USER directive.
+-
+-UPS DEFINITIONS
+----------------
+-
+-In the linkman:upsmon.conf[5], you must specify at least one UPS that will
+-be monitored.  Use the MONITOR directive.
+-
+-	MONITOR 'system' 'powervalue' 'username' 'password' 'type'
+-
+-The 'system' refers to a linkman:upsd[8] server, in the form
+-+upsname[@hostname[:port]]+.  The default hostname is "localhost".  Some
+-examples follow:
+-
+- - "su700@mybox" means a UPS called "su700" on a system called "mybox".
+-This is the normal form.
+-
+- - "fenton@bigbox:5678" is a UPS called "fenton" on a system called
+-"bigbox" which runs linkman:upsd[8] on port "5678".
+-
+-The 'powervalue' refers to how many power supplies on this system are
+-being driven this UPS.  This is typically set to 1, but see the section
+-on power values below.
+-
+-The 'username' is a section in your linkman:upsd.users[5] file.
+-Whatever password you set in that section must match the 'password'
+-set in this file.
+-
+-The type set in that section must also match the 'type' here --
+-*primary* or *secondary*.  In general, a primary process is one
+-running on the system with the UPS actually plugged into a serial
+-port, and a secondary is drawing power from the UPS but can't
+-talk to it directly.  See the section on UPS types for more.
+-
+-NOTIFY EVENTS
+--------------
+-
+-*upsmon* senses several events as it monitors each UPS.  They are called
+-notify events as they can be used to tell the users and admins about the
+-change in status.  See the additional NOTIFY-related sections below for
+-information on customizing the delivery of these messages.
+-
+-*ONLINE*::
+-The UPS is back on line.
+-
+-*ONBATT*::
+-The UPS is on battery.
+-
+-*LOWBATT*::
+-The UPS battery is low (as determined by the driver).
+-
+-*FSD*::
+-The UPS has been commanded into the "forced shutdown" mode.
+-
+-*COMMOK*::
+-Communication with the UPS has been established.
+-
+-*COMMBAD*::
+-Communication with the UPS was just lost.
+-
+-*SHUTDOWN*::
+-The local system is being shut down.
+-
+-*REPLBATT*::
+-The UPS needs to have its battery replaced.
+-
+-*NOCOMM*::
+-The UPS can't be contacted for monitoring.
+-
+-*NOPARENT*::
+-`upsmon` parent process died - shutdown impossible.
+-
+-*CAL*::
+-UPS calibration in progress.
+-
+-*OFF*::
+-UPS administratively OFF or asleep.
+-
+-*NOTOFF*::
+-UPS no longer administratively OFF or asleep.
+-
+-*BYPASS*::
+-UPS on bypass (powered, not protecting).
+-
+-*NOTBYPASS*::
+-UPS no longer on bypass.
+-
+-
+-NOTIFY COMMAND
+---------------
+-
+-In linkman:upsmon.conf[5], you can configure a program called the NOTIFYCMD
+-that will handle events that occur.
+-
+-+NOTIFYCMD+ "'path to program'"
+-
+-+NOTIFYCMD "/usr/local/bin/notifyme"+
+-
+-Remember to wrap the path in "quotes" if it contains any spaces.
+-
+-The program you run as your NOTIFYCMD can use the environment variables
+-NOTIFYTYPE and UPSNAME to know what has happened and on which UPS.  It
+-also receives the notification message (see below) as the first (and
+-only) argument, so you can deliver a pre-formatted message too.
+-
+-Note that the NOTIFYCMD will only be called for a given event when you set
+-the EXEC flag by using the notify flags, as detailed below.
+-
+-NOTIFY FLAGS
+-------------
+-
+-By default, all notify events (see above) generate a global message
+-(wall) to all users, plus they are logged via the syslog.
+-Except for Windows where upsmon only writes to the syslog by default.
+-You can change this with the NOTIFYFLAG directive in the configuration file:
+-
+-+NOTIFYFLAG+ 'notifytype' 'flags'
+-
+-Examples:
+-
+- - `NOTIFYFLAG ONLINE SYSLOG`
+-
+- - `NOTIFYFLAG ONBATT SYSLOG+WALL`
+-
+- - `NOTIFYFLAG LOWBATT SYSLOG+WALL+EXEC`
+-
+-The flags that can be set on a given notify event are:
+-
+-*SYSLOG*::
+-Write this message to the syslog.
+-
+-*WALL*::
+-Send this message to all users on the system via *wall*(1).
+-
+-*EXEC*::
+-Execute the NOTIFYCMD.
+-
+-*IGNORE*::
+-Don't do anything.  If you use this, don't use any of the other flags.
+-
+-You can mix these flags.  "SYSLOG+WALL+EXEC" does all three for a given
+-event.
+-
+-NOTIFY MESSAGES
+----------------
+-
+-upsmon comes with default messages for each of the NOTIFY events.  These
+-can be changed with the NOTIFYMSG directive.
+-
+-+NOTIFYMSG+ 'type' "'message'"
+-
+-Examples:
+-
+- - `NOTIFYMSG ONLINE "UPS %s is getting line power"`
+-
+- - ` NOTIFYMSG ONBATT "Someone pulled the plug on %s"`
+-
+-The first instance of %s is replaced with the identifier of the UPS that
+-generated the event.  These messages are used when sending walls to the
+-users directly from upsmon, and are also passed to the NOTIFYCMD.
+-
+-POWER VALUES
+-------------
+-
+-The "current overall power value" is the sum of all UPSes that are
+-currently able to supply power to the system hosting upsmon.  Any
+-UPS that is either on line or just on battery contributes to this
+-number.  If a UPS is critical (on battery and low battery) or has been
+-put into "forced shutdown" mode, it no longer contributes.
+-
+-A "power value" on a MONITOR line in the config file is the number of
+-power supplies that the UPS runs on the current system.
+-
+-+MONITOR+ 'upsname' 'powervalue' 'username' 'password' 'type'
+-
+-Normally, you only have one power supply, so it will be set to 1.
+-
+-+MONITOR myups@myhost 1 username mypassword primary+
+-
+-On a large server with redundant power supplies, the power value for a UPS
+-may be greater than 1.  You may also have more than one of them defined.
+-
+-+MONITOR ups-alpha@myhost 2 username mypassword primary+
+-
+-+MONITOR ups-beta@myhost 2 username mypassword primary+
+-
+-You can also set the power value for a UPS to 0 if it does not supply any
+-power to that system.  This is generally used when you want to use the
+-upsmon notification features for a UPS even though it's not actually
+-running the system that hosts upsmon.  Don't set this to "primary" unless
+-you really want to power this UPS off when this instance of upsmon needs
+-to shut down for its own reasons.
+-
+-+MONITOR faraway@anotherbox 0 username mypassword secondary+
+-
+-The "minimum power value" is the number of power supplies that must be
+-receiving power in order to keep the computer running.
+-
+-+MINSUPPLIES+ 'value'
+-
+-Typical PCs only have 1, so most users will leave this at the default.
+-
+-+MINSUPPLIES 1+
+-
+-If you have a server or similar system with redundant power, then this
+-value will usually be set higher.  One that requires three power supplies
+-to be running at all times would simply set it to 3.
+-
+-+MINSUPPLIES 3+
+-
+-When the current overall power value drops below the minimum power value,
+-upsmon starts the shutdown sequence.  This design allows you to lose some
+-of your power supplies in a redundant power environment without bringing
+-down the entire system while still working properly for smaller systems.
+-
+-UPS TYPES
+----------
+-
+-*upsmon* and linkman:upsd[8] don't always run on the same system.  When they
+-do, any UPSes that are directly attached to the upsmon host should be
+-monitored in "primary" mode.  This makes upsmon take charge of that equipment,
+-and it will wait for the "secondary" systems to disconnect before shutting
+-down the local system.  This allows the distant systems (monitoring over
+-the network) to shut down cleanly before `upsdrvctl shutdown` runs
+-and turns them all off.
+-
+-When upsmon runs as a secondary, it is relying on the distant system to tell
+-it about the state of the UPS.  When that UPS goes critical (on battery
+-and low battery), it immediately invokes the local shutdown command.  This
+-needs to happen quickly.  Once all secondaries disconnect from the distant
+-linkman:upsd[8] server, its primary-mode upsmon will start its own shutdown
+-process.  Your secondary systems must all quiesce and shut down before the
+-primary turns off the shared power source, or filesystem damage may result.
+-
+-upsmon deals with secondaries that get wedged, hang, or otherwise fail to
+-disconnect from linkman:upsd[8] in a timely manner with the HOSTSYNC
+-timer.  During a shutdown situation, the primary upsmon will give up after
+-this interval and it will shut down anyway.  This keeps the primary from
+-sitting there forever (which would endanger that host) if a secondary
+-should break somehow.  This defaults to 15 seconds.
+-
+-If your primary system is shutting down too quickly, set the FINALDELAY
+-interval to something greater than the default 15 seconds.  Don't set
+-this too high, or your UPS battery may run out of power before the
+-primary upsmon process shuts down that system.
+-
+-TIMED SHUTDOWNS
+----------------
+-
+-For those rare situations where the shutdown process can't be completed
+-between the time that low battery is signalled and the UPS actually powers
+-off the load, use the linkman:upssched[8] helper program.  You can use it
+-along with upsmon to schedule a shutdown based on the "on battery" event.
+-upssched can then come back to upsmon to initiate the shutdown once it has
+-run on battery too long.
+-
+-This can be complicated and messy, so stick to the default critical UPS
+-handling if you can.
+-
+-REDUNDANT POWER SUPPLIES
+-------------------------
+-
+-If you have more than one power supply for redundant power, you may also
+-have more than one UPS feeding your computer.  upsmon can handle this.  Be
+-sure to set the UPS power values appropriately and the MINSUPPLIES value
+-high enough so that it keeps running until it really does need to shut
+-down.
+-
+-For example, the HP NetServer LH4 by default has 3 power supplies
+-installed, with one bay empty.  It has two power cords, one per side of
+-the box.  This means that one power cord powers two power supply bays,
+-and that you can only have two UPSes supplying power.
+-
+-Connect UPS "alpha" to the cord feeding two power supplies, and UPS
+-"beta" to the cord that feeds the third and the empty slot.  Define alpha
+-as a powervalue of 2, and beta as a powervalue of 1.  Set the MINSUPPLIES
+-to 2.
+-
+-When alpha goes on battery, your current overall power value will stay
+-at 3, as it's still supplying power.  However, once it goes critical (on
+-battery and low battery), it will stop contributing to the current overall
+-power value.  That means the value will be 1 (beta alone), which is less
+-than 2.  That is insufficient to run the system, and upsmon will invoke
+-the shutdown sequence.
+-
+-However, if beta goes critical, subtracting its contribution will take the
+-current overall value from 3 to 2.  This is just high enough to satisfy
+-the minimum, so the system will continue running as before.  If beta
+-returns later, it will be re-added and the current value will go back to
+-3.  This allows you to swap out UPSes, change a power configuration, or
+-whatever, as long as you maintain the minimum power value at all times.
+-
+-MIXED OPERATIONS
+-----------------
+-
+-Besides being able to monitor multiple UPSes, upsmon can also monitor them
+-as different roles.  If you have a system with multiple power supplies
+-serviced by separate UPS batteries, it's possible to be a primary on one
+-UPS and a secondary on the other.  This usually happens when you run
+-out of serial or USB ports and need to do the monitoring through another
+-system nearby.
+-
+-This is also complicated, especially when it comes time to power down a
+-UPS that has gone critical but doesn't supply the local system.  You can
+-do this with some scripting magic in your notify command script, but it's
+-beyond the scope of this manual.
+-
+-FORCED SHUTDOWNS
+-----------------
+-
+-When upsmon is forced to bring down the local system, it sets the
+-"FSD" (forced shutdown) flag on any UPSes that it is running in primary
+-mode.  This is used to synchronize secondary systems in the event that
+-a primary which is otherwise OK needs to be brought down due to some
+-pressing event on the UPS manager system.
+-
+-You can manually invoke this mode on the system with primary-mode upsmon
+-by starting another copy of the program with `-c fsd` command line argument.
+-This is useful when you want to initiate a shutdown before the critical
+-stage through some external means, such as linkman:upssched[8].
+-
+-WARNING: Please note that by design, since we require power-cycling the
+-load and don't want some systems to be powered off while others remain
+-running if the "wall power" returns at the wrong moment as usual, the "FSD"
+-flag can not be removed from the data server unless its daemon is restarted.
+-If we do take the first step in critical mode, then we normally intend to go
+-all the wayâ€‰--â€‰shut down all the servers gracefully, and power down the UPS.
+-
+-Keep in mind that some UPS devices and corresponding drivers would also latch
+-or otherwise resurface the "FSD" state again even if "wall power" is available,
+-but the remaining battery charge is below a threshold configured as "safe" in
+-the device (usually if you manually power on the UPS after a long power outage).
+-This is by design of respective UPS vendors, since in such situation they
+-can not guarantee that if a new power outage happens, their UPS would safely
+-shut down your systems again. So it is deemed better and safer to stay dark
+-until batteries become sufficiently charged.
+-
+-When it is time to shut down, upsmon creates POWERDOWNFLAG to
+-communicate to the operating system that the UPS should be commanded
+-off late in the shutdown sequence.  This file is removed if present
+-when upsmon starts, so that the next normal shutdown does not cause
+-the UPS to be turned off.  (The file can't in general be removed
+-during shutdown because the filesystem might be read only.  If the
+-file is in a RAM-backed filesystem, the it won't be present and the
+-check to remove it won't fire.)
+-
+-SIMULATING POWER FAILURES
+--------------------------
+-
+-To test a synchronized shutdown without pulling the plug on your UPS(es),
+-you need only set the forced shutdown (FSD) flag on them.  You can do this
+-by calling upsmon again to set the flag, i.e.:
+-
+-+upsmon -c fsd+
+-
+-After that, the primary and the secondary will do their usual shutdown
+-sequence as if the battery had gone critical, while you can time how long
+-it takes for them.  This is much easier on your UPS equipment, and it beats
+-crawling under a desk to find the plug.
+-
+-Note you can also use a dummy SHUTDOWNCMD setting to just report that the
+-systems would shut down at this point, without actually disrupting their work.
+-
+-WARNING: after such "dummy" experiments you may have to restart the NUT data
+-server `upsd` to clear its "FSD" flag for the devices and clients involved,
+-and make sure no files named by `POWERDOWNFLAG` option (e.g. `/etc/killpower`)
+-remain on the `upsmon primary` systems under test.
+-
+-DEAD UPSES
+-----------
+-
+-In the event that upsmon can't reach linkman:upsd[8], it declares that UPS
+-"dead" after some interval controlled by DEADTIME in the
+-linkman:upsmon.conf[5].  If this happens while that UPS was last known to be
+-on battery, it is assumed to have gone critical and no longer contributes
+-to the overall power value.
+-
+-upsmon will alert you to a UPS that can't be contacted for monitoring
+-with a "NOCOMM" notifier by default every 300 seconds.  This can be
+-changed with the NOCOMMWARNTIME setting.
+-
+-Also upsmon normally reports polling failures for each device that are in place
+-for each POLLFREQ loop (e.g. "Data stale" or "Driver not connected") to
+-system log as configured.  If your devices are expected to be AWOL for an
+-extended timeframe, you can use POLLFAIL_LOG_THROTTLE_MAX to reduce the
+-stress on syslog traffic and storage, by posting these messages only once
+-in every several loop cycles, and when the error condition has changed or
+-cleared. A negative value means standard behavior, and a zero value means
+-to never repeat the message (log only on start and end/change of the failure
+-state).
+-
+-RELOADING NUANCES
+------------------
+-
+-upsmon usually gives up root powers for the process that does most of
+-the work, including handling signals like SIGHUP to reload the configuration
+-file.  This means your linkman:upsmon.conf[8] file must be readable by
+-the non-root account that upsmon switches to.
+-
+-If you want reloads to work, upsmon must run as some user that has
+-permissions to read the configuration file.  I recommend making a new
+-user just for this purpose, as making the file readable by "nobody"
+-(the default user) would be a bad idea.
+-
+-See the RUN_AS_USER section in linkman:upsmon.conf[8] for more on this topic.
+-
+-Additionally, you can't change the SHUTDOWNCMD or POWERDOWNFLAG
+-definitions with a reload due to the split-process model.  If you change
+-those values, you *must* stop upsmon and start it back up.  upsmon
+-will warn you in the syslog if you make changes to either of those
+-values during a reload.
+-
+-ENVIRONMENT VARIABLES
+----------------------
+-
+-*NUT_DEBUG_LEVEL* sets default debug verbosity if no *-D* arguments
+-were provided on command line, but does not request that the daemon
+-runs in foreground mode.
+-
+-*NUT_CONFPATH* is the path name of the directory that contains
+-`upsmon.conf` and other configuration files.  If this variable is not set,
+-*upsmon* uses a built-in default, which is often `/usr/local/ups/etc`.
+-
+-FILES
+------
+-
+-linkman:upsmon.conf[5]
+-
+-SEE ALSO
+---------
+-
+-Server:
+-~~~~~~~
+-
+-linkman:upsd[8]
+-
+-Clients:
+-~~~~~~~~
+-
+-linkman:upsc[8], linkman:upscmd[8],
+-linkman:upsrw[8], linkman:upsmon[8]
+-
+-CGI programs:
+-~~~~~~~~~~~~~
+-
+-linkman:upsset.cgi[8], linkman:upsstats.cgi[8], linkman:upsimage.cgi[8]
+-
+-Internet resources:
+-~~~~~~~~~~~~~~~~~~~
+-
+-The NUT (Network UPS Tools) home page: https://www.networkupstools.org/
++UPSMON(1m)
++==========
++
++NAME
++----
++
++upsmon - UPS monitor and shutdown controller
++
++SYNOPSIS
++--------
++
++*upsmon* -h
++
++*upsmon* -c 'command' [-P 'pid']
++
++*upsmon* [-D] [-F | -B] [-K] [-p] [-u 'user']
++
++DESCRIPTION
++-----------
++
++*upsmon* is the client process that is responsible for the most important part
++of UPS monitoring--shutting down the system when the power goes out.  It
++can call out to other helper programs for notification purposes during
++power events.
++
++upsmon can monitor multiple systems using a single process.  Every UPS
++that is defined in the linkman:upsmon.conf[5] configuration file is assigned
++a power value and a type (*primary* or *secondary*).
++
++OPTIONS
++-------
++
++*-h*::
++Display the help message.
++
++*-c* 'command'::
++Send the command 'command' to the existing upsmon process.  Valid
++commands are:
++
++*fsd*;; shutdown all primary-mode UPSes (use with caution)
++
++*stop*;; stop monitoring and exit
++
++*reload*;; reread linkman:upsmon.conf[5] configuration file.  See
++"reloading nuances" below if this doesn't work.
++
++*-P* 'pid'::
++Send the command signal above using specified PID number, rather than
++consulting the PID file.  This can help define service units which
++start main `upsmon` as a foreground process so it does not have to
++rely on a PID file.
++
++*-D*::
++Raise the debugging level.  upsmon will run in the foreground by default,
++and will print information on stdout about the monitoring process.
++Use this option multiple times for more details.
++
++*-F*::
++upsmon will run in the foreground, regardless of debugging settings.
++
++*-B*::
++upsmon will run in the background, regardless of debugging settings.
++
++*-K*::
++Test for the shutdown flag.  If it exists and contains the magic string
++from upsmon, then upsmon will exit with `EXIT_SUCCESS`.  Any other condition
++will make upsmon exit with `EXIT_FAILURE`.
+++
++You can test for a successful exit from `upsmon -K` in your shutdown
++scripts to know when to call linkman:upsdrvctl[1m] to shut down the UPS.
++
++*-p*::
++Run privileged all the time.  Normally upsmon will split into two
++processes.  The majority of the code runs as an unprivileged user, and
++only a tiny stub runs as root.  This switch will disable that mode, and
++run the old "all root all the time" system.
+++
++This is not the recommended mode, and you should not use this unless you
++have a very good reason.
++
++*-u* 'user'::
++Set the user for the unprivileged monitoring process.  This has no effect
++when using -p.
+++
++The default user is set at configure time with 'configure
++--with-user=...'.  Typically this is 'nobody', but other distributions
++will probably have a specific 'nut' user for this task.  If your
++notification scripts need to run as a specific user, set it here.
+++
++You can also set this in the linkman:upsmon.conf[5] file with the
++RUN_AS_USER directive.
++
++UPS DEFINITIONS
++---------------
++
++In the linkman:upsmon.conf[5], you must specify at least one UPS that will
++be monitored.  Use the MONITOR directive.
++
++	MONITOR 'system' 'powervalue' 'username' 'password' 'type'
++
++The 'system' refers to a linkman:upsd[1m] server, in the form
+++upsname[@hostname[:port]]+.  The default hostname is "localhost".  Some
++examples follow:
++
++ - "su700@mybox" means a UPS called "su700" on a system called "mybox".
++This is the normal form.
++
++ - "fenton@bigbox:5678" is a UPS called "fenton" on a system called
++"bigbox" which runs linkman:upsd[1m] on port "5678".
++
++The 'powervalue' refers to how many power supplies on this system are
++being driven this UPS.  This is typically set to 1, but see the section
++on power values below.
++
++The 'username' is a section in your linkman:upsd.users[5] file.
++Whatever password you set in that section must match the 'password'
++set in this file.
++
++The type set in that section must also match the 'type' here --
++*primary* or *secondary*.  In general, a primary process is one
++running on the system with the UPS actually plugged into a serial
++port, and a secondary is drawing power from the UPS but can't
++talk to it directly.  See the section on UPS types for more.
++
++NOTIFY EVENTS
++-------------
++
++*upsmon* senses several events as it monitors each UPS.  They are called
++notify events as they can be used to tell the users and admins about the
++change in status.  See the additional NOTIFY-related sections below for
++information on customizing the delivery of these messages.
++
++*ONLINE*::
++The UPS is back on line.
++
++*ONBATT*::
++The UPS is on battery.
++
++*LOWBATT*::
++The UPS battery is low (as determined by the driver).
++
++*FSD*::
++The UPS has been commanded into the "forced shutdown" mode.
++
++*COMMOK*::
++Communication with the UPS has been established.
++
++*COMMBAD*::
++Communication with the UPS was just lost.
++
++*SHUTDOWN*::
++The local system is being shut down.
++
++*REPLBATT*::
++The UPS needs to have its battery replaced.
++
++*NOCOMM*::
++The UPS can't be contacted for monitoring.
++
++*NOPARENT*::
++`upsmon` parent process died - shutdown impossible.
++
++*CAL*::
++UPS calibration in progress.
++
++*OFF*::
++UPS administratively OFF or asleep.
++
++*NOTOFF*::
++UPS no longer administratively OFF or asleep.
++
++*BYPASS*::
++UPS on bypass (powered, not protecting).
++
++*NOTBYPASS*::
++UPS no longer on bypass.
++
++
++NOTIFY COMMAND
++--------------
++
++In linkman:upsmon.conf[5], you can configure a program called the NOTIFYCMD
++that will handle events that occur.
++
+++NOTIFYCMD+ "'path to program'"
++
+++NOTIFYCMD "/usr/local/bin/notifyme"+
++
++Remember to wrap the path in "quotes" if it contains any spaces.
++
++The program you run as your NOTIFYCMD can use the environment variables
++NOTIFYTYPE and UPSNAME to know what has happened and on which UPS.  It
++also receives the notification message (see below) as the first (and
++only) argument, so you can deliver a pre-formatted message too.
++
++Note that the NOTIFYCMD will only be called for a given event when you set
++the EXEC flag by using the notify flags, as detailed below.
++
++NOTIFY FLAGS
++------------
++
++By default, all notify events (see above) generate a global message
++(wall) to all users, plus they are logged via the syslog.
++Except for Windows where upsmon only writes to the syslog by default.
++You can change this with the NOTIFYFLAG directive in the configuration file:
++
+++NOTIFYFLAG+ 'notifytype' 'flags'
++
++Examples:
++
++ - `NOTIFYFLAG ONLINE SYSLOG`
++
++ - `NOTIFYFLAG ONBATT SYSLOG+WALL`
++
++ - `NOTIFYFLAG LOWBATT SYSLOG+WALL+EXEC`
++
++The flags that can be set on a given notify event are:
++
++*SYSLOG*::
++Write this message to the syslog.
++
++*WALL*::
++Send this message to all users on the system via *wall*(1).
++
++*EXEC*::
++Execute the NOTIFYCMD.
++
++*IGNORE*::
++Don't do anything.  If you use this, don't use any of the other flags.
++
++You can mix these flags.  "SYSLOG+WALL+EXEC" does all three for a given
++event.
++
++NOTIFY MESSAGES
++---------------
++
++upsmon comes with default messages for each of the NOTIFY events.  These
++can be changed with the NOTIFYMSG directive.
++
+++NOTIFYMSG+ 'type' "'message'"
++
++Examples:
++
++ - `NOTIFYMSG ONLINE "UPS %s is getting line power"`
++
++ - ` NOTIFYMSG ONBATT "Someone pulled the plug on %s"`
++
++The first instance of %s is replaced with the identifier of the UPS that
++generated the event.  These messages are used when sending walls to the
++users directly from upsmon, and are also passed to the NOTIFYCMD.
++
++POWER VALUES
++------------
++
++The "current overall power value" is the sum of all UPSes that are
++currently able to supply power to the system hosting upsmon.  Any
++UPS that is either on line or just on battery contributes to this
++number.  If a UPS is critical (on battery and low battery) or has been
++put into "forced shutdown" mode, it no longer contributes.
++
++A "power value" on a MONITOR line in the config file is the number of
++power supplies that the UPS runs on the current system.
++
+++MONITOR+ 'upsname' 'powervalue' 'username' 'password' 'type'
++
++Normally, you only have one power supply, so it will be set to 1.
++
+++MONITOR myups@myhost 1 username mypassword primary+
++
++On a large server with redundant power supplies, the power value for a UPS
++may be greater than 1.  You may also have more than one of them defined.
++
+++MONITOR ups-alpha@myhost 2 username mypassword primary+
++
+++MONITOR ups-beta@myhost 2 username mypassword primary+
++
++You can also set the power value for a UPS to 0 if it does not supply any
++power to that system.  This is generally used when you want to use the
++upsmon notification features for a UPS even though it's not actually
++running the system that hosts upsmon.  Don't set this to "primary" unless
++you really want to power this UPS off when this instance of upsmon needs
++to shut down for its own reasons.
++
+++MONITOR faraway@anotherbox 0 username mypassword secondary+
++
++The "minimum power value" is the number of power supplies that must be
++receiving power in order to keep the computer running.
++
+++MINSUPPLIES+ 'value'
++
++Typical PCs only have 1, so most users will leave this at the default.
++
+++MINSUPPLIES 1+
++
++If you have a server or similar system with redundant power, then this
++value will usually be set higher.  One that requires three power supplies
++to be running at all times would simply set it to 3.
++
+++MINSUPPLIES 3+
++
++When the current overall power value drops below the minimum power value,
++upsmon starts the shutdown sequence.  This design allows you to lose some
++of your power supplies in a redundant power environment without bringing
++down the entire system while still working properly for smaller systems.
++
++UPS TYPES
++---------
++
++*upsmon* and linkman:upsd[1m] don't always run on the same system.  When they
++do, any UPSes that are directly attached to the upsmon host should be
++monitored in "primary" mode.  This makes upsmon take charge of that equipment,
++and it will wait for the "secondary" systems to disconnect before shutting
++down the local system.  This allows the distant systems (monitoring over
++the network) to shut down cleanly before `upsdrvctl shutdown` runs
++and turns them all off.
++
++When upsmon runs as a secondary, it is relying on the distant system to tell
++it about the state of the UPS.  When that UPS goes critical (on battery
++and low battery), it immediately invokes the local shutdown command.  This
++needs to happen quickly.  Once all secondaries disconnect from the distant
++linkman:upsd[1m] server, its primary-mode upsmon will start its own shutdown
++process.  Your secondary systems must all quiesce and shut down before the
++primary turns off the shared power source, or filesystem damage may result.
++
++upsmon deals with secondaries that get wedged, hang, or otherwise fail to
++disconnect from linkman:upsd[1m] in a timely manner with the HOSTSYNC
++timer.  During a shutdown situation, the primary upsmon will give up after
++this interval and it will shut down anyway.  This keeps the primary from
++sitting there forever (which would endanger that host) if a secondary
++should break somehow.  This defaults to 15 seconds.
++
++If your primary system is shutting down too quickly, set the FINALDELAY
++interval to something greater than the default 15 seconds.  Don't set
++this too high, or your UPS battery may run out of power before the
++primary upsmon process shuts down that system.
++
++TIMED SHUTDOWNS
++---------------
++
++For those rare situations where the shutdown process can't be completed
++between the time that low battery is signalled and the UPS actually powers
++off the load, use the linkman:upssched[1m] helper program.  You can use it
++along with upsmon to schedule a shutdown based on the "on battery" event.
++upssched can then come back to upsmon to initiate the shutdown once it has
++run on battery too long.
++
++This can be complicated and messy, so stick to the default critical UPS
++handling if you can.
++
++REDUNDANT POWER SUPPLIES
++------------------------
++
++If you have more than one power supply for redundant power, you may also
++have more than one UPS feeding your computer.  upsmon can handle this.  Be
++sure to set the UPS power values appropriately and the MINSUPPLIES value
++high enough so that it keeps running until it really does need to shut
++down.
++
++For example, the HP NetServer LH4 by default has 3 power supplies
++installed, with one bay empty.  It has two power cords, one per side of
++the box.  This means that one power cord powers two power supply bays,
++and that you can only have two UPSes supplying power.
++
++Connect UPS "alpha" to the cord feeding two power supplies, and UPS
++"beta" to the cord that feeds the third and the empty slot.  Define alpha
++as a powervalue of 2, and beta as a powervalue of 1.  Set the MINSUPPLIES
++to 2.
++
++When alpha goes on battery, your current overall power value will stay
++at 3, as it's still supplying power.  However, once it goes critical (on
++battery and low battery), it will stop contributing to the current overall
++power value.  That means the value will be 1 (beta alone), which is less
++than 2.  That is insufficient to run the system, and upsmon will invoke
++the shutdown sequence.
++
++However, if beta goes critical, subtracting its contribution will take the
++current overall value from 3 to 2.  This is just high enough to satisfy
++the minimum, so the system will continue running as before.  If beta
++returns later, it will be re-added and the current value will go back to
++3.  This allows you to swap out UPSes, change a power configuration, or
++whatever, as long as you maintain the minimum power value at all times.
++
++MIXED OPERATIONS
++----------------
++
++Besides being able to monitor multiple UPSes, upsmon can also monitor them
++as different roles.  If you have a system with multiple power supplies
++serviced by separate UPS batteries, it's possible to be a primary on one
++UPS and a secondary on the other.  This usually happens when you run
++out of serial or USB ports and need to do the monitoring through another
++system nearby.
++
++This is also complicated, especially when it comes time to power down a
++UPS that has gone critical but doesn't supply the local system.  You can
++do this with some scripting magic in your notify command script, but it's
++beyond the scope of this manual.
++
++FORCED SHUTDOWNS
++----------------
++
++When upsmon is forced to bring down the local system, it sets the
++"FSD" (forced shutdown) flag on any UPSes that it is running in primary
++mode.  This is used to synchronize secondary systems in the event that
++a primary which is otherwise OK needs to be brought down due to some
++pressing event on the UPS manager system.
++
++You can manually invoke this mode on the system with primary-mode upsmon
++by starting another copy of the program with `-c fsd` command line argument.
++This is useful when you want to initiate a shutdown before the critical
++stage through some external means, such as linkman:upssched[1m].
++
++WARNING: Please note that by design, since we require power-cycling the
++load and don't want some systems to be powered off while others remain
++running if the "wall power" returns at the wrong moment as usual, the "FSD"
++flag can not be removed from the data server unless its daemon is restarted.
++If we do take the first step in critical mode, then we normally intend to go
++all the way‚Çë--‚Çëshut down all the servers gracefully, and power down the UPS.
++
++Keep in mind that some UPS devices and corresponding drivers would also latch
++or otherwise resurface the "FSD" state again even if "wall power" is available,
++but the remaining battery charge is below a threshold configured as "safe" in
++the device (usually if you manually power on the UPS after a long power outage).
++This is by design of respective UPS vendors, since in such situation they
++can not guarantee that if a new power outage happens, their UPS would safely
++shut down your systems again. So it is deemed better and safer to stay dark
++until batteries become sufficiently charged.
++
++When it is time to shut down, upsmon creates POWERDOWNFLAG to
++communicate to the operating system that the UPS should be commanded
++off late in the shutdown sequence.  This file is removed if present
++when upsmon starts, so that the next normal shutdown does not cause
++the UPS to be turned off.  (The file can't in general be removed
++during shutdown because the filesystem might be read only.  If the
++file is in a RAM-backed filesystem, the it won't be present and the
++check to remove it won't fire.)
++
++SIMULATING POWER FAILURES
++-------------------------
++
++To test a synchronized shutdown without pulling the plug on your UPS(es),
++you need only set the forced shutdown (FSD) flag on them.  You can do this
++by calling upsmon again to set the flag, i.e.:
++
+++upsmon -c fsd+
++
++After that, the primary and the secondary will do their usual shutdown
++sequence as if the battery had gone critical, while you can time how long
++it takes for them.  This is much easier on your UPS equipment, and it beats
++crawling under a desk to find the plug.
++
++Note you can also use a dummy SHUTDOWNCMD setting to just report that the
++systems would shut down at this point, without actually disrupting their work.
++
++WARNING: after such "dummy" experiments you may have to restart the NUT data
++server `upsd` to clear its "FSD" flag for the devices and clients involved,
++and make sure no files named by `POWERDOWNFLAG` option (e.g. `/etc/killpower`)
++remain on the `upsmon primary` systems under test.
++
++DEAD UPSES
++----------
++
++In the event that upsmon can't reach linkman:upsd[1m], it declares that UPS
++"dead" after some interval controlled by DEADTIME in the
++linkman:upsmon.conf[5].  If this happens while that UPS was last known to be
++on battery, it is assumed to have gone critical and no longer contributes
++to the overall power value.
++
++upsmon will alert you to a UPS that can't be contacted for monitoring
++with a "NOCOMM" notifier by default every 300 seconds.  This can be
++changed with the NOCOMMWARNTIME setting.
++
++Also upsmon normally reports polling failures for each device that are in place
++for each POLLFREQ loop (e.g. "Data stale" or "Driver not connected") to
++system log as configured.  If your devices are expected to be AWOL for an
++extended timeframe, you can use POLLFAIL_LOG_THROTTLE_MAX to reduce the
++stress on syslog traffic and storage, by posting these messages only once
++in every several loop cycles, and when the error condition has changed or
++cleared. A negative value means standard behavior, and a zero value means
++to never repeat the message (log only on start and end/change of the failure
++state).
++
++RELOADING NUANCES
++-----------------
++
++upsmon usually gives up root powers for the process that does most of
++the work, including handling signals like SIGHUP to reload the configuration
++file.  This means your linkman:upsmon.conf[1m] file must be readable by
++the non-root account that upsmon switches to.
++
++If you want reloads to work, upsmon must run as some user that has
++permissions to read the configuration file.  I recommend making a new
++user just for this purpose, as making the file readable by "nobody"
++(the default user) would be a bad idea.
++
++See the RUN_AS_USER section in linkman:upsmon.conf[1m] for more on this topic.
++
++Additionally, you can't change the SHUTDOWNCMD or POWERDOWNFLAG
++definitions with a reload due to the split-process model.  If you change
++those values, you *must* stop upsmon and start it back up.  upsmon
++will warn you in the syslog if you make changes to either of those
++values during a reload.
++
++ENVIRONMENT VARIABLES
++---------------------
++
++*NUT_DEBUG_LEVEL* sets default debug verbosity if no *-D* arguments
++were provided on command line, but does not request that the daemon
++runs in foreground mode.
++
++*NUT_CONFPATH* is the path name of the directory that contains
++`upsmon.conf` and other configuration files.  If this variable is not set,
++*upsmon* uses a built-in default, which is often `/usr/local/ups/etc`.
++
++FILES
++-----
++
++linkman:upsmon.conf[5]
++
++SEE ALSO
++--------
++
++Server:
++~~~~~~~
++
++linkman:upsd[1m]
++
++Clients:
++~~~~~~~~
++
++linkman:upsc[1m], linkman:upscmd[1m],
++linkman:upsrw[1m], linkman:upsmon[1m]
++
++CGI programs:
++~~~~~~~~~~~~~
++
++linkman:upsset.cgi[1m], linkman:upsstats.cgi[1m], linkman:upsimage.cgi[1m]
++
++Internet resources:
++~~~~~~~~~~~~~~~~~~~
++
++The NUT (Network UPS Tools) home page: https://www.networkupstools.org/
+diff -Naur nut-2.8.1-orig/docs/man/upsrw.txt nut-2.8.1/docs/man/upsrw.txt
+--- nut-2.8.1-orig/docs/man/upsrw.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsrw.txt	2023-11-01 03:52:52.132301336 +0100
+@@ -1,5 +1,5 @@
+-UPSRW(8)
+-========
++UPSRW(1m)
++=========
+ 
+ NAME
+ ----
+@@ -19,7 +19,7 @@
+ -----------
+ 
+ *upsrw* allows you to view and change the read/write variables inside your UPS.
+-It sends commands via the server linkman:upsd[8] to your driver, which
++It sends commands via the server linkman:upsd[1m] to your driver, which
+ configures the hardware for you.
+ 
+ The list of variables that allow you to change their values is based on
+@@ -119,7 +119,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsd[8], linkman:upscmd[8]
++linkman:upsd[1m], linkman:upscmd[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upssched.conf.txt nut-2.8.1/docs/man/upssched.conf.txt
+--- nut-2.8.1-orig/docs/man/upssched.conf.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upssched.conf.txt	2023-11-01 03:43:22.059257159 +0100
+@@ -9,8 +9,8 @@
+ DESCRIPTION
+ -----------
+ 
+-This file controls the operations of linkman:upssched[8], the timer-based
+-helper program for linkman:upsmon[8].
++This file controls the operations of linkman:upssched[1m], the timer-based
++helper program for linkman:upsmon[1m].
+ 
+ CONFIGURATION DIRECTIVES
+ ------------------------
+@@ -31,8 +31,8 @@
+ your OS ignores the permissions on a FIFO, then you MUST put this in a
+ protected directory!
+ 
+-NOTE: by default, linkman:upsmon[8] will run upssched as whatever user
+-you have defined with RUN_AS_USER in linkman:upsmon.conf[8].  Make sure
++NOTE: by default, linkman:upsmon[1m] will run upssched as whatever user
++you have defined with RUN_AS_USER in linkman:upsmon.conf[1m].  Make sure
+ that user can create files and write to files in the path you use for
+ PIPEFN and LOCKFN.
+ 
+@@ -98,12 +98,12 @@
+ 'upsname' for the current event will be used.
+ 
+ For a complete list of 'notifytype' possible values, refer to the section
+-NOTIFY EVENTS in linkman:upsmon[8].
++NOTIFY EVENTS in linkman:upsmon[1m].
+ 
+ SEE ALSO
+ --------
+ 
+-linkman:upssched[8], linkman:upsmon[8]
++linkman:upssched[1m], linkman:upsmon[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upssched.txt nut-2.8.1/docs/man/upssched.txt
+--- nut-2.8.1-orig/docs/man/upssched.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upssched.txt	2023-11-01 03:52:55.912069783 +0100
+@@ -1,5 +1,5 @@
+-UPSSCHED(8)
+-===========
++UPSSCHED(1m)
++============
+ 
+ NAME
+ ----
+@@ -11,14 +11,14 @@
+ 
+ *upssched*
+ 
+-NOTE: *upssched* should be run from linkman:upsmon[8] via the NOTIFYCMD.
++NOTE: *upssched* should be run from linkman:upsmon[1m] via the NOTIFYCMD.
+ You should never run it directly during normal operations.
+ 
+ DESCRIPTION
+ -----------
+ 
+ *upssched* was created to allow users to execute programs at times
+-relative to events being monitored by linkman:upsmon[8].  The original
++relative to events being monitored by linkman:upsmon[1m].  The original
+ purpose was to allow for a shutdown to occur after some fixed period
+ on battery, but there are other uses that are possible.
+ 
+@@ -43,7 +43,7 @@
+ 	NOTIFYFLAG ONBATT SYSLOG+EXEC
+ 	NOTIFYFLAG LOWBATT SYSLOG+EXEC
+ 
+-For a full list of notify flags, see the linkman:upsmon[8] documentation.
++For a full list of notify flags, see the linkman:upsmon[1m] documentation.
+ 
+ CONFIGURATION
+ -------------
+@@ -65,7 +65,7 @@
+ 
+ If your UPS goes on and off battery frequently, you can use this program
+ to reduce the number of pager messages that are sent out.  Rather than
+-sending pages directly from linkman:upsmon[8], use a short timer here.
++sending pages directly from linkman:upsmon[1m], use a short timer here.
+ If the timer triggers with the UPS still on battery, then send the page.
+ If the power returns before then, the timer can be cancelled and no page
+ is necessary.
+@@ -128,7 +128,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsmon[8]
++linkman:upsmon[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsset.cgi.txt nut-2.8.1/docs/man/upsset.cgi.txt
+--- nut-2.8.1-orig/docs/man/upsset.cgi.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsset.cgi.txt	2023-11-01 03:52:59.183109687 +0100
+@@ -1,5 +1,5 @@
+-UPSSET.CGI(8)
+-=============
++UPSSET.CGI(1m)
++==============
+ 
+ NAME
+ ----
+@@ -38,7 +38,7 @@
+ nothing to do on this page.
+ 
+ Setting values in read/write variables can also be done from the command
+-line with linkman:upsrw[8].
++line with linkman:upsrw[1m].
+ 
+ INSTANT COMMANDS
+ ----------------
+@@ -65,13 +65,13 @@
+ but not 15 seconds again.
+ 
+ You can also invoke instant commands from the command line with
+-linkman:upscmd[8].
++linkman:upscmd[1m].
+ 
+ ACCESS CONTROL
+ --------------
+ 
+-upsset will only talk to linkman:upsd[8] servers that have been defined
+-in your linkman:hosts.conf[8].  If it complains about "Access to that host
++upsset will only talk to linkman:upsd[1m] servers that have been defined
++in your linkman:hosts.conf[1m].  If it complains about "Access to that host
+ is not authorized", check your hosts.conf first.
+ 
+ SECURITY
+@@ -79,7 +79,7 @@
+ 
+ upsset will not run until you convince it that your CGI directory has
+ been secured.  This is due to the possibility of someone using upsset
+-to try password combinations against your linkman:upsd[8] server.
++to try password combinations against your linkman:upsd[1m] server.
+ 
+ See the example `upsset.conf` file for more information on how you do this.
+ The short explanation is--if you can't lock it down, don't try to run it.
+diff -Naur nut-2.8.1-orig/docs/man/upsset.conf.txt nut-2.8.1/docs/man/upsset.conf.txt
+--- nut-2.8.1-orig/docs/man/upsset.conf.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsset.conf.txt	2023-11-01 03:43:22.064024350 +0100
+@@ -9,18 +9,18 @@
+ DESCRIPTION
+ -----------
+ 
+-This file only does one job--it lets you convince linkman:upsset.cgi[8]
++This file only does one job--it lets you convince linkman:upsset.cgi[1m]
+ that your system's CGI directory is secure.  The program will not run
+ until this file has been properly defined.
+ 
+ SECURITY REQUIREMENTS
+ ---------------------
+ 
+-linkman:upsset.cgi[8] allows you to try login name and password combinations.
++linkman:upsset.cgi[1m] allows you to try login name and password combinations.
+ There is no rate limiting, as the program shuts down between every request.
+ Such is the nature of CGI programs.
+ 
+-Normally, attackers would not be able to access your linkman:upsd[8] server
++Normally, attackers would not be able to access your linkman:upsd[1m] server
+ directly as it would be protected by the LISTEN directives in
+ your linkman:upsd.conf[5] file, tcp-wrappers (if available when NUT was built),
+ and hopefully local firewall settings in your OS.
+@@ -69,7 +69,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsset.cgi[8]
++linkman:upsset.cgi[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsstats.cgi.txt nut-2.8.1/docs/man/upsstats.cgi.txt
+--- nut-2.8.1-orig/docs/man/upsstats.cgi.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsstats.cgi.txt	2023-11-01 03:53:01.958219580 +0100
+@@ -1,5 +1,5 @@
+-UPSSTATS.CGI(8)
+-===============
++UPSSTATS.CGI(1m)
++================
+ 
+ NAME
+ ----
+@@ -23,14 +23,14 @@
+ from UPS hardware.  It can repeat sections of those template files to
+ monitor several UPSes simultaneously, or focus on a single UPS.
+ 
+-These templates can also include references to linkman:upsimage.cgi[8]
++These templates can also include references to linkman:upsimage.cgi[1m]
+ for graphical displays of battery charge levels, voltage readings, and
+ the UPS load.
+ 
+ ACCESS CONTROL
+ --------------
+ 
+-upsstats will only talk to linkman:upsd[8] servers that have been defined
++upsstats will only talk to linkman:upsd[1m] servers that have been defined
+ in your linkman:hosts.conf[5].  If it complains that "Access to that host
+ is not authorized", check that file first.
+ 
+@@ -55,7 +55,7 @@
+ SEE ALSO
+ --------
+ 
+-linkman:upsimage.cgi[8]
++linkman:upsimage.cgi[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/upsstats.html.txt nut-2.8.1/docs/man/upsstats.html.txt
+--- nut-2.8.1-orig/docs/man/upsstats.html.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/upsstats.html.txt	2023-11-01 03:43:22.067396326 +0100
+@@ -9,7 +9,7 @@
+ DESCRIPTION
+ -----------
+ 
+-This file is used by linkman:upsstats.cgi[8] to generate status pages.
++This file is used by linkman:upsstats.cgi[1m] to generate status pages.
+ Certain commands are recognized, and will be replaced with various
+ status elements on the fly.
+ 
+@@ -108,7 +108,7 @@
+ current UPS.  This is only useful within a FOREACHUPS block.
+ 
+ *@IMG* 'varname' ['extra']*@*::
+-Insert an IMG SRC to linkman:upsimage.cgi[8] for one of these
++Insert an IMG SRC to linkman:upsimage.cgi[1m] for one of these
+ status variables:
+ 
+ 	battery.charge;; Battery charge - a percentage
+@@ -221,14 +221,14 @@
+ OTHER TEMPLATES
+ ---------------
+ 
+-linkman:upsstats.cgi[8] will also open a file called `upsstats-single.html`
++linkman:upsstats.cgi[1m] will also open a file called `upsstats-single.html`
+ if you call it with "host=" set in the URL.  That file uses the same
+ rules and techniques documented here.
+ 
+ SEE ALSO
+ --------
+ 
+-linkman:upsstats.cgi[8], linkman:upsimage.cgi[8]
++linkman:upsstats.cgi[1m], linkman:upsimage.cgi[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/usbhid-ups.txt nut-2.8.1/docs/man/usbhid-ups.txt
+--- nut-2.8.1-orig/docs/man/usbhid-ups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/usbhid-ups.txt	2023-11-01 03:53:04.678709468 +0100
+@@ -1,5 +1,5 @@
+-USBHID-UPS(8)
+-=============
++USBHID-UPS(1m)
++==============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the
+ usbhid-ups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -316,7 +316,7 @@
+ The core driver
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources
+ ~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/docs/man/victronups.txt nut-2.8.1/docs/man/victronups.txt
+--- nut-2.8.1-orig/docs/man/victronups.txt	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/docs/man/victronups.txt	2023-11-01 03:53:07.457934752 +0100
+@@ -1,5 +1,5 @@
+-VICTRONUPS(8)
+-=============
++VICTRONUPS(1m)
++==============
+ 
+ NAME
+ ----
+@@ -11,7 +11,7 @@
+ 
+ This man page only documents the hardware-specific features of the the
+ victronups driver.  For information about the core driver, see
+-linkman:nutupsdrv[8].
++linkman:nutupsdrv[1m].
+ 
+ SUPPORTED HARDWARE
+ ------------------
+@@ -61,7 +61,7 @@
+ The core driver:
+ ~~~~~~~~~~~~~~~~
+ 
+-linkman:nutupsdrv[8]
++linkman:nutupsdrv[1m]
+ 
+ Internet resources:
+ ~~~~~~~~~~~~~~~~~~~
+diff -Naur nut-2.8.1-orig/configure.ac nut-2.8.1/configure.ac
+--- nut-2.8.1-orig/configure.ac	2023-10-31 23:30:21.000000000 +0100
++++ nut-2.8.1/configure.ac	2023-11-01 03:53:07.457934752 +0100
+@@ -2622,8 +2622,8 @@
+ 		AC_MSG_CHECKING([if we can build ${nut_doc_build_target_base}])
+ 		can_build_doc_man=no
+ 		if test "${nut_have_asciidoc}" = yes ; then
+-			( cd "$DOCTESTDIR" && ${A2X} --format manpage --destination-dir=. --xsltproc-opts="--nonet" "${abs_srcdir}"/docs/man/snmp-ups.txt && test -s snmp-ups.8 ) && can_build_doc_man=yes
+-			rm -f "${DOCTESTDIR}"/snmp-ups.8
++			( cd "$DOCTESTDIR" && ${A2X} --format manpage --destination-dir=. --xsltproc-opts="--nonet" "${abs_srcdir}"/docs/man/snmp-ups.txt && test -s snmp-ups.1m ) && can_build_doc_man=yes
++			rm -f "${DOCTESTDIR}"/snmp-ups.1m
+ 		fi
+ 		if test "${can_build_doc_man}" = yes ; then
+ 			AC_MSG_RESULT(yes)
+@@ -2637,7 +2637,7 @@
+ 				DOC_SKIPBUILD_LIST="${DOC_SKIPBUILD_LIST} ${nut_doc_build_target_base}"
+ 				if test "${nut_doc_build_target_flag}" = "auto" ; then
+ dnl Test that groff files exist (building from distributed tarball, not git repo)
+-					if test -s "${abs_srcdir}"/docs/man/snmp-ups.8 ; then
++					if test -s "${abs_srcdir}"/docs/man/snmp-ups.1m ; then
+ 						AC_MSG_WARN([Unable to build ${nut_doc_build_target_base} documentation, but can install pre-built distributed copies])
+ 						DOC_INSTALL_DISTED_MANS="yes"
+ 					else
+@@ -2994,8 +2994,8 @@
+ 		DRIVER_MAN_LIST=""
+ 		for i in ${DRIVER_BUILD_LIST}; do
+ 		    dnl See if source or pre-generated (tarball) doc file exists:
+-			if test -f ${srcdir}/docs/man/$i.txt -o -f ${srcdir}/docs/man/$i.8; then
+-				DRIVER_MAN_LIST="${DRIVER_MAN_LIST} $i.8"
++			if test -f ${srcdir}/docs/man/$i.txt -o -f ${srcdir}/docs/man/$i.1m; then
++				DRIVER_MAN_LIST="${DRIVER_MAN_LIST} $i.1m"
+ 				DRIVER_MAN_LIST_PAGES="${DRIVER_MAN_LIST_PAGES} $i.txt"
+ 			fi
+ 		done

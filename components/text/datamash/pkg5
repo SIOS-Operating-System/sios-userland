@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/security/openssl-3",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "text/datamash"
+    ],
+    "name": "datamash"
+}

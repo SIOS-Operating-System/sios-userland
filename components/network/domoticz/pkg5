@@ -1,0 +1,20 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "database/sqlite-3",
+        "library/cereal",
+        "library/jsoncpp",
+        "library/security/openssl-31",
+        "library/zlib",
+        "network/mosquitto",
+        "runtime/lua-54",
+        "system/library",
+        "system/library/math",
+        "system/library/usb/libusb",
+        "web/curl"
+    ],
+    "fmris": [
+        "network/domoticz"
+    ],
+    "name": "domoticz"
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "runtime/perl"
+    ],
+    "fmris": [
+        "backup/znapzend"
+    ],
+    "name": "znapzend"
+}

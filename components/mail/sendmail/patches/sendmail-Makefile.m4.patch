@@ -1,0 +1,14 @@
+--- sendmail-8.17.1/sendmail/Makefile.m4	2021-08-16 06:54:15.000000000 +0000
++++ sendmail-8.17.1/sendmail/Makefile.m4.new	2022-02-01 10:02:31.046781445 +0000
+@@ -55,8 +55,9 @@
+ 	@echo "You must have set up a new user ${MSPQOWN} and a new group ${GBINGRP}"
+ 	@echo "as explained in sendmail/SECURITY."
+ 	mkdir -p ${DESTDIR}${MSPQ}
+-	chown ${MSPQOWN} ${DESTDIR}${MSPQ}
+-	chgrp ${GBINGRP} ${DESTDIR}${MSPQ}
++	# IPS makes these moot on Solaris; skip to avoid non-root failures.
++	#chown ${MSPQOWN} ${DESTDIR}${MSPQ}
++	#chgrp ${GBINGRP} ${DESTDIR}${MSPQ}
+ 	chmod 0770 ${DESTDIR}${MSPQ}
+ 
+ divert(0)

@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "library/python/coverage-39",
+        "library/python/docopt-39",
+        "library/python/poetry-core-39",
+        "library/python/requests-39",
+        "library/python/tomli-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/coveralls",
+        "library/python/coveralls-39"
+    ],
+    "name": "coveralls"
+}

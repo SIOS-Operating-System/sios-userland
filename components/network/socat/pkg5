@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/readline-8",
+        "library/security/openssl-31",
+        "system/library"
+    ],
+    "fmris": [
+        "network/socat"
+    ],
+    "name": "socat"
+}

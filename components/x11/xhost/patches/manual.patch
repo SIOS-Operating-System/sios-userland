@@ -1,0 +1,12 @@
+--- xhost-1.0.10/man/xhost.man.orig
++++ xhost-1.0.10/man/xhost.man
+@@ -190,6 +190,9 @@
+ host's network address while the server is still running, and you are
+ using a network-address based form of authentication, \fIxhost\fP must
+ be used to add the new address and/or remove the old address.
++.SH WARNINGS
++__distroname__ is secure by default.  See Xserver(1) which details how to
++re-enable remote connections to the X server as in previous releases.
+ .SH AUTHORS
+ Bob Scheifler, MIT Laboratory for Computer Science,
+ .br

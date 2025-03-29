@@ -1,0 +1,74 @@
+============================= test session starts ==============================
+platform sunos5 -- Python $(PYTHON_VERSION).X -- $(PYTHON)
+cachedir: .pytest_cache
+rootdir: $(@D)
+collecting ... collected 66 items
+
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_base_header_0 PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_base_header_013 PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_base_header_empty PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_STYLE_DICT_members PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_style_args_all_accessible[lines] PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_style_args_all_accessible[dash] PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_style_args_all_accessible[spaces] PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_style_args_all_accessible[arrow] PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_style_args_all_accessible[plus] PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_access_missing_style PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_get_style_args_deepcopy PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_format_indent_4 PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_format_indent_1 PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_words_list_start PASSED
+tests/test_seedir.py::TestSeedirStringFormatting::test_words_list_length PASSED
+tests/test_seedir.py::TestFakeDirReading::test_read_string PASSED
+tests/test_seedir.py::TestFakeDirReading::test_parse_comments_on PASSED
+tests/test_seedir.py::TestFakeDirReading::test_parse_comments_off PASSED
+tests/test_seedir.py::TestFakeDir::test_count_fake_folders PASSED
+tests/test_seedir.py::TestFakeDir::test_count_fake_files PASSED
+tests/test_seedir.py::TestFakeDir::test_sort_fakedir PASSED
+tests/test_seedir.py::TestFakeDir::test_exclude_files_and_reread PASSED
+tests/test_seedir.py::TestFakeDir::test_include_files_and_reread PASSED
+tests/test_seedir.py::TestFakeDir::test_delete_string_names PASSED
+tests/test_seedir.py::TestFakeDir::test_delete_objects PASSED
+tests/test_seedir.py::TestFakeDir::test_set_parent PASSED
+tests/test_seedir.py::TestFakeDir::test_walk_apply PASSED
+tests/test_seedir.py::TestFakeDir::test_depth_setting PASSED
+tests/test_seedir.py::TestFakeDir::test_randomdir_seed PASSED
+tests/test_seedir.py::TestFakeDir::test_empty_fakedir_has_no_children PASSED
+tests/test_seedir.py::TestFakeDir::test_populate_adds_children PASSED
+tests/test_seedir.py::TestFakeDir::test_copy_equal PASSED
+tests/test_seedir.py::TestFakeDir::test_copy_unlinked PASSED
+tests/test_seedir.py::TestMask::test_mask_no_folders_or_files PASSED
+tests/test_seedir.py::TestMask::test_mask_always_false PASSED
+tests/test_seedir.py::TestMask::test_mask_fakedir_fromstring PASSED
+tests/test_seedir.py::TestMask::test_mask_fakedir PASSED
+tests/test_seedir.py::TestFolderStructure::test_many_randomdirs PASSED
+tests/test_seedir.py::TestFolderStructure::test_itemlimit0_nobeyond PASSED
+tests/test_seedir.py::TestFolderStructure::test_depthlimit0_nobeyond PASSED
+tests/test_seedir.py::TestFolderStructure::test_itemlimit0_beyond_content PASSED
+tests/test_seedir.py::TestFolderStructure::test_depthlimit0_beyond_content PASSED
+tests/test_seedir.py::TestFolderStructure::test_depthlimit1 PASSED
+tests/test_seedir.py::TestFolderStructure::test_depthlimit1_beyond_content PASSED
+tests/test_seedir.py::TestFolderStructure::test_depthlimit1_beyond_content_exclude PASSED
+tests/test_seedir.py::TestFolderStructure::test_complex_sort PASSED
+tests/test_seedir.py::TestFolderStructure::test_complex_inclusion PASSED
+tests/test_seedir.py::TestFormatter::test_formatter_beyond PASSED
+tests/test_seedir.py::TestFormatter::test_formatter_no_return PASSED
+tests/test_seedir.py::TestFormatter::test_expand_one_folder_sticky PASSED
+tests/test_seedir.py::TestFormatter::test_expand_one_folder_nosticky PASSED
+tests/test_seedir.py::TestFormatter::test_mask_with_fmt PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_None_None PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_None_1 PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_1_None PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_1_1 PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_filter_letter_example_2_2 PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_filter_letter_example_2_None PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_filter_letter_example_None_0 PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_filter_letter_example_0_0 PASSED
+tests/test_seedir.py::TestTupleItemLimit::test_works_with_list PASSED
+tests/test_seedir.py::TestErrorHandlingArgs::test_handle_errors_correct_type PASSED
+tests/test_seedir.py::TestErrorHandlingArgs::test_handle_errors_incorrect_type PASSED
+tests/test_seedir.py::TestErrorHandlingArgs::test_handle_errors_None PASSED
+tests/test_seedir.py::TestErrorHandlingArgs::test_handle_errors_tuple PASSED
+tests/test_seedir.py::TestErrorHandlingArgs::test_handle_errors_different_string PASSED
+
+======== 66 passed ========

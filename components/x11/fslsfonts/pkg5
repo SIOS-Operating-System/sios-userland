@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "system/library",
+        "x11/library/libfs"
+    ],
+    "fmris": [
+        "x11/xfs/fslsfonts"
+    ],
+    "name": "fslsfonts"
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/video/libdvdread",
+        "system/library"
+    ],
+    "fmris": [
+        "media/vobcopy"
+    ],
+    "name": "vobcopy"
+}

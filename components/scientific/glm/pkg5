@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "library/math/glm"
+    ],
+    "name": "glm"
+}

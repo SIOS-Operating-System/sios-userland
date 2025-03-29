@@ -1,0 +1,14 @@
+Patch developed inhouse, submitted upstream.
+Details at
+https://sourceforge.net/p/net-snmp/bugs/2940/
+--- net-snmp-5.9.4/net-snmp-create-v3-user.in.orig
++++ net-snmp-5.9.4/net-snmp-create-v3-user.in
+@@ -122,7 +122,7 @@
+ if test "x$xpassphrase" = "x" ; then
+     line="createUser $user $Aalgorithm \"$apassphrase\" $Xalgorithm"
+ else
+-    line="createUser $user $Aalgorithm \"$apassphrase\" $Xalgorithm \"$xpassphrase\""
++    line="createUser $user $Aalgorithm \"$apassphrase\" $Xalgorithm $xpassphrase
+ fi
+ echo "adding the following line to $outfile:"
+ echo "   $line"

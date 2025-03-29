@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/gnutls-3",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libmicrohttpd"
+    ],
+    "name": "libmicrohttpd"
+}

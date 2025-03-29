@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "runtime/python-37",
+        "runtime/python-39",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/python/pretend-37",
+        "library/python/pretend-39",
+        "library/python/pretend"
+    ],
+    "name": "pretend"
+}

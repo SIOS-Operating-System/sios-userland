@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "developer/gcc-10",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "system/storage/smp_utils"
+    ],
+    "name": "smp_utils"
+}

@@ -1,0 +1,49 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2023 <contributor>
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/bin/autoconf-$(HUMAN_VERSION)
+file path=usr/bin/autoheader-$(HUMAN_VERSION)
+file path=usr/bin/autoreconf-$(HUMAN_VERSION)
+file path=usr/bin/autoscan-$(HUMAN_VERSION)
+file path=usr/bin/autoupdate-$(HUMAN_VERSION)
+file path=usr/bin/ifnames-$(HUMAN_VERSION)
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acconfig.h
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acfunctions
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acgeneral.m4
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acheaders
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acidentifiers
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acmakevars
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acoldnames.m4
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acprograms
+file path=usr/share/autoconf-$(HUMAN_VERSION)/acspecific.m4
+file path=usr/share/autoconf-$(HUMAN_VERSION)/autoconf.m4
+file path=usr/share/autoconf-$(HUMAN_VERSION)/autoconf.m4f
+file path=usr/share/autoconf-$(HUMAN_VERSION)/autoheader.m4
+file path=usr/share/autoconf-$(HUMAN_VERSION)/autoheader.m4f
+file path=usr/share/autoconf-$(HUMAN_VERSION)/config.guess
+file path=usr/share/autoconf-$(HUMAN_VERSION)/config.sub
+file path=usr/share/info/autoconf-$(HUMAN_VERSION).info
+file path=usr/share/info/autoconf.info
+file path=usr/share/info/standards.info

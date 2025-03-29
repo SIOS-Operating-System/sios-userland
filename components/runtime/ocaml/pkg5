@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "compress/zstd",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "runtime/ocaml"
+    ],
+    "name": "ocaml"
+}

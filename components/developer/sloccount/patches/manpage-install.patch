@@ -1,0 +1,11 @@
+--- sloccount-2.26/makefile.orig
++++ sloccount-2.26/makefile
+@@ -120,7 +120,7 @@
+    tcl_count \
+    $(COMPILED_EXECUTABLES)
+ 
+-MANPAGES=sloccount.1.gz
++MANPAGES=sloccount.1
+ 
+ MYDOCS=sloccount.html README TODO ChangeLog
+ 

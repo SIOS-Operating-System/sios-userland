@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "developer/golang",
+        "developer/versioning/git",
+        "system/library"
+    ],
+    "fmris": [
+        "application/chezmoi"
+    ],
+    "name": "chezmoi"
+}

@@ -1,0 +1,29 @@
+libsecret:libegg / test-dh                  OK
+libsecret:libegg / test-hex                 OK
+libsecret:libegg / test-hkdf                OK
+libsecret:libegg / test-secmem              OK
+libsecret:libsecret / test-attributes       OK
+libsecret:libsecret / test-collection       OK
+libsecret:libsecret / test-file-collection  OK
+libsecret:libsecret / test-item             OK
+libsecret:libsecret / test-methods          OK
+libsecret:libsecret / test-password         OK
+libsecret:libsecret / test-paths            OK
+libsecret:libsecret / test-prompt           OK
+libsecret:libsecret / test-service          OK
+libsecret:libsecret / test-session          OK
+libsecret:libsecret / test-value            OK
+libsecret:python / test-py-clear            FAIL   exit status 1
+libsecret:python / test-py-lookup           FAIL   exit status 1
+libsecret:python / test-py-store            FAIL   exit status 1
+libsecret:secret-tool / test-secret-tool.sh OK
+libsecret:vala / test-vala-lang             OK
+libsecret:vala / test-vala-unstable         OK
+
+Ok:                 18  
+Expected Fail:      0   
+Fail:               3   
+Unexpected Pass:    0   
+Skipped:            0   
+Timeout:            0   
+

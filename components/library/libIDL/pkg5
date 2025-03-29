@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/glib2",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libidl"
+    ],
+    "name": "libIDL"
+}

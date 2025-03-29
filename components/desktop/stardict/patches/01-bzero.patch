@@ -1,0 +1,10 @@
+--- stardict-3.0.7/dict/src/lib/ctype-uca.cpp.orig
++++ stardict-3.0.7/dict/src/lib/ctype-uca.cpp
+@@ -36,6 +36,7 @@
+ #  include "config.h"
+ #endif
+ 
++#include <strings.h>
+ #include "utils.h"
+ #include "m_ctype.h"
+ 

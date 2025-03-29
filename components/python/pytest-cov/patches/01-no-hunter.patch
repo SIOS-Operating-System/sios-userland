@@ -1,0 +1,12 @@
+hunter is not needed to run tests
+
+--- pytest-cov-6.0.0/setup.py.orig
++++ pytest-cov-6.0.0/setup.py
+@@ -131,7 +131,6 @@
+     extras_require={
+         'testing': [
+             'fields',
+-            'hunter',
+             'process-tests',
+             'pytest-xdist',
+             'virtualenv',

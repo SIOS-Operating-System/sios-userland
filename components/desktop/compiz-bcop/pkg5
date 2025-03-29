@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "desktop/compiz",
+        "shell/bash"
+    ],
+    "fmris": [
+        "desktop/compiz/bcop"
+    ],
+    "name": "compiz-bcop"
+}

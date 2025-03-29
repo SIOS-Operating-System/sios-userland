@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "shell/ksh93",
+        "system/library",
+        "text/aspell"
+    ],
+    "fmris": [
+        "library/myspell/dictionary/fr"
+    ],
+    "name": "hunspell-fr"
+}

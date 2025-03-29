@@ -1,0 +1,82 @@
+--- corosync-2.4.5/qdevices/unix-socket.c.~1~	2019-07-30 14:26:39.000000000 +0000
++++ corosync-2.4.5/qdevices/unix-socket.c	2019-08-19 07:55:50.666289527 +0000
+@@ -46,9 +46,9 @@
+ unix_socket_server_create(const char *path, int non_blocking, int backlog)
+ {
+ 	int s;
+-	struct sockaddr_un sun;
++	struct sockaddr_un address;
+ 
+-	if (strlen(path) >= sizeof(sun.sun_path)) {
++	if (strlen(path) >= sizeof(address.sun_path)) {
+ 		errno = ENAMETOOLONG;
+ 		return (-1);
+ 	}
+@@ -57,12 +57,12 @@
+ 		return (-1);
+ 	}
+ 
+-	memset(&sun, 0, sizeof(sun));
+-	sun.sun_family = AF_UNIX;
++	memset(&address, 0, sizeof(sun));
++	address.sun_family = AF_UNIX;
+ 
+-	strncpy(sun.sun_path, path, sizeof(sun.sun_path) - 1);
++	strncpy(address.sun_path, path, sizeof(address.sun_path) - 1);
+ 	unlink(path);
+-	if (bind(s, (struct sockaddr *)&sun, SUN_LEN(&sun)) != 0) {
++	if (bind(s, (struct sockaddr *)&address, SUN_LEN(&address)) != 0) {
+ 		close(s);
+ 
+ 		return (-1);
+@@ -89,9 +89,9 @@
+ unix_socket_client_create(const char *path, int non_blocking)
+ {
+ 	int s;
+-	struct sockaddr_un sun;
++	struct sockaddr_un address;
+ 
+-	if (strlen(path) >= sizeof(sun.sun_path)) {
++	if (strlen(path) >= sizeof(address.sun_path)) {
+ 		errno = ENAMETOOLONG;
+ 		return (-1);
+ 	}
+@@ -100,10 +100,10 @@
+ 		return (-1);
+ 	}
+ 
+-	memset(&sun, 0, sizeof(sun));
+-	sun.sun_family = AF_UNIX;
++	memset(&address, 0, sizeof(address));
++	address.sun_family = AF_UNIX;
+ 
+-	strncpy(sun.sun_path, path, sizeof(sun.sun_path) - 1);
++	strncpy(address.sun_path, path, sizeof(address.sun_path) - 1);
+ 
+ 	if (non_blocking) {
+ 		if (utils_fd_set_non_blocking(s) != 0) {
+@@ -113,7 +113,7 @@
+ 		}
+ 	}
+ 
+-	if (connect(s, (struct sockaddr *)&sun, SUN_LEN(&sun)) != 0) {
++	if (connect(s, (struct sockaddr *)&address, SUN_LEN(&address)) != 0) {
+ 		close(s);
+ 
+ 		return (-1);
+@@ -145,12 +145,12 @@
+ int
+ unix_socket_server_accept(int sock, int non_blocking)
+ {
+-	struct sockaddr_un sun;
++	struct sockaddr_un address;
+ 	socklen_t sun_len;
+ 	int client_sock;
+ 
+-	sun_len = sizeof(sun);
+-	if ((client_sock = accept(sock, (struct sockaddr *)&sun, &sun_len)) < 0) {
++	sun_len = sizeof(address);
++	if ((client_sock = accept(sock, (struct sockaddr *)&address, &sun_len)) < 0) {
+ 		return (-1);
+ 	}
+ 

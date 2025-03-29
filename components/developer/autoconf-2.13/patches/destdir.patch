@@ -1,0 +1,20 @@
+--- autoconf-2.13/Makefile.in.orig
++++ autoconf-2.13/Makefile.in
+@@ -45,14 +45,14 @@
+ exec_prefix = @exec_prefix@
+ 
+ # Directory in which to install scripts.
+-bindir = @bindir@
++bindir = $(DESTDIR)@bindir@
+ 
+ # Directory in which to install library files.
+-datadir = @datadir@
++datadir = $(DESTDIR)@datadir@
+ acdatadir = $(datadir)/autoconf
+ 
+ # Directory in which to install documentation info files.
+-infodir = @infodir@
++infodir = $(DESTDIR)@infodir@
+ 
+ #### End of system configuration section. ####
+ 

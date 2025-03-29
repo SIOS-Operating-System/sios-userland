@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "library/libxml2",
+        "library/libxml2/32",
+        "system/library",
+        "x11/library/libxcb"
+    ],
+    "fmris": [
+        "x11/library/libxkbcommon"
+    ],
+    "name": "libxkbcommon"
+}

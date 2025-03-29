@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "developer/macro/gnu-m4"
+    ],
+    "fmris": [
+        "developer/build/autoconf-archive"
+    ],
+    "name": "autoconf-archive"
+}

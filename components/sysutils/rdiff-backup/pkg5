@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "library/librsync",
+        "library/python/importlib-metadata-39",
+        "library/python/pyyaml-39",
+        "library/python/setuptools-39",
+        "runtime/python-39",
+        "system/library"
+    ],
+    "fmris": [
+        "backup/rdiff-backup"
+    ],
+    "name": "rdiff-backup"
+}

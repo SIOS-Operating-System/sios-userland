@@ -1,0 +1,16 @@
+--- logrotate-3.15.0/test/test-0050.sh	2018-01-04 12:58:46.000000000 +0000
++++ logrotate-3.15.0/test/test-0050.sh.new	2019-03-07 19:27:47.500403139 +0000
+@@ -8,9 +8,9 @@ cleanup 50
+ # test that hourly rotation works properly
+ preptest test.log 50 1 0
+ 
+-DATESTRING=$(/bin/date +%Y%m%d%H)
+-NOW=$(/bin/date "+%Y-%-m-%-d-%-H" 2>/dev/null)
+-HOURAGO=$(/bin/date "+%Y-%-m-%-d-%-H" --date "1 hour ago" 2>/dev/null)
++DATESTRING=$(/usr/gnu/bin/date +%Y%m%d%H)
++NOW=$(/usr/gnu/bin/date "+%Y-%-m-%-d-%-H" 2>/dev/null)
++HOURAGO=$(/usr/gnu/bin/date "+%Y-%-m-%-d-%-H" --date "1 hour ago" 2>/dev/null)
+ GNUDATE=$?
+ 
+ # --force to trigger rotation
+

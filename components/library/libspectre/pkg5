@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "print/filter/ghostscript",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libspectre"
+    ],
+    "name": "libspectre"
+}

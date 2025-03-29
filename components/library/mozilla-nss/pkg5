@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "database/sqlite-3",
+        "library/nspr",
+        "library/nspr/32",
+        "shell/ksh93",
+        "system/library",
+        "text/xmlto"
+    ],
+    "fmris": [
+        "system/library/mozilla-nss",
+        "system/library/mozilla-nss/header-nss",
+        "system/mozilla-nss"
+    ],
+    "name": "nss"
+}

@@ -1,0 +1,22 @@
+{
+    "dependencies": [
+        "library/expat",
+        "library/pcre2",
+        "library/security/openssl-3",
+        "library/zlib",
+        "runtime/perl",
+        "runtime/perl-540",
+        "runtime/python-39",
+        "shell/bash",
+        "shell/ksh93",
+        "system/library",
+        "text/asciidoc",
+        "text/xmlto",
+        "web/curl"
+    ],
+    "fmris": [
+        "developer/versioning/git",
+        "developer/versioning/git/subtree"
+    ],
+    "name": "git"
+}

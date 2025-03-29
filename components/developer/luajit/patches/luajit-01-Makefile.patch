@@ -1,0 +1,16 @@
+--- LuaJIT-2.0.5/Makefile.orig	2018-02-10 08:09:05.938290954 +0000
++++ LuaJIT-2.0.5/Makefile	2018-02-10 08:09:11.076483412 +0000
+@@ -25,11 +25,12 @@
+ # the paths in src/luaconf.h, too. Note: PREFIX must be an absolute path!
+ #
+ export PREFIX= /usr/local
++export MULTILIB= bin
+ export MULTILIB= lib
+ ##############################################################################
+ 
+ DPREFIX= $(DESTDIR)$(PREFIX)
+-INSTALL_BIN=   $(DPREFIX)/bin
++INSTALL_BIN=   $(DPREFIX)/$(MULTIBIN)
+ INSTALL_LIB=   $(DPREFIX)/$(MULTILIB)
+ INSTALL_SHARE= $(DPREFIX)/share
+ INSTALL_INC=   $(DPREFIX)/include/luajit-$(MAJVER).$(MINVER)

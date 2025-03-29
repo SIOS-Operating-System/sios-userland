@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "gnome/theme/hicolor-icon-theme"
+    ],
+    "name": "hicolor-icon-theme"
+}

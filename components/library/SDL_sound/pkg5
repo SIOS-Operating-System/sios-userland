@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "codec/flac",
+        "codec/speex",
+        "library/libogg",
+        "library/libvorbis",
+        "library/sdl",
+        "system/library"
+    ],
+    "fmris": [
+        "library/audio/sdl-sound"
+    ],
+    "name": "SDL_sound"
+}

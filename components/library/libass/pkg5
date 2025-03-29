@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "developer/assembler/nasm",
+        "library/c++/harfbuzz",
+        "library/fribidi",
+        "library/libunibreak",
+        "system/library",
+        "system/library/fontconfig",
+        "system/library/freetype-2",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/video/libass"
+    ],
+    "name": "libass"
+}

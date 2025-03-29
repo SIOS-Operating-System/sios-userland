@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/python/pycairo-39",
+        "library/python/pygobject-3-39",
+        "runtime/python-39",
+        "shell/expect",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "terminal/gnome-connection-manager"
+    ],
+    "name": "gnome-connection-manager"
+}

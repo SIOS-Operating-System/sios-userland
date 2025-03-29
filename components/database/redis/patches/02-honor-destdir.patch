@@ -1,0 +1,11 @@
+--- redis-6.2.3/src/Makefile.~1~	2021-05-03 21:57:00.000000000 +0000
++++ redis-6.2.3/src/Makefile	2021-05-10 08:45:44.821268674 +0000
+@@ -45,7 +45,7 @@
+ endif
+ 
+ PREFIX?=/usr/local
+-INSTALL_BIN=$(PREFIX)/bin
++INSTALL_BIN=$(DESTDIR)/$(PREFIX)/bin
+ INSTALL=install
+ PKG_CONFIG?=pkg-config
+ 

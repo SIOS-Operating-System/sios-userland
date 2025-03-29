@@ -1,0 +1,17 @@
+diff --git a/man/man1/epmd.1 b/man/man1/epmd.1
+index 33b94ab..a44353f 100644
+--- a/man/man1/epmd.1
++++ b/man/man1/epmd.1
+@@ -83,6 +83,12 @@ Enables debug output. The more
+ 
+ .RE
+ 
++-disable_syslog
++.RS 2
++Disables logging when \fIepmd\fR is started as a daemon. Not recommended for the general use and production
++
++.RE
++
+ -daemon
+ .RS 2
+ Starts 

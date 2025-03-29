@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "data/docbook/dtds"
+    ],
+    "name": "docbook-dtds"
+}

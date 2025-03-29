@@ -1,0 +1,11 @@
+--- stardict-3.0.7/dict/src/lib/Makefile.am.orig
++++ stardict-3.0.7/dict/src/lib/Makefile.am
+@@ -39,7 +39,7 @@
+ 	verify_dict.cpp verify_dict.h \
+ 	dictitemid.h
+ 
+-libstardict_la_LIBADD = $(COMMONLIB_LIB)
++libstardict_la_LIBADD = $(COMMONLIB_LIB) -lgmodule-2.0
+ 
+ if USE_SYSTEM_SIGCPP
+ LOCAL_SIGCPP_INCLUDE =

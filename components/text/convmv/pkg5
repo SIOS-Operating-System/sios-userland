@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "runtime/perl",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "text/convmv"
+    ],
+    "name": "convmv"
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "runtime/tcl-8",
+        "shell/ksh93"
+    ],
+    "fmris": [
+        "tcl/tcllib"
+    ],
+    "name": "tcllib"
+}

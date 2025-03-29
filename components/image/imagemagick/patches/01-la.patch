@@ -1,0 +1,49 @@
+To avoid dependency on libtool/libltdl, change "*.la" extension to "*.so".
+This also changes the path for the *.so files necessary for testing to the
+correct location.
+This patch comes from in-house.  It has not been submitted upstream; plans
+unclear.
+
+--- ImageMagick-7.1.1-43/MagickCore/module.c.orig
++++ ImageMagick-7.1.1-43/MagickCore/module.c
+@@ -78,7 +78,7 @@
+   Define declarations.
+ */
+ #if defined(MAGICKCORE_LTDL_DELEGATE)
+-#  define ModuleGlobExpression "*.la"
++#  define ModuleGlobExpression "*.so"
+ #else
+ #  if defined(_DEBUG)
+ #    define ModuleGlobExpression "IM_MOD_DB_*.dll"
+@@ -1475,7 +1475,7 @@
+   if (IsEventLogging() != MagickFalse)
+     (void) LogMagickEvent(TraceEvent,GetMagickModule(),"%s",tag);
+ #if defined(MAGICKCORE_LTDL_DELEGATE)
+-  (void) FormatLocaleString(name,MagickPathExtent,"%s.la",tag);
++  (void) FormatLocaleString(name,MagickPathExtent,"%s.so",tag);
+   (void) LocaleLower(name);
+ #else
+ #if defined(MAGICKCORE_WINDOWS_SUPPORT)
+@@ -1529,7 +1529,7 @@
+ #elif !defined(MAGICKCORE_LTDL_DELEGATE)
+   (void) FormatLocaleString(name,MagickPathExtent,"%s.dll",tag);
+ #else
+-  (void) FormatLocaleString(name,MagickPathExtent,"%s.la",tag);
++  (void) FormatLocaleString(name,MagickPathExtent,"%s.so",tag);
+ #endif
+ }
+ 
+--- ImageMagick-7.1.1-43/common.shi.in.orig
++++ ImageMagick-7.1.1-43/common.shi.in
+@@ -19,9 +19,9 @@
+ DRAWTEST="@abs_top_builddir@/tests/drawtest"
+ WANDTEST="@abs_top_builddir@/tests/wandtest"
+ LD_LIBRARY_PATH="@abs_top_builddir@/MagickCore/.libs:@abs_top_builddir@/MagickWand/.libs:${LD_LIBRARY_PATH}"
+-MAGICK_CODER_MODULE_PATH="@abs_top_builddir@/coders"
++MAGICK_CODER_MODULE_PATH="@abs_top_builddir@/coders/.libs"
+ MAGICK_CONFIGURE_PATH="@abs_top_builddir@/config:@abs_top_srcdir@/config"
+-MAGICK_FILTER_MODULE_PATH="@abs_top_builddir@/filters"
++MAGICK_FILTER_MODULE_PATH="@abs_top_builddir@/filters/.libs"
+ MAGICK_FONT="@abs_top_srcdir@/PerlMagick/demo/Generic.ttf"
+ MAGICK_THREAD_LIMIT=2
+ PATH="@abs_top_builddir@/utilities:@abs_top_builddir@/tests:${PATH}"

@@ -1,0 +1,18 @@
+{
+    "dependencies": [
+        "database/lmdb",
+        "library/file-monitor/gamin",
+        "library/gnutls-3",
+        "library/icu-76",
+        "library/jansson",
+        "library/openldap",
+        "library/print/cups-libs",
+        "library/zlib",
+        "system/library",
+        "system/network/avahi"
+    ],
+    "fmris": [
+        "library/samba/libsmbclient"
+    ],
+    "name": "samba"
+}

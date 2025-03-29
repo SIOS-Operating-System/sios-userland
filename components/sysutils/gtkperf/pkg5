@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/desktop/atk",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk2",
+        "library/desktop/pango",
+        "library/glib2",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "benchmark/gtkperf"
+    ],
+    "name": "gtkperf"
+}

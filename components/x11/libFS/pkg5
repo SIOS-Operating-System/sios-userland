@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "system/library",
+        "x11/library/xtrans"
+    ],
+    "fmris": [
+        "x11/library/libfs"
+    ],
+    "name": "libFS"
+}

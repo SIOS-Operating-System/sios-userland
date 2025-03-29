@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "library/ncurses",
+        "library/readline-8",
+        "system/library",
+        "system/library/libdiskmgt",
+        "system/library/libdiskmgt/header-libdiskmgt"
+    ],
+    "fmris": [
+        "system/storage/parted"
+    ],
+    "name": "parted"
+}

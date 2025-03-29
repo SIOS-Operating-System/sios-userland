@@ -1,0 +1,7 @@
+t/make_executable.t ... ok
+t/man_pagename.t ...... ok
+t/split_like_shell.t .. ok
+t/tilde.t ............. ok
+All tests successful.
+Files=4, Tests=30
+Result: PASS

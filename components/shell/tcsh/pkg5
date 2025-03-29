@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "system/library",
+        "text/locale"
+    ],
+    "fmris": [
+        "shell/tcsh"
+    ],
+    "name": "tcsh"
+}

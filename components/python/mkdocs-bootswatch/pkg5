@@ -1,0 +1,17 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/python/mkdocs-37",
+        "library/python/mkdocs-39",
+        "runtime/python-37",
+        "runtime/python-39",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "library/python/mkdocs-bootswatch-37",
+        "library/python/mkdocs-bootswatch-39",
+        "library/python/mkdocs-bootswatch"
+    ],
+    "name": "mkdocs-bootswatch"
+}

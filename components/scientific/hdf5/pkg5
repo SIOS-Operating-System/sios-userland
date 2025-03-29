@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/zlib",
+        "shell/ksh93",
+        "system/library",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime",
+        "system/library/gfortran-14-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/c++/hdf5"
+    ],
+    "name": "hdf5"
+}

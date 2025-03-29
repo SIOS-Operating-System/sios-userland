@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "library/audio/openal",
+        "library/audio/pulseaudio",
+        "library/sdl2",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "audio/mpg123"
+    ],
+    "name": "mpg123"
+}

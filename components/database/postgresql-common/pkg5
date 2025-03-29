@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "database/postgres-common"
+    ],
+    "name": "postgres-common"
+}

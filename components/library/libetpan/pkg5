@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "database/berkeleydb-5",
+        "library/expat",
+        "library/gnutls-3",
+        "library/zlib",
+        "system/library",
+        "system/library/security/libsasl",
+        "web/curl"
+    ],
+    "fmris": [
+        "library/libetpan"
+    ],
+    "name": "libetpan"
+}

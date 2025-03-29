@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "library/libidn2",
+        "library/libpsl",
+        "library/pcre2",
+        "library/security/openssl-3",
+        "library/zlib",
+        "system/library"
+    ],
+    "fmris": [
+        "web/wget"
+    ],
+    "name": "wget"
+}

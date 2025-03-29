@@ -1,0 +1,18 @@
+--- fsvs-1.2.5/src/options.c	2011-04-29 16:20:18.000000000 +0400
++++ fsvs-1.2.5/src/options.c	2013-08-06 00:20:17.796597800 +0400
+@@ -254,13 +254,13 @@
+ 		.parse=opt___string2val, .parm=opt___conflict_strings,
+ 	},
+ 	[OPT__MERGE_PRG] = {
+-		.name="merge_prg", .cp_val="diff3", .parse=opt___store_string, 
++		.name="merge_prg", .cp_val="gdiff3", .parse=opt___store_string, 
+ 	},
+ 	[OPT__MERGE_OPT] = {
+ 		.name="merge_opt", .cp_val="-m", .parse=opt___store_string,
+ 	},
+ 	[OPT__DIFF_PRG] = {
+-		.name="diff_prg", .cp_val="diff", .parse=opt___store_string, 
++		.name="diff_prg", .cp_val="gdiff", .parse=opt___store_string, 
+ 	},
+ 	[OPT__DIFF_OPT] = {
+ 		.name="diff_opt", .cp_val="-pu", .parse=opt___store_string,

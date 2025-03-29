@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "library/libunistring",
+        "system/library"
+    ],
+    "fmris": [
+        "library/libidn2"
+    ],
+    "name": "libidn2"
+}

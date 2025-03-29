@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "shell/zsh"
+    ],
+    "fmris": [
+        "utility/zsh-syntax-highlighting"
+    ],
+    "name": "zsh-syntax-highlighting"
+}

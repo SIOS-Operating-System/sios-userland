@@ -1,0 +1,74 @@
+#
+# CDDL HEADER START
+#
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License (the "License").
+# You may not use this file except in compliance with the License.
+#
+# You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+# or http://www.opensolaris.org/os/licensing.
+# See the License for the specific language governing permissions
+# and limitations under the License.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+# If applicable, add the following below this CDDL HEADER, with the
+# fields enclosed by brackets "[]" replaced with your own identifying
+# information: Portions Copyright [yyyy] [name of copyright owner]
+#
+# CDDL HEADER END
+#
+# Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2021 Klaus Ziegler
+#
+<transform file path=usr/perl5/$(PERLVER)/man.+ -> default mangler.man.stability uncommitted>
+
+<transform file path=(usr/perl5/vendor_perl/$(PERLVER)/)(SVN/.+) -> \
+	set action.hash %<\1>$(PERL_ARCH)/%<\2> >
+
+set name=pkg.fmri value=pkg:/library/perl-5/subversion@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="Perl 64-bit bindings for the Subversion SCM"
+set name=info.classification value="org.opensolaris.category.2008:Development/Source Code Management"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/perl5/$(PERLVER)/lib/$(PERL_ARCH)/perllocal.pod
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/auto/SVN/_Client/_Client.so
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/auto/SVN/_Core/_Core.so
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/auto/SVN/_Delta/_Delta.so
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/auto/SVN/_Fs/_Fs.so
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/auto/SVN/_Ra/_Ra.so
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/auto/SVN/_Repos/_Repos.so
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/auto/SVN/_Wc/_Wc.so
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Base.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Client.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Core.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Delta.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Fs.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Ra.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Repos.pm
+file path=usr/perl5/vendor_perl/$(PERLVER)/$(PERL_ARCH)/SVN/Wc.pm
+
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Base.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Client.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Core.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Delta.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Fs.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Ra.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Repos.3perl
+file path=usr/perl5/$(PERLVER)/man/man3perl/SVN::Wc.3perl
+
+file path=usr/lib/$(MACH64)/libsvn_swig_perl-1.so.0.0.0
+
+link path=usr/lib/$(MACH64)/libsvn_swig_perl-1.so \
+	  target=libsvn_swig_perl-1.so.0.0.0
+link path=usr/lib/$(MACH64)/libsvn_swig_perl-1.so.0 \
+	  target=libsvn_swig_perl-1.so.0.0.0
+
+# perl modules are unusable without perl runtime binary
+depend type=require fmri=__TBD pkg.debug.depend.file=perl \
+    pkg.debug.depend.path=usr/perl5/$(PERLVER)/bin

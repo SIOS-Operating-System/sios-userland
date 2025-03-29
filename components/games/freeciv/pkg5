@@ -1,0 +1,25 @@
+{
+    "dependencies": [
+        "compress/bzip2",
+        "compress/xz",
+        "compress/zstd",
+        "database/sqlite-3",
+        "image/imagemagick",
+        "library/desktop/cairo",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/gtk3",
+        "library/desktop/pango",
+        "library/glib2",
+        "library/icu-76",
+        "library/readline-8",
+        "library/zlib",
+        "runtime/lua-54",
+        "system/library",
+        "system/library/math",
+        "web/curl"
+    ],
+    "fmris": [
+        "games/freeciv"
+    ],
+    "name": "freeciv"
+}

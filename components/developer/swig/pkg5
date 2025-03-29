@@ -1,0 +1,20 @@
+{
+    "dependencies": [
+        "developer/parser/bison-37",
+        "library/ocaml/ocaml-findlib",
+        "library/pcre2",
+        "library/zlib",
+        "runtime/lua",
+        "runtime/ocaml",
+        "runtime/perl-540",
+        "runtime/python-39",
+        "runtime/ruby-32",
+        "system/library",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime"
+    ],
+    "fmris": [
+        "developer/swig"
+    ],
+    "name": "swig"
+}

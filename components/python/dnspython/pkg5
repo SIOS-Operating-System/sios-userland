@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/python/hatchling-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/dnspython",
+        "library/python/dnspython-39"
+    ],
+    "name": "dnspython"
+}

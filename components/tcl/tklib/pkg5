@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "SUNWcs"
+    ],
+    "fmris": [
+        "tcl/tklib"
+    ],
+    "name": "tklib"
+}

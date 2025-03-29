@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "library/python/certifi-39",
+        "library/python/charset-normalizer-39",
+        "library/python/idna-39",
+        "library/python/setuptools-39",
+        "library/python/urllib3-39",
+        "library/python/wheel-39",
+        "runtime/python-39"
+    ],
+    "fmris": [
+        "library/python/requests",
+        "library/python/requests-39"
+    ],
+    "name": "requests"
+}

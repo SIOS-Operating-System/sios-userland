@@ -1,0 +1,33 @@
+t/00-load.t .......... ok
+t/01-import.t ........ ok
+t/02-constants.t ..... ok
+t/09-load-threads.t .. ok
+t/10-simple.t ........ ok
+t/11-multiple.t ...... ok
+t/13-data.t .......... ok
+t/14-callbacks.t ..... ok
+t/15-self.t .......... ok
+t/16-huf.t ........... ok
+t/17-ctl.t ........... ok
+t/18-opinfo.t ........ ok
+t/20-get.t ........... ok
+t/21-set.t ........... ok
+t/22-len.t ........... ok
+t/23-clear.t ......... ok
+t/24-free.t .......... ok
+t/25-copy.t .......... ok
+t/27-local.t ......... ok
+t/28-uvar.t .......... ok
+t/30-scalar.t ........ ok
+t/31-array.t ......... ok
+t/32-hash.t .......... ok
+t/33-code.t .......... ok
+t/34-glob.t .......... ok
+t/35-stash.t ......... ok
+t/40-threads.t ....... ok
+t/41-clone.t ......... ok
+t/50-return.t ........ ok
+t/80-leaks.t ......... ok
+All tests successful.
+Files=30, Tests=1598
+Result: PASS

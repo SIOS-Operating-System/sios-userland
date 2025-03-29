@@ -1,0 +1,21 @@
+{
+    "dependencies": [
+        "database/sqlite-3",
+        "developer/cppunit",
+        "library/gmp",
+        "library/gnutls-3",
+        "library/libcares",
+        "library/libssh2",
+        "library/libxml2",
+        "library/nettle",
+        "library/zlib",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/gcc-13-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "web/aria2"
+    ],
+    "name": "aria2"
+}

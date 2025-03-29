@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "runtime/perl",
+        "shell/ksh93",
+        "system/library"
+    ],
+    "fmris": [
+        "text/sloccount"
+    ],
+    "name": "sloccount"
+}

@@ -1,0 +1,11 @@
+--- nrpe-4.1.3/startup/solaris-init.xml.in.orig
++++ nrpe-4.1.3/startup/solaris-init.xml.in
+@@ -68,7 +68,7 @@
+ 			restart_on='restart'
+ 			type='path'>
+ 			<service_fmri
+-			    value='file://localhost@sysconfdir@/nrpe.cfg' />
++			    value='file://localhost@pkgsysconfdir@/nrpe.cfg' />
+ 		</dependency>
+ 
+ 		<dependency

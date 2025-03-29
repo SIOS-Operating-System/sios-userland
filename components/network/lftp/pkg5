@@ -1,0 +1,18 @@
+{
+    "dependencies": [
+        "library/expat",
+        "library/readline",
+        "library/security/openssl-31",
+        "library/zlib",
+        "runtime/perl",
+        "shell/bash",
+        "shell/ksh93",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "network/ftp/lftp"
+    ],
+    "name": "lftp"
+}

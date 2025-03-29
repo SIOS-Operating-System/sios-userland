@@ -1,0 +1,16 @@
+{
+    "dependencies": [
+        "library/gc",
+        "library/gmp",
+        "library/libffi",
+        "library/libunistring",
+        "library/readline",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/guile"
+    ],
+    "name": "guile"
+}

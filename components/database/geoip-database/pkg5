@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "database/geoip-database"
+    ],
+    "name": "geoip-database"
+}

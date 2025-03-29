@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "library/pcre2",
+        "library/python/pexpect-39",
+        "system/library",
+        "system/library/g++-13-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "shell/fish"
+    ],
+    "name": "fish"
+}

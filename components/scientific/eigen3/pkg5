@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "library/eigen3"
+    ],
+    "name": "eigen"
+}

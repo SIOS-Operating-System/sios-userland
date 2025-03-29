@@ -1,0 +1,7 @@
+{
+    "dependencies": [],
+    "fmris": [
+        "developer/build/imake/xorg-cf-files"
+    ],
+    "name": "xorg-cf-files"
+}

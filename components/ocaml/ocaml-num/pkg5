@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "library/ocaml/ocaml-findlib",
+        "runtime/ocaml",
+        "system/library"
+    ],
+    "fmris": [
+        "library/ocaml/ocaml-num"
+    ],
+    "name": "ocaml-num"
+}

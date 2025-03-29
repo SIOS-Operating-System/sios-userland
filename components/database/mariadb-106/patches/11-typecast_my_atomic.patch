@@ -1,0 +1,16 @@
+--- mariadb-10.6.16/include/my_atomic.h.orig
++++ mariadb-10.6.16/include/my_atomic.h
+@@ -123,11 +123,11 @@
+ #define MY_MEMORY_ORDER_ACQ_REL
+ #define MY_MEMORY_ORDER_SEQ_CST
+ 
+-#define my_atomic_store32_explicit(P, D, O) my_atomic_store32((P), (D))
++#define my_atomic_store32_explicit(P, D, O) my_atomic_store32((volatile int32*)(P), (D))
+ #define my_atomic_store64_explicit(P, D, O) my_atomic_store64((P), (D))
+ #define my_atomic_storeptr_explicit(P, D, O) my_atomic_storeptr((P), (D))
+ 
+-#define my_atomic_load32_explicit(P, O) my_atomic_load32((P))
++#define my_atomic_load32_explicit(P, O) my_atomic_load32((volatile int32*)(P))
+ #define my_atomic_load64_explicit(P, O) my_atomic_load64((P))
+ #define my_atomic_loadptr_explicit(P, O) my_atomic_loadptr((P))
+ 

@@ -1,0 +1,446 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2025 Andreas Wacknitz
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+# Filter out actions that are in fontconfig-32.p5m
+<transform path=usr/bin/$(MACH32) -> drop>
+<transform path=usr/lib/libfontconfig.so -> drop>
+<transform path=usr/lib/pkgconfig/fontconfig.pc-> drop>
+
+file files/20-indic.conf path=etc/fonts/conf.avail/20-indic.conf
+file files/49-sun-preuser.conf path=etc/fonts/conf.avail/49-sun-preuser.conf
+file files/90-sun-prefer-bitmap.conf path=etc/fonts/conf.avail/90-sun-prefer-bitmap.conf
+
+link path=etc/fonts/conf.d/20-indic.conf target=../conf.avail/20-indic.conf
+link path=etc/fonts/conf.d/49-sun-preuser.conf target=../conf.avail/49-sun-preuser.conf
+link path=etc/fonts/conf.d/90-sun-prefer-bitmap.conf target=../conf.avail/90-sun-prefer-bitmap.conf
+
+# Provide a default local configuration
+file files/local.conf path=etc/fonts/local.conf preserve=true
+
+file files/auth_attr path=etc/security/auth_attr.d/fontconfig
+file files/fc-cache.sh path=lib/svc/method/fc-cache mode=0555
+file files/fc-cache.xml path=lib/svc/manifest/application/font/fc-cache.xml
+file files/FontStates.html path=usr/lib/help/auths/locale/C/FontStates.html
+
+file files/libfontconfig.3lib path=usr/share/man/man3lib/libfontconfig.3lib
+
+dir group=bin mode=0755 owner=root path=var/cache/fontconfig
+
+file path=etc/fonts/conf.avail/05-reset-dirs-sample.conf
+file path=etc/fonts/conf.avail/09-autohint-if-no-hinting.conf
+file path=etc/fonts/conf.avail/10-autohint.conf
+file path=etc/fonts/conf.avail/10-hinting-full.conf
+file path=etc/fonts/conf.avail/10-hinting-medium.conf
+file path=etc/fonts/conf.avail/10-hinting-none.conf
+file path=etc/fonts/conf.avail/10-hinting-slight.conf
+file path=etc/fonts/conf.avail/10-no-antialias.conf
+file path=etc/fonts/conf.avail/10-scale-bitmap-fonts.conf
+file path=etc/fonts/conf.avail/10-sub-pixel-bgr.conf
+file path=etc/fonts/conf.avail/10-sub-pixel-none.conf
+file path=etc/fonts/conf.avail/10-sub-pixel-rgb.conf
+file path=etc/fonts/conf.avail/10-sub-pixel-vbgr.conf
+file path=etc/fonts/conf.avail/10-sub-pixel-vrgb.conf
+file path=etc/fonts/conf.avail/10-unhinted.conf
+file path=etc/fonts/conf.avail/10-yes-antialias.conf
+file path=etc/fonts/conf.avail/11-lcdfilter-default.conf
+file path=etc/fonts/conf.avail/11-lcdfilter-legacy.conf
+file path=etc/fonts/conf.avail/11-lcdfilter-light.conf
+file path=etc/fonts/conf.avail/11-lcdfilter-none.conf
+file path=etc/fonts/conf.avail/20-unhint-small-vera.conf
+file path=etc/fonts/conf.avail/25-unhint-nonlatin.conf
+file path=etc/fonts/conf.avail/30-metric-aliases.conf
+file path=etc/fonts/conf.avail/35-lang-normalize.conf
+file path=etc/fonts/conf.avail/40-nonlatin.conf
+file path=etc/fonts/conf.avail/45-generic.conf
+file path=etc/fonts/conf.avail/45-latin.conf
+file path=etc/fonts/conf.avail/48-spacing.conf
+file path=etc/fonts/conf.avail/49-sansserif.conf
+file path=etc/fonts/conf.avail/50-user.conf
+file path=etc/fonts/conf.avail/51-local.conf
+file path=etc/fonts/conf.avail/60-generic.conf
+file path=etc/fonts/conf.avail/60-latin.conf
+file path=etc/fonts/conf.avail/65-fonts-persian.conf
+file path=etc/fonts/conf.avail/65-khmer.conf
+file path=etc/fonts/conf.avail/65-nonlatin.conf
+file path=etc/fonts/conf.avail/69-unifont.conf
+file path=etc/fonts/conf.avail/70-no-bitmaps-and-emoji.conf
+file path=etc/fonts/conf.avail/70-no-bitmaps-except-emoji.conf
+file path=etc/fonts/conf.avail/70-no-bitmaps.conf
+file path=etc/fonts/conf.avail/70-yes-bitmaps.conf
+file path=etc/fonts/conf.avail/80-delicious.conf
+file path=etc/fonts/conf.avail/90-synthetic.conf
+link path=etc/fonts/conf.d/05-reset-dirs-sample.conf \
+    target=../conf.avail/05-reset-dirs-sample.conf
+link path=etc/fonts/conf.d/09-autohint-if-no-hinting.conf \
+    target=../conf.avail/09-autohint-if-no-hinting.conf
+link path=etc/fonts/conf.d/10-autohint.conf \
+    target=../conf.avail/10-autohint.conf
+link path=etc/fonts/conf.d/10-hinting-full.conf \
+    target=../conf.avail/10-hinting-full.conf
+link path=etc/fonts/conf.d/10-hinting-medium.conf \
+    target=../conf.avail/10-hinting-medium.conf
+link path=etc/fonts/conf.d/10-hinting-none.conf \
+    target=../conf.avail/10-hinting-none.conf
+link path=etc/fonts/conf.d/10-hinting-slight.conf \
+    target=../conf.avail/10-hinting-slight.conf
+link path=etc/fonts/conf.d/10-no-antialias.conf \
+    target=../conf.avail/10-no-antialias.conf
+link path=etc/fonts/conf.d/10-scale-bitmap-fonts.conf \
+    target=../conf.avail/10-scale-bitmap-fonts.conf
+link path=etc/fonts/conf.d/10-sub-pixel-bgr.conf \
+    target=../conf.avail/10-sub-pixel-bgr.conf
+link path=etc/fonts/conf.d/10-sub-pixel-none.conf \
+    target=../conf.avail/10-sub-pixel-none.conf
+link path=etc/fonts/conf.d/10-sub-pixel-rgb.conf \
+    target=../conf.avail/10-sub-pixel-rgb.conf
+link path=etc/fonts/conf.d/10-sub-pixel-vbgr.conf \
+    target=../conf.avail/10-sub-pixel-vbgr.conf
+link path=etc/fonts/conf.d/10-sub-pixel-vrgb.conf \
+    target=../conf.avail/10-sub-pixel-vrgb.conf
+link path=etc/fonts/conf.d/10-unhinted.conf \
+    target=../conf.avail/10-unhinted.conf
+link path=etc/fonts/conf.d/10-yes-antialias.conf \
+    target=../conf.avail/10-yes-antialias.conf
+link path=etc/fonts/conf.d/11-lcdfilter-default.conf \
+    target=../conf.avail/11-lcdfilter-default.conf
+link path=etc/fonts/conf.d/11-lcdfilter-legacy.conf \
+    target=../conf.avail/11-lcdfilter-legacy.conf
+link path=etc/fonts/conf.d/11-lcdfilter-light.conf \
+    target=../conf.avail/11-lcdfilter-light.conf
+link path=etc/fonts/conf.d/11-lcdfilter-none.conf \
+    target=../conf.avail/11-lcdfilter-none.conf
+link path=etc/fonts/conf.d/20-unhint-small-vera.conf \
+    target=../conf.avail/20-unhint-small-vera.conf
+link path=etc/fonts/conf.d/25-unhint-nonlatin.conf \
+    target=../conf.avail/25-unhint-nonlatin.conf
+link path=etc/fonts/conf.d/30-metric-aliases.conf \
+    target=../conf.avail/30-metric-aliases.conf
+link path=etc/fonts/conf.d/35-lang-normalize.conf \
+    target=../conf.avail/35-lang-normalize.conf
+link path=etc/fonts/conf.d/40-nonlatin.conf \
+    target=../conf.avail/40-nonlatin.conf
+link path=etc/fonts/conf.d/45-generic.conf target=../conf.avail/45-generic.conf
+link path=etc/fonts/conf.d/45-latin.conf target=../conf.avail/45-latin.conf
+link path=etc/fonts/conf.d/48-spacing.conf target=../conf.avail/48-spacing.conf
+link path=etc/fonts/conf.d/49-sansserif.conf \
+    target=../conf.avail/49-sansserif.conf
+link path=etc/fonts/conf.d/50-user.conf target=../conf.avail/50-user.conf
+link path=etc/fonts/conf.d/51-local.conf target=../conf.avail/51-local.conf
+link path=etc/fonts/conf.d/60-generic.conf target=../conf.avail/60-generic.conf
+link path=etc/fonts/conf.d/60-latin.conf target=../conf.avail/60-latin.conf
+link path=etc/fonts/conf.d/65-fonts-persian.conf \
+    target=../conf.avail/65-fonts-persian.conf
+link path=etc/fonts/conf.d/65-khmer.conf target=../conf.avail/65-khmer.conf
+link path=etc/fonts/conf.d/65-nonlatin.conf \
+    target=../conf.avail/65-nonlatin.conf
+link path=etc/fonts/conf.d/69-unifont.conf target=../conf.avail/69-unifont.conf
+link path=etc/fonts/conf.d/70-no-bitmaps-and-emoji.conf \
+    target=../conf.avail/70-no-bitmaps-and-emoji.conf
+link path=etc/fonts/conf.d/70-no-bitmaps-except-emoji.conf \
+    target=../conf.avail/70-no-bitmaps-except-emoji.conf
+link path=etc/fonts/conf.d/70-no-bitmaps.conf \
+    target=../conf.avail/70-no-bitmaps.conf
+link path=etc/fonts/conf.d/70-yes-bitmaps.conf \
+    target=../conf.avail/70-yes-bitmaps.conf
+link path=etc/fonts/conf.d/80-delicious.conf \
+    target=../conf.avail/80-delicious.conf
+link path=etc/fonts/conf.d/90-synthetic.conf \
+    target=../conf.avail/90-synthetic.conf
+file path=etc/fonts/fonts.conf
+file path=etc/fonts/fonts.conf.bak
+file path=usr/bin/$(MACH32)/fc-cache
+file path=usr/bin/$(MACH32)/fc-cat
+file path=usr/bin/$(MACH32)/fc-conflist
+file path=usr/bin/$(MACH32)/fc-list
+file path=usr/bin/$(MACH32)/fc-match
+file path=usr/bin/$(MACH32)/fc-pattern
+file path=usr/bin/$(MACH32)/fc-query
+file path=usr/bin/$(MACH32)/fc-scan
+file path=usr/bin/$(MACH32)/fc-validate
+file path=usr/bin/fc-cache
+file path=usr/bin/fc-cat
+file path=usr/bin/fc-conflist
+file path=usr/bin/fc-list
+file path=usr/bin/fc-match
+file path=usr/bin/fc-pattern
+file path=usr/bin/fc-query
+file path=usr/bin/fc-scan
+file path=usr/bin/fc-validate
+file path=usr/include/fontconfig/fcfreetype.h
+file path=usr/include/fontconfig/fcprivate.h
+file path=usr/include/fontconfig/fontconfig.h
+link path=usr/lib/$(MACH64)/libfontconfig.so target=libfontconfig.so.1.15.0
+link path=usr/lib/$(MACH64)/libfontconfig.so.1 target=libfontconfig.so.1.15.0
+file path=usr/lib/$(MACH64)/libfontconfig.so.1.15.0
+file path=usr/lib/$(MACH64)/pkgconfig/fontconfig.pc
+link path=usr/lib/libfontconfig.so target=libfontconfig.so.1.15.0
+link path=usr/lib/libfontconfig.so.1 target=libfontconfig.so.1.15.0
+file path=usr/lib/libfontconfig.so.1.15.0
+file path=usr/lib/pkgconfig/fontconfig.pc
+file path=usr/share/doc/fontconfig/fontconfig-devel.html
+file path=usr/share/doc/fontconfig/fontconfig-devel.pdf
+file path=usr/share/doc/fontconfig/fontconfig-devel.txt
+file path=usr/share/doc/fontconfig/fontconfig-user.html
+file path=usr/share/doc/fontconfig/fontconfig-user.pdf
+file path=usr/share/doc/fontconfig/fontconfig-user.txt
+file path=usr/share/gettext/its/fontconfig.its
+file path=usr/share/gettext/its/fontconfig.loc
+file path=usr/share/locale/ka/LC_MESSAGES/fontconfig-conf.mo
+file path=usr/share/locale/ka/LC_MESSAGES/fontconfig.mo
+file path=usr/share/locale/zh_CN/LC_MESSAGES/fontconfig-conf.mo
+file path=usr/share/locale/zh_CN/LC_MESSAGES/fontconfig.mo
+file path=usr/share/man/man1/fc-cache.1
+file path=usr/share/man/man1/fc-cat.1
+file path=usr/share/man/man1/fc-conflist.1
+file path=usr/share/man/man1/fc-list.1
+file path=usr/share/man/man1/fc-match.1
+file path=usr/share/man/man1/fc-pattern.1
+file path=usr/share/man/man1/fc-query.1
+file path=usr/share/man/man1/fc-scan.1
+file path=usr/share/man/man1/fc-validate.1
+file path=usr/share/man/man3/FcAtomicCreate.3
+file path=usr/share/man/man3/FcAtomicDeleteNew.3
+file path=usr/share/man/man3/FcAtomicDestroy.3
+file path=usr/share/man/man3/FcAtomicLock.3
+file path=usr/share/man/man3/FcAtomicNewFile.3
+file path=usr/share/man/man3/FcAtomicOrigFile.3
+file path=usr/share/man/man3/FcAtomicReplaceOrig.3
+file path=usr/share/man/man3/FcAtomicUnlock.3
+file path=usr/share/man/man3/FcBlanksAdd.3
+file path=usr/share/man/man3/FcBlanksCreate.3
+file path=usr/share/man/man3/FcBlanksDestroy.3
+file path=usr/share/man/man3/FcBlanksIsMember.3
+file path=usr/share/man/man3/FcCacheCopySet.3
+file path=usr/share/man/man3/FcCacheCreateTagFile.3
+file path=usr/share/man/man3/FcCacheDir.3
+file path=usr/share/man/man3/FcCacheNumFont.3
+file path=usr/share/man/man3/FcCacheNumSubdir.3
+file path=usr/share/man/man3/FcCacheSubdir.3
+file path=usr/share/man/man3/FcCharSetAddChar.3
+file path=usr/share/man/man3/FcCharSetCopy.3
+file path=usr/share/man/man3/FcCharSetCount.3
+file path=usr/share/man/man3/FcCharSetCoverage.3
+file path=usr/share/man/man3/FcCharSetCreate.3
+file path=usr/share/man/man3/FcCharSetDelChar.3
+file path=usr/share/man/man3/FcCharSetDestroy.3
+file path=usr/share/man/man3/FcCharSetEqual.3
+file path=usr/share/man/man3/FcCharSetFirstPage.3
+file path=usr/share/man/man3/FcCharSetHasChar.3
+file path=usr/share/man/man3/FcCharSetIntersect.3
+file path=usr/share/man/man3/FcCharSetIntersectCount.3
+file path=usr/share/man/man3/FcCharSetIsSubset.3
+file path=usr/share/man/man3/FcCharSetMerge.3
+file path=usr/share/man/man3/FcCharSetNew.3
+file path=usr/share/man/man3/FcCharSetNextPage.3
+file path=usr/share/man/man3/FcCharSetSubtract.3
+file path=usr/share/man/man3/FcCharSetSubtractCount.3
+file path=usr/share/man/man3/FcCharSetUnion.3
+file path=usr/share/man/man3/FcConfigAcceptFilter.3
+file path=usr/share/man/man3/FcConfigAcceptFont.3
+file path=usr/share/man/man3/FcConfigAppFontAddDir.3
+file path=usr/share/man/man3/FcConfigAppFontAddFile.3
+file path=usr/share/man/man3/FcConfigAppFontClear.3
+file path=usr/share/man/man3/FcConfigBuildFonts.3
+file path=usr/share/man/man3/FcConfigCreate.3
+file path=usr/share/man/man3/FcConfigDestroy.3
+file path=usr/share/man/man3/FcConfigEnableHome.3
+file path=usr/share/man/man3/FcConfigFileInfoIterGet.3
+file path=usr/share/man/man3/FcConfigFileInfoIterInit.3
+file path=usr/share/man/man3/FcConfigFileInfoIterNext.3
+file path=usr/share/man/man3/FcConfigFilename.3
+file path=usr/share/man/man3/FcConfigGetBlanks.3
+file path=usr/share/man/man3/FcConfigGetCache.3
+file path=usr/share/man/man3/FcConfigGetCacheDirs.3
+file path=usr/share/man/man3/FcConfigGetConfigDirs.3
+file path=usr/share/man/man3/FcConfigGetConfigFiles.3
+file path=usr/share/man/man3/FcConfigGetCurrent.3
+file path=usr/share/man/man3/FcConfigGetFilename.3
+file path=usr/share/man/man3/FcConfigGetFontDirs.3
+file path=usr/share/man/man3/FcConfigGetFonts.3
+file path=usr/share/man/man3/FcConfigGetRescanInterval.3
+file path=usr/share/man/man3/FcConfigGetSysRoot.3
+file path=usr/share/man/man3/FcConfigHome.3
+file path=usr/share/man/man3/FcConfigParseAndLoad.3
+file path=usr/share/man/man3/FcConfigParseAndLoadFromMemory.3
+file path=usr/share/man/man3/FcConfigReference.3
+file path=usr/share/man/man3/FcConfigSetCurrent.3
+file path=usr/share/man/man3/FcConfigSetFontSetFilter.3
+file path=usr/share/man/man3/FcConfigSetRescanInterval.3
+file path=usr/share/man/man3/FcConfigSetSysRoot.3
+file path=usr/share/man/man3/FcConfigSubstitute.3
+file path=usr/share/man/man3/FcConfigSubstituteWithPat.3
+file path=usr/share/man/man3/FcConfigUptoDate.3
+file path=usr/share/man/man3/FcDefaultSubstitute.3
+file path=usr/share/man/man3/FcDirCacheClean.3
+file path=usr/share/man/man3/FcDirCacheCreateUUID.3
+file path=usr/share/man/man3/FcDirCacheDeleteUUID.3
+file path=usr/share/man/man3/FcDirCacheLoad.3
+file path=usr/share/man/man3/FcDirCacheLoadFile.3
+file path=usr/share/man/man3/FcDirCacheRead.3
+file path=usr/share/man/man3/FcDirCacheRescan.3
+file path=usr/share/man/man3/FcDirCacheUnlink.3
+file path=usr/share/man/man3/FcDirCacheUnload.3
+file path=usr/share/man/man3/FcDirCacheValid.3
+file path=usr/share/man/man3/FcDirSave.3
+file path=usr/share/man/man3/FcDirScan.3
+file path=usr/share/man/man3/FcFileIsDir.3
+file path=usr/share/man/man3/FcFileScan.3
+file path=usr/share/man/man3/FcFini.3
+file path=usr/share/man/man3/FcFontList.3
+file path=usr/share/man/man3/FcFontMatch.3
+file path=usr/share/man/man3/FcFontRenderPrepare.3
+file path=usr/share/man/man3/FcFontSetAdd.3
+file path=usr/share/man/man3/FcFontSetCreate.3
+file path=usr/share/man/man3/FcFontSetDestroy.3
+file path=usr/share/man/man3/FcFontSetList.3
+file path=usr/share/man/man3/FcFontSetMatch.3
+file path=usr/share/man/man3/FcFontSetPrint.3
+file path=usr/share/man/man3/FcFontSetSort.3
+file path=usr/share/man/man3/FcFontSetSortDestroy.3
+file path=usr/share/man/man3/FcFontSort.3
+file path=usr/share/man/man3/FcFreeTypeCharIndex.3
+file path=usr/share/man/man3/FcFreeTypeCharSet.3
+file path=usr/share/man/man3/FcFreeTypeCharSetAndSpacing.3
+file path=usr/share/man/man3/FcFreeTypeQuery.3
+file path=usr/share/man/man3/FcFreeTypeQueryAll.3
+file path=usr/share/man/man3/FcFreeTypeQueryFace.3
+file path=usr/share/man/man3/FcGetDefaultLangs.3
+file path=usr/share/man/man3/FcGetLangs.3
+file path=usr/share/man/man3/FcGetVersion.3
+file path=usr/share/man/man3/FcInit.3
+file path=usr/share/man/man3/FcInitBringUptoDate.3
+file path=usr/share/man/man3/FcInitLoadConfig.3
+file path=usr/share/man/man3/FcInitLoadConfigAndFonts.3
+file path=usr/share/man/man3/FcInitReinitialize.3
+file path=usr/share/man/man3/FcIsLower.3
+file path=usr/share/man/man3/FcIsUpper.3
+file path=usr/share/man/man3/FcLangGetCharSet.3
+file path=usr/share/man/man3/FcLangNormalize.3
+file path=usr/share/man/man3/FcLangSetAdd.3
+file path=usr/share/man/man3/FcLangSetCompare.3
+file path=usr/share/man/man3/FcLangSetContains.3
+file path=usr/share/man/man3/FcLangSetCopy.3
+file path=usr/share/man/man3/FcLangSetCreate.3
+file path=usr/share/man/man3/FcLangSetDel.3
+file path=usr/share/man/man3/FcLangSetDestroy.3
+file path=usr/share/man/man3/FcLangSetEqual.3
+file path=usr/share/man/man3/FcLangSetGetLangs.3
+file path=usr/share/man/man3/FcLangSetHasLang.3
+file path=usr/share/man/man3/FcLangSetHash.3
+file path=usr/share/man/man3/FcLangSetSubtract.3
+file path=usr/share/man/man3/FcLangSetUnion.3
+file path=usr/share/man/man3/FcMatrixCopy.3
+file path=usr/share/man/man3/FcMatrixEqual.3
+file path=usr/share/man/man3/FcMatrixInit.3
+file path=usr/share/man/man3/FcMatrixMultiply.3
+file path=usr/share/man/man3/FcMatrixRotate.3
+file path=usr/share/man/man3/FcMatrixScale.3
+file path=usr/share/man/man3/FcMatrixShear.3
+file path=usr/share/man/man3/FcNameConstant.3
+file path=usr/share/man/man3/FcNameGetConstant.3
+file path=usr/share/man/man3/FcNameGetConstantFor.3
+file path=usr/share/man/man3/FcNameGetObjectType.3
+file path=usr/share/man/man3/FcNameParse.3
+file path=usr/share/man/man3/FcNameRegisterConstants.3
+file path=usr/share/man/man3/FcNameRegisterObjectTypes.3
+file path=usr/share/man/man3/FcNameUnparse.3
+file path=usr/share/man/man3/FcNameUnregisterConstants.3
+file path=usr/share/man/man3/FcNameUnregisterObjectTypes.3
+file path=usr/share/man/man3/FcObjectSetAdd.3
+file path=usr/share/man/man3/FcObjectSetBuild.3
+file path=usr/share/man/man3/FcObjectSetCreate.3
+file path=usr/share/man/man3/FcObjectSetDestroy.3
+file path=usr/share/man/man3/FcPatternAdd-Type.3
+file path=usr/share/man/man3/FcPatternAdd.3
+file path=usr/share/man/man3/FcPatternAddWeak.3
+file path=usr/share/man/man3/FcPatternBuild.3
+file path=usr/share/man/man3/FcPatternCreate.3
+file path=usr/share/man/man3/FcPatternDel.3
+file path=usr/share/man/man3/FcPatternDestroy.3
+file path=usr/share/man/man3/FcPatternDuplicate.3
+file path=usr/share/man/man3/FcPatternEqual.3
+file path=usr/share/man/man3/FcPatternEqualSubset.3
+file path=usr/share/man/man3/FcPatternFilter.3
+file path=usr/share/man/man3/FcPatternFindIter.3
+file path=usr/share/man/man3/FcPatternFormat.3
+file path=usr/share/man/man3/FcPatternGet-Type.3
+file path=usr/share/man/man3/FcPatternGet.3
+file path=usr/share/man/man3/FcPatternGetWithBinding.3
+file path=usr/share/man/man3/FcPatternHash.3
+file path=usr/share/man/man3/FcPatternIterEqual.3
+file path=usr/share/man/man3/FcPatternIterGetObject.3
+file path=usr/share/man/man3/FcPatternIterGetValue.3
+file path=usr/share/man/man3/FcPatternIterIsValid.3
+file path=usr/share/man/man3/FcPatternIterNext.3
+file path=usr/share/man/man3/FcPatternIterStart.3
+file path=usr/share/man/man3/FcPatternIterValueCount.3
+file path=usr/share/man/man3/FcPatternObjectCount.3
+file path=usr/share/man/man3/FcPatternPrint.3
+file path=usr/share/man/man3/FcPatternReference.3
+file path=usr/share/man/man3/FcPatternRemove.3
+file path=usr/share/man/man3/FcRangeCopy.3
+file path=usr/share/man/man3/FcRangeCreateDouble.3
+file path=usr/share/man/man3/FcRangeCreateInteger.3
+file path=usr/share/man/man3/FcRangeDestroy.3
+file path=usr/share/man/man3/FcRangeGetDouble.3
+file path=usr/share/man/man3/FcStrBasename.3
+file path=usr/share/man/man3/FcStrBuildFilename.3
+file path=usr/share/man/man3/FcStrCmp.3
+file path=usr/share/man/man3/FcStrCmpIgnoreCase.3
+file path=usr/share/man/man3/FcStrCopy.3
+file path=usr/share/man/man3/FcStrCopyFilename.3
+file path=usr/share/man/man3/FcStrDirname.3
+file path=usr/share/man/man3/FcStrDowncase.3
+file path=usr/share/man/man3/FcStrFree.3
+file path=usr/share/man/man3/FcStrListCreate.3
+file path=usr/share/man/man3/FcStrListDone.3
+file path=usr/share/man/man3/FcStrListFirst.3
+file path=usr/share/man/man3/FcStrListNext.3
+file path=usr/share/man/man3/FcStrPlus.3
+file path=usr/share/man/man3/FcStrSetAdd.3
+file path=usr/share/man/man3/FcStrSetAddFilename.3
+file path=usr/share/man/man3/FcStrSetCreate.3
+file path=usr/share/man/man3/FcStrSetDel.3
+file path=usr/share/man/man3/FcStrSetDestroy.3
+file path=usr/share/man/man3/FcStrSetEqual.3
+file path=usr/share/man/man3/FcStrSetMember.3
+file path=usr/share/man/man3/FcStrStr.3
+file path=usr/share/man/man3/FcStrStrIgnoreCase.3
+file path=usr/share/man/man3/FcToLower.3
+file path=usr/share/man/man3/FcUcs4ToUtf8.3
+file path=usr/share/man/man3/FcUtf16Len.3
+file path=usr/share/man/man3/FcUtf16ToUcs4.3
+file path=usr/share/man/man3/FcUtf8Len.3
+file path=usr/share/man/man3/FcUtf8ToUcs4.3
+file path=usr/share/man/man3/FcValueDestroy.3
+file path=usr/share/man/man3/FcValueEqual.3
+file path=usr/share/man/man3/FcValuePrint.3
+file path=usr/share/man/man3/FcValueSave.3
+file path=usr/share/man/man3/FcWeightFromOpenType.3
+file path=usr/share/man/man3/FcWeightFromOpenTypeDouble.3
+file path=usr/share/man/man3/FcWeightToOpenType.3
+file path=usr/share/man/man3/FcWeightToOpenTypeDouble.3
+file path=usr/share/man/man5/fonts-conf.5
+file path=usr/share/xml/fontconfig/fonts.dtd

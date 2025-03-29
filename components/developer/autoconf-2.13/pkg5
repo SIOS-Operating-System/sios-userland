@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "developer/macro/gnu-m4",
+        "runtime/perl",
+        "shell/ksh93"
+    ],
+    "fmris": [
+        "developer/build/autoconf-213"
+    ],
+    "name": "autoconf"
+}

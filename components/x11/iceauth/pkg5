@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "system/library",
+        "x11/library/libice"
+    ],
+    "fmris": [
+        "x11/iceauth"
+    ],
+    "name": "iceauth"
+}

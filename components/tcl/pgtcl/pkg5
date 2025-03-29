@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        "database/postgres-16/developer",
+        "database/postgres-16/library",
+        "database/sqlite-3",
+        "system/library"
+    ],
+    "fmris": [
+        "database/postgres/pgtcl"
+    ],
+    "name": "pgtcl"
+}

@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "library/gmp",
+        "library/mpfr",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math"
+    ],
+    "fmris": [
+        "library/mpc"
+    ],
+    "name": "mpc"
+}

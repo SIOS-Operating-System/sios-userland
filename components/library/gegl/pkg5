@@ -1,0 +1,31 @@
+{
+    "dependencies": [
+        "codec/jasper",
+        "developer/vala",
+        "image/library/babl",
+        "image/library/lensfun",
+        "image/library/libjpeg8-turbo",
+        "image/library/libpng16",
+        "image/library/libraw",
+        "image/library/librsvg",
+        "image/library/libtiff",
+        "library/desktop/cairo",
+        "library/desktop/gdk-pixbuf",
+        "library/desktop/json-glib",
+        "library/desktop/pango",
+        "library/glib2",
+        "library/lcms2",
+        "library/libpoppler",
+        "library/libwebp",
+        "library/openexr",
+        "library/sdl2",
+        "system/library",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime",
+        "system/library/math"
+    ],
+    "fmris": [
+        "image/library/gegl"
+    ],
+    "name": "gegl"
+}

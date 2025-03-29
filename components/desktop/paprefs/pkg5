@@ -1,0 +1,18 @@
+{
+    "dependencies": [
+        "library/audio/pulseaudio",
+        "library/c++/glibmm",
+        "library/c++/sigcpp",
+        "library/desktop/c++/atkmm",
+        "library/desktop/c++/gtkmm3",
+        "library/desktop/gtk3",
+        "library/glib2",
+        "system/library",
+        "system/library/g++-10-runtime",
+        "system/library/gcc-10-runtime"
+    ],
+    "fmris": [
+        "desktop/paprefs"
+    ],
+    "name": "paprefs"
+}

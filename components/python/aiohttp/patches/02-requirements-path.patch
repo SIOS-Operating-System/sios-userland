@@ -1,0 +1,16 @@
+--- aiohttp-3.11.9/requirements/test.in.orig
++++ aiohttp-3.11.9/requirements/test.in
+@@ -1,4 +1,4 @@
+--r base.in
++-r requirements/base.in
+ 
+ coverage
+ freezegun
+--- aiohttp-3.11.9/requirements/base.in.orig
++++ aiohttp-3.11.9/requirements/base.in
+@@ -1,4 +1,4 @@
+--r runtime-deps.in
++-r requirements/runtime-deps.in
+ 
+ gunicorn
+ uvloop; platform_system != "Windows" and implementation_name == "cpython"  # MagicStack/uvloop#14

@@ -1,0 +1,5 @@
+t/00_load.t .. ok
+t/01_arch.t .. ok
+All tests successful.
+Files=2, Tests=2
+Result: PASS

@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        "SUNWcs",
+        "shell/ksh93",
+        "system/library",
+        "system/library/math",
+        "text/xmlto"
+    ],
+    "fmris": [
+        "library/giflib"
+    ],
+    "name": "giflib"
+}
