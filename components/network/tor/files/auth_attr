@@ -1,2 +1,0 @@
-solaris.smf.manage.tor:::Manage Tor service states::
-solaris.smf.value.tor:::Change Tor value properties::

@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "system/library"
-    ],
-    "fmris": [
-        "developer/build/pkgconf"
-    ],
-    "name": "pkgconf"
-}
